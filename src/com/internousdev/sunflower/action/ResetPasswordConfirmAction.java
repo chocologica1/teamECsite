@@ -1,106 +1,57 @@
 package com.internousdev.sunflower.action;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
+
+import com.internousdev.sunflower.util.InputChecker;
 import com.opensymphony.xwork2.ActionSupport;
 
-public class ResetPasswordConfirmAction extends ActionSupport{
-	private String userId;
-	private String nowPassword;
-	private String newPassword;
-	private String newPasswordConfirm;
-	private String errorMessage1; //ユーザIDの未入力についてのエラーメッセージ
-	private String errorMessage2; //ユーザIDの文字種についてのエラーメッセージ
-	private String errorMessage3; //ユーザIDの文字数についてのエラーメッセージ
-	private String errorMessage4; //
+public class ResetPasswordConfirmAction extends ActionSupport implements SessionAware {
+	private String loginId;                      //ユーザID
+	private String password;                     //現在のパスワード
+	private String newPassword;                  //新しいパスワード
+	private String reConfirmationNewPassword;    //（再確認）
+	/*private String categoryId;*/
+
+	private List<String> loginIdErrorMessageList = new ArrayList<String>();                  //ユーザIDが適当でないときのエラーメッセージ
+	private List<String> passwordErrorMessageList = new ArrayList<String>();                 //現在のパスワードが間違っているときのエラーメッセージ
+	private List<String> passwordIncorrectErrorMessageList = new ArrayList<String>();        //
+	private List<String> newPasswordErrorMessageList = new ArrayList<String>();              //
+	private List<String> reConfirmationNewPasswordErrorMessageList = new ArrayList<String>();//
+	private List<String> newPasswordIncorrectErrorMessageList = new ArrayList<String>();     //
+
+	private Map<String,Object> session;  //セッション
+
 
 	public String execute() {
-		String result = ERROR;  //始めはエラーにしておく
+		String result = ERROR;
 
-		/*ユーザIDが未入力でない,ユーザIDが全て半角英数字,ユーザIDの文字数が1～8字のとき
-		 *ユーザIDが未入力でない,ユーザIDが全て半角英数字,ユーザIDの文字数が1～8字のとき */
-		if ((userId.length() != 0) && (userId /**/) && (userId.length() >= 1 && userId.length() <= 8) &&
-			(nowPassword.length() != 0) && (nowPassword /**/) && (nowPassword.length() >= 1 && nowPassword.length() <= 16) &&
-			(newPassword.length() != 0) && (newPassword /**/) && (newPassword.length() >= 1 && newPassword.length() <= 16) &&
-			(newPassword.equals(newPasswordConfirm))) {
+		InputChecker inputChecker = new InputChecker();  //InputCheckerをインスタンス化
 
-			result = SUCCESS;
+		//doCheck()メソッドを使って、既入力・半角英数字・文字数を判定する
+		loginIdErrorMessageList = inputChecker.doCheck("ユーザID",loginId,1,8,true,false,false,true,false,false,false,false,false);
+		passwordErrorMessageList = inputChecker.doCheck("現在のパスワード",password,1,16,true,false,false,true,false,false,false,false,false);
+		newPasswordErrorMessageList = inputChecker.doCheck("新しいパスワード",newPassword,1,16,true,false,false,true,false,false,false,false,false);
+		reConfirmationNewPasswordErrorMessageList = inputChecker.doCheck("新しいパスワード(再確認)",reConfirmationNewPassword,1,16,true,false,false,true,false,false,false,false,false);
 
-		} else if (userId.length() == 0) {  //ユーザIDが未入力のとき
-			result = ERROR;
-			errorMessage1 = "ユーザIDを入力してください。";
+		//doPasswordCheck()メソッドを使って、"新しいパスワード"と"(再確認)"の文字列が一致するか確認する
+		newPasswordIncorrectErrorMessageList = inputChecker.doPasswordCheck(newPassword,reConfirmationNewPassword);
 
-		} else if (userId /**/) {  //ユーザIDが半角英数字でないとき
-			result = ERROR;
-			errorMessage2 = "ユーザIDは半角英数字で入力してください。";
 
-		} else if (userId.length() > 8) {  //ユーザIDの文字数が適当でないとき
-			result = ERROR;
-			errorMessage3 = "ユーザIDは1文字以上8文字以下で入力してください。";
+		//上記全てのエラーメッセージが無かった場合
+		if(loginIdErrorMessageList.size() == 0
+		&& passwordErrorMessageList.size() == 0
+		&& newPasswordErrorMessageList.size() == 0
+		&& reConfirmationNewPasswordErrorMessageList.size() == 0
+		&& newPasswordIncorrectErrorMessageList.size() == 0) {
+
+			UserInfoDAO userInfoDAO = new UserInfoDAO();  //UserInfoDAOをインスタンス化
+			if(userInfoDAO.isExistUserInfo())
+
 		}
-		return result;
 	}
-
-
-
-
-
-
-
-	public String getUserId() {
-		return userId;
-	}
-	public void setUserId(String userId) {
-		this.userId = userId;
-	}
-
-	public String getNewPassword() {
-		return newPassword;
-	}
-	public void setNewPassword(String newPassword) {
-		this.newPassword = newPassword;
-	}
-
-	public String getErrorMessage1() {
-		return errorMessage1;
-	}
-	public void setErrorMessage1(String errorMessage1) {
-		this.errorMessage1 = errorMessage1;
-	}
-
-	public String getErrorMessage2() {
-		return errorMessage2;
-	}
-	public void setErrorMessage2(String errorMessage2) {
-		this.errorMessage2 = errorMessage2;
-	}
-
-	public String getErrorMessage3() {
-		return errorMessage3;
-	}
-	public void setErrorMessage3(String errorMessage3) {
-		this.errorMessage3 = errorMessage3;
-	}
-
-	public String getErrorMessage4() {
-		return errorMessage4;
-	}
-	public void setErrorMessage4(String errorMessage4) {
-		this.errorMessage4 = errorMessage4;
-	}
-
-	public String getNowPassword() {
-		return nowPassword;
-	}
-	public void setNowPassword(String nowPassword) {
-		this.nowPassword = nowPassword;
-	}
-
-	public String getNewPasswordConfirm() {
-		return newPasswordConfirm;
-	}
-	public void setNewPasswordConfirm(String newPasswordConfirm) {
-		this.newPasswordConfirm = newPasswordConfirm;
-	}
-
-
 
 }
