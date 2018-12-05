@@ -216,39 +216,4 @@ public class UserInfoDAO {
 		return result;
 	}
 
-	public String concealPassword(String newPassword){
-
-		int beginIndex = 0;
-		int endIndex = 1;
-
-		StringBuilder stringBuilder = new StringBuilder("********");
-
-		String concealedPassword = stringBuilder.replace(beginIndex, endIndex, newPassword.substring(beginIndex, endIndex)).toString();
-		return concealedPassword;
-	}
-
-	public boolean checkDuplication(String loginId){
-		boolean result = false;
-		DBConnector dbCon = new DBConnector();
-		Connection con = dbCon.getConnection();
-		String sql = "select * from user_info where user_id=?";
-		try{
-			PreparedStatement ps = con.prepareStatement(sql);
-			ps.setString(1, loginId);
-			ResultSet rs = ps.executeQuery();
-			if(rs.next()){
-				result = true;
-			}
-		}catch (SQLException e){
-			e.printStackTrace();
-		}
-		try{
-			con.close();
-		}catch(SQLException e){
-			e.printStackTrace();
-		}
-		return result;
-	}
-
-
 }
