@@ -57,11 +57,20 @@
 		</s:form>
 
 		<!-- 決済ボタン -->
-		<div id="settlement">
-			<s:form action="SettlementConfirmAction">
-				<s:submit value="決済"/>
-			</s:form>
-		</div>
+		<s:if test="session.containKey("loginId")"/>
+			<div class="settlement">
+				<s:form action="SettlementConfirmAction">
+					<s:submit value="決済"/>
+				</s:form>
+			</div>
+		<s:else>
+			<div class="settlement">
+				<s:form action="LoginAction">
+					<input type="hidden" name="cartFlg" value="true"/>
+					<s:submit value="決済"/>
+				</s:form>
+			</div>
+		</s:else>
  	</s:if>
 	<!-- カートに商品が入っていない場合 -->
 
