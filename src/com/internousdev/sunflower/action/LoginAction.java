@@ -24,6 +24,7 @@ public class LoginAction extends ActionSupport implements SessionAware{
 	private String loginId;
 	private String password;
 	private String loginErrorMessage;
+	private boolean cartFlg;
 
 	private List<MCategoryDTO>mCategoryDtoList = new ArrayList<MCategoryDTO>();
 
@@ -34,6 +35,17 @@ public class LoginAction extends ActionSupport implements SessionAware{
 
 
 	public String execute(){
+
+		String result = "login";
+
+		try{
+			if(!session.containsKey("logined")){
+				result = "login";
+				return result;
+			}
+
+
+		}
 
 
 
@@ -69,9 +81,65 @@ public class LoginAction extends ActionSupport implements SessionAware{
 			int count=0;
 			CartInfoDAO cartInfoDao = new CartInfoDAO();
 
+			//仮ユーザーIDに保持しているカート情報とユーザーIDをリンクさせる
+			cartInfoDao.linkToLoginId(String.valueOf(session.get("tempUserId")),loginId);
+
+			/*ログインフラグを保持している場合
+			 * 宛先情報を取得し
+			 * 決済画面に遷移
+			 */
+			if(count > 0) {
+				DestinationInfoDAO destinationInfoDao = new DestinationInfoDAO();
+				try {
+					List<DestinationInfoDTO> destinationInfoDtoList = new ArrayList<DestinationInfoDTO>();
+					destinationInfoDtoList = destinationInfoDao.getDestinationInfo(loginId);
+					Iterator<DestinationInfoDTO> iterator = destinationInfoDtoList.iterator();
+					if(!(iterator.hasNext())) {
+						destinationInfoDtoList = null;
+					}
+					session.put("destinationInfoDtoList", destinationInfoDtoList);
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+				result = "settlement";
+			}else {
+				result = SUCCESS;
+			}
+		}
+			session.put("logined", 1);
+	}
+	return result;
+
+
 
 		}
 	}
+
+		public String getCategoryId(){
+			return loginErrorMessage;
+		}
+
+		public void setLoginErrorMessage(String loginErrorMessage){
+			this.loginErrorMessage = loginErrorMessage;
+		}
+
+		public void setCartFl
+
+		public String getLoginId(){
+			return loginId;
+		}
+
+		public void setLoginId(String loginId){
+			this.loginId = loginId;
+		}
+
+		public String getPassword() {
+			return password;
+		}
+
+		public void setPassword(String password) {
+			this.password = password;
+		}
 
 
 
