@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ taglib prefix="s" uri="/struts-tags" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,43 +21,43 @@
 			<s:if test="!#session.familyNameErrorMessageList.isEmpty()">
 				<s:iterator value="#session.familyNameErrorMessageList">
 					<br>
-					<s:property/>
+					<s:property />
 				</s:iterator>
 			</s:if>
 			<s:if test="!#session.firstNameErrorMessageList.isEmpty()">
 				<s:iterator value="#session.firstNameErrorMessageList">
 					<br>
-					<s:property/>
+					<s:property />
 				</s:iterator>
 			</s:if>
 			<s:if test="!#session.familyNameKanaErrorMessageList.isEmpty()">
 				<s:iterator value="#session.familyNameKanaErrorMessageList">
 					<br>
-					<s:property/>
+					<s:property />
 				</s:iterator>
 			</s:if>
 			<s:if test="!#session.firstNameKanaErrorMessageList.isEmpty()">
 				<s:iterator value="#session.firstNameKanaErrorMessageList">
 					<br>
-					<s:property/>
+					<s:property />
 				</s:iterator>
 			</s:if>
 			<s:if test="!#session.emailErrorMessageList.isEmpty()">
 				<s:iterator value="#session.emailErrorMessageList">
 					<br>
-					<s:property/>
+					<s:property />
 				</s:iterator>
 			</s:if>
 			<s:if test="!#session.loginIdErrorMessageList.isEmpty()">
 				<s:iterator value="#session.loginIdErrorMessageList">
 					<br>
-					<s:property/>
+					<s:property />
 				</s:iterator>
 			</s:if>
 			<s:if test="!#session.passwordErrorMessageList.isEmpty()">
 				<s:iterator value="#session.passwordErrorMessageList">
 					<br>
-					<s:property/>
+					<s:property />
 				</s:iterator>
 			</s:if>
 		</div>
