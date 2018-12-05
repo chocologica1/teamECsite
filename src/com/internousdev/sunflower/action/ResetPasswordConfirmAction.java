@@ -16,12 +16,12 @@ public class ResetPasswordConfirmAction extends ActionSupport implements Session
 	private String reConfirmationNewPassword;    //（再確認）
 	/*private String categoryId;*/
 
-	private List<String> loginIdErrorMessageList = new ArrayList<String>();                  //ユーザIDが適当でないときのエラーメッセージ
-	private List<String> passwordErrorMessageList = new ArrayList<String>();                 //現在のパスワードが間違っているときのエラーメッセージ
-	private List<String> passwordIncorrectErrorMessageList = new ArrayList<String>();        //
-	private List<String> newPasswordErrorMessageList = new ArrayList<String>();              //
-	private List<String> reConfirmationNewPasswordErrorMessageList = new ArrayList<String>();//
-	private List<String> newPasswordIncorrectErrorMessageList = new ArrayList<String>();     //
+	private List<String> loginIdErrorMessageList = new ArrayList<String>();                  //ユーザID不適当メッセージ
+	private List<String> passwordErrorMessageList = new ArrayList<String>();                 //現在のパスワード不適当メッセージ
+	private List<String> incorrectErrorMessageList = new ArrayList<String>();       		 //ユーザIDまたはパスワード不存在メッセージ
+	private List<String> newPasswordErrorMessageList = new ArrayList<String>();              //新しいパスワード不適当メッセージ
+	private List<String> reConfirmationNewPasswordErrorMessageList = new ArrayList<String>();//（再確認）不適当メッセージ
+	private List<String> newPasswordIncorrectErrorMessageList = new ArrayList<String>();     //新しいパスワードと（再確認）不一致メッセージ
 
 	private Map<String,Object> session;  //セッション
 
@@ -49,9 +49,110 @@ public class ResetPasswordConfirmAction extends ActionSupport implements Session
 		&& newPasswordIncorrectErrorMessageList.size() == 0) {
 
 			UserInfoDAO userInfoDAO = new UserInfoDAO();  //UserInfoDAOをインスタンス化
-			if(userInfoDAO.isExistUserInfo())
 
+			//入力されたユーザID・パスワードと一致するデータがDB上にあれば"true"が返ってくる
+			if(userInfoDAO.isExistUserInfo(loginId,password)) {
+
+				//入力された新しいパスワードの1文字目だけ表示、2～16文字目は*で表示されるようにした文字列を代入する
+				String hiddenPassword = userInfoDAO.hiddenPassword(password);
+				session.put("loginId", loginId);                  //セッション「ユーザID」
+				session.put("newPassword", newPassword);          //セッション「新しいパスワード」
+				session.put("hiddenPassword", hiddenPassword);    //セッション「*で表示されるパスワード」
+				result = SUCCESS;
+
+			//入力されたユーザID・パスワードと一致するデータがDB上に無かった場合
+			} else {
+				incorrectErrorMessageList.add("ユーザIDまたはパスワードが異なります。");
+				session.put("incorrectErrorMessageList", incorrectErrorMessageList);  //セッション「ユーザIDまたはパスワード不存在メッセージ」
+			}
+		} else {
+			session.put("loginIdErrorMessageList", loginIdErrorMessageList);                                       //セッション「ユーザID不適当メッセージ」
+			session.put("passwordErrorMessageList", passwordErrorMessageList);                                     //セッション「現在のパスワード不適当メッセージ」
+			session.put("newPasswordErrorMessageList", newPasswordErrorMessageList);                               //セッション「新しいパスワード不適当メッセージ」
+			session.put("reConfirmationNewPasswordErrorMessageList", reConfirmationNewPasswordErrorMessageList);   //セッション「（再確認）不適当メッセージ」
+			session.put("newPasswordIncorrectErrorMessageList", newPasswordIncorrectErrorMessageList);             //セッション「新しいパスワードと（再確認）不一致メッセージ」
 		}
+		return result;
 	}
+
+
+	public String getLoginId() {
+		return loginId;
+	}
+	public void setLoginId(String loginId) {
+		this.loginId = loginId;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getNewPassword() {
+		return newPassword;
+	}
+	public void setNewPassword(String newPassword) {
+		this.newPassword = newPassword;
+	}
+
+	public String getReConfirmationNewPassword() {
+		return reConfirmationNewPassword;
+	}
+	public void setReConfirmationNewPassword(String reConfirmationNewPassword) {
+		this.reConfirmationNewPassword = reConfirmationNewPassword;
+	}
+
+	public List<String> getLoginIdErrorMessageList() {
+		return loginIdErrorMessageList;
+	}
+	public void setLoginIdErrorMessageList(List<String> loginIdErrorMessageList) {
+		this.loginIdErrorMessageList = loginIdErrorMessageList;
+	}
+
+	public List<String> getPasswordErrorMessageList() {
+		return passwordErrorMessageList;
+	}
+	public void setPasswordErrorMessageList(List<String> passwordErrorMessageList) {
+		this.passwordErrorMessageList = passwordErrorMessageList;
+	}
+
+	public List<String> getIncorrectErrorMessageList() {
+		return incorrectErrorMessageList;
+	}
+	public void setIncorrectErrorMessageList(List<String> incorrectErrorMessageList) {
+		this.incorrectErrorMessageList = incorrectErrorMessageList;
+	}
+
+	public List<String> getNewPasswordErrorMessageList() {
+		return newPasswordErrorMessageList;
+	}
+	public void setNewPasswordErrorMessageList(List<String> newPasswordErrorMessageList) {
+		this.newPasswordErrorMessageList = newPasswordErrorMessageList;
+	}
+
+	public List<String> getReConfirmationNewPasswordErrorMessageList() {
+		return reConfirmationNewPasswordErrorMessageList;
+	}
+	public void setReConfirmationNewPasswordErrorMessageList(List<String> reConfirmationNewPasswordErrorMessageList) {
+		this.reConfirmationNewPasswordErrorMessageList = reConfirmationNewPasswordErrorMessageList;
+	}
+
+	public List<String> getNewPasswordIncorrectErrorMessageList() {
+		return newPasswordIncorrectErrorMessageList;
+	}
+	public void setNewPasswordIncorrectErrorMessageList(List<String> newPasswordIncorrectErrorMessageList) {
+		this.newPasswordIncorrectErrorMessageList = newPasswordIncorrectErrorMessageList;
+	}
+
+	public Map<String, Object> getSession() {
+		return session;
+	}
+	public void setSession(Map<String, Object> session) {
+		this.session = session;
+	}
+
+
 
 }
