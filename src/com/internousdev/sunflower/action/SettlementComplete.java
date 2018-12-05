@@ -56,17 +56,25 @@ public class SettlementComplete extends ActionSupport implements SessionAware{
 			/*セッションに保存されているログインIDをもつ商品情報をカート情報テーブルから削除*/
 			deleteCount = cartInfoDao.xxx(String.valueOf(session.get("")));
 
-			/*削除に成功した場合*/
-			if(deleteCount > 0){
-
-			}
-
-			/*削除に失敗した場合*/
-			/*(つまりはエラー)*/
-			else{
+			/*削除に失敗した場合(つまりエラー)*/
+			if(deleteCount <= 0){
 				/*エラー画面に遷移*/
 				return "sippai";
 			}
+
+			/*カート内の情報を再取得*/
+			cartList.clear();
+			cartList = cartInfoDao.xxx(String.valueOf(session.get("")));
+			iterator = cartList.iterator();
+			if(!(iterator.hasNext())){
+				cartList = null;
+			}
+
+			//セッションにログインユーザのカート情報を再格納
+			session.put("cartList", cartList);
+
+			//セッションにログイニュー座のカート内商品の合計金額を再格納
+			int totalPrice = Integer.parseInt(String.valueOf(cartInfoDao.xxx(String.valueOf(session.get("")))));
 
 			/*ホーム画面へ遷移するための戻り値*/
 			result = SUCCESS;
@@ -74,7 +82,7 @@ public class SettlementComplete extends ActionSupport implements SessionAware{
 
 		/*ログインしていない場合*/
 		else{
-			/*???*/
+			/*???画面に遷移するための戻り値*/
 			result = ERROR;
 		}
 
