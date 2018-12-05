@@ -38,19 +38,24 @@
 	<table>
 		<tr>
 			<td>ユーザID</td>
-			<td><input type="text" name="loginId"/></td>
+			<s:if test="#session.savedLoginId == true"> <!-- １度ユーザIDを入力して戻ってきた場合  -->
+			<td><s:textfield name="loginId" placeholder="ユーザID" value="%{#session.loginId}"/></td>
+			</s:if>
+			<s:else> <!-- 初めて入力する場合  -->
+			<td><s:textfield name="loginId" placeholder="ユーザID"/></td>
+			</s:else>
 		</tr>
 		<tr>
 			<td>現在のパスワード</td>
-			<td><input type="password" name="password"/></td>
+			<td><s:password name="password" placeholder="現在のパスワード"/></td>
 		</tr>
 		<tr>
 			<td>新しいパスワード</td>
-			<td><input type="password" name="newPassword"/></td>
+			<td><s:password name="newPassword" placeholder="新しいパスワード"/></td>
 		</tr>
 		<tr>
 			<td>新しいパスワード(再確認)</td>
-			<td><input type="password" name="reConfirmationNewPassword"/></td>
+			<td><s:password name="reConfirmationNewPassword" placeholder="新しいパスワード(再確認)"/></td>
 		</tr>
 	</table>
 	<s:submit value="確認"/>
