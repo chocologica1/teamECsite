@@ -7,5 +7,6 @@
 	<!-- <constant name="struts.devMode" value="true" /> -->
 	<package name="com.internousdev.sunflower.action" extends="struts-default">
 
+
 	</package>
 </struts>
