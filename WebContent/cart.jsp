@@ -56,21 +56,19 @@
 			</div>
 		</s:form>
 
+		<!-- カート合計金額 -->
+		<div class="totalPrice">
+			<s:property value="totalPrice"/>
+		</div>
+
 		<!-- 決済ボタン -->
-		<s:if test="session.containKey("loginId")"/>
+
+
 			<div class="settlement">
 				<s:form action="SettlementConfirmAction">
 					<s:submit value="決済"/>
 				</s:form>
 			</div>
-		<s:else>
-			<div class="settlement">
-				<s:form action="LoginAction">
-					<input type="hidden" name="cartFlg" value="true"/>
-					<s:submit value="決済"/>
-				</s:form>
-			</div>
-		</s:else>
  	</s:if>
 	<!-- カートに商品が入っていない場合 -->
 

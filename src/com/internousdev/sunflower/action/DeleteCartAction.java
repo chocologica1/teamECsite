@@ -23,6 +23,8 @@ public class DeleteCartAction extends ActionSupport implements SessionAware{
 
 	private List<CartInfoDTO> cartInfoDTOList = null;
 
+	private int totalPrice;
+
 	/**
 	 * カート画面から受け取った削除対象の商品IDを元にCartInfoDAOのdeleteメソッドを呼び出しカートから商品を削除します。<br>
 	 * 削除に成功した場合カート情報テーブルの情報を再取得、カート画面に遷移します。<br>
@@ -35,7 +37,7 @@ public class DeleteCartAction extends ActionSupport implements SessionAware{
 
 		//deleteメソッドの呼び出し、戻り値をresultListに格納
 		for(Integer productId : productIdMap.keySet()){
-			resultList.add(cartInfoDAO.delete(productId,String.valueOf(session.get("userId")),String.valueOf(session.get("tempUserId"))));
+			resultList.add(cartInfoDAO.delete(productId,String.valueOf(session.get("loginId")),String.valueOf(session.get("tempUserId"))));
 		}
 
 		//resultListに0(削除失敗)があるかどうかを判定、existErrorにboolean値を格納
@@ -43,8 +45,9 @@ public class DeleteCartAction extends ActionSupport implements SessionAware{
 			existError = i <= 0 ? true : existError;
 		}
 
-		//cartInfoDTOListの読み込み
-		cartInfoDTOList = cartInfoDAO.getCartInfoDTOList(String.valueOf(session.get("userId")), String.valueOf(session.get("tempUserId")));
+		//cartInfoDTOList及び合計金額の読み込み
+		cartInfoDTOList = cartInfoDAO.getCartInfoDTOList(String.valueOf(session.get("loginId")), String.valueOf(session.get("tempUserId")));
+		totalPrice = cartInfoDAO.getTotalPrice(String.valueOf(session.get("loginId")),String.valueOf(session.get("tempUserId")));
 
 		//existErrorがtrueの場合SUCCESS、falseの場合ERRORを戻す
 		return existError ? SUCCESS : ERROR;
@@ -58,6 +61,10 @@ public class DeleteCartAction extends ActionSupport implements SessionAware{
 
 	public List<CartInfoDTO> getCartInfoDTOList(){
 		return cartInfoDTOList;
+	}
+
+	public int getTotalPrice(){
+		return totalPrice;
 	}
 
 	public Map<String,Object> getSession(){

@@ -5,9 +5,14 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="">
-<title></title>
+<title>ホーム</title>
 </head>
 <body>
+  <jsp:include page="header.jsp"/>
+  <div id = "contents">
+    <h1>ホーム画面</h1>
+  </div>
+  <jsp:include page="footer.jsp"/>
 
 </body>
 </html>
