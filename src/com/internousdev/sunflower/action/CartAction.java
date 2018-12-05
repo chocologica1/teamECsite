@@ -12,13 +12,15 @@ public class CartAction extends ActionSupport implements SessionAware{
 	private Map<String,Object> session;
 	private CartInfoDAO cartInfoDAO = new CartInfoDAO();
 	private List<CartInfoDTO> cartInfoDTOList;
+	private int totalPrice;
 
 	/**
-	 * 	カート情報を取得しcart.jspへ遷移します。
+	 * 	カート情報及び合計金額を取得しcart.jspへ遷移します。
 	 */
 
 	public String execute(){
-		cartInfoDTOList = cartInfoDAO.getCartInfoDTOList(String.valueOf(session.get("userId")),String.valueOf(session.get("tempUserId")));
+		cartInfoDTOList = cartInfoDAO.getCartInfoDTOList(String.valueOf(session.get("loginId")),String.valueOf(session.get("tempUserId")));
+		totalPrice = cartInfoDAO.getTotalPrice(String.valueOf(session.get("loginId")), String.valueOf(session.get("tempUserId")));
 		return SUCCESS;
 	}
 
@@ -26,6 +28,10 @@ public class CartAction extends ActionSupport implements SessionAware{
 
 	public List<CartInfoDTO> getCartInfoDTOList(){
 		return cartInfoDTOList;
+	}
+
+	public int getTotalPrice(){
+		return totalPrice;
 	}
 
 	public Map<String,Object> getSession(){
