@@ -40,7 +40,7 @@
 					<s:iterator value="#session.passwordErrorMessageList"><br><s:property /></s:iterator>
 				</s:if>
 			</div>
-		<!-- エラーメッセージここまで。イメージとしてはフォームの上に表示する感じ -->
+		<!-- エラーメッセージここまで。ページ上部に表示する感じ -->
 
 		<s:form action="CreateUserConfirmAction">
 			<table class="CreateUserForm">
@@ -48,6 +48,7 @@
 					<th class="textTitle">姓</th>
 					<td><s:textfield name="familyName" value="%{#session.familyName}" placeholder="姓" class="text" /></td>
 				</tr>
+
 				<tr class="textBox">
 					<th class="txtTitle">名</th>
 					<td><s:textfield name="firstName" value="%{#session.firstName}" placeholder="名" class="text" /><tr>
@@ -79,12 +80,8 @@
 					<th class="txtTitle">パスワード</th>
 					<td><s:textfield name="password" value="%{#session.password}" placeholder="パスワード" class="text" /></td>
 				</tr>
-			</table>
-			<div class="submit_btn_box">
-				<div id=".contents-btn-set">
+			</table>s
 					<s:submit value="登録" class="submit_btn" />
-				</div>
-			</div>
 		</s:form>
 	</div>
 

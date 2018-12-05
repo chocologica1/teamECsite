@@ -27,6 +27,7 @@ public class CreateUserAction extends ActionSupport implements SessionAware {
 	public String execute(){
 		String result = ERROR;
 
+		//セッションに残っているエラーメッセージを取り除いておく
 		session.remove("familyNameErrorMessageList");
 		session.remove("firstNameErrorMessageList");
 		session.remove("famimyNameKanaErrorMessageList");
