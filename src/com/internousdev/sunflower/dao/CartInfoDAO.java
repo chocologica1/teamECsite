@@ -33,4 +33,18 @@ public class CartInfoDAO {
 		return 0;
 	}
 
+	/**
+	 * 未実装です。
+	 * カート内に商品を追加します。
+	 * @param productId	追加する商品ID
+	 * @param productCount	追加する個数
+	 * @param userId	ユーザーID
+	 * @param tempUserId	仮ユーザーID
+	 * @return	追加に成功した場合正の整数、失敗した場合は0を戻します
+	 */
+
+	public int regist(int productId, int productCount, String userId, String tempUserId) {
+		return 0;
+	}
+
 }
