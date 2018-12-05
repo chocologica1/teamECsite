@@ -226,6 +226,5 @@ public class ProductInfoDAO {
 			e.printStackTrace();
 		}
 		return productInfoDTOList;
-		a
 	}
 }
