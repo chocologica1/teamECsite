@@ -10,7 +10,7 @@
 <body>
 
 	<!-- ヘッダー -->
-	<s:include value="header.jsp"/>
+<%-- 	<s:include value="header.jsp"/> --%>
 
 	<!-- メイン -->
 	<div id="main">
