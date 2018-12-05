@@ -8,6 +8,7 @@ import org.apache.struts2.interceptor.SessionAware;
 
 import com.internousdev.sunflower.dao.MCategoryDAO;
 import com.internousdev.sunflower.dto.MCategoryDTO;
+import com.internousdev.sunflower.util.CommonUtility;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class HomeAction extends ActionSupport implements SessionAware {
@@ -19,8 +20,8 @@ public class HomeAction extends ActionSupport implements SessionAware {
 	//ログインしてるか、していないか確認
 	public String execute(){
 		if(!(session.containsKey("loginId")) && !(session.containsKey("tempUserId"))){
-			CommonUtility cu = new CommonUtility();
-			session.put("tempUserId", cu.getRamdomValue());
+			CommonUtility commonUtility = new CommonUtility();
+			session.put("tempUserId", commonUtility.getRamdomValue());
 		}
 
 		//ログイン中でないことを確認。
