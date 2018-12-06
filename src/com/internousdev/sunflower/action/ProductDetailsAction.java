@@ -16,7 +16,7 @@ public class ProductDetailsAction extends ActionSupport {
 	private String productNameKana;
 	private int price;
 	private String releaseCompany;
-	private Date registDate;
+	private Date releaseDate;
 	private String productDescription;
 		//関連商品
 	private List<ProductInfoDTO> productInfoDTOList = new ArrayList<ProductInfoDTO>();
@@ -34,7 +34,7 @@ public class ProductDetailsAction extends ActionSupport {
 		productNameKana = productInfoDTO.getProductNameKana();
 		price = productInfoDTO.getPrice();
 		releaseCompany = productInfoDTO.getReleaseCompany();
-		registDate = productInfoDTO.getRegistDate();
+		releaseDate = productInfoDTO.getReleaseDate();
 		productDescription = productInfoDTO.getProductDescription();
 
 		//関連商品を3つ取得
@@ -71,8 +71,8 @@ public class ProductDetailsAction extends ActionSupport {
 		return releaseCompany;
 	}
 
-	public Date getRegistDate() {
-		return registDate;
+	public Date getReleaseDate() {
+		return releaseDate;
 	}
 
 	public String getProductDescription() {
