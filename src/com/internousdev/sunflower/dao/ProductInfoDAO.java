@@ -60,7 +60,7 @@ public class ProductInfoDAO {
 	}
 
 	//キーワード検索(カテゴリ指定)
-	public List<ProductInfoDTO> getProductInfoListByKeywords(String[] keywordsList, int categoryId) {
+	public List<ProductInfoDTO> getProductInfoListByKeywords(String[] keywordsList, String categoryId) {
 		DBConnector db = new DBConnector();
 		Connection con = db.getConnection();
 		List<ProductInfoDTO> productInfoDTOList = new ArrayList<ProductInfoDTO>();
