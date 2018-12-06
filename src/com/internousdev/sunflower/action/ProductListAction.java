@@ -13,13 +13,11 @@ public class ProductListAction extends ActionSupport {
 
 	//メソッド（商品一覧を取得するだけ）
 	public String execute() {
-		String result = ERROR;
+
 		ProductInfoDAO productInfoDAO = new ProductInfoDAO();
 		productInfoDTOList = productInfoDAO.getProductInfoList();
-		if (productInfoDTOList.size() != 0) {
-			result = SUCCESS;
-		}
-		return result;
+
+		return SUCCESS;
 	}
 
 	//アクセサ
