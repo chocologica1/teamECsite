@@ -8,8 +8,9 @@
 <title>カート画面</title>
 </head>
 <body>
+	<jsp:include page="header.jsp"/>
 	<!-- カートに商品が入っている場合 -->
- 	<s:if test="true">
+ 	<s:if test="cartInfoDTOList.size() > 0">
 		<s:form action="DeleteCartAction">
 			<div id="cart">
 				<s:iterator value="cartInfoDTOList">
@@ -70,12 +71,11 @@
 				</s:form>
 			</div>
  	</s:if>
-
-
 	<!-- カートに商品が入っていない場合 -->
-
 	<s:else>
 		<div class="message">カート情報なし</div>
 	</s:else>
+
+	<jsp:include page="footer.jsp"/>
 </body>
 </html>
