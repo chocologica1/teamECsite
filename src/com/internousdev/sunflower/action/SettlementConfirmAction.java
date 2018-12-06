@@ -29,10 +29,11 @@ public class SettlementConfirmAction extends ActionSupport implements SessionAwa
 		/*宛先情報を格納する変数リスト*/
 //
 		/*ログインしている場合*/
-		if(session.containsKey("LoginId")){
-
+//		if(session.containsKey("LoginId")){
+		if(true){
 			try{
 				/*DBから宛先情報のリストを取得する*/
+//				destinationDTOList = destinationDao.getDestinationInfo(String.valueOf(session.get("loginId")));
 				destinationDTOList = destinationDao.getDestinationInfo(String.valueOf(session.get("loginId")));
 
 				/*宛先情報リストが空の場合*/
@@ -41,6 +42,8 @@ public class SettlementConfirmAction extends ActionSupport implements SessionAwa
 					destinationDTOList = null;
 					//destinationNullMesssage ="宛先情報がありません。";
 				}
+
+				System.out.println(destinationDTOList.get(0).getId());
 
 				/*セッションに宛先情報リストを入れる*/
 				session.put("destinationDTOList", destinationDTOList);
