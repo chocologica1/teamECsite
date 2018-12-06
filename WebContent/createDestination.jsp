@@ -32,6 +32,10 @@
 			<th>名ふりがな</th>
 			<td><input type="text" name="firstNameKana" value="" placeholder="名ふりがな" /></td>
 		</tr>
+		<tr>
+			<th>性別</th>
+			<td><input type="text" name="firstNameKana" value="" placeholder="名ふりがな" /></td>
+		</tr>
 
 	</table>
 </s:form>

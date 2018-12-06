@@ -25,14 +25,15 @@ public class HomeAction extends ActionSupport implements SessionAware {
 		}
 
 		//ログイン中でないことを確認。
-		if(!session.containsKey("logined")){
-			session.put("logined", 0);
+		if(!session.containsKey("loginId")){
+			session.put("loginId", 0);
 		}
 
-		//ログイン状態にする
-		if(session.containsKey("regist")){
-			session.put("logined", 1);
+		//ログイン中であることを確認。
+		if(session.containsKey("loginId")){
+			session.put("loginId", 1);
 		}
+
 
 		if(!session.containsKey("mCategoryDTOList")){
 			MCategoryDAO mCategoryDao = new MCategoryDAO();

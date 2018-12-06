@@ -9,8 +9,9 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.struts2.interceptor.SessionAware;
 
 import com.internousdev.sunflower.dao.MCategoryDAO;
+import com.internousdev.sunflower.dao.ProductInfoDAO;
 import com.internousdev.sunflower.dto.MCategoryDTO;
-//ProductInfoDTOが完成次第インポート。
+import com.internousdev.sunflower.dto.ProductInfoDTO;
 import com.internousdev.sunflower.util.InputChecker;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -18,19 +19,19 @@ public class SearchItemAction extends ActionSupport implements SessionAware {
 
 	private String categoryId;
 	private String keywords;
-	private String pageNo;
-	private List<MCategoryDTO> mCategoryDtoList = new ArrayList<MCategoryDTO>();
+	private List<MCategoryDTO> mCategoryDTOList = new ArrayList<MCategoryDTO>();
 	private List<String> keywordsErrorMessageList = new ArrayList<String>();
-	private List<ProductInfoDTO> productInfoDtoList = new ArrayList<ProductInfoDTO>();
+	private List<ProductInfoDTO> productInfoDTOList = new ArrayList<ProductInfoDTO>();
 	private Map<String, Object> session;
 
 	public String execute(){
 
 		String result = ERROR;
+		//再度検索（エラーなし）した時にkeywordsErrorMessageListを削除するため
 		session.remove("keywordsErrorMessageList");
         InputChecker inputChecker = new InputChecker();
 
-        //空白文字もチェックしてくれる.isBlank()
+        //空白文字のチェックしてくれる.isBlank()
         if(StringUtils.isBlank(keywords)){
         	keywords = "";
         }else {
@@ -52,36 +53,31 @@ public class SearchItemAction extends ActionSupport implements SessionAware {
 
         switch (categoryId){
           case"1":
-        	  //keywords.split(" ")→検索でスペースを入れたときに分割する
-            productInfoDtoList = productInfoDAO.getProductInfoListAll(keywords.split(" "));
+        	//keywords.split(" ")→検索でスペースを入れたときに分割する
+            productInfoDTOList = productInfoDAO.getProductInfoListAll(keywords.split(" "));
             result = SUCCESS;
             break;
 
           default:
-        	productInfoDtoList = productInfoDAO.getProductionInfoListByKeywords(keywords.split(" "), categoryId);
+        	productInfoDTOList = productInfoDAO.getProductInfoListByKeywords(keywords.split(" "), categoryId);
         	result = SUCCESS;
         	break;
         }
 
-        Iterator<ProductInfoDTO> iterator = productInfoDtoList.Iterator();
+        Iterator<ProductInfoDTO> iterator = productInfoDTOList.iterator();
         if(!(iterator.hasNext())){
-        	productInfoDtoList = null;
+        	productInfoDTOList = null;
         }
 
         if(!session.containsKey("mCategoryList")){
         	MCategoryDAO mCategoryDAO = new MCategoryDAO();
-        	mCategoryDtoList = mCategoryDAO.getMCategoryList();
-        	session.put("mCategoryDTOList", mCategoryDtoList);
+        	mCategoryDTOList = mCategoryDAO.getMCategoryList();
+        	session.put("mCategoryDTOList", mCategoryDTOList);
         }
+
+        return result;
 	}
 
-	public String getPageNo(){
-		return pageNo;
-	}
-
-	public void setPageNo(String pageNo){
-		this.pageNo = pageNo;
-	}
 
 	public String getKeywords(){
 		return keywords;
@@ -99,12 +95,12 @@ public class SearchItemAction extends ActionSupport implements SessionAware {
 		this.categoryId = categoryId;
 	}
 
-	public List<MCategoryDTO> getmCategoryDtoList(){
-		return mCategoryDtoList;
+	public List<MCategoryDTO> getmCategoryDTOList(){
+		return mCategoryDTOList;
 	}
 
-	public void setmCategoryList(List<MCategoryDTO> mCategoryDtoList){
-		this.mCategoryDtoList = mCategoryDtoList;
+	public void setmCategoryList(List<MCategoryDTO> mCategoryDTOList){
+		this.mCategoryDTOList = mCategoryDTOList;
 	}
 
 	public List<String> getKeywordsErrorMessageList(){
@@ -115,12 +111,12 @@ public class SearchItemAction extends ActionSupport implements SessionAware {
 		this.keywordsErrorMessageList = keywordsErrorMessageList;
 	}
 
-	public List<ProductInfoDTO> getProductInfoDtoList(){
-		return productInfoDtoList;
+	public List<ProductInfoDTO> getProductInfoDTOList(){
+		return productInfoDTOList;
 	}
 
-	public void setProductInfoDTOList(List<ProductInfoDTO> productInfoDtoList){
-		this.productInfoDtoList = productInfoDtoList;
+	public void setProductInfoDTOList(List<ProductInfoDTO> productInfoDTOList){
+		this.productInfoDTOList = productInfoDTOList;
 	}
 
 	public Map<String, Object> getSession(){
