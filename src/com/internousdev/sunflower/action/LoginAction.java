@@ -60,7 +60,6 @@ public class LoginAction extends ActionSupport implements SessionAware{
 		session.put("logined",0);
 	}
 
-	//
 	if(!session.containsKey("mCategoryList")){
 		MCategoryDAO mCategoryDao = new MCategoryDAO();
 		mCategoryDTOList = mCategoryDao.getMCategoryList();
@@ -77,10 +76,10 @@ public class LoginAction extends ActionSupport implements SessionAware{
 			int count=0;
 			CartInfoDAO cartInfoDao = new CartInfoDAO();
 
-			//仮ユーザーIDに保持しているカート情報とユーザーIDをリンクさせる
-			cartInfoDao.linkToLoginId(String.valueOf(session.get("tempUserId")),loginId);
+			//tempUserIdに保持しているカート情報とloginIDをリンクさせる
+			cartInfoDao.linkToLoginId(loginId,String.valueOf(session.get("tempUserId")));
 
-			/*ログインフラグを保持している場合
+			/*cartFlgを保持している場合
 			 * 宛先情報を取得し
 			 * 決済画面に遷移
 			 */
@@ -90,8 +89,10 @@ public class LoginAction extends ActionSupport implements SessionAware{
 					List<DestinationInfoDTO> destinationInfoDtoList = new ArrayList<DestinationInfoDTO>();
 					destinationInfoDtoList = destinationInfoDao.getDestinationInfo(loginId);
 					Iterator<DestinationInfoDTO> iterator = destinationInfoDtoList.iterator();
+					//宛先情報がない場合nullを入れてメッセージを表示する。
 					if(!(iterator.hasNext())) {
 						destinationInfoDtoList = null;
+						destinationInfoDtoList = "宛先情報がありません。";
 					}
 					session.put("destinationInfoDtoList", destinationInfoDtoList);
 				} catch (SQLException e) {
@@ -118,8 +119,6 @@ public class LoginAction extends ActionSupport implements SessionAware{
 		public void setLoginErrorMessage(String loginErrorMessage){
 			this.loginErrorMessage = loginErrorMessage;
 		}
-
-		public void setCartFl
 
 		public String getLoginId(){
 			return loginId;
