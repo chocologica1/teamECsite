@@ -18,23 +18,27 @@
 
 <s:elseif test="purchaseHistoryInfoDTOList.size() > 0">    <!-- 購入履歴がある場合  -->
 	<table>
-
 		<tr>
+			<th>商品名</th>
+			<th>ふりがな</th>
+			<th>商品画像</th>
+			<th>値段</th>
+			<th>個数</th>
+			<th>合計金額</th>
+		</tr>
 		<s:iterator value="purchaseHistoryInfoDTOList">
+		<tr>
 			<td><s:property value="productName"/></td>
 			<td><s:property value="productNameKana"/></td>
-			<td><img src='<s:property value="imageFilePath"/>'></td>
-			<td><s:property value="imageFileName"/></td>
-			<td><s:property value="price"/></td>
-			<td><s:property value="productCount"/></td>
-			<td><s:property value="totalPrice"/></td>
-		</s:iterator>
+			<td><img src='<s:property value="imageFilePath"/>'><s:property value="imageFileName"/></td>
+			<td><s:property value="price"/>円</td>
+			<td><s:property value="productCount"/>個</td>
+			<td><s:property value="totalPrice"/>円</td>
 		</tr>
-
+		</s:iterator>
 		<s:form action="DeletePurchaseHistoryAction">
-			<s:submit value="削除"/>
+			<s:submit value="履歴削除"/>
 		</s:form>
-
 	</table>
 </s:elseif>
 

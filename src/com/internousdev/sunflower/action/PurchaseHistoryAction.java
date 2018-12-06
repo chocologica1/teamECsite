@@ -28,7 +28,7 @@ public class PurchaseHistoryAction extends ActionSupport implements SessionAware
 
 		} else {
 			result = ERROR;
-			message = "商品購入履歴情報はありません。";
+			setMessage("商品購入履歴情報はありません。");
 		}
 
 

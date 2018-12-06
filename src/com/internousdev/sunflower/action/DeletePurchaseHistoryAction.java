@@ -1,27 +1,29 @@
 package com.internousdev.sunflower.action;
 
+import java.util.ArrayList;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
 import com.internousdev.sunflower.dao.PurchaseHistoryInfoDAO;
+import com.internousdev.sunflower.dto.PurchaseHistoryInfoDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class DeletePurchaseHistoryAction extends ActionSupport implements SessionAware {
 	public Map<String,Object> session;
 	private PurchaseHistoryInfoDAO purchaseHistoryInfoDAO = new PurchaseHistoryInfoDAO();
+	private ArrayList<PurchaseHistoryInfoDTO> purchaseHistoryInfoDTOList = new ArrayList<PurchaseHistoryInfoDTO>();
 
 	public String execute() {
 		String result = ERROR;
 
-		int count = 0;
-		String loginId = session.get("loginId").toString();
-		count = purchaseHistoryInfoDAO.allDelete(loginId);
+		// 購入履歴の全消去、戻り値は更新件数
+		int count = purchaseHistoryInfoDAO.allDelete(session.get("loginId").toString());
 
+		// 更新できた場合
 		if(count > 0) {
 			result = SUCCESS;
-		} else {
-			result = ERROR;
+			purchaseHistoryInfoDTOList = null;  // 商品購入履歴一覧を"null"にする
 		}
 
 		return result;
@@ -44,5 +46,13 @@ public class DeletePurchaseHistoryAction extends ActionSupport implements Sessio
 	public void setPurchaseHistoryInfoDAO(PurchaseHistoryInfoDAO purchaseHistoryInfoDAO) {
 		this.purchaseHistoryInfoDAO = purchaseHistoryInfoDAO;
 	}
+
+	public ArrayList<PurchaseHistoryInfoDTO> getPurchaseHistoryInfoDTOList() {
+		return purchaseHistoryInfoDTOList;
+	}
+	public void setPurchaseHistoryInfoDTOList(ArrayList<PurchaseHistoryInfoDTO> purchaseHistoryInfoDTOList) {
+		this.purchaseHistoryInfoDTOList = purchaseHistoryInfoDTOList;
+	}
+
 
 }
