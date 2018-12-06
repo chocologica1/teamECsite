@@ -152,7 +152,7 @@ public class CartInfoDAO {
 	public int linkToLoginId(String userId,String tempUserId){
 		int result = 0;
 		Connection con = db.getConnection();
-		String sql = "UPDATE cart_info SET login_id = ? , update_date = now() WHERE temp_user_id = ?";
+		String sql = "UPDATE cart_info SET user_id = ? , update_date = now() WHERE temp_user_id = ?";
 		try{
 			PreparedStatement ps = con.prepareStatement(sql);
 			ps.setString(1, userId);
@@ -237,7 +237,7 @@ public class CartInfoDAO {
 	public int addCount(int productId,int productCount,String userId,String tempUserId){
 		int result = 0;
 		Connection con = db.getConnection();
-		String sql = "UPDATE cart_info SET product_count = ? , update_date = now() WHERE product_id = ? AND (user_id = ? OR temp_user_id = ?)";
+		String sql = "UPDATE cart_info SET product_count = product_count + ? , update_date = now() WHERE product_id = ? AND (user_id = ? OR temp_user_id = ?)";
 		try{
 			PreparedStatement ps = con.prepareStatement(sql);
 			ps.setInt(1, productCount);

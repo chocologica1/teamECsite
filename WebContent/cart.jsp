@@ -32,6 +32,10 @@
 							<td><s:property value="productNameKana"/></td>
 						</tr>
 						<tr>
+							<td>商品画像</td>
+							<td><Img src="<s:property value='productImagePath'/>"></td>
+						</tr>
+						<tr>
 							<td>発売会社名</td>
 							<td><s:property value="releaseCompany"/></td>
 						</tr>
