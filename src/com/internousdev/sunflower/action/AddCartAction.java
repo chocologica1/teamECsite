@@ -28,18 +28,18 @@ public class AddCartAction extends ActionSupport implements SessionAware{
 
 	public String execute(){
 		int result = 0;
-		
+
 		//未ログインかつ仮ユーザーIDを発行していない場合、仮ユーザーIDを発行しsessionに格納
-		if(!(session.containsKey("userId") || session.containsKey("tempUserId"))){
+		if(!(session.containsKey("loginId") || session.containsKey("tempUserId"))){
 			session.put("tempUserId", commonUtility.getRamdomValue());
 		}
-		
+
 		/*
 		 * registメソッドを呼び出し、カート情報テーブルに商品を追加する。
 		 * 戻り値はresultに格納。成功した場合正の整数、失敗した場合0が戻る。
 		 */
-		result = cartInfoDAO.regist(productId,productCount,String.valueOf(session.get("userId")),String.valueOf(session.get("tempUserId")));
-		
+		result = cartInfoDAO.regist(productId,productCount,String.valueOf(session.get("loginId")),String.valueOf(session.get("tempUserId")));
+
 		//resultが1以上であればSUCCESS、0以下であればERRORを戻す。
 		return result > 0 ? SUCCESS : ERROR;
 	}
