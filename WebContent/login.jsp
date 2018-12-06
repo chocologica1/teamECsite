@@ -8,6 +8,8 @@
 <link rel="stylesheet" href="./css/style.css">
 <title>ログイン</title>
 
+<script>
+
 function goLoginAction(){
 	document.getElementById("form").action="LoginAction";
 }
@@ -17,6 +19,7 @@ function goCreateUseerAction(){
 function goResetPasswordAction(){
 	document.getElementById("form").action="ResetPasswordAction";
 }
+</script>
 
 </head>
 <body>
