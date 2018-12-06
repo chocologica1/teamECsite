@@ -19,7 +19,7 @@
 		<div id="contents">
 
 			<!-- 宛先情報が存在する場合 -->
-			<s:if test="destinationNullMessage != ''">
+			<s:if test="#session.destinationDTOList.size()>0">
 <%-- 			<s:if test="destinationList.size() > 0"> --%>
 				宛先を選択してください
 

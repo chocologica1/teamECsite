@@ -22,7 +22,7 @@ public class DestinationInfoDAO {
 				+ "FROM"
 				+ "destination_info"
 				+ "WHERE"
-				+ "user_id = ?";
+				+ "user_id = '?'";
 
 		try{
 			PreparedStatement ps = con.prepareStatement(sql);
@@ -48,6 +48,4 @@ public class DestinationInfoDAO {
 
 		return destinationList;
 	}
-
-	public int insert(String userId, String familyName, String firstName, String familyNameKana, String firstNameKana, String)
 }
