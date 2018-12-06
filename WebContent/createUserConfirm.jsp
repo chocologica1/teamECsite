@@ -43,8 +43,8 @@
 						<td><s:property value="email" /></td>
 					</tr>
 					<tr>
-						<th><s:label value="ログインID" /></th>
-						<td><s:property value="loginID" /></td>
+						<th><s:label value="ユーザID" /></th>
+						<td><s:property value="loginId" /></td>
 					</tr>
 					<tr>
 						<th><s:label value="パスワード" /></th>
@@ -53,6 +53,11 @@
 				</table>
 					<s:submit value="登録情報を確定" />
 		</s:form>
+
+		<s:form action="CreateUserAction">
+			<s:submit value="戻る"/>
+		</s:form>
+
 	</div>
 	<div id="footer">
 	</div>

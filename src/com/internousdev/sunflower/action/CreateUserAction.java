@@ -17,10 +17,7 @@ public class CreateUserAction extends ActionSupport implements SessionAware {
 	private List<String> sexList=new ArrayList<String>();
 	private String email;
 	private String loginID;
-	private String password;
-	private static final String MALE = "男性";
-	private static final String FEMALE = "女性";
-	private String defaultSexValue = MALE;
+	private String password;;
 	private String categoryId;
 	private Map<String, Object> session;
 
@@ -36,14 +33,6 @@ public class CreateUserAction extends ActionSupport implements SessionAware {
 		session.remove("userIdErrorMessageList");
 		session.remove("passwordErrorMessageList");
 
-		if(sex == null){
-			session.put("sex", MALE);
-		}else{
-			session.put("sex",String.valueOf(session.get("sex")));
-		}
-		sexList.add(MALE);
-		sexList.add(FEMALE);
-		session.put("sexList", sexList);
 
 		result = SUCCESS;
 		return result;
@@ -121,13 +110,6 @@ public class CreateUserAction extends ActionSupport implements SessionAware {
 		this.password = password;
 	}
 
-	public String getDefaultSexValue() {
-		return defaultSexValue;
-	}
-
-	public void setDefaultSexValue(String defaultSexValue) {
-		this.defaultSexValue = defaultSexValue;
-	}
 
 	public String getCategoryId() {
 		return categoryId;

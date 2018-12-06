@@ -6,16 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="">
-
-
-<s:if test="session.cartFlg == 1">
-	<meta http-equiv="refresh" content="3;<s:url action='SettlementConfirmAction'/>">
-</s:if>
-<s:else>
-	<meta http-equiv="refresh" content="3;<s:url action='HomeAction'/>">
-</s:else>
-
-
+	<meta http-equiv="refresh" content="3;<s:url action='LoginAction'/>">
 <title>ユーザー情報入力完了画面</title>
 </head>
 <body>

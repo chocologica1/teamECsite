@@ -44,6 +44,7 @@ public class CreateUserConfirmAction extends ActionSupport implements SessionAwa
 		session.put("sex",sex);
 		session.put("email",email);
 		session.put("loginId",loginId);
+		session.put("password",password);
 
 		familyNameErrorMessageList = inputChecker.doCheck("姓",familyName,1, 16, true, true, true, false, false, false, false, false, false);
 		firstNameErrorMessageList = inputChecker.doCheck("名", firstName, 1, 16, true, true, true, false, false, false, false, false, false);
@@ -71,6 +72,12 @@ public class CreateUserConfirmAction extends ActionSupport implements SessionAwa
 			session.put("loginIdErrorMessageList", loginIdErrorMessageList);
 			session.put("passwordErrorMessageList", passwordErrorMessageList);
 			result = ERROR;
+		}
+
+		if("0".equals(sex)){
+			sex = "男性";
+		}else{
+			sex = "女性";
 		}
 		return result;
 	}

@@ -68,49 +68,48 @@
 				<tr class="textBox">
 					<th class="textTitle">姓</th>
 					<td><input type="text" name="familyName"
-							value="%{#session.familyName}" placeholder="姓" class="text" /></td>
+							value="<s:property value='familyName' />" placeholder="姓" class="text" /></td>
 				</tr>
 
 				<tr class="textBox">
 					<th class="txtTitle">名</th>
 					<td><input type="text" name="firstName"
-							value="%{#session.firstName}" placeholder="名" class="text" />
+							value="<s:property value='firstName' />" placeholder="名" class="text" />
 				<tr>
 				</tr>
 				<tr class="textBox">
 					<th class="txtTitle">姓ふりがな</th>
 					<td><input type="text" name="familyNameKana"
-							value="%{#session.familyNameKana}" placeholder="姓ふりがね"
+							value="<s:property value='familyNameKana' />" placeholder="姓ふりがね"
 							class="text" /></td>
 				</tr>
 				<tr class="textBox">
 					<th class="txtTitle">名ふりがな</th>
 					<td><input type="text" name="firstNameKana"
-							value="%{#session.firstNameKana}" placeholder="名ふりがな"
+							value="<s:property value='firstNameKana' />" placeholder="名ふりがな"
 							class="text" /></td>
 				</tr>
-				<tr class="textBox">
-					<th class="txtTitle">性別</th>
-						<td><s:radio name="sex" list="sexList" value="defaultSexValue" label="性別" placeholder="性別"/></td>
-<!-- 						<td><input type="radio" id="0" name="sex" value="%{#session.sex}" />男性</td> -->
-<!-- 						<td><input type="radio" id="1" name="sex" value="%{#session.sex}" />女性</td> -->
+				<tr>
+					<th>性別</th>
+						<td><input type="radio" id="0" name="sex" value="0" />男性</td>
+						<td><input type="radio" id="1" name="sex" value="1" />女性</td>
 				</tr>
 
-				<tr class="txtBox">
-					<th class="txtTitle">メールアドレス</th>
-					<td><input type="text" name="email" value="%{#session.email}"
+				<tr>
+					<th>メールアドレス</th>
+					<td><input type="text" name="email" value="<s:property value='email' />"
 							placeholder="メールアドレス" class="text" /></td>
 				</tr>
 
-				<tr class="txtBox">
-					<th class="txtTitle">ログインID</th>
-					<td><input type="text" name="loginId" value="%{#session.loginId}"
-							placeholder="ログインID" class="text" /></td>
+				<tr>
+					<th>ユーザID</th>
+					<td><input type="text" name="loginId" value="<s:property value='loginId' />"
+							placeholder="ユーザID" class="text" /></td>
 				</tr>
 
 				<tr class="txtBox">
-					<th class="txtTitle">パスワード</th>
-					<td><input type="text" name="password" value="%{#session.password}"
+					<th>パスワード</th>
+					<td><input type="text" name="password" value="<s:property value='password' />"
 							placeholder="パスワード" class="text" /></td>
 				</tr>
 			</table>
