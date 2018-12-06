@@ -7,6 +7,8 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.internousdev.sunflower.dao.DestinationInfoDAO;
+import com.internousdev.sunflower.dto.DestinationInfoDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class SettlementConfirm extends ActionSupport implements SessionAware{
@@ -31,7 +33,7 @@ public class SettlementConfirm extends ActionSupport implements SessionAware{
 
 			try{
 				/*DBから宛先情報のリストを取得する*/
-				destinationList = destinationDao.xxx(String.valueOf(session.get("")));
+				destinationList = destinationDao.getDestinationInfo(String.valueOf(session.get("")));
 
 				/*宛先情報リストが空の場合*/
 				Iterator<DestinationInfoDTO> iterator = destinationList.iterator();
@@ -49,6 +51,8 @@ public class SettlementConfirm extends ActionSupport implements SessionAware{
 
 		/*ログインしていない場合*/
 		else{
+			/*カートフラグを立てる*/
+
 			/*ログイン画面へ遷移するための戻り値*/
 			result = ERROR;
 		}
