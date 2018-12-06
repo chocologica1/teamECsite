@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="">
-<meta http-equiv="refresh" content="0;URL = <s:URL action='HomeAction'/>">
+<meta http-equiv="refresh" content="0;URL = <s:url action='HomeAction'/>">
 <title>index</title>
 </head>
 <body>

@@ -109,6 +109,7 @@ public class CartInfoDAO {
 		if(existsProduct(productId,userId,tempUserId)){
 			result = addCount(productId,productCount,userId,tempUserId);
 		}else{
+			//userIdがnullの場合tempUserIdを代入(user_idカラムがnot null指定のため)
 			userId = userId == null ? tempUserId : userId;
 			Connection con = db.getConnection();
 			String sql = "INSERT INTO cart_info(product_id,product_count,user_id,temp_user_id,regist_date,update_date) VALUES(?,?,?,?,now(),now())";
@@ -137,7 +138,7 @@ public class CartInfoDAO {
 	public int linkToLoginId(String userId,String tempUserId){
 		int result = 0;
 		Connection con = db.getConnection();
-		String sql = "UPDATE cart_info SET login_id = ? WHERE temp_user_id = ?";
+		String sql = "UPDATE cart_info SET login_id = ? , update_date = now() WHERE temp_user_id = ?";
 		try{
 			PreparedStatement ps = con.prepareStatement(sql);
 			ps.setString(1, userId);
@@ -152,14 +153,18 @@ public class CartInfoDAO {
 	}
 
 	/**
-	 * 未実装です。
 	 * カート内の全ての商品の合計金額を戻します。
 	 * @param tempUserId	仮ログインID
 	 * @param userId	ユーザーID
 	 * @return	合計金額を戻します
 	 */
 	public int getTotalPrice(String userId,String tempUserId){
-		return 0;
+		int result = 0;
+		List<CartInfoDTO> cartInfoDTOList = getCartInfoDTOList(userId,tempUserId);
+		for(CartInfoDTO dto : cartInfoDTOList){
+			result += dto.getSubtotal();
+		}
+		return result;
 	}
 
 	/**
