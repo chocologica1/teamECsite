@@ -219,9 +219,9 @@ public class UserInfoDAO {
 	//パスワードを*で隠す
 	public String hiddenPassword(String password) {
 		int beginIndex = 0;
-		int endIndex = 1;
+		int endIndex = 0;
 		if(password.length() > 1) {
-			endIndex = 2;
+			endIndex = 1;
 		}
 		StringBuilder stringBuilder = new StringBuilder("****************");
 
