@@ -20,45 +20,45 @@
 		<div class="errorMessage">
 			<s:if test="!#session.familyNameErrorMessageList.isEmpty()">
 				<s:iterator value="#session.familyNameErrorMessageList">
-					<br>
 					<s:property />
 				</s:iterator>
+				<br>
 			</s:if>
 			<s:if test="!#session.firstNameErrorMessageList.isEmpty()">
 				<s:iterator value="#session.firstNameErrorMessageList">
-					<br>
 					<s:property />
 				</s:iterator>
+				<br>
 			</s:if>
 			<s:if test="!#session.familyNameKanaErrorMessageList.isEmpty()">
 				<s:iterator value="#session.familyNameKanaErrorMessageList">
-					<br>
 					<s:property />
 				</s:iterator>
+				<br>
 			</s:if>
 			<s:if test="!#session.firstNameKanaErrorMessageList.isEmpty()">
 				<s:iterator value="#session.firstNameKanaErrorMessageList">
-					<br>
 					<s:property />
 				</s:iterator>
+				<br>
 			</s:if>
 			<s:if test="!#session.emailErrorMessageList.isEmpty()">
 				<s:iterator value="#session.emailErrorMessageList">
-					<br>
 					<s:property />
 				</s:iterator>
+				<br>
 			</s:if>
 			<s:if test="!#session.loginIdErrorMessageList.isEmpty()">
 				<s:iterator value="#session.loginIdErrorMessageList">
-					<br>
 					<s:property />
 				</s:iterator>
+				<br>
 			</s:if>
 			<s:if test="!#session.passwordErrorMessageList.isEmpty()">
 				<s:iterator value="#session.passwordErrorMessageList">
-					<br>
 					<s:property />
 				</s:iterator>
+				<br>
 			</s:if>
 		</div>
 		<!-- エラーメッセージここまで -->
@@ -67,49 +67,50 @@
 			<table>
 				<tr class="textBox">
 					<th class="textTitle">姓</th>
-					<td><s:textfield name="familyName"
+					<td><input type="text" name="familyName"
 							value="%{#session.familyName}" placeholder="姓" class="text" /></td>
 				</tr>
 
 				<tr class="textBox">
 					<th class="txtTitle">名</th>
-					<td><s:textfield name="firstName"
+					<td><input type="text" name="firstName"
 							value="%{#session.firstName}" placeholder="名" class="text" />
 				<tr>
 				</tr>
 				<tr class="textBox">
 					<th class="txtTitle">姓ふりがな</th>
-					<td><s:textfield name="familyNameKana"
+					<td><input type="text" name="familyNameKana"
 							value="%{#session.familyNameKana}" placeholder="姓ふりがね"
 							class="text" /></td>
 				</tr>
 				<tr class="textBox">
 					<th class="txtTitle">名ふりがな</th>
-					<td><s:textfield name="firstNameKana"
+					<td><input type="text" name="firstNameKana"
 							value="%{#session.firstNameKana}" placeholder="名ふりがな"
 							class="text" /></td>
 				</tr>
 				<tr class="textBox">
 					<th class="txtTitle">性別</th>
-					<td><s:radio name="sex" list="%{#session.sexList}"
-							value="%{#session.sex}" placeholder="性別" class="text" /></td>
+						<td><s:radio name="sex" list="sexList" value="defaultSexValue" label="性別" placeholder="性別"/></td>
+<!-- 						<td><input type="radio" id="0" name="sex" value="%{#session.sex}" />男性</td> -->
+<!-- 						<td><input type="radio" id="1" name="sex" value="%{#session.sex}" />女性</td> -->
 				</tr>
 
 				<tr class="txtBox">
 					<th class="txtTitle">メールアドレス</th>
-					<td><s:textfield name="email" value="%{#session.email}"
+					<td><input type="text" name="email" value="%{#session.email}"
 							placeholder="メールアドレス" class="text" /></td>
 				</tr>
 
 				<tr class="txtBox">
 					<th class="txtTitle">ログインID</th>
-					<td><s:textfield name="loginId" value="%{#session.loginId}"
+					<td><input type="text" name="loginId" value="%{#session.loginId}"
 							placeholder="ログインID" class="text" /></td>
 				</tr>
 
 				<tr class="txtBox">
 					<th class="txtTitle">パスワード</th>
-					<td><s:textfield name="password" value="%{#session.password}"
+					<td><input type="text" name="password" value="%{#session.password}"
 							placeholder="パスワード" class="text" /></td>
 				</tr>
 			</table>

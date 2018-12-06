@@ -5,10 +5,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="">
+<!-- <link rel="stylesheet" href=""> -->
 <title>登録内容の確認</title>
 </head>
-<body>
 <body>
 	<div id="header">
 	</div>
@@ -57,7 +56,6 @@
 	</div>
 	<div id="footer">
 	</div>
-</body>
 
 </body>
 </html>

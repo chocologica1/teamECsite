@@ -7,6 +7,14 @@
 	<!-- <constant name="struts.devMode" value="true" /> -->
 	<package name="com.internousdev.sunflower.action" extends="struts-default">
 
+	<action name="CreateUserConfirmAction" class="com.internousdev.sunflower.action.CreateUserConfirmAction"
+			method="execute">
+			<result name="success">createUserConfirm.jsp</result>
+			<result name="error">createUser.jsp</result>
+
+		</action>
+
+
 
 	</package>
 </struts>

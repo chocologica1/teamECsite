@@ -48,4 +48,6 @@ public class DestinationInfoDAO {
 
 		return destinationList;
 	}
+
+	public int insert(String userId, String familyName, String firstName, String familyNameKana, String firstNameKana, String)
 }

@@ -4,6 +4,8 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.internousdev.sunflower.dao.UserInfoDAO;
+import com.internousdev.sunflower.dto.UserInfoDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class MyPageAction extends ActionSupport implements SessionAware {
@@ -12,18 +14,13 @@ public class MyPageAction extends ActionSupport implements SessionAware {
 
 	public String execute(){
 
-		//loginedのsession有無を確認
-		if(!session.containsKey("logined")){
-          String result = "login";
-          return result;
-		}
-
 		UserInfoDAO userInfoDAO = new UserInfoDAO();
 		UserInfoDTO userInfoDTO = new UserInfoDTO();
 
 		userInfoDTO = userInfoDAO.getUserInfo(String.valueOf(session.get("logined")));
 
-		if(userInfoDAO != null){
+		//userInfoDTOに入ったかで条件分岐
+		if(userInfoDTO != null){
 			session.put("familyName", userInfoDTO.getFamilyName());
 			session.put("firstName", userInfoDTO.getFirstName());
 			session.put("familyNameKana", userInfoDTO.getFamilyNameKana());
