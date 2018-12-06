@@ -10,13 +10,12 @@ import java.util.List;
 
 import com.internousdev.sunflower.dto.MCategoryDTO;
 import com.internousdev.sunflower.util.DBConnector;
-
 public class MCategoryDAO {
 
 	public List<MCategoryDTO> getMCategoryList(){
 		DBConnector db = new DBConnector();
 		Connection con = db.getConnection();
-		List<MCategoryDTO>mCategoryDTOList = new ArrayList<MCategoryDTO>();
+		List<MCategoryDTO>mCategoryDtoList = new ArrayList<MCategoryDTO>();
         String sql = "select * from m_category";
 
         try{
@@ -31,13 +30,15 @@ public class MCategoryDAO {
         		mCategoryDTO.setCategoryDescription(rs.getString("category_description"));
         		mCategoryDTO.setInsertDate(rs.getDate("insert_date"));
         		mCategoryDTO.setUpdateDate(rs.getDate("update_date"));
-        		mCategoryDTOList.add(mCategoryDTO);
+        		mCategoryDtoList.add(mCategoryDTO);
         	}
 
-        	//いらないかも...
-        	Iterator<MCategoryDTO> iterator = mCategoryDTOList.iterator();
+        	//mCategoryDtoListが空かどうか判別する
+        	Iterator<MCategoryDTO> iterator = mCategoryDtoList.iterator();
+
+
         	if(!(iterator.hasNext())){
-        		mCategoryDTOList = null;
+        		mCategoryDtoList = null;
         	}
         }catch (SQLException e){
         	e.printStackTrace();
@@ -48,7 +49,7 @@ public class MCategoryDAO {
         	e.printStackTrace();
         }
 
-        return mCategoryDTOList;
+        return mCategoryDtoList;
 
 	}
 

@@ -56,12 +56,19 @@
 			</div>
 		</s:form>
 
-		<!-- 決済ボタン -->
-		<div id="settlement">
-			<s:form action="SettlementConfirmAction">
-				<s:submit value="決済"/>
-			</s:form>
+		<!-- カート合計金額 -->
+		<div class="totalPrice">
+			<s:property value="totalPrice"/>
 		</div>
+
+		<!-- 決済ボタン -->
+
+
+			<div class="settlement">
+				<s:form action="SettlementConfirmAction">
+					<s:submit value="決済"/>
+				</s:form>
+			</div>
  	</s:if>
 	<!-- カートに商品が入っていない場合 -->
 
