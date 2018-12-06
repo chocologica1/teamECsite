@@ -20,32 +20,31 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class LoginAction extends ActionSupport implements SessionAware{
 	private boolean savedLoginId;
-	private String categoryId;
 	private String loginId;
 	private String password;
-	private String loginErrorMessage;
-	private boolean cartFlg;
+	private int cartFlg;
 
-	private List<MCategoryDTO>mCategoryDtoList = new ArrayList<MCategoryDTO>();
+	private List<MCategoryDTO>mCategoryDTOList = new ArrayList<MCategoryDTO>();
 
 	private List<String>loginIdErrorMessageList = new ArrayList<String>();
 	private List<String>passwordErrorMessageList = new ArrayList<String>();
 
 	private Map<String, Object> session;
+	private Object destinationDTOList;
+
 
 
 	public String execute(){
 
-		String result = "login";
+		String result = ERROR;
 
-		try{
-			if(!session.containsKey("logined")){
-				result = "login";
-				return result;
-			}
-
-
-	}
+		if(savedLoginId==true){
+			session.put("savedLoginId", true);
+			session.put("loginId", loginId);
+		}else{
+			session.put("savedLoginId", false);
+			session.put("loginId", loginId);
+		}
 
 	//フォームに入力できる文字数の指定
 	InputChecker inputChecker = new InputChecker();
@@ -63,7 +62,7 @@ public class LoginAction extends ActionSupport implements SessionAware{
 	if(!session.containsKey("mCategoryList")){
 		MCategoryDAO mCategoryDao = new MCategoryDAO();
 		mCategoryDTOList = mCategoryDao.getMCategoryList();
-		session.put("mCategoryDtoList", mCategoryDTOList);
+		session.put("mCategoryDTOList", mCategoryDTOList);
 	}
 
 	UserInfoDAO userInfoDao = new UserInfoDAO();
@@ -83,18 +82,18 @@ public class LoginAction extends ActionSupport implements SessionAware{
 			 * 宛先情報を取得し
 			 * 決済画面に遷移
 			 */
-			if(count > 0) {
+			cartFlg = cartInfoDao.linkToLoginId(String.valueOf(session.get("tempUserId")),loginId);
+			if(cartFlg > 0) {
 				DestinationInfoDAO destinationInfoDao = new DestinationInfoDAO();
 				try {
-					List<DestinationInfoDTO> destinationInfoDtoList = new ArrayList<DestinationInfoDTO>();
-					destinationInfoDtoList = destinationInfoDao.getDestinationInfo(loginId);
-					Iterator<DestinationInfoDTO> iterator = destinationInfoDtoList.iterator();
-					//宛先情報がない場合nullを入れてメッセージを表示する。
+					List<DestinationInfoDTO> destinationInfoDTOList = new ArrayList<DestinationInfoDTO>();
+					destinationInfoDTOList = destinationInfoDao.getDestinationInfo(loginId);
+					Iterator<DestinationInfoDTO> iterator = destinationInfoDTOList.iterator();
+					//宛先情報がない場合nullを入れる。
 					if(!(iterator.hasNext())) {
-						destinationInfoDtoList = null;
-						destinationInfoDtoList = "宛先情報がありません。";
+						destinationInfoDTOList = null;
 					}
-					session.put("destinationInfoDtoList", destinationInfoDtoList);
+					session.put("destinationDTOList", destinationDTOList);
 				} catch (SQLException e) {
 					e.printStackTrace();
 				}
@@ -103,7 +102,8 @@ public class LoginAction extends ActionSupport implements SessionAware{
 				result = SUCCESS;
 			}
 		}
-			session.put("logined", 1);
+		//ヘッダーにログイン情報の受け渡す
+			session.put("loginId", 1);
 	}
 	return result;
 
@@ -112,13 +112,7 @@ public class LoginAction extends ActionSupport implements SessionAware{
 		}
 
 
-		public String getCategoryId(){
-			return loginErrorMessage;
-		}
 
-		public void setLoginErrorMessage(String loginErrorMessage){
-			this.loginErrorMessage = loginErrorMessage;
-		}
 
 		public String getLoginId(){
 			return loginId;
