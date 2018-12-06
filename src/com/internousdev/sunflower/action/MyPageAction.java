@@ -14,10 +14,15 @@ public class MyPageAction extends ActionSupport implements SessionAware {
 
 	public String execute(){
 
+		if(!(session.containsKey("loginId"))){
+		    String result = ERROR;
+		    return result;
+		}
+
 		UserInfoDAO userInfoDAO = new UserInfoDAO();
 		UserInfoDTO userInfoDTO = new UserInfoDTO();
 
-		userInfoDTO = userInfoDAO.getUserInfo(String.valueOf(session.get("logined")));
+		userInfoDTO = userInfoDAO.getUserInfo(String.valueOf(session.get("loginId")));
 
 		//userInfoDTOに入ったかで条件分岐
 		if(userInfoDTO != null){
