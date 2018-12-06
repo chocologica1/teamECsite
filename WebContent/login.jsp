@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" href="./css/style.css">
 <title>ログイン</title>
+
 function goLoginAction(){
 	document.getElementById("form").action="LoginAction";
 }
