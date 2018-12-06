@@ -8,7 +8,7 @@ import com.internousdev.sunflower.dao.UserInfoDAO;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class ResetPasswordCompleteAction extends ActionSupport implements SessionAware {
-	private String loginId;
+	private String userId;
 	private String password;
 	private Map<String,Object> session;
 
@@ -18,7 +18,7 @@ public class ResetPasswordCompleteAction extends ActionSupport implements Sessio
 		UserInfoDAO userInfoDAO = new UserInfoDAO();   //UserInfoDAOをインスタンス化
 
 		//DB上の情報を更新、更新した件数
-		int count = userInfoDAO.resetPassword(session.get("loginId").toString(), session.get("newPassword").toString());
+		int count = userInfoDAO.resetPassword(session.get("userId").toString(), session.get("newPassword").toString());
 		if(count > 0) {
 			result = SUCCESS;
 		} else {
@@ -31,11 +31,11 @@ public class ResetPasswordCompleteAction extends ActionSupport implements Sessio
 
 
 
-	public String getLoginId() {
-		return loginId;
+	public String getUserId() {
+		return userId;
 	}
-	public void setLoginId(String loginId) {
-		this.loginId = loginId;
+	public void setUserId(String userId) {
+		this.userId = userId;
 	}
 
 	public String getPassword() {

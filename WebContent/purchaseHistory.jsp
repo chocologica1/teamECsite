@@ -11,12 +11,19 @@
 
 <h1>商品購入履歴一覧画面</h1>
 
-<s:if test="purchaseHistoryInfoDTOList.size() == 0">   <!-- 購入履歴がない場合  -->
+
+<!-- 購入履歴がない場合  -->
+
+<s:if test="purchaseHistoryInfoDTOList.size() == 0">
 	<s:property value="message"/>
 </s:if>
 
 
-<s:elseif test="purchaseHistoryInfoDTOList.size() > 0">    <!-- 購入履歴がある場合  -->
+
+
+<!-- 購入履歴がある場合  -->
+
+<s:elseif test="purchaseHistoryInfoDTOList.size() > 0">
 	<table>
 		<tr>
 			<th>商品名</th>
@@ -41,6 +48,8 @@
 		</s:form>
 	</table>
 </s:elseif>
+
+
 
 </body>
 </html>

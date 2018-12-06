@@ -13,45 +13,61 @@
 
 <h1>パスワード再設定画面</h1>
 
-	<s:if test="!#session.loginIdErrorMessageList.isEmpty()">
-		<s:iterator value="#session.loginIdErrorMessageList"><s:property/><br>
+<!-- ↓↓↓ エラーメッセージ ↓↓↓  -->
+
+	<!-- ログインID不適切  -->
+	<s:if test="!#session.userIdErrorMessageList.isEmpty()">
+		<s:iterator value="#session.userIdErrorMessageList"><s:property/><br>
 		</s:iterator>
 	</s:if>
 
+	<!-- 現在のパスワード不適切  -->
 	<s:if test="!#session.passwordErrorMessageList.isEmpty()">
 		<s:iterator value="#session.passwordErrorMessageList"><s:property/><br>
 		</s:iterator>
 	</s:if>
 
+	<!-- ログインIDまたはパスワードが間違っている  -->
 	<s:if test="!#session.incorrectErrorMessageList.isEmpty()">
 		<s:iterator value="#session.incorrectErrorMessageList"><s:property/><br>
 		</s:iterator>
 	</s:if>
 
+	<!-- 新しいパスワード不適切  -->
 	<s:if test="!#session.newPasswordErrorMessageList.isEmpty()">
 		<s:iterator value="#session.newPasswordErrorMessageList"><s:property/><br>
 		</s:iterator>
 	</s:if>
 
+	<!-- 新しいパスワード(再確認)不適切  -->
 	<s:if test="!#session.reConfirmationNewPasswordErrorMessageList.isEmpty()">
 		<s:iterator value="#session.reConfirmationNewPasswordErrorMessageList"><s:property/><br>
 		</s:iterator>
 	</s:if>
 
+	<!-- 新しいパスワードと(再確認)が不一致  -->
 	<s:if test="!#session.newPasswordIncorrectErrorMessageList.isEmpty()">
 		<s:iterator value="#session.newPasswordIncorrectErrorMessageList"><s:property/><br>
 		</s:iterator>
 	</s:if>
 
+<!--     ここまで     -->
+
+
+
+<!-- ↓↓↓ パスワード再設定 入力欄 ↓↓↓  -->
+
 <s:form action="ResetPasswordConfirmAction">
 	<table>
 		<tr>
 			<td>ユーザID</td>
-			<s:if test="#session.savedLoginId == true"> <!-- １度ユーザIDを入力して戻ってきた場合  -->
-			<td><input type="text" name="loginId" placeholder="ユーザID" value='<s:property value="#session.loginId"/>'/></td>
+			<!-- 再遷移してきた場合  -->
+			<s:if test="#session.saveduserId == true">
+			<td><input type="text" name="userId" placeholder="ユーザID" value='<s:property value="#session.userId"/>'/></td>
 			</s:if>
-			<s:else> <!-- 初めて入力する場合  -->
-			<td><input type="text" name="loginId" placeholder="ユーザID"/></td>
+			<!-- 初めて入力する場合  -->
+			<s:else>
+			<td><input type="text" name="userId" placeholder="ユーザID"/></td>
 			</s:else>
 		</tr>
 		<tr>
@@ -69,6 +85,9 @@
 		<s:submit value="確認"/>
 	</table>
 </s:form>
+
+<!--    ここまで     -->
+
 
 </body>
 </html>

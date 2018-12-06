@@ -14,7 +14,7 @@ public class ResetPasswordAction extends ActionSupport implements SessionAware {
 		String result = ERROR;
 
 		//エラーメッセージを全て消去する
-		session.remove("loginIdErrorMessageList");
+		session.remove("userIdErrorMessageList");
 		session.remove("passwordErrorMessageList");
 		session.remove("incorrectErrorMessageList");
 		session.remove("newPasswordErrorMessageList");
