@@ -24,7 +24,7 @@
 				宛先を選択してください
 
 				<!-- 宛先選択フォーム -->
-				<s:form action="SettlementCompleteSction">
+				<s:form action="SettlementCompleteAction">
 
 					<!-- 宛先情報テーブル -->
 					<table>
@@ -39,7 +39,7 @@
 						</tr>
 
 						<!-- イテレータによるループ表記 -->
-						<s:iterator value="destinationList" status="st">
+						<s:iterator value="#session.destinationDTOList" status="st">
 							<tr>
 								<!-- 選択用ラジオボタン -->
 								<td>
@@ -79,7 +79,7 @@
 			<s:else>
 				<!-- メッセージを表示 -->
 				<div id="message">
-					<s:property value="destinationNullMessage"/>
+					宛先情報がありません。
 				</div>
 			</s:else>
 
@@ -87,6 +87,11 @@
 			<s:form action="CreateDestinationAction">
 				<s:submit value="新規宛先登録"/>
 			</s:form>
+
+			<s:form action="SettlementConfirmAction">
+				<s:submit value="リダイレクト"/>
+			</s:form>
+
 		</div>
 	</div>
 

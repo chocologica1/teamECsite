@@ -12,7 +12,7 @@ import com.internousdev.sunflower.dao.PurchaseHistoryInfoDAO;
 import com.internousdev.sunflower.dto.CartInfoDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
-public class SettlementComplete extends ActionSupport implements SessionAware{
+public class SettlementCompleteAction extends ActionSupport implements SessionAware{
 	private Map<String, Object> session;
 	private String radioId;
 

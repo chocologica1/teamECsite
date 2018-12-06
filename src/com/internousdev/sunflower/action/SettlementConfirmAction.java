@@ -11,7 +11,7 @@ import com.internousdev.sunflower.dao.DestinationInfoDAO;
 import com.internousdev.sunflower.dto.DestinationInfoDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
-public class SettlementConfirm extends ActionSupport implements SessionAware{
+public class SettlementConfirmAction extends ActionSupport implements SessionAware{
 	private Map<String, Object> session;
 	private String id;
 	private String familyName;
@@ -19,7 +19,7 @@ public class SettlementConfirm extends ActionSupport implements SessionAware{
 	private String address;
 	private String telNumber;
 	private String email;
-	private String destinationNullMesssage = "";
+//	private String destinationNullMesssage = "";
 	ArrayList<DestinationInfoDTO> destinationDTOList = new ArrayList<DestinationInfoDTO>();
 
 	public String execute(){
@@ -39,8 +39,12 @@ public class SettlementConfirm extends ActionSupport implements SessionAware{
 				Iterator<DestinationInfoDTO> iterator = destinationDTOList.iterator();
 				if(!(iterator.hasNext())){
 					destinationDTOList = null;
-					destinationNullMesssage ="宛先情報がありません。";
+					//destinationNullMesssage ="宛先情報がありません。";
 				}
+
+				/*セッションに宛先情報リストを入れる*/
+				session.put("destinationDTOList", destinationDTOList);
+
 			}catch(SQLException e){
 				e.printStackTrace();
 			}
@@ -52,7 +56,7 @@ public class SettlementConfirm extends ActionSupport implements SessionAware{
 		/*ログインしていない場合*/
 		else{
 			/*カートフラグを立てる*/
-			session.put("cartFlg", "1");
+			session.put("cartFlg", 1);
 
 			/*ログイン画面へ遷移するための戻り値*/
 			result = ERROR;
@@ -90,13 +94,13 @@ public class SettlementConfirm extends ActionSupport implements SessionAware{
 		this.session = session;
 	}
 
-	public String getDestinationNullMesssage() {
-		return destinationNullMesssage;
-	}
-
-	public void setDestinationNullMesssage(String destinationNullMesssage) {
-		this.destinationNullMesssage = destinationNullMesssage;
-	}
+//	public String getDestinationNullMesssage() {
+//		return destinationNullMesssage;
+//	}
+//
+//	public void setDestinationNullMesssage(String destinationNullMesssage) {
+//		this.destinationNullMesssage = destinationNullMesssage;
+//	}
 
 	public String getFamilyName() {
 		return familyName;
