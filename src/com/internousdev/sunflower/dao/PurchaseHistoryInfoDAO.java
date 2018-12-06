@@ -39,6 +39,7 @@ public class PurchaseHistoryInfoDAO {
 				purchaseHistoryInfoDTO.setImageFileName(rs.getString("image_file_name"));
 				purchaseHistoryInfoDTO.setPrice(rs.getInt("price"));
 				purchaseHistoryInfoDTO.setProductCount(rs.getInt("product_count"));
+				purchaseHistoryInfoDTO.setTotalPrice(rs.getInt("price")*rs.getInt("product_count"));
 				purchaseHistoryInfoDTOList.add(purchaseHistoryInfoDTO);
 			}
 		}
