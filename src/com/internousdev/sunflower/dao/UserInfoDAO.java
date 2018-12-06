@@ -225,8 +225,8 @@ public class UserInfoDAO {
 		}
 		StringBuilder stringBuilder = new StringBuilder("****************");
 
-		String concealPassword = stringBuilder.replace(beginIndex, endIndex, password.substring(beginIndex,endIndex)).toString();
-		return concealPassword;
+		String hiddenPassword = stringBuilder.replace(beginIndex, endIndex, password.substring(beginIndex,endIndex)).toString();
+		return hiddenPassword;
 	}
 
 }
