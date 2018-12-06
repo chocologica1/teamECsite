@@ -15,7 +15,7 @@
 
 <!-- ↓↓↓ エラーメッセージ ↓↓↓  -->
 
-	<!-- ログインID不適切  -->
+	<!-- ユーザID不適切  -->
 	<s:if test="!#session.userIdErrorMessageList.isEmpty()">
 		<s:iterator value="#session.userIdErrorMessageList"><s:property/><br>
 		</s:iterator>
@@ -27,7 +27,7 @@
 		</s:iterator>
 	</s:if>
 
-	<!-- ログインIDまたはパスワードが間違っている  -->
+	<!-- ユーザIDまたはパスワードが間違っている  -->
 	<s:if test="!#session.incorrectErrorMessageList.isEmpty()">
 		<s:iterator value="#session.incorrectErrorMessageList"><s:property/><br>
 		</s:iterator>
