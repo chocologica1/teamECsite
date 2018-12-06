@@ -18,15 +18,19 @@
 		</s:iterator>
 	</s:if>
 
-	<!-- 検索結果なし -->
-	<s:elseif test="productInfoDTOList.size() == 0">
+	<!-- 検索結果/商品情報なし -->
+	<s:elseif test="productInfoDTOList.isEmpty()">
 		<p>検索結果がありません。</p>
 	</s:elseif>
 
-	<!-- 一覧表示 -->
+	<!-- 商品情報あり -->
 	<s:else>
 		<s:iterator value="productInfoDTOList">
-			<img src="<s:property value="imageFilePath"/>/<s:property value="imageFileName"/>" alt="product" />
+			<!-- 画像をクリックすると商品IDをActionに渡す -->
+			<a href='<s:url action="ProductDetailsAction">
+				<s:param name="productId" value="productInfoDTOList.productId"/></s:url>'>
+				<img src="<s:property value="imageFilePath"/>/<s:property value="imageFileName"/>" alt="product" />
+			</a>
 			<s:property value="productName"/>
 			<s:property value="productNameKana"/>
 			<s:property value="price"/>
