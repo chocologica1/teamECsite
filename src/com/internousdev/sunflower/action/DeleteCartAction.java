@@ -35,7 +35,7 @@ public class DeleteCartAction extends ActionSupport implements SessionAware{
 		List<Integer> resultList = new ArrayList<>();
 		boolean existError = false;
 
-		//deleteメソッドの呼び出し、戻り値をresultListに格納
+		//deleteメソッドを全削除対象商品IDを引数に指定して呼び出し、戻り値をresultListに格納
 		for(Integer productId : productIdMap.keySet()){
 			resultList.add(cartInfoDAO.delete(productId,String.valueOf(session.get("loginId")),String.valueOf(session.get("tempUserId"))));
 		}

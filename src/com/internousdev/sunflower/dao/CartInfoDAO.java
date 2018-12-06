@@ -91,7 +91,21 @@ public class CartInfoDAO {
 	 * @return	削除に成功した場合正の整数、失敗した場合は0を戻します
 	 */
 	public int delete(int productId, String userId, String tempUserId) {
-		return 0;
+		int result = 0;
+		Connection con = db.getConnection();
+		String sql = "DELETE FROM cart_info WHERE product_id = ? AND (user_id = ? OR temp_user_id = ?)";
+		try{
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setInt(1, productId);
+			ps.setString(2, userId);
+			ps.setString(3, tempUserId);
+			result = ps.executeUpdate();
+		}catch(SQLException e){
+			e.printStackTrace();
+		}finally{
+			try{con.close();}catch(SQLException e){}
+		}
+		return result;
 	}
 
 	/**

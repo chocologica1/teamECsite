@@ -9,7 +9,7 @@
 </head>
 <body>
 	<!-- カートに商品が入っている場合 -->
- 	<s:if test="cartInfoDTOList.size() > 0">
+ 	<s:if test="true">
 		<s:form action="DeleteCartAction">
 			<div id="cart">
 				<s:iterator value="cartInfoDTOList">
@@ -58,7 +58,7 @@
 
 		<!-- カート合計金額 -->
 		<div class="totalPrice">
-			<s:property value="totalPrice"/>
+			<s:property value="totalPrice"/>円
 		</div>
 
 		<!-- 決済ボタン -->

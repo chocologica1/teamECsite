@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="">
-<meta http-equiv="refresh" content="3;<s:URL action='HomeAction'/>">
+<meta http-equiv="refresh" content="3;<s:url action='HomeAction'/>">
 <title>Error</title>
 </head>
 <body>
