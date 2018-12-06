@@ -59,55 +59,28 @@ public class ProductDetailsAction extends ActionSupport {
 		return productName;
 	}
 
-	public void setProductName(String productName) {
-		this.productName = productName;
-	}
-
 	public String getProductNameKana() {
 		return productNameKana;
-	}
-
-	public void setProductNameKana(String productNameKana) {
-		this.productNameKana = productNameKana;
 	}
 
 	public int getPrice() {
 		return price;
 	}
 
-	public void setPrice(int price) {
-		this.price = price;
-	}
-
 	public String getReleaseCompany() {
 		return releaseCompany;
-	}
-
-	public void setReleaseCompany(String releaseCompany) {
-		this.releaseCompany = releaseCompany;
 	}
 
 	public Date getRegistDate() {
 		return registDate;
 	}
 
-	public void setRegistDate(Date registDate) {
-		this.registDate = registDate;
-	}
-
 	public String getProductDescription() {
 		return productDescription;
-	}
-
-	public void setProductDescription(String productDescription) {
-		this.productDescription = productDescription;
 	}
 
 	public List<ProductInfoDTO> getProductInfoDTOList() {
 		return productInfoDTOList;
 	}
 
-	public void setProductInfoDTOList(List<ProductInfoDTO> productInfoDTOList) {
-		this.productInfoDTOList = productInfoDTOList;
-	}
 }
