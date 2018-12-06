@@ -2,10 +2,14 @@ package com.internousdev.sunflower.action;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.internousdev.sunflower.dao.CartInfoDAO;
+import com.internousdev.sunflower.dao.PurchaseHistoryInfoDAO;
+import com.internousdev.sunflower.dto.CartInfoDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class SettlementComplete extends ActionSupport implements SessionAware{
@@ -14,33 +18,33 @@ public class SettlementComplete extends ActionSupport implements SessionAware{
 
 	public String execute(){
 		String result = "";
-		CartInforDAO cartInfoDao = new CartInfoDAO();
-		ArrayList<CarInfoDTO> cartList = new ArrayList<CartInfoDTO>();
+		CartInfoDAO cartInfoDao = new CartInfoDAO();
+		List<CartInfoDTO> cartDTOList = new ArrayList<CartInfoDTO>();
 		PurchaseHistoryInfoDAO PHInfoDao = new PurchaseHistoryInfoDAO();
 
 		/*ログインしている場合*/
-		if(session.containsKey("")){
+		if(session.containsKey("LoginId")){
 
 
 			/*商品履歴情報テーブルに商品ごとの決済情報を登録する*/
 
 			/*ログインユーザのカート情報をカート情報テーブルから取得*/
-			cartList = cartInfoDao.xxx(session.get(""));
+			cartDTOList = cartInfoDao.getCartInfoDTOList(String.valueOf(session.get("loginId")), String.valueOf(session.get("tempUserId")));
 			/*カート情報がない場合の処理*/
-			Iterator<CartInfoDTO> iterator = cartList.iterator();
+			Iterator<CartInfoDTO> iterator = cartDTOList.iterator();
 			if(!(iterator.hasNext())){
-				cartList = null;
+				cartDTOList = null;
 			}
 			int addCount = 0; //商品履歴情報テーブルに登録された数を格納する変数
 
 			/*購入履歴情報テーブルに1件ずつ登録*/
-			for(int i=0;i<cartList.size();i++){
-				addCount += PHInfoDao.xxx(
-						String.valueOf(session.get("")),//ユーザID
-						cartList.get().get(),//商品ID
-						cartList.get().get(),//個数
-						cartList.get().get(),//金額
-						radioId//宛先情報ID
+			for(int i=0;i<cartDTOList.size();i++){
+				addCount += PHInfoDao.regist(
+						String.valueOf(session.get("loginId")),//ユーザID
+						cartDTOList.get(i).getProductId(),//商品ID
+						cartDTOList.get(i).getProductCount(),//個数
+						cartDTOList.get(i).getPrice(),//金額
+						Integer.parseInt(radioId)//宛先情報ID
 						);
 			}
 
@@ -54,7 +58,7 @@ public class SettlementComplete extends ActionSupport implements SessionAware{
 
 			int deleteCount = 0; //カート情報テーブルから削除された商品情報の数を格納する変数
 			/*セッションに保存されているログインIDをもつ商品情報をカート情報テーブルから削除*/
-			deleteCount = cartInfoDao.xxx(String.valueOf(session.get("")));
+			deleteCount = cartInfoDao.deleteAll(String.valueOf(session.get("loginId")));
 
 			/*削除に失敗した場合(つまりエラー)*/
 			if(deleteCount <= 0){
@@ -63,18 +67,22 @@ public class SettlementComplete extends ActionSupport implements SessionAware{
 			}
 
 			/*カート内の情報を再取得*/
-			cartList.clear();
-			cartList = cartInfoDao.xxx(String.valueOf(session.get("")));
-			iterator = cartList.iterator();
+			cartDTOList.clear();
+			cartDTOList = cartInfoDao.getCartInfoDTOList(String.valueOf(session.get("loginId")), String.valueOf(session.get("tempUserId")));
+			iterator = cartDTOList.iterator();
 			if(!(iterator.hasNext())){
-				cartList = null;
+				cartDTOList = null;
 			}
+			/*セッションにログインユーザのカート情報を再格納*/
+			session.put("cartDTOList", cartDTOList);
 
-			//セッションにログインユーザのカート情報を再格納
-			session.put("cartList", cartList);
+			/*カート内商品の合計金額を取得*/
+			int totalPrice = Integer.parseInt(String.valueOf(cartInfoDao.getTotalPrice(String.valueOf(session.get("tempUserId")), String.valueOf(session.get("loginId")))));
+			/*セッションにログインユーザのカート内商品の合計金額を再格納*/
+			session.put("totalPrice", totalPrice);
 
-			//セッションにログイニュー座のカート内商品の合計金額を再格納
-			int totalPrice = Integer.parseInt(String.valueOf(cartInfoDao.xxx(String.valueOf(session.get("")))));
+			/*カートフラグを折る*/
+			session.remove("cartFlg");
 
 			/*ホーム画面へ遷移するための戻り値*/
 			result = SUCCESS;

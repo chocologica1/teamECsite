@@ -20,7 +20,7 @@ public class SettlementConfirm extends ActionSupport implements SessionAware{
 	private String telNumber;
 	private String email;
 	private String destinationNullMesssage = "";
-	ArrayList<DestinationInfoDTO> destinationList = new ArrayList<DestinationInfoDTO>();
+	ArrayList<DestinationInfoDTO> destinationDTOList = new ArrayList<DestinationInfoDTO>();
 
 	public String execute(){
 		String result = "";
@@ -29,16 +29,16 @@ public class SettlementConfirm extends ActionSupport implements SessionAware{
 		/*宛先情報を格納する変数リスト*/
 
 		/*ログインしている場合*/
-		if(session.containsKey("")){
+		if(session.containsKey("LoginId")){
 
 			try{
 				/*DBから宛先情報のリストを取得する*/
-				destinationList = destinationDao.getDestinationInfo(String.valueOf(session.get("")));
+				destinationDTOList = destinationDao.getDestinationInfo(String.valueOf(session.get("loginId")));
 
 				/*宛先情報リストが空の場合*/
-				Iterator<DestinationInfoDTO> iterator = destinationList.iterator();
+				Iterator<DestinationInfoDTO> iterator = destinationDTOList.iterator();
 				if(!(iterator.hasNext())){
-					destinationList = null;
+					destinationDTOList = null;
 					destinationNullMesssage ="宛先情報がありません。";
 				}
 			}catch(SQLException e){
@@ -52,6 +52,7 @@ public class SettlementConfirm extends ActionSupport implements SessionAware{
 		/*ログインしていない場合*/
 		else{
 			/*カートフラグを立てる*/
+			session.put("cartFlg", "1");
 
 			/*ログイン画面へ遷移するための戻り値*/
 			result = ERROR;
@@ -73,12 +74,12 @@ public class SettlementConfirm extends ActionSupport implements SessionAware{
 
 
 	public ArrayList<DestinationInfoDTO> getDestinationList() {
-		return destinationList;
+		return destinationDTOList;
 	}
 
 
 	public void setDestinationList(ArrayList<DestinationInfoDTO> destinationList) {
-		this.destinationList = destinationList;
+		this.destinationDTOList = destinationList;
 	}
 
 	public Map<String, Object> getSession() {
