@@ -2,6 +2,7 @@ package com.internousdev.sunflower.action;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
@@ -19,15 +20,17 @@ public class CreateUserConfirmAction extends ActionSupport implements SessionAwa
 	private String loginId;
 	private String password;
 
-	private List<String> familyNameErrorMessage = new ArrayList<String>();
-	private List<String> firstNameErrorMessage = new ArrayList<String>();
-	private List<String> familyNameKanaErrorMessage = new ArrayList<String>();
-	private List<String> firstNameKanaErrorMessage = new ArrayList<String>();
-	private List<String> emailErrorMessage = new ArrayList<String>();
-	private List<String> loginIdErrorMessage = new ArrayList<String>();
-	private List<String> passwordErrorMessage = new ArrayList<String>();
+	private List<String> familyNameErrorMessageList = new ArrayList<String>();
+	private List<String> firstNameErrorMessageList = new ArrayList<String>();
+	private List<String> familyNameKanaErrorMessageList = new ArrayList<String>();
+	private List<String> firstNameKanaErrorMessageList = new ArrayList<String>();
+	private List<String> emailErrorMessageList = new ArrayList<String>();
+	private List<String> loginIdErrorMessageList = new ArrayList<String>();
+	private List<String> passwordErrorMessageList = new ArrayList<String>();
 
 	private String categoryId;
+	private List<String> sexList = new ArrayList<String>();
+	private Map<String, Object> session;
 
 	public String execute(){
 
@@ -47,14 +50,14 @@ public class CreateUserConfirmAction extends ActionSupport implements SessionAwa
 		familyNameKanaErrorMessageList = inputChecker.doCheck("姓ふりがな",familyNameKana,1, 16, false, false, true, false, false, false, false, false, false);
 		firstNameKanaErrorMessageList = inputChecker.doCheck("名ふりがな",firstNameKana,1, 16, false, false, true, false, false, false, false, false, false);
 		emailErrorMessageList = inputChecker.doCheck("メールアドレス", email, 10, 32, true, false, false, true, true, false, false, false, false);
-		loginIdErrorMessageList = inputChecker.doCheck("ユーザID", loginId, true, false, false, true, true, false, false, false, false, false, false);
+		loginIdErrorMessageList = inputChecker.doCheck("ユーザID", loginId, 1, 8, true, false, false, true, false, false, false, false, false);
 		passwordErrorMessageList = inputChecker.doCheck("パスワード", password, 1, 16, true, false, false, true, false, false, false, false, false);
 
 
 		if(familyNameErrorMessageList.size()==0
 				&& firstNameErrorMessageList.size()==0
 				&& familyNameKanaErrorMessageList.size()==0
-				&& firstNameKkanaErrorMessageList.size()==0
+				&& firstNameKanaErrorMessageList.size()==0
 				&& emailErrorMessageList.size()==0
 				&& loginIdErrorMessageList.size()==0
 				&& passwordErrorMessageList.size()==0) {
@@ -136,60 +139,60 @@ public class CreateUserConfirmAction extends ActionSupport implements SessionAwa
 		this.password = password;
 	}
 
-	public List<String> getFamilyNameErrorMessage() {
-		return familyNameErrorMessage;
+	public List<String> getFamilyNameErrorMessageList() {
+		return familyNameErrorMessageList;
 	}
 
-	public void setFamilyNameErrorMessage(List<String> familyNameErrorMessage) {
-		this.familyNameErrorMessage = familyNameErrorMessage;
+	public void setFamilyNameErrorMessageList(List<String> familyNameErrorMessageList) {
+		this.familyNameErrorMessageList = familyNameErrorMessageList;
 	}
 
-	public List<String> getFirstNameErrorMessage() {
-		return firstNameErrorMessage;
+	public List<String> getFirstNameErrorMessageList() {
+		return firstNameErrorMessageList;
 	}
 
-	public void setFirstNameErrorMessage(List<String> firstNameErrorMessage) {
-		this.firstNameErrorMessage = firstNameErrorMessage;
+	public void setFirstNameErrorMessageList(List<String> firstNameErrorMessageList) {
+		this.firstNameErrorMessageList = firstNameErrorMessageList;
 	}
 
-	public List<String> getFamilyNameKanaErrorMessage() {
-		return familyNameKanaErrorMessage;
+	public List<String> getFamilyNameKanaErrorMessageList() {
+		return familyNameKanaErrorMessageList;
 	}
 
-	public void setFamilyNameKanaErrorMessage(List<String> familyNameKanaErrorMessage) {
-		this.familyNameKanaErrorMessage = familyNameKanaErrorMessage;
+	public void setFamilyNameKanaErrorMessageList(List<String> familyNameKanaErrorMessageList) {
+		this.familyNameKanaErrorMessageList = familyNameKanaErrorMessageList;
 	}
 
-	public List<String> getFirstNameKanaErrorMessage() {
-		return firstNameKanaErrorMessage;
+	public List<String> getFirstNameKanaErrorMessageList() {
+		return firstNameKanaErrorMessageList;
 	}
 
-	public void setFirstNameKanaErrorMessage(List<String> firstNameKanaErrorMessage) {
-		this.firstNameKanaErrorMessage = firstNameKanaErrorMessage;
+	public void setFirstNameKanaErrorMessageList(List<String> firstNameKanaErrorMessageList) {
+		this.firstNameKanaErrorMessageList = firstNameKanaErrorMessageList;
 	}
 
-	public List<String> getEmailErrorMessage() {
-		return emailErrorMessage;
+	public List<String> getEmailErrorMessageList() {
+		return emailErrorMessageList;
 	}
 
-	public void setEmailErrorMessage(List<String> emailErrorMessage) {
-		this.emailErrorMessage = emailErrorMessage;
+	public void setEmailErrorMessageList(List<String> emailErrorMessageList) {
+		this.emailErrorMessageList = emailErrorMessageList;
 	}
 
-	public List<String> getLoginIdErrorMessage() {
-		return loginIdErrorMessage;
+	public List<String> getLoginIdErrorMessageList() {
+		return loginIdErrorMessageList;
 	}
 
-	public void setLoginIdErrorMessage(List<String> loginIdErrorMessage) {
-		this.loginIdErrorMessage = loginIdErrorMessage;
+	public void setLoginIdErrorMessageList(List<String> loginIdErrorMessageList) {
+		this.loginIdErrorMessageList = loginIdErrorMessageList;
 	}
 
-	public List<String> getPasswordErrorMessage() {
-		return passwordErrorMessage;
+	public List<String> getPasswordErrorMessageList() {
+		return passwordErrorMessageList;
 	}
 
-	public void setPasswordErrorMessage(List<String> passwordErrorMessage) {
-		this.passwordErrorMessage = passwordErrorMessage;
+	public void setPasswordErrorMessageList(List<String> passwordErrorMessageList) {
+		this.passwordErrorMessageList = passwordErrorMessageList;
 	}
 
 	public String getCategoryId() {
@@ -198,6 +201,22 @@ public class CreateUserConfirmAction extends ActionSupport implements SessionAwa
 
 	public void setCategoryId(String categoryId) {
 		this.categoryId = categoryId;
+	}
+
+	public List<String> getSexList() {
+		return sexList;
+	}
+
+	public void setSexList(List<String> sexList) {
+		this.sexList = sexList;
+	}
+
+	public Map<String, Object> getSession() {
+		return session;
+	}
+	@Override
+	public void setSession(Map<String, Object> session) {
+		this.session = session;
 	}
 
 }
