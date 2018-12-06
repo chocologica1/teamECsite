@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html>
@@ -62,7 +61,7 @@
 		<tr>
 			<td>ユーザID</td>
 			<!-- 再遷移してきた場合  -->
-			<s:if test="#session.saveduserId == true">
+			<s:if test="#session.savedUserId == true">
 			<td><input type="text" name="userId" placeholder="ユーザID" value='<s:property value="#session.userId"/>'/></td>
 			</s:if>
 			<!-- 初めて入力する場合  -->
