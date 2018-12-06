@@ -24,7 +24,7 @@
 			</tr>
 			<tr>
 				<td>値段</td>
-				<td><s:property value="price"/></td>
+				<td>¥<s:property value="price"/></td>
 			</tr>
 			<tr>
 				<td>購入個数</td>
@@ -36,6 +36,7 @@
 						<option value="4">4</option>
 						<option value="5">5</option>
 					</select>
+					個
 				</td>
 			</tr>
 			<tr>
@@ -51,7 +52,7 @@
 				<td><s:property value="productDescription"/></td>
 			</tr>
 		</table>
-		<s:param name="categoryId" value="categoryId"/>
+		<s:param name="productId" value="productId"/>
 		<s:submit type="button" value="カートに追加"/>
 	</s:form>
 	<!-- 関連商品 -->
