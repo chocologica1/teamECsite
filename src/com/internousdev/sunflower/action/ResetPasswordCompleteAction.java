@@ -4,6 +4,7 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.internousdev.sunflower.dao.UserInfoDAO;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class ResetPasswordCompleteAction extends ActionSupport implements SessionAware {
@@ -14,7 +15,9 @@ public class ResetPasswordCompleteAction extends ActionSupport implements Sessio
 	public String execute() {
 		String result = ERROR;
 
-		UserInfoDAO userInfoDAO = new UserInfoDAO();
+		UserInfoDAO userInfoDAO = new UserInfoDAO();   //UserInfoDAOをインスタンス化
+
+		//DB上の情報を更新、更新した件数
 		int count = userInfoDAO.resetPassword(session.get("loginId").toString(), session.get("newPassword").toString());
 		if(count > 0) {
 			result = SUCCESS;

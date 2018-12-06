@@ -6,6 +6,7 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.internousdev.sunflower.dao.UserInfoDAO;
 import com.internousdev.sunflower.util.InputChecker;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -51,7 +52,7 @@ public class ResetPasswordConfirmAction extends ActionSupport implements Session
 			UserInfoDAO userInfoDAO = new UserInfoDAO();  //UserInfoDAOをインスタンス化
 
 			//入力されたユーザID・パスワードと一致するデータがDB上にあれば"true"が返ってくる
-			if(userInfoDAO.isExistUserInfo(loginId,password)) {
+			if(userInfoDAO.isExistsUserInfo(loginId,password)) {
 
 				//入力された新しいパスワードの1文字目だけ表示、2～16文字目は*で表示されるようにした文字列を代入する
 				String hiddenPassword = userInfoDAO.hiddenPassword(password);

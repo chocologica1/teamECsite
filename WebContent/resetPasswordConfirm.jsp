@@ -15,11 +15,11 @@
 	<table>
 		<tr>
 			<td>ユーザID</td>
-			<td><s:property value="#session.loginId"/></td>
+			<td><s:property value="#session.loginId"/></td>   <!-- 改めてユーザIDを確認  -->
 		</tr>
 		<tr>
 			<td>新しいパスワード</td>
-			<td><s:property value="#session.hiddenPassword"/></td>
+			<td><s:property value="#session.hiddenPassword"/></td>   <!-- 改めて新パスワードを*で表示  -->
 		</tr>
 	</table>
 	<s:submit value="パスワード再設定"/>

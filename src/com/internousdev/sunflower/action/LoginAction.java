@@ -13,7 +13,7 @@ import com.internousdev.sunflower.dao.DestinationInfoDAO;
 import com.internousdev.sunflower.dao.MCategoryDAO;
 import com.internousdev.sunflower.dao.UserInfoDAO;
 import com.internousdev.sunflower.dto.DestinationInfoDTO;
-import com.internousdev.sunflower.dto.MCatergoryDTO;
+import com.internousdev.sunflower.dto.MCategoryDTO;
 import com.internousdev.sunflower.dto.UserInfoDTO;
 import com.internousdev.sunflower.util.InputChecker;
 import com.opensymphony.xwork2.ActionSupport;
@@ -45,10 +45,6 @@ public class LoginAction extends ActionSupport implements SessionAware{
 			}
 
 
-		}
-
-
-
 	}
 
 	//フォームに入力できる文字数の指定
@@ -58,7 +54,7 @@ public class LoginAction extends ActionSupport implements SessionAware{
 
 
 	//入力できない文字が入力ときのメッセージ
-	if(loginIdErrorMessageList.size()!=0 && passworkErrorMessageList.size()!=0){
+	if(loginIdErrorMessageList.size()!=0 && passwordErrorMessageList.size()!=0){
 		session.put("loginIdErrorMessageList", "loginIdErrorMessageList");
 		session.put("passwordErrorMessageList", "passwordErrorMessageList");
 		session.put("logined",0);
@@ -67,13 +63,13 @@ public class LoginAction extends ActionSupport implements SessionAware{
 	//
 	if(!session.containsKey("mCategoryList")){
 		MCategoryDAO mCategoryDao = new MCategoryDAO();
-		mCategoryDtoList = mCategoryDao.getMCategoryList;
-		session.put("mCategoryDtoList", mCategoryList);
+		mCategoryDTOList = mCategoryDao.getMCategoryList();
+		session.put("mCategoryDtoList", mCategoryDTOList);
 	}
 
 	UserInfoDAO userInfoDao = new UserInfoDAO();
 	//入力したID,パスワードが登録されているか確認
-	if(userInfoDao.login(loginId, password)){
+	if(userInfoDao.isExistsUserInfo(loginId, password)){
 		//該当ユーザーをログイン状態にする
 		if(userInfoDao.login(loginId, password)> 0){
 			UserInfoDTO userIdDTO = userInfoDao.getUserInfo(loginId, password);
@@ -113,7 +109,7 @@ public class LoginAction extends ActionSupport implements SessionAware{
 
 
 		}
-	}
+
 
 		public String getCategoryId(){
 			return loginErrorMessage;
@@ -139,6 +135,33 @@ public class LoginAction extends ActionSupport implements SessionAware{
 
 		public void setPassword(String password) {
 			this.password = password;
+		}
+
+		public boolean isSavedLoginId() {
+			return savedLoginId;
+		}
+
+		public void setSavedLoginId(boolean savedLoginId) {
+			this.savedLoginId = savedLoginId;
+		}
+
+		public List<String> getLoginIdErrorMessageList() {
+			return loginIdErrorMessageList;
+		}
+		public void setLoginIdErrorMessageList(List<String> loginIdErrorMessageList) {
+			this.loginIdErrorMessageList = loginIdErrorMessageList;
+		}
+		public List<String> getPasswordErrorMessageList() {
+			return passwordErrorMessageList;
+		}
+		public void setPasswordErrorMessageList(List<String> passwordErrorMessageList) {
+			this.passwordErrorMessageList = passwordErrorMessageList;
+		}
+		public Map<String, Object> getSession() {
+			return session;
+		}
+		public void setSession(Map<String, Object> session) {
+			this.session = session;
 		}
 
 

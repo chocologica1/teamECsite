@@ -216,4 +216,17 @@ public class UserInfoDAO {
 		return result;
 	}
 
+	//パスワードを*で隠す
+	public String hiddenPassword(String password) {
+		int beginIndex = 0;
+		int endIndex = 1;
+		if(password.length() > 1) {
+			endIndex = 2;
+		}
+		StringBuilder stringBuilder = new StringBuilder("****************");
+
+		String hiddenPassword = stringBuilder.replace(beginIndex, endIndex, password.substring(beginIndex,endIndex)).toString();
+		return hiddenPassword;
+	}
+
 }
