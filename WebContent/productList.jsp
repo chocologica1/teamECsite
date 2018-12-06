@@ -8,9 +8,12 @@
 <title>商品一覧</title>
 </head>
 <body>
+
+	<h2>商品一覧画面</h2>
+
 	<!-- 検索エラー -->
 	<s:if test="!#session.keywordsErrorMessageList.isEmpty()">
-		<s:iterator value="keywordsErrorMessageList">
+		<s:iterator value="#session.keywordsErrorMessageList">
 			<s:property/><br>
 		</s:iterator>
 	</s:if>
