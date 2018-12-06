@@ -27,7 +27,7 @@ public class SettlementConfirmAction extends ActionSupport implements SessionAwa
 		/*宛先情報取得用DAO*/
 		DestinationInfoDAO destinationDao = new DestinationInfoDAO();
 		/*宛先情報を格納する変数リスト*/
-
+//
 		/*ログインしている場合*/
 		if(session.containsKey("LoginId")){
 
