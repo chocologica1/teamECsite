@@ -32,20 +32,20 @@ public class ProductInfoDAO {
 			ResultSet rs = ps.executeQuery();
 			while(rs.next()) {
 				ProductInfoDTO productInfoDTO = new ProductInfoDTO();
-				productInfoDTO.setId(rs.getInt("id"));
+//				productInfoDTO.setId(rs.getInt("id"));
 				productInfoDTO.setProductId(rs.getInt("product_id"));
 				productInfoDTO.setProductName(rs.getString("product_name"));
 				productInfoDTO.setProductNameKana(rs.getString("product_name_kana"));
-				productInfoDTO.setProductDescription(rs.getString("product_descliption"));
+				productInfoDTO.setProductDescription(rs.getString("product_description"));
 				productInfoDTO.setCategoryId(rs.getInt("category_id"));
 				productInfoDTO.setPrice(rs.getInt("price"));
 				productInfoDTO.setImageFilePath(rs.getString("image_file_path"));
 				productInfoDTO.setImageFileName(rs.getString("image_file_name"));
-				productInfoDTO.setReleaseDate(rs.getDate("release_date"));
-				productInfoDTO.setReleaseCompany(rs.getString("release_company"));
-				productInfoDTO.setStatus(rs.getInt("status"));
-				productInfoDTO.setRegistDate(rs.getDate("regist_date"));
-				productInfoDTO.setUpdateDate(rs.getDate("update_date"));
+//				productInfoDTO.setReleaseDate(rs.getDate("release_date"));
+//				productInfoDTO.setReleaseCompany(rs.getString("release_company"));
+//				productInfoDTO.setStatus(rs.getInt("status"));
+//				productInfoDTO.setRegistDate(rs.getDate("regist_date"));
+//				productInfoDTO.setUpdateDate(rs.getDate("update_date"));
 				productInfoDTOList.add(productInfoDTO);
 			}
 		} catch (SQLException e) {
@@ -81,20 +81,20 @@ public class ProductInfoDAO {
 			ResultSet rs = ps.executeQuery();
 			while(rs.next()) {
 				ProductInfoDTO productInfoDTO = new ProductInfoDTO();
-				productInfoDTO.setId(rs.getInt("id"));
+//				productInfoDTO.setId(rs.getInt("id"));
 				productInfoDTO.setProductId(rs.getInt("product_id"));
 				productInfoDTO.setProductName(rs.getString("product_name"));
 				productInfoDTO.setProductNameKana(rs.getString("product_name_kana"));
-				productInfoDTO.setProductDescription(rs.getString("product_descliption"));
+//				productInfoDTO.setProductDescription(rs.getString("product_description"));
 				productInfoDTO.setCategoryId(rs.getInt("category_id"));
 				productInfoDTO.setPrice(rs.getInt("price"));
 				productInfoDTO.setImageFilePath(rs.getString("image_file_path"));
 				productInfoDTO.setImageFileName(rs.getString("image_file_name"));
-				productInfoDTO.setReleaseDate(rs.getDate("release_date"));
-				productInfoDTO.setReleaseCompany(rs.getString("release_company"));
-				productInfoDTO.setStatus(rs.getInt("status"));
-				productInfoDTO.setRegistDate(rs.getDate("regist_date"));
-				productInfoDTO.setUpdateDate(rs.getDate("update_date"));
+//				productInfoDTO.setReleaseDate(rs.getDate("release_date"));
+//				productInfoDTO.setReleaseCompany(rs.getString("release_company"));
+//				productInfoDTO.setStatus(rs.getInt("status"));
+//				productInfoDTO.setRegistDate(rs.getDate("regist_date"));
+//				productInfoDTO.setUpdateDate(rs.getDate("update_date"));
 				productInfoDTOList.add(productInfoDTO);
 			}
 		} catch (SQLException e) {
@@ -120,20 +120,20 @@ public class ProductInfoDAO {
 			ResultSet rs = ps.executeQuery();
 			while(rs.next()) {
 				ProductInfoDTO productInfoDTO = new ProductInfoDTO();
-				productInfoDTO.setId(rs.getInt("id"));
+//				productInfoDTO.setId(rs.getInt("id"));
 				productInfoDTO.setProductId(rs.getInt("product_id"));
 				productInfoDTO.setProductName(rs.getString("product_name"));
 				productInfoDTO.setProductNameKana(rs.getString("product_name_kana"));
-				productInfoDTO.setProductDescription(rs.getString("product_descliption"));
+//				productInfoDTO.setProductDescription(rs.getString("product_description"));
 				productInfoDTO.setCategoryId(rs.getInt("category_id"));
 				productInfoDTO.setPrice(rs.getInt("price"));
 				productInfoDTO.setImageFilePath(rs.getString("image_file_path"));
 				productInfoDTO.setImageFileName(rs.getString("image_file_name"));
-				productInfoDTO.setReleaseDate(rs.getDate("release_date"));
-				productInfoDTO.setReleaseCompany(rs.getString("release_company"));
-				productInfoDTO.setStatus(rs.getInt("status"));
-				productInfoDTO.setRegistDate(rs.getDate("regist_date"));
-				productInfoDTO.setUpdateDate(rs.getDate("update_date"));
+//				productInfoDTO.setReleaseDate(rs.getDate("release_date"));
+//				productInfoDTO.setReleaseCompany(rs.getString("release_company"));
+//				productInfoDTO.setStatus(rs.getInt("status"));
+//				productInfoDTO.setRegistDate(rs.getDate("regist_date"));
+//				productInfoDTO.setUpdateDate(rs.getDate("update_date"));
 				productInfoDTOList.add(productInfoDTO);
 			}
 		} catch (SQLException e) {
@@ -159,20 +159,20 @@ public class ProductInfoDAO {
 			ps.setInt(1, productId);
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
-				productInfoDTO.setId(rs.getInt("id"));
+//				productInfoDTO.setId(rs.getInt("id"));
 				productInfoDTO.setProductId(rs.getInt("product_id"));
 				productInfoDTO.setProductName(rs.getString("product_name"));
 				productInfoDTO.setProductNameKana(rs.getString("product_name_kana"));
-				productInfoDTO.setProductDescription(rs.getString("product_descliption"));
+				productInfoDTO.setProductDescription(rs.getString("product_description"));
 				productInfoDTO.setCategoryId(rs.getInt("category_id"));
 				productInfoDTO.setPrice(rs.getInt("price"));
 				productInfoDTO.setImageFilePath(rs.getString("image_file_path"));
 				productInfoDTO.setImageFileName(rs.getString("image_file_name"));
 				productInfoDTO.setReleaseDate(rs.getDate("release_date"));
 				productInfoDTO.setReleaseCompany(rs.getString("release_company"));
-				productInfoDTO.setStatus(rs.getInt("status"));
-				productInfoDTO.setRegistDate(rs.getDate("regist_date"));
-				productInfoDTO.setUpdateDate(rs.getDate("update_date"));
+//				productInfoDTO.setStatus(rs.getInt("status"));
+//				productInfoDTO.setRegistDate(rs.getDate("regist_date"));
+//				productInfoDTO.setUpdateDate(rs.getDate("update_date"));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -201,11 +201,11 @@ public class ProductInfoDAO {
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
 				ProductInfoDTO productInfoDTO = new ProductInfoDTO();
-				productInfoDTO.setId(rs.getInt("id"));
+//				productInfoDTO.setId(rs.getInt("id"));
 				productInfoDTO.setProductId(rs.getInt("product_id"));
 				productInfoDTO.setProductName(rs.getString("product_name"));
 //				productInfoDTO.setProductNameKana(rs.getString("product_name_kana"));
-//				productInfoDTO.setProductDescription(rs.getString("product_descliption"));
+//				productInfoDTO.setProductDescription(rs.getString("product_description"));
 //				productInfoDTO.setCategoryId(rs.getInt("category_id"));
 //				productInfoDTO.setPrice(rs.getInt("price"));
 				productInfoDTO.setImageFilePath(rs.getString("image_file_path"));
