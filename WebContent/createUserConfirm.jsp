@@ -11,7 +11,6 @@
 <body>
 <body>
 	<div id="header">
-		<div id="pr"></div>
 	</div>
 	<div>
 		<div class="pageTitle">登録内容確認画面</div>
@@ -57,7 +56,6 @@
 		</s:form>
 	</div>
 	<div id="footer">
-		<div id="pr"></div>
 	</div>
 </body>
 
