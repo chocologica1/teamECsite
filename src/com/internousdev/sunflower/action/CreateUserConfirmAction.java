@@ -2,11 +2,9 @@ package com.internousdev.sunflower.action;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
-import com.internousdev.sunflower.dao.UserInfoDAO;
 import com.internousdev.sunflower.util.InputChecker;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -69,11 +67,140 @@ public class CreateUserConfirmAction extends ActionSupport implements SessionAwa
 			session.put("emailErrorMessageList", emailErrorMessageList);
 			session.put("loginIdErrorMessageList", loginIdErrorMessageList);
 			session.put("passwordErrorMessageList", passwordErrorMessageList);
-
+			result = ERROR;
 		}
+		return result;
 	}
 
+	public String getFamilyName() {
+		return familyName;
 	}
 
+	public void setFamilyName(String familyName) {
+		this.familyName = familyName;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getFamilyNameKana() {
+		return familyNameKana;
+	}
+
+	public void setFamilyNameKana(String familyNameKana) {
+		this.familyNameKana = familyNameKana;
+	}
+
+	public String getFirstNameKana() {
+		return firstNameKana;
+	}
+
+	public void setFirstNameKana(String firstNameKana) {
+		this.firstNameKana = firstNameKana;
+	}
+
+	public String getSex() {
+		return sex;
+	}
+
+	public void setSex(String sex) {
+		this.sex = sex;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getLoginId() {
+		return loginId;
+	}
+
+	public void setLoginId(String loginId) {
+		this.loginId = loginId;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public List<String> getFamilyNameErrorMessage() {
+		return familyNameErrorMessage;
+	}
+
+	public void setFamilyNameErrorMessage(List<String> familyNameErrorMessage) {
+		this.familyNameErrorMessage = familyNameErrorMessage;
+	}
+
+	public List<String> getFirstNameErrorMessage() {
+		return firstNameErrorMessage;
+	}
+
+	public void setFirstNameErrorMessage(List<String> firstNameErrorMessage) {
+		this.firstNameErrorMessage = firstNameErrorMessage;
+	}
+
+	public List<String> getFamilyNameKanaErrorMessage() {
+		return familyNameKanaErrorMessage;
+	}
+
+	public void setFamilyNameKanaErrorMessage(List<String> familyNameKanaErrorMessage) {
+		this.familyNameKanaErrorMessage = familyNameKanaErrorMessage;
+	}
+
+	public List<String> getFirstNameKanaErrorMessage() {
+		return firstNameKanaErrorMessage;
+	}
+
+	public void setFirstNameKanaErrorMessage(List<String> firstNameKanaErrorMessage) {
+		this.firstNameKanaErrorMessage = firstNameKanaErrorMessage;
+	}
+
+	public List<String> getEmailErrorMessage() {
+		return emailErrorMessage;
+	}
+
+	public void setEmailErrorMessage(List<String> emailErrorMessage) {
+		this.emailErrorMessage = emailErrorMessage;
+	}
+
+	public List<String> getLoginIdErrorMessage() {
+		return loginIdErrorMessage;
+	}
+
+	public void setLoginIdErrorMessage(List<String> loginIdErrorMessage) {
+		this.loginIdErrorMessage = loginIdErrorMessage;
+	}
+
+	public List<String> getPasswordErrorMessage() {
+		return passwordErrorMessage;
+	}
+
+	public void setPasswordErrorMessage(List<String> passwordErrorMessage) {
+		this.passwordErrorMessage = passwordErrorMessage;
+	}
+
+	public String getCategoryId() {
+		return categoryId;
+	}
+
+	public void setCategoryId(String categoryId) {
+		this.categoryId = categoryId;
+	}
 
 }
+
+
+
