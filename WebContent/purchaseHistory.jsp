@@ -15,8 +15,10 @@
 	<s:property value="message"/>
 </s:if>
 
+
 <s:elseif test="purchaseHistoryInfoDTOList.size() > 0">    <!-- 購入履歴がある場合  -->
 	<table>
+
 		<tr>
 		<s:iterator value="purchaseHistoryInfoDTOList">
 			<td><s:property value="productName"/></td>
@@ -32,6 +34,7 @@
 		<s:form action="DeletePurchaseHistoryAction">
 			<s:submit value="削除"/>
 		</s:form>
+
 	</table>
 </s:elseif>
 
