@@ -9,15 +9,16 @@
 <script src="//code.jquery.com/jquery-1.12.1.min.js"></script>
 
 <script type="text/javascript">
-	function checkValue(check){
-		var btn = document.getElementById('deleteButton');
-
-		if(("input[type=checkbox]:checked").size() > 0){
-			btn.removeAttribute('disabled');
-		}else{
-			btn.setAttribute('disabled','disabled');
-		}
-	}
+	$(function(){
+		$('.deleteCheck').click(function(){
+			var check_count = $('.product :checked').length;
+			if(check_count > 0){
+				$("#deleteButton").removeAttr("disabled");
+			}else{
+				$("#deleteButton").attr("disabled","disabled");
+			}
+		})
+	})
 </script>
 </head>
 <body>
@@ -34,7 +35,7 @@
 								DeleteCartActionのproductIdMapに「key:商品ID」「value:商品ID」で格納する。
 							-->
 							<td>削除</td>
-							<td><input type="checkbox" value="<s:property value='productId'/>" name="productIdMap(<s:property value='productId'/>)" id="check" onclick="checkValue(this)"></td>
+							<td><input type="checkbox" value="<s:property value='productId'/>" name="productIdMap(<s:property value='productId'/>)" class="deleteCheck"></td>
 						</tr>
 						<tr>
 							<td>商品名</td>
@@ -46,7 +47,7 @@
 						</tr>
 						<tr>
 							<td>商品画像</td>
-							<td><Img src="<s:property value='productImagePath'/>"></td>
+							<td><Img src="<s:property value='productImagePath'/>/<s:property value="imageFileName"/>"></td>
 						</tr>
 						<tr>
 							<td>発売会社名</td>
@@ -70,7 +71,7 @@
 
 			<!-- 削除ボタン -->
 			<div id="delete">
-				<input type="submit" value="削除" id="deleteButton"/>
+				<input type="submit" value="削除" id="deleteButton" disabled = "disabled"/>
 			</div>
 		</s:form>
 
