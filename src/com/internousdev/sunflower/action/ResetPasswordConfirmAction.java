@@ -11,13 +11,13 @@ import com.internousdev.sunflower.util.InputChecker;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class ResetPasswordConfirmAction extends ActionSupport implements SessionAware {
-	private String userId;                      //ユーザID
+	private String userId;                       //ユーザID
 	private String password;                     //現在のパスワード
 	private String newPassword;                  //新しいパスワード
 	private String reConfirmationNewPassword;    //（再確認）
 	/*private String categoryId;*/
 
-	private List<String> userIdErrorMessageList = new ArrayList<String>();                  //ユーザID不適当メッセージ
+	private List<String> userIdErrorMessageList = new ArrayList<String>();                 	 //ユーザID不適当メッセージ
 	private List<String> passwordErrorMessageList = new ArrayList<String>();                 //現在のパスワード不適当メッセージ
 	private List<String> incorrectErrorMessageList = new ArrayList<String>();       		 //ユーザIDまたはパスワード不存在メッセージ
 	private List<String> newPasswordErrorMessageList = new ArrayList<String>();              //新しいパスワード不適当メッセージ
@@ -56,7 +56,7 @@ public class ResetPasswordConfirmAction extends ActionSupport implements Session
 
 				//入力された新しいパスワードの1文字目だけ表示、2～16文字目は*で表示されるようにした文字列を代入する
 				String hiddenPassword = userInfoDAO.hiddenPassword(newPassword);
-				session.put("userId", userId);				  //セッション「ユーザID」
+				session.put("userId", userId);				  	  //セッション「ユーザID」
 				session.put("savedUserId", true);			      //セッション「保存ユーザID(戻る用)」
 				session.put("password", password);				  //セッション「現在のパスワード」
 				session.put("newPassword", newPassword);          //セッション「新しいパスワード」
@@ -67,12 +67,12 @@ public class ResetPasswordConfirmAction extends ActionSupport implements Session
 			//入力されたユーザID・パスワードと一致するデータがDB上に無かった場合
 			} else if(!(userInfoDAO.isExistsUserInfo(userId,password))) {
 				result = ERROR;
-				incorrectErrorMessageList.add("ユーザIDまたはパスワードが異なります。");
+				incorrectErrorMessageList.add("ユーザIDまたは現在のパスワードが異なります。");
 				session.put("incorrectErrorMessageList", incorrectErrorMessageList);  //セッション「ユーザIDまたはパスワード不存在メッセージ」
 				return result;
 			}
 		} else {
-			session.put("userIdErrorMessageList", userIdErrorMessageList);                                       //セッション「ユーザID不適当メッセージ」
+			session.put("userIdErrorMessageList", userIdErrorMessageList);                                         //セッション「ユーザID不適当メッセージ」
 			session.put("passwordErrorMessageList", passwordErrorMessageList);                                     //セッション「現在のパスワード不適当メッセージ」
 			session.put("newPasswordErrorMessageList", newPasswordErrorMessageList);                               //セッション「新しいパスワード不適当メッセージ」
 			session.put("reConfirmationNewPasswordErrorMessageList", reConfirmationNewPasswordErrorMessageList);   //セッション「（再確認）不適当メッセージ」
