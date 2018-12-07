@@ -21,8 +21,8 @@
 		</div>
 	</s:if>
 
-	<!-- 検索結果/商品情報なし -->
-	<s:elseif test="productInfoDTOList.isEmpty()">
+	<!-- 検索結果なし -->
+	<s:elseif test="productInfoDTOList == null">
 		<div>
 			<p>検索結果がありません。</p>
 		</div>
