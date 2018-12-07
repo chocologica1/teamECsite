@@ -61,7 +61,7 @@
 								<!-- ふりがな -->
 								<td><s:property value="familyNameKana"/><span>　</span><s:property value="firstNameKana"/></td>
 								<!-- 住所 -->
-								<td><s:property value="address"/></td>
+								<td><s:property value="userAddress"/></td>
 								<!-- 電話番号 -->
 								<td><s:property value="telNumber"/></td>
 								<!-- メールアドレス -->

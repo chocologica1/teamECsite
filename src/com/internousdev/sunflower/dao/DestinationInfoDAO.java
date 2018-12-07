@@ -16,18 +16,15 @@ public class DestinationInfoDAO {
 	public ArrayList<DestinationInfoDTO> getDestinationInfo(String loginId) throws SQLException{
 		DBConnector db = new DBConnector();
 		Connection con = db.getConnection();
-		ArrayList<DestinationInfoDTO> destinationList = new ArrayList<DestinationInfoDTO>();
-		String sql ="SELECT"
-				+ "id, family_name, first_name, family_name_kana, first_name_kana, email, tell_number, user_address"
-				+ "FROM"
-				+ "destination_info"
-				+ "WHERE"
-				+ "user_id = '?'";
+		ArrayList<DestinationInfoDTO> destinationDTOList = new ArrayList<DestinationInfoDTO>();
+		String sql ="SELECT id, family_name, first_name, family_name_kana, first_name_kana, email, tell_number, user_address FROM destination_info WHERE user_id = ?";
 
 		try{
 			PreparedStatement ps = con.prepareStatement(sql);
 			ps.setString(1, loginId);
 			ResultSet rs = ps.executeQuery();
+
+			System.out.println("sql:" + sql);
 
 			while(rs.next()){
 				DestinationInfoDTO dto = new DestinationInfoDTO();
@@ -39,6 +36,7 @@ public class DestinationInfoDAO {
 				dto.setEmail(rs.getString("email"));
 				dto.setTelNumber(rs.getString("tell_number"));
 				dto.setUserAddress(rs.getString("user_address"));
+				destinationDTOList.add(dto);
 			}
 		}catch(SQLException e){
 			e.printStackTrace();
@@ -46,7 +44,7 @@ public class DestinationInfoDAO {
 			con.close();
 		}
 
-		return destinationList;
+		return destinationDTOList;
 	}
 
 	public int insert(String userId, String familyName, String firstName, String familyNameKana, String firstNameKana, String email, String tellNumber, String userAddress){
