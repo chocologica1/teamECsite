@@ -15,7 +15,6 @@ public class ResetPasswordConfirmAction extends ActionSupport implements Session
 	private String password;                     //現在のパスワード
 	private String newPassword;                  //新しいパスワード
 	private String reConfirmationNewPassword;    //（再確認）
-	/*private String categoryId;*/
 
 	private List<String> userIdErrorMessageList = new ArrayList<String>();                 	 //ユーザID不適当メッセージ
 	private List<String> passwordErrorMessageList = new ArrayList<String>();                 //現在のパスワード不適当メッセージ
@@ -76,7 +75,6 @@ public class ResetPasswordConfirmAction extends ActionSupport implements Session
 			session.put("newPasswordErrorMessageList", newPasswordErrorMessageList);                               //セッション「新しいパスワード不適当メッセージ」
 			session.put("reConfirmationNewPasswordErrorMessageList", reConfirmationNewPasswordErrorMessageList);   //セッション「（再確認）不適当メッセージ」
 			session.put("newPasswordIncorrectErrorMessageList", newPasswordIncorrectErrorMessageList);             //セッション「新しいパスワードと（再確認）不一致メッセージ」
-			session.put("savedUserId", null);
 		}
 		return result;
 	}
