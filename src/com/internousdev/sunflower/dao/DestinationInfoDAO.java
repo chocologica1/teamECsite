@@ -44,7 +44,7 @@ public class DestinationInfoDAO {
 		return destinationDTOList;
 	}
 
-	public int insert(String userId, String familyName, String firstName, String familyNameKana, String firstNameKana, String email, String tellNumber, String userAddress){
+	public int createDestination(String userId, String familyName, String firstName, String familyNameKana, String firstNameKana, String email, String tellNumber, String userAddress){
 		DBConnector db = new DBConnector();
 		Connection con = db.getConnection();
 		int count =0;

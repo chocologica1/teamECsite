@@ -47,7 +47,11 @@
 					<td><s:property value="email" /></td>
 				</tr>
 			</table>
-			<s:submit value=""
+			<s:submit value="登録情報を確定" />
+		</s:form>
+
+		<s:form action="CreateDestinationAction" >
+			<s:submit value="戻る" />
 		</s:form>
 	</div>
 

@@ -9,8 +9,7 @@
 <title>登録内容の確認</title>
 </head>
 <body>
-	<div id="header">
-	</div>
+	<jsp:include page="header.jsp"/>
 	<div>
 		<h1>登録内容確認画面</h1>
 		<br>

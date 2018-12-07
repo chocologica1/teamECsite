@@ -9,9 +9,7 @@
 <title>ユーザー登録画面</title>
 </head>
 <body>
-	<div id="header">
-		<div id="pr"></div>
-	</div>
+	<jsp:include page="header.jsp"/>
 
 	<div>
 		<h1>ユーザー情報入力画面</h1>

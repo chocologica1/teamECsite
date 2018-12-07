@@ -10,7 +10,7 @@
 <title>ユーザー情報入力完了画面</title>
 </head>
 <body>
-	<div id="header"></div>
+	<jsp:include page="header.jsp"/>
 	<div id="contents">
 		<h1>登録完了画面</h1>
 		<div class="success">ユーザー登録が完了致しました。</div>
