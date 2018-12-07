@@ -81,8 +81,8 @@
 			</tr>
 			<tr>
 				<th>電話番号</th>
-				<td><input type="text" name="tellNumber"
-					value="<s:property value='tellNumber' />" placeholder="電話番号" /></td>
+				<td><input type="text" name="telNumber"
+					value="<s:property value='telNumber' />" placeholder="電話番号" /></td>
 			</tr>
 			<tr>
 				<th>メールアドレス</th>

@@ -15,7 +15,7 @@ public class CreateDestinationConfirmAction extends ActionSupport implements Ses
 	private String familyNameKana;
 	private String firstNameKana;
 	private String userAdress;
-	private String tellNumber;
+	private String telNumber;
 	private String email;
 
 	private List<String> familyNameErrorMessageList = new ArrayList<String>();
@@ -24,7 +24,7 @@ public class CreateDestinationConfirmAction extends ActionSupport implements Ses
 	private List<String> firstNameKanaErrorMessageList = new ArrayList<String>();
 	private List<String> userAdressErrorMessageList = new ArrayList<String>();
 	private List<String> emailErrorMessageList = new ArrayList<String>();
-	private List<String> tellNumberErrorMessageList = new ArrayList<String>();
+	private List<String> telNumberErrorMessageList = new ArrayList<String>();
 
 	private Map<String, Object> session;
 
@@ -38,7 +38,7 @@ public class CreateDestinationConfirmAction extends ActionSupport implements Ses
 		firstNameKanaErrorMessageList = inputChecker.doCheck("名ふりがな",firstNameKana,1, 16, false, false, true, false, false, false, false, false, false);
 		userAdressErrorMessageList = inputChecker.doCheck("住所", userAdress, 10, 50, true, true, true, true, true, true, false, false, false);
 		emailErrorMessageList = inputChecker.doCheck("メールアドレス", email, 10, 32, true, false, false, true, true, false, false, false, false);
-		tellNumberErrorMessageList = inputChecker.doCheck("電話番号", tellNumber, 10, 13, false, false, false, true, false, false, false, false, false);
+		telNumberErrorMessageList = inputChecker.doCheck("電話番号", telNumber, 10, 13, false, false, false, true, false, false, false, false, false);
 
 
 		if(familyNameErrorMessageList.size()==0
@@ -47,7 +47,7 @@ public class CreateDestinationConfirmAction extends ActionSupport implements Ses
 				&& firstNameKanaErrorMessageList.size()==0
 				&& userAdressErrorMessageList.size()==0
 				&& emailErrorMessageList.size()==0
-				&& tellNumberErrorMessageList.size()==0 ){
+				&& telNumberErrorMessageList.size()==0 ){
 			result = SUCCESS;
 		}else{
 			session.put("familyNameErrorMessageList", familyNameErrorMessageList);
@@ -56,7 +56,7 @@ public class CreateDestinationConfirmAction extends ActionSupport implements Ses
 			session.put("firstNameKanaErrorMessageList", firstNameKanaErrorMessageList);
 			session.put("userAdressErrorMessageList", userAdressErrorMessageList);
 			session.put("emailErrorMessageList", emailErrorMessageList);
-			session.put("tellNumberMessageList", tellNumberErrorMessageList);
+			session.put("telNumberMessageList", telNumberErrorMessageList);
 			result = ERROR;
 		}
 		return result;
@@ -102,12 +102,12 @@ public class CreateDestinationConfirmAction extends ActionSupport implements Ses
 		this.userAdress = userAdress;
 	}
 
-	public String getTellNumber() {
-		return tellNumber;
+	public String getTelNumber() {
+		return telNumber;
 	}
 
-	public void setTellNumber(String tellNumber) {
-		this.tellNumber = tellNumber;
+	public void setTelNumber(String telNumber) {
+		this.telNumber = telNumber;
 	}
 
 	public String getEmail() {
@@ -166,12 +166,12 @@ public class CreateDestinationConfirmAction extends ActionSupport implements Ses
 		this.emailErrorMessageList = emailErrorMessageList;
 	}
 
-	public List<String> getTellNumberErrorMessageList() {
-		return tellNumberErrorMessageList;
+	public List<String> getTelNumberErrorMessageList() {
+		return telNumberErrorMessageList;
 	}
 
-	public void setTellNumberErrorMessageList(List<String> tellNumberErrorMessageList) {
-		this.tellNumberErrorMessageList = tellNumberErrorMessageList;
+	public void setTelNumberErrorMessageList(List<String> telNumberErrorMessageList) {
+		this.telNumberErrorMessageList = telNumberErrorMessageList;
 	}
 
 	public Map<String, Object> getSession() {
