@@ -10,7 +10,7 @@
 <body>
 
 	<!-- ヘッダー -->
-<%-- 	<s:include value="header.jsp"/> --%>
+	<s:include value="header.jsp"/>
 
 	<!-- メイン -->
 	<div id="main">
@@ -20,7 +20,6 @@
 
 			<!-- 宛先情報が存在する場合 -->
 			<s:if test="#session.destinationDTOList.size()>0">
-<%-- 			<s:if test="destinationList.size() > 0"> --%>
 				宛先を選択してください
 
 				<!-- 宛先選択フォーム -->

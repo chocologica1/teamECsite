@@ -5,13 +5,13 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="">
-<!-- <meta http-equiv="refresh" content="3;URL='HomeAction'"/> -->
+<meta http-equiv="refresh" content="3;URL='HomeAction'"/>
 <title>決済完了画面</title>
 </head>
 <body>
 
 	<!-- ヘッダー -->
-<%-- 	<s:include value="header.jsp"/> --%>
+	<s:include value="header.jsp"/>
 
 	<!-- メイン -->
 	<div id="main">
@@ -21,7 +21,6 @@
 			<!-- メッセージを表示 -->
 			<div id="message">
 				決済が完了しました。
-<%-- 				<s:property value="message"/> --%>
 			</div>
 		</div>
 

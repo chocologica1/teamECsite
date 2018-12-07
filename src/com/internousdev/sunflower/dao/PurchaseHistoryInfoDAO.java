@@ -68,10 +68,10 @@ public class PurchaseHistoryInfoDAO {
 		Connection con = db.getConnection();
 
 		String sql = "INSERT INTO"
-				+ "purchase_history_info"
-				+ "(user_id, product_id, product_count, price, destination_id, regist_date)"
-				+ "VALUES"
-				+ "(?,?,?,?,?,now())";
+				+ " purchase_history_info"
+				+ " (user_id, product_id, product_count, price, destination_id, regist_date)"
+				+ " VALUES"
+				+ " (?,?,?,?,?,now())";
 		int count = 0;
 
 		try{
@@ -94,8 +94,6 @@ public class PurchaseHistoryInfoDAO {
 		}
 		return count;
 	}
-
-
 
 	// 商品購入履歴一覧の全削除
 	public int allDelete(String loginId) {
