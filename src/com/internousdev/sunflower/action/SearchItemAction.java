@@ -17,7 +17,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class SearchItemAction extends ActionSupport implements SessionAware {
 
-	private String categoryId;
+	private int categoryId;
 	private String keywords;
 	private List<MCategoryDTO> mCategoryDTOList = new ArrayList<MCategoryDTO>();
 	private List<String> keywordsErrorMessageList = new ArrayList<String>();
@@ -51,8 +51,9 @@ public class SearchItemAction extends ActionSupport implements SessionAware {
 
         ProductInfoDAO productInfoDAO = new ProductInfoDAO();
 
+
         switch (categoryId){
-          case"1":
+          case 1 :
         	//keywords.split(" ")→検索でスペースを入れたときに分割する
             productInfoDTOList = productInfoDAO.getProductInfoListAll(keywords.split(" "));
             result = SUCCESS;
@@ -87,11 +88,11 @@ public class SearchItemAction extends ActionSupport implements SessionAware {
 		this.keywords = keywords;
 	}
 
-	public String getCategoryId(){
+	public int getCategoryId(){
 		return categoryId;
 	}
 
-	public void setCategoryId(String categoryId){
+	public void setCategoryId(int categoryId){
 		this.categoryId = categoryId;
 	}
 

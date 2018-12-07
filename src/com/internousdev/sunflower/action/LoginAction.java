@@ -67,16 +67,17 @@ public class LoginAction extends ActionSupport implements SessionAware{
 
 	UserInfoDAO userInfoDao = new UserInfoDAO();
 	//入力したID,パスワードが登録されているか確認
-	if(userInfoDao.isExistsUserInfo(loginId, password)){
+	if(userInfoDao.isExistsUserInfo(loginId, password) || Integer.parseInt(String.valueOf(session.get("userCreateFlg"))){
 		//該当ユーザーをログイン状態にする
 		if(userInfoDao.login(loginId, password)> 0){
-			UserInfoDTO userIdDTO = userInfoDao.getUserInfo(loginId, password);
+			UserInfoDTO userInfoDTO = userInfoDao.getUserInfo(loginId, password);
 			session.put("loginId", userInfoDTO.getUserId());
-			int count=0;
-			CartInfoDAO cartInfoDao = new CartInfoDAO();
+
 
 			//tempUserIdに保持しているカート情報とloginIDをリンクさせる
+			CartInfoDAO cartInfoDao = new CartInfoDAO();
 			cartInfoDao.linkToLoginId(loginId,String.valueOf(session.get("tempUserId")));
+
 
 			/*cartFlgを保持している場合
 			 * 宛先情報を取得し
@@ -103,14 +104,13 @@ public class LoginAction extends ActionSupport implements SessionAware{
 			}
 		}
 		//ヘッダーにログイン情報の受け渡す
-			session.put("loginId", 1);
+			session.put("loginFlg", 1);
 	}
 	return result;
 
 
 
 		}
-
 
 
 

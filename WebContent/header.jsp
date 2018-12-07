@@ -20,7 +20,7 @@
   }
 
   function goProductListAction(){
-	  document.getElementById("form").value = 1;
+	  document.getElementById("categoryId").value = 1;
 	  document.getElementById("form").action = "ProductListAction";
   }
 
@@ -38,14 +38,14 @@
     <div id = "header-menu">
       <ul>
           <s:form id= "form" name = "form">
-            <s:if test = 'session.containsKey("mCategoryDTOList")'>
-              <li><s:select name = "categoryId" list = "session.mCategoryDTOList" listValue = "categoryName" listkey = "categoryId" class = "cs-div" id = "categoryId"></s:select></li>
-            </s:if>
+	<s:if test='#session.containsKey("mCategoryDTOList")'>
+	<li><s:select name="categoryId" list="#session.mCategoryDTOList" listValue="categoryName" listKey = "categoryId" class="cs-div" id="categoryId"/></li>
+	</s:if>
 
             <li><s:textfield name = "keywords" class = "txt-keywords" placeholder = "検索キーワード"/></li>
             <li><s:submit value = "商品検索" class = "submit_btn" onclick = "goSearchItemAction();"/></li>
 
-            <s:if test = "#session.loginId == 1">
+            <s:if test = "#session.loginFlg == 1">
               <li><s:submit value = "ログアウト" class = "submit_btn" onclick = "goLogoutAction();"/></li>
             </s:if>
 
@@ -56,7 +56,7 @@
             <li><s:submit value = "カート" class = "submit_btn" onclick = "goCartAction();"/></li>
             <li><s:submit value = "商品一覧" class = "submit_btn" onclick = "goProductListAction();"/></li>
 
-            <s:if test = "#session.loginId == 1">
+            <s:if test = "#session.loginFlg == 1">
               <li><s:submit value = "マイページ" class = "submit_btn" onclick = "goMyPageAction();"/></li>
             </s:if>
 
