@@ -27,6 +27,7 @@
 </s:form>
 
 <s:form action="ResetPasswordAction">
+	<input type="hidden" name="reFlg" value="2"/>
 	<s:submit value="戻る"/>
 </s:form>
 

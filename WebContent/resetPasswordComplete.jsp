@@ -8,7 +8,7 @@
 <title>パスワード再設定完了</title>
 <script>
 setTimeout(function(){
-	  window.location.href = 'home.jsp';
+	  window.location.href = 'HomeAction';
 	}, 3*1000);
 </script>
 </head>
