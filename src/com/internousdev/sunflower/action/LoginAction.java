@@ -66,8 +66,15 @@ public class LoginAction extends ActionSupport implements SessionAware{
 	}
 
 	UserInfoDAO userInfoDao = new UserInfoDAO();
+
+
+	if(loginId.isEmpty() && password.isEmpty()){
+		loginId = String.valueOf(session.get("userId"));
+		password = String.valueOf(session.get("password"));
+	}
+
 	//入力したID,パスワードが登録されているか確認
-	if(userInfoDao.isExistsUserInfo(loginId, password) || Integer.parseInt(String.valueOf(session.get("userCreateFlg"))){
+	if(userInfoDao.isExistsUserInfo(loginId, password)){
 		//該当ユーザーをログイン状態にする
 		if(userInfoDao.login(loginId, password)> 0){
 			UserInfoDTO userInfoDTO = userInfoDao.getUserInfo(loginId, password);

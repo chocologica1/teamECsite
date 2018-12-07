@@ -1,33 +1,50 @@
 package com.internousdev.sunflower.action;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.internousdev.sunflower.dao.MCategoryDAO;
+import com.internousdev.sunflower.dto.MCategoryDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class GoLoginAction extends ActionSupport implements SessionAware{
+	private String categoryId;
+	private List<MCategoryDTO> mCategoryDTOList = new ArrayList<MCategoryDTO>();
 	private Map<String, Object> session;
-
-	public String execute(){
-		if(!session.containsKey("logined")){
-			String result = "login";
-			return result;
+	public String execute() {
+		if(!session.containsKey("mCategoryList")) {
+			MCategoryDAO mCategoryDao = new MCategoryDAO();
+			mCategoryDTOList = mCategoryDao.getMCategoryList();
+			session.put("mCategoryDTOList", mCategoryDTOList);
 		}
 		session.put("loginIdErrorMessageList", "");
-		session.put("passwordErrorMessageLIst", "");
-		session.put("loginErrorMessage","");
-		session.remove("settlementFlg");
-
+		session.put("passwordErrorMessageList", "");
 		return SUCCESS;
 	}
 
-	public Map<String, Object> getSessin(){
+	public String getCategoryId() {
+		return categoryId;
+	}
+
+	public void setCategoryId(String categoryId) {
+		this.categoryId = categoryId;
+	}
+
+	public List<MCategoryDTO> getmCategoryDtoList() {
+		return mCategoryDTOList;
+	}
+
+	public void setmCategoryDtoList(List<MCategoryDTO> mCategoryDTOList) {
+		this.mCategoryDTOList = mCategoryDTOList;
+	}
+
+	public Map<String, Object> getSession() {
 		return session;
 	}
-
-	public void setSession(Map<String, Object> session){
+	public void setSession(Map<String, Object> session) {
 		this.session = session;
 	}
-
 }
