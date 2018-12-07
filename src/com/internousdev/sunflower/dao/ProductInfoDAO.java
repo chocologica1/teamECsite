@@ -191,7 +191,7 @@ public class ProductInfoDAO {
 		Connection con = db.getConnection();
 		List<ProductInfoDTO> productInfoDTOList = new ArrayList<ProductInfoDTO>();
 
-		String sql = "select * from product_info where category_id=? and product_id not in (?) and order by rand() limit ?,?";
+		String sql = "select * from product_info where category_id=? and product_id not in (?) order by rand() limit ?,?";
 		try {
 			PreparedStatement ps = con.prepareStatement(sql);
 			ps.setInt(1, categoryId);
