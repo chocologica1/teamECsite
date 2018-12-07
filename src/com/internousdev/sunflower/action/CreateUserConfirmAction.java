@@ -17,7 +17,7 @@ public class CreateUserConfirmAction extends ActionSupport implements SessionAwa
 	private String firstNameKana;
 	private String sex;
 	private String email;
-	private String loginId;
+	private String userId;
 	private String password;
 
 	private List<String> familyNameErrorMessageList = new ArrayList<String>();
@@ -25,7 +25,7 @@ public class CreateUserConfirmAction extends ActionSupport implements SessionAwa
 	private List<String> familyNameKanaErrorMessageList = new ArrayList<String>();
 	private List<String> firstNameKanaErrorMessageList = new ArrayList<String>();
 	private List<String> emailErrorMessageList = new ArrayList<String>();
-	private List<String> loginIdErrorMessageList = new ArrayList<String>();
+	private List<String> userIdErrorMessageList = new ArrayList<String>();
 	private List<String> passwordErrorMessageList = new ArrayList<String>();
 
 	private String categoryId;
@@ -43,7 +43,7 @@ public class CreateUserConfirmAction extends ActionSupport implements SessionAwa
 		session.put("firstNameKana",firstNameKana);
 		session.put("sex",sex);
 		session.put("email",email);
-		session.put("userId",loginId);
+		session.put("userId",userId);
 		session.put("password",password);
 
 		familyNameErrorMessageList = inputChecker.doCheck("姓",familyName,1, 16, true, true, true, false, false, false, false, false, false);
@@ -51,7 +51,7 @@ public class CreateUserConfirmAction extends ActionSupport implements SessionAwa
 		familyNameKanaErrorMessageList = inputChecker.doCheck("姓ふりがな",familyNameKana,1, 16, false, false, true, false, false, false, false, false, false);
 		firstNameKanaErrorMessageList = inputChecker.doCheck("名ふりがな",firstNameKana,1, 16, false, false, true, false, false, false, false, false, false);
 		emailErrorMessageList = inputChecker.doCheck("メールアドレス", email, 10, 32, true, false, false, true, true, false, false, false, false);
-		loginIdErrorMessageList = inputChecker.doCheck("ユーザID", loginId, 1, 8, true, false, false, true, false, false, false, false, false);
+		userIdErrorMessageList = inputChecker.doCheck("ユーザID", userId, 1, 8, true, false, false, true, false, false, false, false, false);
 		passwordErrorMessageList = inputChecker.doCheck("パスワード", password, 1, 16, true, false, false, true, false, false, false, false, false);
 
 
@@ -60,7 +60,7 @@ public class CreateUserConfirmAction extends ActionSupport implements SessionAwa
 				&& familyNameKanaErrorMessageList.size()==0
 				&& firstNameKanaErrorMessageList.size()==0
 				&& emailErrorMessageList.size()==0
-				&& loginIdErrorMessageList.size()==0
+				&& userIdErrorMessageList.size()==0
 				&& passwordErrorMessageList.size()==0) {
 			result = SUCCESS;
 		}else{
@@ -69,7 +69,7 @@ public class CreateUserConfirmAction extends ActionSupport implements SessionAwa
 			session.put("familyNameKanaErrorMessageList", familyNameKanaErrorMessageList);
 			session.put("firstNameKanaErrorMessageList", firstNameKanaErrorMessageList);
 			session.put("emailErrorMessageList", emailErrorMessageList);
-			session.put("loginIdErrorMessageList", loginIdErrorMessageList);
+			session.put("userIdErrorMessageList", userIdErrorMessageList);
 			session.put("passwordErrorMessageList", passwordErrorMessageList);
 			result = ERROR;
 		}
@@ -130,12 +130,12 @@ public class CreateUserConfirmAction extends ActionSupport implements SessionAwa
 		this.email = email;
 	}
 
-	public String getLoginId() {
-		return loginId;
+	public String getUserId() {
+		return userId;
 	}
 
-	public void setLoginId(String loginId) {
-		this.loginId = loginId;
+	public void setUserId(String userId) {
+		this.userId = userId;
 	}
 
 	public String getPassword() {
@@ -186,12 +186,12 @@ public class CreateUserConfirmAction extends ActionSupport implements SessionAwa
 		this.emailErrorMessageList = emailErrorMessageList;
 	}
 
-	public List<String> getLoginIdErrorMessageList() {
-		return loginIdErrorMessageList;
+	public List<String> getUserIdErrorMessageList() {
+		return userIdErrorMessageList;
 	}
 
-	public void setLoginIdErrorMessageList(List<String> loginIdErrorMessageList) {
-		this.loginIdErrorMessageList = loginIdErrorMessageList;
+	public void setUserIdErrorMessageList(List<String> userIdErrorMessageList) {
+		this.userIdErrorMessageList = userIdErrorMessageList;
 	}
 
 	public List<String> getPasswordErrorMessageList() {

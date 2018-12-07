@@ -56,7 +56,7 @@
 			<tr>
 				<th>姓</th>
 				<td><input type="text" name="familyName"
-					value="<s:property value='familtName' />" placeholder="姓" /></td>
+					value="<s:property value='familyName' />" placeholder="姓" /></td>
 			</tr>
 			<tr>
 				<th>名</th>

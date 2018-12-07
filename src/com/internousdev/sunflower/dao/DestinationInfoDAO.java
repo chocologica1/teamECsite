@@ -50,7 +50,7 @@ public class DestinationInfoDAO {
 		int count =0;
 
 		String sql="insert into destination_info(user_id,family_name,first_name,family_name_kana,first_name_kana,email,tell_number,user_address,regist_date,update_date)"
-				+ " value(?,?,?,?,?,?,?,?,now(),now())";
+				+ " values(?,?,?,?,?,?,?,?,now(),now())";
 
 		try{
 			PreparedStatement ps = con.prepareStatement(sql);
