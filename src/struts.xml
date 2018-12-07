@@ -3,6 +3,7 @@
 "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
 "http://struts.apache.org/dtds/struts-2.3.dtd">
 <struts>
+	<constant name="struts.ui.theme" value="simple" />
 	<!-- 開発者モード(デバッグしたい時にはコメント外してください。ユーザーのエラーページが無効にできます) -->
 	<!-- <constant name="struts.devMode" value="true" /> -->
 	<package name="com.internousdev.sunflower.action" extends="struts-default">
@@ -20,7 +21,7 @@
 
 	<action name="CreateUserCompleteAction" class="com.internousdev.sunflower.action.CreateUserCompleteAction" method="execute">
 		<result name="success">createUserComplete.jsp</result>
-		<result name="error">createUser.jsp</result>
+		<result name="error">error.jsp</result>
 	</action>
 
 	<!-- ログイン認証機能 -->
@@ -76,7 +77,7 @@
 	<!-- カート機能 -->
 	<action name="AddCartAction" class="com.internousdev.sunflower.action.AddCartAction" method="execute">
 		<result name="success">cart.jsp</result>
-		<result name="error">home.jsp</result>
+		<result name="error">error.jsp</result>
 	</action>
 
 	<action name="CartAction" class="com.internousdev.sunflower.action.CartAction" method="execute">
@@ -86,7 +87,7 @@
 
 	<action name="DeleteCartAction" class="com.internousdev.sunflower.action.DeleteCartAction" method="execute">
 		<result name="success">cart.jsp</result>
-		<result name="error">cart.jsp</result>
+		<result name="error">error.jsp</result>
 	</action>
 
 	<!-- 宛先情報選択機能 -->
@@ -108,12 +109,13 @@
 
 	<action name="CreateDestinationCompleteAction" class="com.internousdev.sunflower.action.CreateDestinationCompleteAction" method="execute">
 		<result name="success">createDestinationComplete.jsp</result>
-		<result name="error">createDestination.jsp</result>
+		<result name="error">error.jsp</result>
 	</action>
 
 	<!-- 決済完了機能 -->
    <action name="SettlementCompleteAction" class="com.internousdev.sunflower.action.SettlementCompleteAction" method="execute">
 		<result name="success">settlementComplete.jsp</result>
+		<result name="error">error.jsp</result>
 	</action>
 
 	<!-- マイページ機能 -->
@@ -129,12 +131,13 @@
 
 	<action name="DeletePurchaseHistoryAction" class="com.internousdev.sunflower.action.DeletePurchaseHistoryAction" method="execute">
 		<result name="success">purchaseHistory.jsp</result>
-		<result name="error">home.jsp</result>
+		<result name="error">error.jsp</result>
 	</action>
 
 	<!-- ログアウト機能 -->
 	<action name="LogoutAction" class="com.internousdev.sunflower.action.LogoutAction" method="execute">
 		<result name="success">index.jsp</result>
+		<result name="error">error.jsp</result>
 	</action>
 
 	</package>
