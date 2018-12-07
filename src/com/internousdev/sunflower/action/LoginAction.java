@@ -56,7 +56,7 @@ public class LoginAction extends ActionSupport implements SessionAware{
 	if(loginIdErrorMessageList.size()!=0 && passwordErrorMessageList.size()!=0){
 		session.put("loginIdErrorMessageList", "loginIdErrorMessageList");
 		session.put("passwordErrorMessageList", "passwordErrorMessageList");
-		session.put("logined",0);
+		session.put("loginId",0);
 	}
 
 	if(!session.containsKey("mCategoryList")){
