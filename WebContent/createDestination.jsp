@@ -38,16 +38,17 @@
 			</s:iterator>
 			<br>
 		</s:if>
-		<s:if test="!#session.emailErrorMessageList.isEmpty()">
-			<s:iterator value="#session.emailErrorMessageList"><s:property />
-			</s:iterator>
-			<br>
-		</s:if>
 		<s:if test="!#session.telNumberErrorMessageList.isEmpty()">
 			<s:iterator value="#session.telNumberErrorMessageList"><s:property />
 			</s:iterator>
 			<br>
 		</s:if>
+		<s:if test="!#session.emailErrorMessageList.isEmpty()">
+			<s:iterator value="#session.emailErrorMessageList"><s:property />
+			</s:iterator>
+			<br>
+		</s:if>
+
 	</div>
 	<!-- ここまで -->
 

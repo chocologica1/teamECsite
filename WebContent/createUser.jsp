@@ -155,7 +155,7 @@
 				<tr class="txtBox">
 					<th>パスワード</th>
 					<td><input type="text" name="password"
-						value="<s:property value='password' />" placeholder="パスワード"
+						value="" placeholder="パスワード"
 						class="text" /></td>
 				</tr>
 			</table>
