@@ -12,6 +12,8 @@ public class ProductDetailsAction extends ActionSupport {
 	//フィールド
 		//商品詳細
 	private int productId;
+	private String imageFilePath;
+	private String imageFileName;
 	private String productName;
 	private String productNameKana;
 	private int price;
@@ -30,6 +32,8 @@ public class ProductDetailsAction extends ActionSupport {
 
 		//商品詳細を取得
 		productInfoDTO = productInfoDAO.getProductInfo(productId);
+		imageFilePath = productInfoDTO.getImageFilePath();
+		imageFileName = productInfoDTO.getImageFileName();
 		productName = productInfoDTO.getProductName();
 		productNameKana = productInfoDTO.getProductNameKana();
 		price = productInfoDTO.getPrice();
@@ -53,6 +57,14 @@ public class ProductDetailsAction extends ActionSupport {
 
 	public void setProductId(int productId) {
 		this.productId = productId;
+	}
+
+	public String getImageFilePath() {
+		return imageFilePath;
+	}
+
+	public String getImageFileName() {
+		return imageFileName;
 	}
 
 	public String getProductName() {

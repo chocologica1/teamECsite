@@ -71,7 +71,6 @@
 
 	<!-- 関連商品 -->
 	<div>
-
 		<s:iterator value="productInfoDTOList">
 			<div>
 				<div>
