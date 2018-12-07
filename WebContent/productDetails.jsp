@@ -63,7 +63,7 @@
 			</div>
 			<!-- カートに商品IDを渡す -->
 			<div>
-				<s:param name="productId" value="productId"/>
+				<s:hidden name="productId" value="productId"/>
 				<s:submit type="button" value="カートに追加"/>
 			</div>
 		</s:form>
