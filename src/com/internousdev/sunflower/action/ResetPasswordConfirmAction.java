@@ -15,7 +15,6 @@ public class ResetPasswordConfirmAction extends ActionSupport implements Session
 	private String password;                     //現在のパスワード
 	private String newPassword;                  //新しいパスワード
 	private String reConfirmationNewPassword;    //（再確認）
-	/*private String categoryId;*/
 
 	private List<String> userIdErrorMessageList = new ArrayList<String>();                 	 //ユーザID不適当メッセージ
 	private List<String> passwordErrorMessageList = new ArrayList<String>();                 //現在のパスワード不適当メッセージ
