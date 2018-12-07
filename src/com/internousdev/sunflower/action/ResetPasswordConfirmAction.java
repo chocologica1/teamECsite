@@ -56,7 +56,7 @@ public class ResetPasswordConfirmAction extends ActionSupport implements Session
 
 				//入力された新しいパスワードの1文字目だけ表示、2～16文字目は*で表示されるようにした文字列を代入する
 				String hiddenPassword = userInfoDAO.hiddenPassword(newPassword);
-				session.put("userId", userId);				  	  //セッション「ユーザID」
+				session.put("copyUserId", userId);				  	  //セッション「ユーザID」
 				session.put("savedUserId", true);			      //セッション「保存ユーザID(戻る用)」
 				session.put("newPassword", newPassword);          //セッション「新しいパスワード」
 				session.put("hiddenPassword", hiddenPassword);    //セッション「*で表示されるパスワード」
@@ -76,6 +76,7 @@ public class ResetPasswordConfirmAction extends ActionSupport implements Session
 			session.put("newPasswordErrorMessageList", newPasswordErrorMessageList);                               //セッション「新しいパスワード不適当メッセージ」
 			session.put("reConfirmationNewPasswordErrorMessageList", reConfirmationNewPasswordErrorMessageList);   //セッション「（再確認）不適当メッセージ」
 			session.put("newPasswordIncorrectErrorMessageList", newPasswordIncorrectErrorMessageList);             //セッション「新しいパスワードと（再確認）不一致メッセージ」
+			session.put("savedUserId", null);
 		}
 		return result;
 	}

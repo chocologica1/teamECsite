@@ -61,10 +61,14 @@
 	<table>
 		<tr>
 			<td>ユーザID</td>
-			<!-- 再遷移してきた場合  -->
+			<!-- ログイン画面から再遷移してきた場合  -->
 			<s:if test="#session.savedUserId == true">
-			<td><input type="text" name="userId" placeholder="ユーザID" value='<s:property value="#session.userId"/>'/></td>
+			<td><input type="text" name="userId" placeholder="ユーザID" value='<s:property value="#session.copyUserId"/>'/></td>
 			</s:if>
+			<!-- ログイン画面から再遷移してきた場合  -->
+			<s:elseif test="#session.savedUserId == null">
+			<td><input type="text" name="userId" placeholder="ユーザID" value='<s:property value="userId"/>'/></td>
+			</s:elseif>
 			<!-- 初めて入力する場合  -->
 			<s:else>
 			<td><input type="text" name="userId" placeholder="ユーザID"/></td>

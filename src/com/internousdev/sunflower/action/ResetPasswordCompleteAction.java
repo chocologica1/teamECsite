@@ -18,7 +18,7 @@ public class ResetPasswordCompleteAction extends ActionSupport implements Sessio
 		UserInfoDAO userInfoDAO = new UserInfoDAO();   //UserInfoDAOをインスタンス化
 
 		//DB上の情報を更新、更新した件数
-		int count = userInfoDAO.resetPassword(session.get("userId").toString(), session.get("newPassword").toString());
+		int count = userInfoDAO.resetPassword(session.get("copyUserId").toString(), session.get("newPassword").toString());
 		if(count > 0) {
 			result = SUCCESS;
 		} else {

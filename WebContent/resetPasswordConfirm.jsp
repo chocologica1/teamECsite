@@ -16,7 +16,7 @@
 	<table>
 		<tr>
 			<td>ユーザID</td>
-			<td><s:property value="#session.userId"/></td>          <!-- 改めてユーザIDを確認  -->
+			<td><s:property value="#session.copyUserId"/></td>          <!-- 改めてユーザIDを確認  -->
 		</tr>
 		<tr>
 			<td>新しいパスワード</td>
