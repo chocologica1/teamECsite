@@ -63,7 +63,7 @@
 			</div>
 			<!-- カートに商品IDを渡す -->
 			<div>
-				<s:hidden name="productId" value="productId"/>
+				<input type="hidden" name="productId" value="<s:property value='productId'/>"/>
 				<s:submit type="button" value="カートに追加"/>
 			</div>
 		</s:form>
