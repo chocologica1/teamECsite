@@ -93,7 +93,7 @@ public class LoginAction extends ActionSupport implements SessionAware{
 			 */
 
 			cartInfoDao.linkToLoginId(String.valueOf(session.get("tempUserId")),loginId);
-			if((Integer)session.get("cartFlg") > 0) {
+			if(session.get("cartFlg") != null && (Integer)session.get("cartFlg") > 0) {
 				DestinationInfoDAO destinationInfoDao = new DestinationInfoDAO();
 				try {
 					List<DestinationInfoDTO> destinationInfoDTOList = new ArrayList<DestinationInfoDTO>();

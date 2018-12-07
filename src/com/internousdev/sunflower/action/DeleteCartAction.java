@@ -1,7 +1,6 @@
 package com.internousdev.sunflower.action;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -17,7 +16,7 @@ public class DeleteCartAction extends ActionSupport implements SessionAware{
 	 * cart.jspから削除対象の商品IDを受け取る<br>
 	 * key、value共に商品ID
 	 */
-	private Map<Integer,Integer> productIdMap = new HashMap<>();
+	private int[] productIdArray;
 
 	private CartInfoDAO cartInfoDAO = new CartInfoDAO();
 
@@ -40,7 +39,7 @@ public class DeleteCartAction extends ActionSupport implements SessionAware{
 
 
 		//deleteメソッドを全削除対象商品IDを引数に指定して呼び出し、戻り値をresultListに格納
-		for(Integer productId : productIdMap.keySet()){
+		for(int productId : productIdArray){
 			resultList.add(cartInfoDAO.delete(productId,String.valueOf(session.get("loginId")),String.valueOf(session.get("tempUserId"))));
 		}
 
@@ -64,8 +63,8 @@ public class DeleteCartAction extends ActionSupport implements SessionAware{
 
 
 
-	public void setProductIdMap(int key,int value){
-		productIdMap.put(key, value);
+	public void setProductIdArray(int[] productIdArray){
+		this.productIdArray = productIdArray;
 	}
 
 	public List<CartInfoDTO> getCartInfoDTOList(){

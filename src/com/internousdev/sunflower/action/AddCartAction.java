@@ -33,8 +33,8 @@ public class AddCartAction extends ActionSupport implements SessionAware{
 	public String execute(){
 		int result = 0;
 
-		//未ログインかつ仮ユーザーIDを発行していない場合、仮ユーザーIDを発行しsessionに格納
-		if(!(session.containsKey("loginId") || session.containsKey("tempUserId"))){
+		//仮ユーザーIDを発行していない場合、仮ユーザーIDを発行しsessionに格納
+		if(!(session.containsKey("tempUserId"))){
 			session.put("tempUserId", commonUtility.getRamdomValue());
 		}
 

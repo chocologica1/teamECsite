@@ -32,10 +32,11 @@
 						<tr>
 							<!--
 								削除対象チェックボックス
-								DeleteCartActionのproductIdMapに「key:商品ID」「value:商品ID」で格納する。
+								チェックされた商品の商品IDを
+								DeleteCartActionのproductIdArrayに格納する
 							-->
 							<td>削除</td>
-							<td><input type="checkbox" value="<s:property value='productId'/>" name="productIdMap(<s:property value='productId'/>)" class="deleteCheck"></td>
+							<td><input type="checkbox" value="<s:property value='productId'/>" name="productIdArray" class="deleteCheck"></td>
 						</tr>
 						<tr>
 							<td>商品名</td>
