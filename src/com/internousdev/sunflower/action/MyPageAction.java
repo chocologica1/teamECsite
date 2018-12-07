@@ -13,7 +13,7 @@ public class MyPageAction extends ActionSupport implements SessionAware {
 	private Map<String, Object> session;
 
 	public String execute(){
-
+        //SessionのloginIdが無い場合home.jspに遷移
 		if(!(session.containsKey("loginId"))){
 		    String result = ERROR;
 		    return result;
@@ -24,7 +24,7 @@ public class MyPageAction extends ActionSupport implements SessionAware {
 
 		userInfoDTO = userInfoDAO.getUserInfo(String.valueOf(session.get("loginId")));
 
-		//userInfoDTOに入ったかで条件分岐
+		//userInfoDTOに入ったかを確認する条件分岐
 		if(userInfoDTO != null){
 			session.put("familyName", userInfoDTO.getFamilyName());
 			session.put("firstName", userInfoDTO.getFirstName());

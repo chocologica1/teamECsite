@@ -17,7 +17,7 @@ public class HomeAction extends ActionSupport implements SessionAware {
 	private String categoryId;
 	private Map<String, Object> session;
 
-	//ログインしてるか、していないか確認
+	//ログインしてるか、していないか確認 ログインしていない場合tempUserIdをputする。
 	public String execute(){
 		if(!(session.containsKey("loginId")) && !(session.containsKey("tempUserId"))){
 			CommonUtility commonUtility = new CommonUtility();
@@ -25,13 +25,13 @@ public class HomeAction extends ActionSupport implements SessionAware {
 		}
 
 		//ログイン中でないことを確認。
-		if(!session.containsKey("loginId")){
-			session.put("loginId", 0);
+		if(!session.containsKey("loginFlg")){
+			session.put("loginFlg", 0);
 		}
 
 		//ログイン中であることを確認。
-		if(session.containsKey("loginId")){
-			session.put("loginId", 1);
+		if(session.containsKey("loginFlg")){
+			session.put("loginFlg", 1);
 		}
 
 
