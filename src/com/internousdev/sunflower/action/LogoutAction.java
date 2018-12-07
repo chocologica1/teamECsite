@@ -29,7 +29,7 @@ public class LogoutAction extends ActionSupport implements SessionAware {
 			//savedLoginIdがtrueだったらログインIDを保持
 			if (savedLoginId) {
 				session.put("savedLoginId", savedLoginId);
-				session.put("loginId", loginId);
+				session.put("keepLoginId", loginId);
 			}
 			result = SUCCESS;
 		}
