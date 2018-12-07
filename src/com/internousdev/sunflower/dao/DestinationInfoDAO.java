@@ -48,4 +48,34 @@ public class DestinationInfoDAO {
 
 		return destinationList;
 	}
+
+	public int insert(String userId, String familyName, String firstName, String familyNameKana, String firstNameKana, String email, String tellNumber, String userAddress){
+		DBConnector db = new DBConnector();
+		Connection con = db.getConnection();
+		int count =0;
+
+		String sql="insert into destination_info(user_id,family_name,first_name,family_name_kana,first_name_kana,email,tell_number,user_address,regist_date,update_date)"
+				+ " value(?,?,?,?,?,?,?,?,now(),now())";
+
+		try{
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setString(1, userId);
+			ps.setString(2, familyName);
+			ps.setString(3, firstName);
+			ps.setString(4, familyNameKana);
+			ps.setString(5, firstNameKana);
+			ps.setString(6, email);
+			ps.setString(7, tellNumber);
+			ps.setString(8, userAddress);
+			count = ps.executeUpdate();
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
+		try{
+			con.close();
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
+		return count;
+	}
 }

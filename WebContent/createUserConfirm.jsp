@@ -12,7 +12,7 @@
 	<div id="header">
 	</div>
 	<div>
-		<div class="pageTitle">登録内容確認画面</div>
+		<h1>登録内容確認画面</h1>
 		<br>
 		<p>以下の内容で登録します</p>
 		<br>

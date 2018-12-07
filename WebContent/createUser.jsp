@@ -13,50 +13,43 @@
 		<div id="pr"></div>
 	</div>
 
-	<div class="main">
+	<div>
 		<h1>ユーザー情報入力画面</h1>
 
 		<!-- エラーメッセージここから -->
 		<div class="errorMessage">
 			<s:if test="!#session.familyNameErrorMessageList.isEmpty()">
 				<s:iterator value="#session.familyNameErrorMessageList">
-					<s:property />
 				</s:iterator>
 				<br>
 			</s:if>
 			<s:if test="!#session.firstNameErrorMessageList.isEmpty()">
 				<s:iterator value="#session.firstNameErrorMessageList">
-					<s:property />
 				</s:iterator>
 				<br>
 			</s:if>
 			<s:if test="!#session.familyNameKanaErrorMessageList.isEmpty()">
 				<s:iterator value="#session.familyNameKanaErrorMessageList">
-					<s:property />
 				</s:iterator>
 				<br>
 			</s:if>
 			<s:if test="!#session.firstNameKanaErrorMessageList.isEmpty()">
 				<s:iterator value="#session.firstNameKanaErrorMessageList">
-					<s:property />
 				</s:iterator>
 				<br>
 			</s:if>
 			<s:if test="!#session.emailErrorMessageList.isEmpty()">
 				<s:iterator value="#session.emailErrorMessageList">
-					<s:property />
 				</s:iterator>
 				<br>
 			</s:if>
 			<s:if test="!#session.loginIdErrorMessageList.isEmpty()">
 				<s:iterator value="#session.loginIdErrorMessageList">
-					<s:property />
 				</s:iterator>
 				<br>
 			</s:if>
 			<s:if test="!#session.passwordErrorMessageList.isEmpty()">
 				<s:iterator value="#session.passwordErrorMessageList">
-					<s:property />
 				</s:iterator>
 				<br>
 			</s:if>
@@ -117,7 +110,7 @@
 		</s:form>
 	</div>
 
-	<div id="header">
+	<div id="footer">
 		<div id="pr"></div>
 	</div>
 </body>
