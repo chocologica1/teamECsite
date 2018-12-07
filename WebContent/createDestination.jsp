@@ -76,7 +76,7 @@
 
 			<tr>
 				<th>住所</th>
-				<td><input type="text" name="userAddress"
+				<td><input type="text" name="userAdress"
 					value="<s:property value='userAdress' />" placeholder="住所" /></td>
 			</tr>
 			<tr>
