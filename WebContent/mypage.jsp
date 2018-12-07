@@ -34,7 +34,7 @@
 
       <tr>
         <th scope = "row"><s:label value = "メールアドレス"/></th>
-        <td><s:property value = "userInfoDTO.familyName"/></td>
+        <td><s:property value = "userInfoDTO.email"/></td>
       </tr>
 
     </table>
