@@ -56,7 +56,7 @@ public class LoginAction extends ActionSupport implements SessionAware{
 	if(loginIdErrorMessageList.size()!=0 && passwordErrorMessageList.size()!=0){
 		session.put("loginIdErrorMessageList", "loginIdErrorMessageList");
 		session.put("passwordErrorMessageList", "passwordErrorMessageList");
-		session.put("loginId",0);
+		session.put("loginFlg",0);
 	}
 
 	if(!session.containsKey("mCategoryList")){
@@ -110,7 +110,7 @@ public class LoginAction extends ActionSupport implements SessionAware{
 				result = SUCCESS;
 			}
 		}
-		//ヘッダーにログイン情報の受け渡す
+		//ログイン情報を受け渡す
 			session.put("loginFlg", 1);
 	}
 	return result;
