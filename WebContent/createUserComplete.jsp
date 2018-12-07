@@ -15,6 +15,6 @@
 		<h1>登録完了画面</h1>
 		<div class="success">ユーザー登録が完了致しました。</div>
 	</div>
-	<div id="footer"></div>
+	<jsp:include page="footer.jsp" />
 
 </body>
