@@ -1,6 +1,5 @@
 package com.internousdev.sunflower.action;
 
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Map;
@@ -31,10 +30,11 @@ public class SettlementConfirmAction extends ActionSupport implements SessionAwa
 		/*ログインしている場合*/
 //		if(session.containsKey("LoginId")){
 		if(true){
-			try{
+//			try{
 				/*DBから宛先情報のリストを取得する*/
+
 //				destinationDTOList = destinationDao.getDestinationInfo(String.valueOf(session.get("loginId")));
-				destinationDTOList = destinationDao.getDestinationInfo(String.valueOf(session.get("loginId")));
+//				destinationDTOList = destinationDao.getDestinationInfo("guest");
 
 				/*宛先情報リストが空の場合*/
 				Iterator<DestinationInfoDTO> iterator = destinationDTOList.iterator();
@@ -43,14 +43,15 @@ public class SettlementConfirmAction extends ActionSupport implements SessionAwa
 					//destinationNullMesssage ="宛先情報がありません。";
 				}
 
-				System.out.println(destinationDTOList.get(0).getId());
+//				System.out.println(destinationDTOList.get(0).getId());
 
 				/*セッションに宛先情報リストを入れる*/
 				session.put("destinationDTOList", destinationDTOList);
 
-			}catch(SQLException e){
-				e.printStackTrace();
-			}
+//			}
+//			catch(SQLException e){
+//				e.printStackTrace();
+//			}
 
 			/*決済確認画面へ遷移するための戻り値*/
 			result = SUCCESS;

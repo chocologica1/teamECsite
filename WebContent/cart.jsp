@@ -6,12 +6,24 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" href="">
 <title>カート画面</title>
+<script src="//code.jquery.com/jquery-1.12.1.min.js"></script>
+<script type="text/javascript">
+	function checkValue(check){
+		var btn = document.getElementById('deleteButton');
+
+		if(("input[type=checkbox]:checked").size() > 0){
+			btn.removeAttribute('disabled');
+		}else{
+			btn.setAttribute('disabled','disabled');
+		}
+	}
+</script>
 </head>
 <body>
 	<jsp:include page="header.jsp"/>
 	<!-- カートに商品が入っている場合 -->
  	<s:if test="cartInfoDTOList.size() > 0">
-		<s:form action="DeleteCartAction">
+		<s:form action="DeleteCartAction" name = "form">
 			<div id="cart">
 				<s:iterator value="cartInfoDTOList">
 					<table class="product">
@@ -21,7 +33,7 @@
 								DeleteCartActionのproductIdMapに「key:商品ID」「value:商品ID」で格納する。
 							-->
 							<td>削除</td>
-							<td><input type="checkbox" value="<s:property value='productId' />" name="productIdMap(<s:property value='productId'/>)"></td>
+							<td><input type="checkbox" value="<s:property value='productId'/>" name="productIdMap(<s:property value='productId'/>)" id="check" onclick="checkValue(this)"></td>
 						</tr>
 						<tr>
 							<td>商品名</td>
@@ -57,7 +69,7 @@
 
 			<!-- 削除ボタン -->
 			<div id="delete">
-				<s:submit value="削除"/>
+				<s:submit value="削除" id="deleteButton" disabled="disabled"/>
 			</div>
 		</s:form>
 
