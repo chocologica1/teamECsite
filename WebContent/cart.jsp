@@ -48,7 +48,7 @@
 						</tr>
 						<tr>
 							<td>商品画像</td>
-							<td><Img src="<s:property value='productImagePath'/>/<s:property value="imageFileName"/>"></td>
+							<td><Img src='<s:property value="productImagePath"/>/<s:property value="imageFileName"/>'></td>
 						</tr>
 						<tr>
 							<td>発売会社名</td>
@@ -64,7 +64,7 @@
 						</tr>
 						<tr>
 							<td>合計金額</td>
-							<td><s:property value="price"/></td>
+							<td><s:property value="subtotal"/></td>
 						</tr>
 					</table>
 				</s:iterator>
