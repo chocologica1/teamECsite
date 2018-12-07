@@ -24,17 +24,6 @@ public class HomeAction extends ActionSupport implements SessionAware {
 			session.put("tempUserId", commonUtility.getRamdomValue());
 		}
 
-		//ログイン中でないことを確認。
-		if(!session.containsKey("loginFlg")){
-			session.put("loginFlg", 0);
-		}
-
-		//ログイン中であることを確認。
-		if(session.containsKey("loginFlg")){
-			session.put("loginFlg", 1);
-		}
-
-
 		if(!session.containsKey("mCategoryDTOList")){
 			MCategoryDAO mCategoryDao = new MCategoryDAO();
 			mCategoryDTOList = mCategoryDao.getMCategoryList();
