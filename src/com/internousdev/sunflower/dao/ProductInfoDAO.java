@@ -36,7 +36,7 @@ public class ProductInfoDAO {
 				productInfoDTO.setProductId(rs.getInt("product_id"));
 				productInfoDTO.setProductName(rs.getString("product_name"));
 				productInfoDTO.setProductNameKana(rs.getString("product_name_kana"));
-				productInfoDTO.setProductDescription(rs.getString("product_description"));
+//				productInfoDTO.setProductDescription(rs.getString("product_description"));
 				productInfoDTO.setCategoryId(rs.getInt("category_id"));
 				productInfoDTO.setPrice(rs.getInt("price"));
 				productInfoDTO.setImageFilePath(rs.getString("image_file_path"));
