@@ -41,8 +41,8 @@
 				</s:iterator>
 				<br>
 			</s:if>
-			<s:if test="!#session.loginIdErrorMessageList.isEmpty()">
-				<s:iterator value="#session.loginIdErrorMessageList"><s:property />
+			<s:if test="!#session.userIdErrorMessageList.isEmpty()">
+				<s:iterator value="#session.userIdErrorMessageList"><s:property />
 				</s:iterator>
 				<br>
 			</s:if>
@@ -94,7 +94,7 @@
 
 				<tr>
 					<th>ユーザID</th>
-					<td><input type="text" name="loginId" value="<s:property value='loginId' />"
+					<td><input type="text" name="userId" value="<s:property value='userId' />"
 							placeholder="ユーザID" class="text" /></td>
 				</tr>
 
