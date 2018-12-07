@@ -27,9 +27,6 @@ public class HomeAction extends ActionSupport implements SessionAware {
 		if(!session.containsKey("mCategoryDTOList")){
 			MCategoryDAO mCategoryDao = new MCategoryDAO();
 			mCategoryDTOList = mCategoryDao.getMCategoryList();
-			for(int i = 0; i<mCategoryDTOList.size(); i++){
-				System.out.println("aa:"+ mCategoryDTOList.get(i).getCategoryId());
-			}
 			session.put("mCategoryDTOList", mCategoryDTOList);
 		}
 
