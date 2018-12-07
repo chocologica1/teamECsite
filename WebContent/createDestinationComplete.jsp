@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="">
+<meta http-equiv="refresh" content="3;<s:url action='SettlementConfirmAction'/>">
 <title>宛先情報入力確認画面</title>
 </head>
 <body>

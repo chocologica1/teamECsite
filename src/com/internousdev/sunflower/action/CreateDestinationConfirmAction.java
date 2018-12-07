@@ -14,7 +14,7 @@ public class CreateDestinationConfirmAction extends ActionSupport implements Ses
 	private String firstName;
 	private String familyNameKana;
 	private String firstNameKana;
-	private String userAdress;
+	private String userAddress;
 	private String telNumber;
 	private String email;
 
@@ -22,7 +22,7 @@ public class CreateDestinationConfirmAction extends ActionSupport implements Ses
 	private List<String> firstNameErrorMessageList = new ArrayList<String>();
 	private List<String> familyNameKanaErrorMessageList = new ArrayList<String>();
 	private List<String> firstNameKanaErrorMessageList = new ArrayList<String>();
-	private List<String> userAdressErrorMessageList = new ArrayList<String>();
+	private List<String> userAddressErrorMessageList = new ArrayList<String>();
 	private List<String> emailErrorMessageList = new ArrayList<String>();
 	private List<String> telNumberErrorMessageList = new ArrayList<String>();
 
@@ -36,7 +36,7 @@ public class CreateDestinationConfirmAction extends ActionSupport implements Ses
 		firstNameErrorMessageList = inputChecker.doCheck("名", firstName, 1, 16, true, true, true, false, false, false, false, false, false);
 		familyNameKanaErrorMessageList = inputChecker.doCheck("姓ふりがな",familyNameKana,1, 16, false, false, true, false, false, false, false, false, false);
 		firstNameKanaErrorMessageList = inputChecker.doCheck("名ふりがな",firstNameKana,1, 16, false, false, true, false, false, false, false, false, false);
-		userAdressErrorMessageList = inputChecker.doCheck("住所", userAdress, 10, 50, true, true, true, true, true, true, false, false, false);
+		userAddressErrorMessageList = inputChecker.doCheck("住所", userAddress, 10, 50, true, true, true, true, true, true, false, false, false);
 		emailErrorMessageList = inputChecker.doCheck("メールアドレス", email, 10, 32, true, false, false, true, true, false, false, false, false);
 		telNumberErrorMessageList = inputChecker.doCheck("電話番号", telNumber, 10, 13, false, false, false, true, false, false, false, false, false);
 
@@ -45,18 +45,28 @@ public class CreateDestinationConfirmAction extends ActionSupport implements Ses
 				&& firstNameErrorMessageList.size()==0
 				&& familyNameKanaErrorMessageList.size()==0
 				&& firstNameKanaErrorMessageList.size()==0
-				&& userAdressErrorMessageList.size()==0
+				&& userAddressErrorMessageList.size()==0
 				&& emailErrorMessageList.size()==0
 				&& telNumberErrorMessageList.size()==0 ){
+
+			session.put("familyName", familyName);
+			session.put("firstName", firstName);
+			session.put("familyNameKana", familyNameKana);
+			session.put("firstNameKana", firstNameKana);
+			session.put("userAddress", userAddress);
+			session.put("telNumber", telNumber);
+			session.put("email", email);
+
+
 			result = SUCCESS;
 		}else{
 			session.put("familyNameErrorMessageList", familyNameErrorMessageList);
 			session.put("firstNameErrorMessageList", firstNameErrorMessageList);
 			session.put("familyNameKanaErrorMessageList", familyNameKanaErrorMessageList);
 			session.put("firstNameKanaErrorMessageList", firstNameKanaErrorMessageList);
-			session.put("userAdressErrorMessageList", userAdressErrorMessageList);
+			session.put("userAddressErrorMessageList", userAddressErrorMessageList);
 			session.put("emailErrorMessageList", emailErrorMessageList);
-			session.put("telNumberMessageList", telNumberErrorMessageList);
+			session.put("telNumberErrorMessageList", telNumberErrorMessageList);
 			result = ERROR;
 		}
 		return result;
@@ -94,12 +104,12 @@ public class CreateDestinationConfirmAction extends ActionSupport implements Ses
 		this.firstNameKana = firstNameKana;
 	}
 
-	public String getUserAdress() {
-		return userAdress;
+	public String getUserAddress() {
+		return userAddress;
 	}
 
-	public void setUserAdress(String userAdress) {
-		this.userAdress = userAdress;
+	public void setUserAddress(String userAddress) {
+		this.userAddress = userAddress;
 	}
 
 	public String getTelNumber() {
@@ -150,12 +160,12 @@ public class CreateDestinationConfirmAction extends ActionSupport implements Ses
 		this.firstNameKanaErrorMessageList = firstNameKanaErrorMessageList;
 	}
 
-	public List<String> getUserAdressErrorMessageList() {
-		return userAdressErrorMessageList;
+	public List<String> getUserAddressErrorMessageList() {
+		return userAddressErrorMessageList;
 	}
 
-	public void setUserAdressErrorMessageList(List<String> userAdressErrorMessageList) {
-		this.userAdressErrorMessageList = userAdressErrorMessageList;
+	public void setUserAddressErrorMessageList(List<String> userAddressErrorMessageList) {
+		this.userAddressErrorMessageList = userAddressErrorMessageList;
 	}
 
 	public List<String> getEmailErrorMessageList() {

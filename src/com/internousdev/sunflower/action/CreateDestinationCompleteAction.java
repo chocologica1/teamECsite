@@ -13,8 +13,8 @@ public class CreateDestinationCompleteAction extends ActionSupport implements Se
 	private String firstName;
 	private String familyNameKana;
 	private String firstNameKana;
-	private String userAdress;
-	private String tellNumber;
+	private String userAddress;
+	private String telNumber;
 	private String email;
 	private String categoryId;
 	private Map<String, Object> session;
@@ -27,11 +27,13 @@ public class CreateDestinationCompleteAction extends ActionSupport implements Se
 		System.out.println(session.get("firstName"));
 		System.out.println(session.get("familyNameKana"));
 		System.out.println(session.get("firstNameKana"));
-		System.out.println(session.get("userAdress"));
-		System.out.println(session.get("tellNumber"));
+		System.out.println(session.get("userAddress"));
+		System.out.println(session.get("telNumber"));
 		System.out.println(session.get("email"));
 
-		int count = destinationInfoDAO.createDestination(session.get("loginId").toString(),session.get("familyName").toString(), session.get("firstName").toString(), session.get("familyNameKana").toString(), session.get("firstNameKana").toString(), session.get("userAdress").toString(), session.get("tellNumber").toString(), session.get("email").toString());
+		/*loginIdに注意*/
+//		int count = destinationInfoDAO.createDestination(session.get("loginId").toString(),session.get("familyName").toString(), session.get("firstName").toString(), session.get("familyNameKana").toString(), session.get("firstNameKana").toString(), session.get("userAddress").toString(), session.get("telNumber").toString(), session.get("email").toString());
+		int count = destinationInfoDAO.createDestination("guestWww",session.get("familyName").toString(), session.get("firstName").toString(), session.get("familyNameKana").toString(), session.get("firstNameKana").toString(), session.get("userAddress").toString(), session.get("telNumber").toString(), session.get("email").toString());
 		if(count >0){
 			result = SUCCESS;
 		}
@@ -70,20 +72,20 @@ public class CreateDestinationCompleteAction extends ActionSupport implements Se
 		this.firstNameKana = firstNameKana;
 	}
 
-	public String getUserAdress() {
-		return userAdress;
+	public String getUseraddress() {
+		return userAddress;
 	}
 
-	public void setUserAdress(String userAdress) {
-		this.userAdress = userAdress;
+	public void setUseraddress(String userAddress) {
+		this.userAddress = userAddress;
 	}
 
-	public String getTellNumber() {
-		return tellNumber;
+	public String gettelNumber() {
+		return telNumber;
 	}
 
-	public void setTellNumber(String tellNumber) {
-		this.tellNumber = tellNumber;
+	public void settelNumber(String telNumber) {
+		this.telNumber = telNumber;
 	}
 
 	public String getEmail() {

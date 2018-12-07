@@ -12,8 +12,8 @@ public class CreateDestinationAction extends ActionSupport implements SessionAwa
 	private String firstName;
 	private String familyNameKana;
 	private String firstNameKana;
-	private String userAdress;
-	private String tellNumber;
+	private String userAddress;
+	private String telnumber;
 	private String email;
 	private Map<String, Object> session;
 
@@ -23,7 +23,7 @@ public class CreateDestinationAction extends ActionSupport implements SessionAwa
 	//セッションに残っているエラーメッセージを取り除いておく
 	session.remove("familyNameErrorMessageList");
 	session.remove("firstNameErrorMessageList");
-	session.remove("famimyNameKanaErrorMessageList");
+	session.remove("familyNameKanaErrorMessageList");
 	session.remove("firstNameKanaErrorMessageList");
 	session.remove("userAddressErrorMessageList");
 	session.remove("emailErrorMessageList");
@@ -66,20 +66,20 @@ public class CreateDestinationAction extends ActionSupport implements SessionAwa
 		this.firstNameKana = firstNameKana;
 	}
 
-	public String getUserAdress() {
-		return userAdress;
+	public String getUserAddress() {
+		return userAddress;
 	}
 
-	public void setUserAdress(String userAdress) {
-		this.userAdress = userAdress;
+	public void setUserAddress(String userAddress) {
+		this.userAddress = userAddress;
 	}
 
-	public String getTellNumber() {
-		return tellNumber;
+	public String gettelnumber() {
+		return telnumber;
 	}
 
-	public void setTellNumber(String tellNumber) {
-		this.tellNumber = tellNumber;
+	public void settelnumber(String telnumber) {
+		this.telnumber = telnumber;
 	}
 
 	public String getEmail() {

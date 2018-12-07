@@ -35,11 +35,11 @@
 				</tr>
 				<tr>
 					<th><s:label value="住所" /></th>
-					<td><s:property value="userAdress" /></td>
+					<td><s:property value="userAddress" /></td>
 				</tr>
 				<tr>
 					<th><s:label value="電話番号" /></th>
-					<td><s:property value="tellNumber" /></td>
+					<td><s:property value="telNumber" /></td>
 				</tr>
 
 				<tr>
