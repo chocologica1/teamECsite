@@ -14,27 +14,27 @@
     <table>
       <tr>
         <th scope = "row"><s:label value = "姓"/></th>
-        <td><s:property value = "#session.familyName"/></td>
+        <td><s:property value = "userInfoDTO.familyName"/></td>
       </tr>
 
       <tr>
         <th scope = "row"><s:label value = "名"/></th>
-        <td><s:property value = "#session.firstName"/></td>
+        <td><s:property value = "userInfoDTO.firstName"/></td>
       </tr>
 
       <tr>
         <th scope = "row"><s:label value = "ふりがな"/></th>
-        <td><s:property value = "#session.familyNameKana"/><s:property value = "#session.firstNameKana"/></td>
+        <td><s:property value = "userInfoDTO.familyNameKana"/><s:property value = "userInfoDTO.firstNameKana"/></td>
       </tr>
 
       <tr>
         <th scope = "row"><s:label value = "性別"/></th>
-        <td><s:if test = "session.sex == 0">男性</s:if><s:if test = "session.sex == 1">女性</s:if></td>
+        <td><s:if test = "userInfoDTO.sex == 0">男性</s:if><s:if test = "userInfoDTO.sex == 1">女性</s:if></td>
       </tr>
 
       <tr>
         <th scope = "row"><s:label value = "メールアドレス"/></th>
-        <td><s:property value = "#session.familyName"/></td>
+        <td><s:property value = "userInfoDTO.familyName"/></td>
       </tr>
 
     </table>
