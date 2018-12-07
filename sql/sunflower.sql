@@ -129,7 +129,7 @@ create table cart_info (
 	id int primary key not null auto_increment comment "ID",
 	user_id varchar(16) not null comment "ユーザーID",
 	temp_user_id varchar(16) comment "仮ユーザーID",
-	product_id int not null unique comment "商品ID",
+	product_id int not null comment "商品ID",
 	product_count int not null comment "個数",
 	price int not null comment "金額",
 	regist_date datetime not null comment "登録日",
@@ -141,7 +141,7 @@ create table cart_info (
 create table purchase_history_info (
 	id int primary key not null auto_increment comment "ID",
 	user_id varchar(16) not null comment "ユーザーID",
-	product_id int not null unique comment "商品ID",
+	product_id int not null comment "商品ID",
 	product_count int not null comment "個数",
 	price int not null comment "金額",
 	destination_id int not null comment "宛先情報ID",
@@ -153,7 +153,7 @@ create table purchase_history_info (
 /*宛先情報テーブルここから*/
 create table destination_info (
 	id int primary key not null auto_increment comment "ID",
-	user_id varchar(16) not null unique comment "ユーザーID",
+	user_id varchar(16) not null comment "ユーザーID",
 	family_name varchar(32) not null comment "姓",
 	first_name varchar(32) not null comment "名",
 	family_name_kana varchar(32) not null comment "姓かな",
