@@ -212,7 +212,7 @@ public class CartInfoDAO {
 	 * @return	指定された商品があるかboolean値で戻します。
 	 */
 	public boolean existsProduct(int productId,String userId,String tempUserId){
-		int result = 0;
+		boolean result = false;
 		Connection con = db.getConnection();
 		String sql = "SELECT * FROM cart_info WHERE product_id = ? AND (user_id = ? OR temp_user_id = ?)";
 		try{
@@ -220,13 +220,14 @@ public class CartInfoDAO {
 			ps.setInt(1, productId);
 			ps.setString(2, userId);
 			ps.setString(3, tempUserId);
-			result = ps.executeUpdate();
+			ResultSet rs = ps.executeQuery();
+			result = rs.next();
 		}catch(SQLException e){
 			e.printStackTrace();
 		}finally{
 			try{con.close();}catch(SQLException e){}
 		}
-		return result > 0;
+		return result;
 	}
 
 	/**

@@ -37,6 +37,12 @@ public class LoginAction extends ActionSupport implements SessionAware{
 
 		String result = ERROR;
 
+		if(loginId == null && password == null){
+			loginId = String.valueOf(session.get("userId"));
+			password = String.valueOf(session.get("password"));
+		}
+
+
 		if(savedLoginId==true){
 			session.put("savedLoginId", true);
 			session.put("loginId", loginId);
@@ -67,10 +73,6 @@ public class LoginAction extends ActionSupport implements SessionAware{
 	UserInfoDAO userInfoDao = new UserInfoDAO();
 
 
-	if(loginId.isEmpty() && password.isEmpty()){
-		loginId = String.valueOf(session.get("userId"));
-		password = String.valueOf(session.get("password"));
-	}
 
 	//入力したID,パスワードが登録されているか確認
 	if(userInfoDao.isExistsUserInfo(loginId, password)){
