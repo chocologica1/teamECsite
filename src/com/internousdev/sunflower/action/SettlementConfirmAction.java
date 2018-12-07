@@ -28,13 +28,13 @@ public class SettlementConfirmAction extends ActionSupport implements SessionAwa
 		/*宛先情報を格納する変数リスト*/
 
 		/*ログインしている場合*/
-//		if(session.containsKey("LoginId")){ //デバック時にコメントアウト
-		if(true){ //デバック用
+		if(session.containsKey("LoginId")){ //デバック時にコメントアウト
+//		if(true){ //デバック用
 			try{
 				/*DBから宛先情報のリストを取得する*/
 
-//				destinationDTOList = destinationDao.getDestinationInfo(String.valueOf(session.get("loginId"))); //デバック時にコメントアウト
-				destinationDTOList = destinationDao.getDestinationInfo("guest");//デバック用
+				destinationDTOList = destinationDao.getDestinationInfo(String.valueOf(session.get("loginId"))); //デバック時にコメントアウト
+//				destinationDTOList = destinationDao.getDestinationInfo("guest");//デバック用
 
 				/*宛先情報リストが空の場合*/
 				Iterator<DestinationInfoDTO> iterator = destinationDTOList.iterator();
