@@ -27,24 +27,22 @@ public class SettlementConfirmAction extends ActionSupport implements SessionAwa
 		/*宛先情報取得用DAO*/
 		DestinationInfoDAO destinationDao = new DestinationInfoDAO();
 		/*宛先情報を格納する変数リスト*/
-//
+
 		/*ログインしている場合*/
 //		if(session.containsKey("LoginId")){
-		if(true){
+		if(true){ //デバック用
 			try{
 				/*DBから宛先情報のリストを取得する*/
 
 //				destinationDTOList = destinationDao.getDestinationInfo(String.valueOf(session.get("loginId")));
-				destinationDTOList = destinationDao.getDestinationInfo("guest");
+				destinationDTOList = destinationDao.getDestinationInfo("guest");//デバック用
 
 				/*宛先情報リストが空の場合*/
 				Iterator<DestinationInfoDTO> iterator = destinationDTOList.iterator();
 				if(!(iterator.hasNext())){
 					destinationDTOList = null;
-					//destinationNullMesssage ="宛先情報がありません。";
-				}
 
-//				System.out.println(destinationDTOList.get(0).getId());
+				}
 
 				/*セッションに宛先情報リストを入れる*/
 				session.put("destinationDTOList", destinationDTOList);

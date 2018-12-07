@@ -23,9 +23,6 @@ public class DestinationInfoDAO {
 			PreparedStatement ps = con.prepareStatement(sql);
 			ps.setString(1, loginId);
 			ResultSet rs = ps.executeQuery();
-
-			System.out.println("sql:" + sql);
-
 			while(rs.next()){
 				DestinationInfoDTO dto = new DestinationInfoDTO();
 				dto.setId(rs.getInt("id"));
