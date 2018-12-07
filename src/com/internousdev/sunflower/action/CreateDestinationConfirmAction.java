@@ -57,6 +57,7 @@ public class CreateDestinationConfirmAction extends ActionSupport implements Ses
 			session.put("telNumber", telNumber);
 			session.put("email", email);
 
+			session.put("savedDestinationInfo",true);
 
 			result = SUCCESS;
 		}else{
