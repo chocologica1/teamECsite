@@ -43,7 +43,7 @@
 					</tr>
 					<tr>
 						<th><s:label value="ユーザID" /></th>
-						<td><s:property value="loginId" /></td>
+						<td><s:property value="userId" /></td>
 					</tr>
 					<tr>
 						<th><s:label value="パスワード" /></th>
