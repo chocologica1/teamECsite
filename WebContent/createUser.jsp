@@ -17,37 +17,37 @@
 		<!-- エラーメッセージここから -->
 		<div class="errorMessage">
 			<s:if test="!#session.familyNameErrorMessageList.isEmpty()">
-				<s:iterator value="#session.familyNameErrorMessageList">
+				<s:iterator value="#session.familyNameErrorMessageList"><s:property/>
 				</s:iterator>
 				<br>
 			</s:if>
 			<s:if test="!#session.firstNameErrorMessageList.isEmpty()">
-				<s:iterator value="#session.firstNameErrorMessageList">
+				<s:iterator value="#session.firstNameErrorMessageList"><s:property />
 				</s:iterator>
 				<br>
 			</s:if>
 			<s:if test="!#session.familyNameKanaErrorMessageList.isEmpty()">
-				<s:iterator value="#session.familyNameKanaErrorMessageList">
+				<s:iterator value="#session.familyNameKanaErrorMessageList"><s:property />
 				</s:iterator>
 				<br>
 			</s:if>
 			<s:if test="!#session.firstNameKanaErrorMessageList.isEmpty()">
-				<s:iterator value="#session.firstNameKanaErrorMessageList">
+				<s:iterator value="#session.firstNameKanaErrorMessageList"><s:property />
 				</s:iterator>
 				<br>
 			</s:if>
 			<s:if test="!#session.emailErrorMessageList.isEmpty()">
-				<s:iterator value="#session.emailErrorMessageList">
+				<s:iterator value="#session.emailErrorMessageList"><s:property />
 				</s:iterator>
 				<br>
 			</s:if>
 			<s:if test="!#session.loginIdErrorMessageList.isEmpty()">
-				<s:iterator value="#session.loginIdErrorMessageList">
+				<s:iterator value="#session.loginIdErrorMessageList"><s:property />
 				</s:iterator>
 				<br>
 			</s:if>
 			<s:if test="!#session.passwordErrorMessageList.isEmpty()">
-				<s:iterator value="#session.passwordErrorMessageList">
+				<s:iterator value="#session.passwordErrorMessageList"><s:property />
 				</s:iterator>
 				<br>
 			</s:if>
