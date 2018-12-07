@@ -13,6 +13,7 @@ public class DeletePurchaseHistoryAction extends ActionSupport implements Sessio
 	public Map<String,Object> session;
 	private PurchaseHistoryInfoDAO purchaseHistoryInfoDAO = new PurchaseHistoryInfoDAO();
 	private ArrayList<PurchaseHistoryInfoDTO> purchaseHistoryInfoDTOList = new ArrayList<PurchaseHistoryInfoDTO>();
+	private String message;
 
 	public String execute() {
 		String result = ERROR;
@@ -23,7 +24,8 @@ public class DeletePurchaseHistoryAction extends ActionSupport implements Sessio
 		// 更新できた場合
 		if(count > 0) {
 			result = SUCCESS;
-			purchaseHistoryInfoDTOList = null;  // 商品購入履歴一覧を"null"にする
+			purchaseHistoryInfoDTOList = purchaseHistoryInfoDAO.getPurchaseHistoryInfo(session.get("loginId").toString());  // 消去後の商品購入履歴一覧を取得する
+			setMessage("商品購入履歴情報はありません。");
 		}
 
 		return result;
@@ -52,6 +54,13 @@ public class DeletePurchaseHistoryAction extends ActionSupport implements Sessio
 	}
 	public void setPurchaseHistoryInfoDTOList(ArrayList<PurchaseHistoryInfoDTO> purchaseHistoryInfoDTOList) {
 		this.purchaseHistoryInfoDTOList = purchaseHistoryInfoDTOList;
+	}
+
+	public String getMessage() {
+		return message;
+	}
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 

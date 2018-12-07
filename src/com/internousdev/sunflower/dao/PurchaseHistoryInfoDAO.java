@@ -19,19 +19,24 @@ public class PurchaseHistoryInfoDAO {
 		Connection con = db.getConnection();
 		ArrayList<PurchaseHistoryInfoDTO> purchaseHistoryInfoDTOList = new ArrayList<PurchaseHistoryInfoDTO>();
 
-		String sql="SELECT pi.product_name, pi.product_name_kana, pi.image_file_path, pi.image_file_name, phi.price, phi.product_count"
-				+ "FROM product_info pi"
-				+ "LEFT JOIN purchase_history_info phi"
-				+ "ON pi.product_id = phi.product_id"
-				+ "WHERE phi.user_id = ?"
-				+ "ORDER BY regist_date"
-				+ "DESC";
+		String sql="SELECT"
+				+ " pi.product_name as product_name,"			// 商品名
+				+ " pi.product_name_kana as product_name_kana,"	// ふりがな
+				+ " pi.image_file_path as image_file_path,"		// 画像ファイルパス
+				+ " pi.image_file_name as image_file_name,"		// 画像ファイル名
+				+ " phi.price as price,"						// 単品価格
+				+ " phi.product_count as product_count"			// 個数
+				+ " FROM purchase_history_info as phi"
+				+ " LEFT JOIN product_info as pi"
+				+ " ON phi.product_id = pi.product_id"
+				+ " WHERE phi.user_id = ?"
+				+ " ORDER BY phi.regist_date DESC";
 		try{
 			PreparedStatement ps = con.prepareStatement(sql);
 			ps.setString(1,loginId);
 			ResultSet rs = ps.executeQuery();
 
-			if(rs.next()) {
+			while(rs.next()) {
 				PurchaseHistoryInfoDTO purchaseHistoryInfoDTO = new PurchaseHistoryInfoDTO();
 				purchaseHistoryInfoDTO.setProductName(rs.getString("product_name"));
 				purchaseHistoryInfoDTO.setProductNameKana(rs.getString("product_name_kana"));

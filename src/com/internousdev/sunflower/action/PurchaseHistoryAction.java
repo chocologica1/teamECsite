@@ -16,23 +16,16 @@ public class PurchaseHistoryAction extends ActionSupport implements SessionAware
 	private String message;
 
 	public String execute() {
-		String result = ERROR;
 
-		if(session.containsKey("id")) {
-			result = SUCCESS;
+		if(session.containsKey("loginId")) {
 
 			// DBから商品購入履歴一覧を取得してリストに情報を格納する
-			String loginId = session.get("loginId").toString();
-			purchaseHistoryInfoDTOList = purchaseHistoryInfoDAO.getPurchaseHistoryInfo(loginId);
-
-
-		} else {
-			result = ERROR;
-			setMessage("商品購入履歴情報はありません。");
+			purchaseHistoryInfoDTOList = purchaseHistoryInfoDAO.getPurchaseHistoryInfo(session.get("loginId").toString());
 		}
 
+		setMessage("商品購入履歴情報はありません。");
 
-		return result;
+		return SUCCESS;
 	}
 
 

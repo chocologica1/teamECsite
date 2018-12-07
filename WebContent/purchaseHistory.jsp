@@ -23,7 +23,7 @@
 
 <!-- 購入履歴がある場合  -->
 
-<s:elseif test="purchaseHistoryInfoDTOList.size() > 0">
+<s:elseif test="purchaseHistoryInfoDTOList.size() != 0">
 	<table>
 		<tr>
 			<th>商品名</th>
