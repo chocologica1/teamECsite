@@ -58,7 +58,6 @@ public class ResetPasswordConfirmAction extends ActionSupport implements Session
 				String hiddenPassword = userInfoDAO.hiddenPassword(newPassword);
 				session.put("userId", userId);				  	  //セッション「ユーザID」
 				session.put("savedUserId", true);			      //セッション「保存ユーザID(戻る用)」
-				session.put("password", password);				  //セッション「現在のパスワード」
 				session.put("newPassword", newPassword);          //セッション「新しいパスワード」
 				session.put("hiddenPassword", hiddenPassword);    //セッション「*で表示されるパスワード」
 				result = SUCCESS;
