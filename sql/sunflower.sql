@@ -77,9 +77,9 @@ create table product_info (
 ) default charset=utf8 comment="商品情報テーブル";
 /*画像後から修正します*/
 insert into product_info values
-	(1,1,"ソファ","そふぁ","リビングルーム詳細1",2,50000,"./images/product","noimage.jpg",now(),"会社1",0,now(),now()),
-	(2,2,"クッション","くっしょん","リビングルーム詳細2",2,3000,"./images/product","noimage.jpg",now(),"会社2",0,now(),now()),
-	(3,3,"カーテン","かーてん","リビングルーム詳細3",2,5000,"./images/product","noimage.jpg",now(),"会社3",0,now(),now()),
+	(1,1,"ソファ","そふぁ","リビングルーム詳細1",2,50000,"./images/product","living1.jpg",now(),"会社1",0,now(),now()),
+	(2,2,"クッション","くっしょん","リビングルーム詳細2",2,3000,"./images/product","living2.jpg",now(),"会社2",0,now(),now()),
+	(3,3,"カーテン","かーてん","リビングルーム詳細3",2,5000,"./images/product","living3.jpg",now(),"会社3",0,now(),now()),
 	(4,4,"ローテーブル","ろーてーぶる","リビングルーム詳細4",2,15000,"./images/product","noimage.jpg",now(),"会社4",0,now(),now()),
 	(5,5,"ダイニングテーブル","だいにんぐてーぶる","リビングルーム詳細5",2,20000,"./images/product","noimage.jpg",now(),"会社5",0,now(),now()),
 	(6,6,"ダイニングチェア","だいにんぐちぇあ","リビングルーム詳細6",2,7000,"./images/product","noimage.jpg",now(),"会社6",0,now(),now()),
