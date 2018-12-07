@@ -33,24 +33,26 @@ public class DeleteCartAction extends ActionSupport implements SessionAware{
 
 	public String execute(){
 		List<Integer> resultList = new ArrayList<>();
-		boolean existError = false;
+		String result = ERROR;
 
 		//deleteメソッドを全削除対象商品IDを引数に指定して呼び出し、戻り値をresultListに格納
 		for(Integer productId : productIdMap.keySet()){
 			resultList.add(cartInfoDAO.delete(productId,String.valueOf(session.get("loginId")),String.valueOf(session.get("tempUserId"))));
 		}
 
-		//resultListに0(削除失敗)があるかどうかを判定、existErrorにboolean値を格納
-		for(Integer i:resultList){
-			existError = i <= 0 ? true : existError;
+		//resultListに0(削除失敗)があるかどうかを判定
+		if(resultList.size() > 0){
+			result = SUCCESS;
+			for(Integer i:resultList){
+				result = i > 0 ? result : ERROR;
+			}
 		}
 
 		//cartInfoDTOList及び合計金額の読み込み
 		cartInfoDTOList = cartInfoDAO.getCartInfoDTOList(String.valueOf(session.get("loginId")), String.valueOf(session.get("tempUserId")));
 		totalPrice = cartInfoDAO.getTotalPrice(String.valueOf(session.get("loginId")),String.valueOf(session.get("tempUserId")));
 
-		//existErrorがtrueの場合SUCCESS、falseの場合ERRORを戻す
-		return existError ? SUCCESS : ERROR;
+		return result;
 	}
 
 	//以下getter及びsetter
