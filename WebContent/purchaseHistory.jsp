@@ -8,6 +8,7 @@
 <title>商品購入履歴一覧</title>
 </head>
 <body>
+<jsp:include page="header.jsp"/>
 
 <h1>商品購入履歴一覧画面</h1>
 
@@ -50,6 +51,6 @@
 </s:elseif>
 
 
-
+<jsp:include page="footer.jsp"/>
 </body>
 </html>

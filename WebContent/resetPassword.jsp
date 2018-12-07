@@ -9,6 +9,7 @@
 <title>パスワード再設定</title>
 </head>
 <body>
+<jsp:include page="header.jsp"/>
 
 <h1>パスワード再設定画面</h1>
 
@@ -87,6 +88,6 @@
 
 <!--    ここまで     -->
 
-
+<jsp:include page="footer.jsp"/>
 </body>
 </html>
