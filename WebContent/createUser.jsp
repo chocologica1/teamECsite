@@ -52,7 +52,7 @@
 				<br>
 			</s:if>
 		</div>
-		<!-- エラーメッセージここまで -->
+		<!-- ここまで -->
 
 		<s:form action="CreateUserConfirmAction">
 			<table>
@@ -71,7 +71,7 @@
 				<tr class="textBox">
 					<th class="txtTitle">姓ふりがな</th>
 					<td><input type="text" name="familyNameKana"
-							value="<s:property value='familyNameKana' />" placeholder="姓ふりがね"
+							value="<s:property value='familyNameKana' />" placeholder="姓ふりがな"
 							class="text" /></td>
 				</tr>
 				<tr class="textBox">
@@ -82,7 +82,7 @@
 				</tr>
 				<tr>
 					<th>性別</th>
-						<td><input type="radio" id="0" name="sex" value="0" />男性</td>
+						<td><input type="radio" id="0" name="sex" value="0" checked />男性</td>
 						<td><input type="radio" id="1" name="sex" value="1" />女性</td>
 				</tr>
 
