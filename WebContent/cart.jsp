@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="">
 <title>カート画面</title>
 <script src="//code.jquery.com/jquery-1.12.1.min.js"></script>
+
 <script type="text/javascript">
 	function checkValue(check){
 		var btn = document.getElementById('deleteButton');
@@ -69,7 +70,7 @@
 
 			<!-- 削除ボタン -->
 			<div id="delete">
-				<s:submit value="削除" id="deleteButton" disabled="disabled"/>
+				<input type="submit" value="削除" id="deleteButton"/>
 			</div>
 		</s:form>
 

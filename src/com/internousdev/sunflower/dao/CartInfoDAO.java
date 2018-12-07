@@ -74,6 +74,7 @@ public class CartInfoDAO {
 				cartInfoDTOList.add(dto);
 			}
 		}catch(SQLException e){
+			System.out.println("get");
 			e.printStackTrace();
 		}finally{
 			try{con.close();}catch(SQLException e){}
@@ -120,25 +121,42 @@ public class CartInfoDAO {
 
 	public int regist(int productId, int productCount, String userId, String tempUserId) {
 		int result = 0;
+		int price = 0;
 		if(existsProduct(productId,userId,tempUserId)){
 			result = addCount(productId,productCount,userId,tempUserId);
 		}else{
 			//userIdがnullの場合tempUserIdを代入(user_idカラムがnot null指定のため)
 			userId = userId == null ? tempUserId : userId;
 			Connection con = db.getConnection();
-			String sql = "INSERT INTO cart_info(product_id,product_count,user_id,temp_user_id,regist_date,update_date) VALUES(?,?,?,?,now(),now())";
+			String sql = "INSERT INTO cart_info(product_id,product_count,user_id,temp_user_id,price,regist_date,update_date) VALUES(?,?,?,?,?,now(),now())";
+			price = getPrice(productId);
 			try{
 				PreparedStatement ps = con.prepareStatement(sql);
 				ps.setInt(1, productId);
 				ps.setInt(2, productCount);
 				ps.setString(3, userId);
 				ps.setString(4, tempUserId);
+				ps.setInt(5, price);
 				result = ps.executeUpdate();
 			}catch(SQLException e){
 				e.printStackTrace();
 			}finally{
 				try{con.close();}catch(SQLException e){}
 			}
+		}
+		return result;
+	}
+
+	public int getPrice(int productId){
+		int result = 0;
+		String sql = "SELECT price FROM product_info WHERE product_id = ?";
+		try(Connection con = db.getConnection()){
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setInt(1, productId);
+			ResultSet rs = ps.executeQuery();
+			if(rs.next()) result = rs.getInt("price");
+		}catch(SQLException e){
+			e.printStackTrace();
 		}
 		return result;
 	}
