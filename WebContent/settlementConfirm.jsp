@@ -44,7 +44,7 @@
 								<!-- 選択用ラジオボタン -->
 								<td>
 									<!-- 1行目の場合 -->
-									<s:if test="st.index==0">
+									<s:if test="#st.index==0">
 										<!-- （宛先情報テーブルのIDカラムを保持） -->
 										<input type="radio" name="radioId" checked="checked" value="<s:property value="id"/>"/>
 									</s:if>

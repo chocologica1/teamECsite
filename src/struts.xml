@@ -96,24 +96,24 @@
 	</action>
 
 	<!-- 宛先情報登録機能 -->
-<!-- 	<action name="CreateDestinationAction" class="com.internousdev.sunflower.action.CreateDestinationAction" method="execute"> -->
-<!-- 		<result name="success">createDestination.jsp</result> -->
-<!-- 		<result name="error">home.jsp</result> -->
-<!-- 	</action> -->
+	<action name="CreateDestinationAction" class="com.internousdev.sunflower.action.CreateDestinationAction" method="execute">
+		<result name="success">createDestination.jsp</result>
+		<result name="error">home.jsp</result>
+	</action>
 
-<!-- 	<action name="CreateDestinationConfirmAction" class="com.internousdev.sunflower.action.CreateDestinationConfirmAction" method="execute"> -->
-<!-- 		<result name="success">createDestinationConfirm.jsp</result> -->
-<!-- 		<result name="error">createDestination.jsp</result> -->
-<!-- 	</action> -->
+	<action name="CreateDestinationConfirmAction" class="com.internousdev.sunflower.action.CreateDestinationConfirmAction" method="execute">
+		<result name="success">createDestinationConfirm.jsp</result>
+		<result name="error">createDestination.jsp</result>
+	</action>
 
-<!-- 	<action name="CreateDestinationCompleteAction" class="com.internousdev.sunflower.action.CreateDestinationCompleteAction" method="execute"> -->
-<!-- 		<result name="success">createDestinationComplete.jsp</result> -->
-<!-- 		<result name="error">createDestination.jsp</result> -->
-<!-- 	</action> -->
+	<action name="CreateDestinationCompleteAction" class="com.internousdev.sunflower.action.CreateDestinationCompleteAction" method="execute">
+		<result name="success">createDestinationComplete.jsp</result>
+		<result name="error">createDestination.jsp</result>
+	</action>
 
 	<!-- 決済完了機能 -->
    <action name="SettlementCompleteAction" class="com.internousdev.sunflower.action.SettlementCompleteAction" method="execute">
-		<result name="success">index.jsp</result>
+		<result name="success">settlementComplete.jsp</result>
 	</action>
 
 	<!-- マイページ機能 -->
