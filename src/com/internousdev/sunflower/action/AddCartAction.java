@@ -1,10 +1,12 @@
 package com.internousdev.sunflower.action;
 
+import java.util.List;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
 import com.internousdev.sunflower.dao.CartInfoDAO;
+import com.internousdev.sunflower.dto.CartInfoDTO;
 import com.internousdev.sunflower.util.CommonUtility;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -12,6 +14,8 @@ public class AddCartAction extends ActionSupport implements SessionAware{
 	private Map<String,Object> session;
 	private CommonUtility commonUtility = new CommonUtility();
 	private CartInfoDAO cartInfoDAO = new CartInfoDAO();
+	private List<CartInfoDTO> cartInfoDTOList;
+	private int totalPrice;
 
 	/**
 	 * productDetails.jsp（商品詳細画面）から受け取るパラメータ
@@ -40,6 +44,10 @@ public class AddCartAction extends ActionSupport implements SessionAware{
 		 */
 		result = cartInfoDAO.regist(productId,productCount,String.valueOf(session.get("loginId")),String.valueOf(session.get("tempUserId")));
 
+		//カート情報の取得
+		cartInfoDTOList = cartInfoDAO.getCartInfoDTOList(String.valueOf(session.get("loginId")), String.valueOf(session.get("tempUserId")));
+		totalPrice = cartInfoDAO.getTotalPrice(String.valueOf(session.get("loginId")), String.valueOf(session.get("tempUserId")));
+
 		//resultが1以上であればSUCCESS、0以下であればERRORを戻す。
 		return result > 0 ? SUCCESS : ERROR;
 	}
@@ -52,6 +60,14 @@ public class AddCartAction extends ActionSupport implements SessionAware{
 
 	public void setProductCount(int productCount){
 		this.productCount = productCount;
+	}
+
+	public int getTotalPrice(){
+		return totalPrice;
+	}
+
+	public List<CartInfoDTO> getCartInfoDTOList(){
+		return cartInfoDTOList;
 	}
 
 	public Map<String,Object> getSession(){

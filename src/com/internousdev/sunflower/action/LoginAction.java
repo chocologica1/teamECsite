@@ -22,7 +22,6 @@ public class LoginAction extends ActionSupport implements SessionAware{
 	private boolean savedLoginId;
 	private String loginId;
 	private String password;
-	private int cartFlg;
 
 	private List<MCategoryDTO>mCategoryDTOList = new ArrayList<MCategoryDTO>();
 
@@ -90,8 +89,9 @@ public class LoginAction extends ActionSupport implements SessionAware{
 			 * 宛先情報を取得し
 			 * 決済画面に遷移
 			 */
-			cartFlg = cartInfoDao.linkToLoginId(String.valueOf(session.get("tempUserId")),loginId);
-			if(cartFlg > 0) {
+
+			cartInfoDao.linkToLoginId(String.valueOf(session.get("tempUserId")),loginId);
+			if((Integer)session.get("cartFlg") > 0) {
 				DestinationInfoDAO destinationInfoDao = new DestinationInfoDAO();
 				try {
 					List<DestinationInfoDTO> destinationInfoDTOList = new ArrayList<DestinationInfoDTO>();

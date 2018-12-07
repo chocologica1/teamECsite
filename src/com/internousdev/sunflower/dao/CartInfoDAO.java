@@ -83,7 +83,6 @@ public class CartInfoDAO {
 	}
 
 	/**
-	 * 未実装です。
 	 * カート内の商品一品目を削除します。
 	 *
 	 * @param productId	削除対象の商品ID
@@ -146,6 +145,12 @@ public class CartInfoDAO {
 		}
 		return result;
 	}
+
+	/**
+	 * 商品の価格を取得します
+	 * @param productId	商品ID
+	 * @return	商品価格
+	 */
 
 	public int getPrice(int productId){
 		int result = 0;

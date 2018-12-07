@@ -63,7 +63,7 @@
 						</tr>
 						<tr>
 							<td>合計金額</td>
-							<td><s:property value="productCount"/></td>
+							<td><s:property value="price"/></td>
 						</tr>
 					</table>
 				</s:iterator>
