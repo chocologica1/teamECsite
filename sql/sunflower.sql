@@ -113,15 +113,15 @@ insert into product_info values
 	(34,34,"掛け布団カバー","かけふとんかばー","ベッドルーム詳細7",5,3000,"./images/product","bedroom7.jpg",now(),"会社34",0,now(),now()),
 	(35,35,"枕","まくら","ベッドルーム詳細8",5,3000,"./images/product","bedroom8.jpg",now(),"会社35",0,now(),now()),
 	(36,36,"枕カバー","まくらかばー","ベッドルーム詳細9",5,1000,"./images/product","bedroom9.jpg",now(),"会社36",0,now(),now()),
-	(37,37,"シャワーカーテン","しゃわーかーてん","バスルーム詳細1",6,800,"./images/product","noimage.jpg",now(),"会社37",0,now(),now()),
-	(38,38,"洗面器","せんめんき","バスルーム詳細2",6,800,"./images/product","noimage.jpg",now(),"会社38",0,now(),now()),
-	(39,39,"風呂イス","ふろいす","バスルーム詳細3",6,2000,"./images/product","noimage.jpg",now(),"会社39",0,now(),now()),
-	(40,40,"手桶","ておけ","バスルーム詳細4",6,600,"./images/product","noimage.jpg",now(),"会社40",0,now(),now()),
-	(41,41,"ソープディスペンサー","そーぷでぃすぺんさー","バスルーム詳細5",6,800,"./images/product","noimage.jpg",now(),"会社41",0,now(),now()),
-	(42,42,"ボトルラック","ぼとるらっく","バスルーム詳細6",6,1200,"./images/product","noimage.jpg",now(),"会社42",0,now(),now()),
-	(43,43,"バスボール","ばすぼーる","バスルーム詳細7",6,150,"./images/product","noimage.jpg",now(),"会社43",0,now(),now()),
-	(44,44,"ソープディッシュ","そーぷでぃっしゅ","バスルーム詳細8",6,400,"./images/product","noimage.jpg",now(),"会社44",0,now(),now()),
-	(45,45,"バスマット","ばすまっと","バスルーム詳細9",6,1000,"./images/product","noimage.jpg",now(),"会社45",0,now(),now());
+	(37,37,"シャワーカーテン","しゃわーかーてん","バスルーム詳細1",6,800,"./images/product","bathroom1.jpg",now(),"会社37",0,now(),now()),
+	(38,38,"洗面器","せんめんき","バスルーム詳細2",6,800,"./images/product","bathroom2.jpg",now(),"会社38",0,now(),now()),
+	(39,39,"風呂イス","ふろいす","バスルーム詳細3",6,2000,"./images/product","bathroom3.jpg",now(),"会社39",0,now(),now()),
+	(40,40,"手桶","ておけ","バスルーム詳細4",6,600,"./images/product","bathroom4.jpg",now(),"会社40",0,now(),now()),
+	(41,41,"ソープディスペンサー","そーぷでぃすぺんさー","バスルーム詳細5",6,800,"./images/product","bathroom5.jpg",now(),"会社41",0,now(),now()),
+	(42,42,"ボトルラック","ぼとるらっく","バスルーム詳細6",6,1200,"./images/product","bathroom6.jpg",now(),"会社42",0,now(),now()),
+	(43,43,"バスボール","ばすぼーる","バスルーム詳細7",6,150,"./images/product","bathroom7.jpg",now(),"会社43",0,now(),now()),
+	(44,44,"ソープディッシュ","そーぷでぃっしゅ","バスルーム詳細8",6,400,"./images/product","bathroom8.jpg",now(),"会社44",0,now(),now()),
+	(45,45,"バスマット","ばすまっと","バスルーム詳細9",6,1000,"./images/product","bathroom9.jpg",now(),"会社45",0,now(),now());
 /*商品情報テーブルここまで*/
 
 
