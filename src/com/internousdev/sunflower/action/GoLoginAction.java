@@ -15,6 +15,11 @@ public class GoLoginAction extends ActionSupport implements SessionAware{
 	private List<MCategoryDTO> mCategoryDTOList = new ArrayList<MCategoryDTO>();
 	private Map<String, Object> session;
 	public String execute() {
+
+		if(session == null || session.isEmpty()){
+			return "timeOut";
+		}
+
 		if(!session.containsKey("mCategoryList")) {
 			MCategoryDAO mCategoryDao = new MCategoryDAO();
 			mCategoryDTOList = mCategoryDao.getMCategoryList();
