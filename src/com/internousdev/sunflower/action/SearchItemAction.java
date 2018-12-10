@@ -26,6 +26,11 @@ public class SearchItemAction extends ActionSupport implements SessionAware {
 
 	public String execute(){
 
+		//セッションタイムアウト
+		if(session == null || session.isEmpty()){
+			return "timeOut";
+		}
+
 		String result = ERROR;
 		//再度検索（エラーなし）した時にkeywordsErrorMessageListを削除するため
 		session.remove("keywordsErrorMessageList");

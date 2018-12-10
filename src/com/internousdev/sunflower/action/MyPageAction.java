@@ -14,6 +14,12 @@ public class MyPageAction extends ActionSupport implements SessionAware {
 	private UserInfoDTO userInfoDTO = new UserInfoDTO();
 
 	public String execute(){
+
+		//セッションタイムアウト
+		if(session == null || session.isEmpty()){
+			return "timeOut";
+		}
+
         //SessionloginIdが無い場合home.jspに遷移
 		if(!(session.containsKey("loginId"))){
 		    String result = ERROR;
