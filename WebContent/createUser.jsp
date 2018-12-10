@@ -120,7 +120,7 @@
 				</tr>
 				<tr>
 					<th>性別</th>
-					<s:if test="#session.sex == 1">>
+					<s:if test="#session.sex == 1">
 					<td><input type="radio" id="0" name="sex" value="0" />男性</td>
 					<td><input type="radio" id="1" name="sex" value="1" checked/>女性</td>
 					</s:if>
