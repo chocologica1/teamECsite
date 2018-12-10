@@ -29,11 +29,9 @@ public class SettlementConfirmAction extends ActionSupport implements SessionAwa
 
 		/*ログインしている場合*/
 		if((session.containsKey("loginFlg"))){
-//		if(true){ //デバック用
 			try{
 				/*DBから宛先情報のリストを取得する*/
 				destinationInfoDTOList = destinationDao.getDestinationInfo(String.valueOf(session.get("loginId"))); //デバック時にコメントアウト
-//				destinationInfoDTOList = destinationDao.getDestinationInfo("guest");//デバック用
 
 				/*宛先情報リストが空の場合*/
 				Iterator<DestinationInfoDTO> iterator = destinationInfoDTOList.iterator();
