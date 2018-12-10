@@ -14,6 +14,7 @@ public class LogoutAction extends ActionSupport implements SessionAware {
 	//メソッド
 	public String execute() {
 
+		//セッションタイムアウト
 		if(session == null || session.isEmpty()){
 			return "timeOut";
 		}
