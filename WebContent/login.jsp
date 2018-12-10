@@ -30,6 +30,7 @@ function goResetPasswordAction(){
 		<s:if test="!#session.loginIdErrorMessageList.isEmpry()">
 			<div class="error">
 				<div class="errormessage">
+				test
 					<s:iterator value="#session.loginIdErrorMessageList"></s:iterator>
 				</div>
 			</div>
@@ -37,6 +38,7 @@ function goResetPasswordAction(){
 		<s:if test="!#session.passwordErrorMessageList.isEmpty()">
 			<div class="error">
 				<div class="error-message">
+				test
 					<s:iterator value="#session.passwordErrorMessageList"></s:iterator>
 				</div>
 			</div>

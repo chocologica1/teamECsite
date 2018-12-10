@@ -61,8 +61,8 @@ public class LoginAction extends ActionSupport implements SessionAware{
 
 	//入力できない文字が入力ときのメッセージ
 	if(loginIdErrorMessageList.size()!=0 && passwordErrorMessageList.size()!=0){
-		session.put("loginIdErrorMessageList", "loginIdErrorMessageList");
-		session.put("passwordErrorMessageList", "passwordErrorMessageList");
+		session.put("loginIdErrorMessageList", loginIdErrorMessageList);
+		session.put("passwordErrorMessageList", passwordErrorMessageList);
 		session.put("loginFlg",false);
 	}
 
