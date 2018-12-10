@@ -18,6 +18,10 @@ public class CreateDestinationAction extends ActionSupport implements SessionAwa
 	private Map<String, Object> session;
 
 	public String execute(){
+		//セッションタイムアウト
+		if(session == null || session.isEmpty()){
+			return "timeOut";
+		}
 	String result = ERROR;
 
 	//セッションに残っているエラーメッセージを取り除いておく

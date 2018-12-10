@@ -21,6 +21,10 @@ public class CreateUserCompleteAction extends ActionSupport implements SessionAw
 	private Map<String ,Object> session;
 
 	public String execute(){
+		//セッションタイムアウト
+		if(session == null || session.isEmpty()){
+			return "timeOut";
+		}
 		String result = ERROR;
 		UserInfoDAO userInfoDAO = new UserInfoDAO();
 

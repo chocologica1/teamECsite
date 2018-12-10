@@ -33,6 +33,10 @@ public class CreateUserConfirmAction extends ActionSupport implements SessionAwa
 	private Map<String, Object> session;
 
 	public String execute(){
+		//セッションタイムアウト
+		if(session == null || session.isEmpty()){
+			return "timeOut";
+		}
 
 		String result =ERROR;
 		InputChecker inputChecker =new InputChecker();

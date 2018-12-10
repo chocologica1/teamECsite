@@ -29,6 +29,10 @@ public class CreateDestinationConfirmAction extends ActionSupport implements Ses
 	private Map<String, Object> session;
 
 	public String execute(){
+		//セッションタイムアウト
+		if(session == null || session.isEmpty()){
+			return "timeOut";
+		}
 		String result=ERROR;
 
 		InputChecker inputChecker = new InputChecker();
