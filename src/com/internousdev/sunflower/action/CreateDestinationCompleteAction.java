@@ -20,6 +20,10 @@ public class CreateDestinationCompleteAction extends ActionSupport implements Se
 	private Map<String, Object> session;
 
 	public String execute(){
+		//セッションタイムアウト
+		if(session == null || session.isEmpty()){
+			return "timeOut";
+		}
 		String result = ERROR;
 		DestinationInfoDAO destinationInfoDAO = new DestinationInfoDAO();
 

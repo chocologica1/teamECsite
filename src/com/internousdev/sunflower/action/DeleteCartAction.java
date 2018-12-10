@@ -33,6 +33,10 @@ public class DeleteCartAction extends ActionSupport implements SessionAware{
 	 */
 
 	public String execute(){
+		//セッションタイムアウト
+		if(session == null || session.isEmpty()){
+			return "timeOut";
+		}
 		List<Integer> resultList = new ArrayList<>();
 		String result = ERROR;
 

@@ -31,6 +31,10 @@ public class AddCartAction extends ActionSupport implements SessionAware{
 	 */
 
 	public String execute(){
+		//セッションタイムアウト
+		if(session == null || session.isEmpty()){
+			return "timeOut";
+		}
 		int result = 0;
 
 		//仮ユーザーIDを発行していない場合、仮ユーザーIDを発行しsessionに格納
