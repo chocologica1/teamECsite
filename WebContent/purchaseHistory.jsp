@@ -38,7 +38,7 @@
 		<tr>
 			<td><s:property value="productName"/></td>
 			<td><s:property value="productNameKana"/></td>
-			<td><img src='<s:property value="imageFilePath"/>'><s:property value="imageFileName"/></td>
+			<td><img src='<s:property value="imageFilePath"/>/<s:property value="imageFileName"/>'></td>
 			<td><s:property value="price"/>円</td>
 			<td><s:property value="productCount"/>個</td>
 			<td><s:property value="totalPrice"/>円</td>
