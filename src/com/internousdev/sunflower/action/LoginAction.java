@@ -55,7 +55,7 @@ public class LoginAction extends ActionSupport implements SessionAware{
 
 	//フォームに入力できる文字数の指定
 	InputChecker inputChecker = new InputChecker();
-	loginIdErrorMessageList = inputChecker.doCheck("ログインID", loginId, 1, 8, true, false, false, true, false, false, false, false, false);
+	loginIdErrorMessageList = inputChecker.doCheck("ユーザーID", loginId, 1, 8, true, false, false, true, false, false, false, false, false);
 	passwordErrorMessageList = inputChecker.doCheck("パスワード", password, 1, 16, true, false, false, true, false, false, false, false, false);
 
 
