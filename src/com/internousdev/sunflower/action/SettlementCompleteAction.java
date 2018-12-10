@@ -28,10 +28,7 @@ public class SettlementCompleteAction extends ActionSupport implements SessionAw
 			cartDTOList = cartInfoDao.getCartInfoDTOList(String.valueOf(session.get("loginId")), String.valueOf(session.get("tempUserId"))); //デバック時にコメントアウト
 			/*カート情報がない場合の処理*/
 			Iterator<CartInfoDTO> iterator = cartDTOList.iterator();
-			System.out.println("loginId:" + session.get("loginId"));
-			System.out.println("tempUserId:" + session.get("tempUserId"));
 			if(!(iterator.hasNext())){
-				System.out.println("getCartERROR");
 				/*エラー画面に遷移*/
 				return ERROR;
 			}
@@ -51,7 +48,6 @@ public class SettlementCompleteAction extends ActionSupport implements SessionAw
 
 			/*登録に失敗した場合(つまりエラー)*/
 			if(addCount <= 0){
-				System.out.println("addCountERROR:"+addCount);
 				/*エラー画面に遷移*/
 				return ERROR;
 			}
@@ -62,11 +58,8 @@ public class SettlementCompleteAction extends ActionSupport implements SessionAw
 			/*セッションに保存されているログインIDをもつ商品情報をカート情報テーブルから削除*/
 			deleteCount = cartInfoDao.deleteAll(String.valueOf(session.get("loginId"))); //デバック時にコメントアウト
 
-
-			System.out.println("loginId:" + session.get("loginId"));
 			/*削除に失敗した場合(つまりエラー)*/
 			if(deleteCount <= 0){
-				System.out.println("deleteCountERROR:"+deleteCount);
 				/*エラー画面に遷移*/
 				return ERROR;
 			}
