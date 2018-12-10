@@ -16,6 +16,11 @@ public class DeletePurchaseHistoryAction extends ActionSupport implements Sessio
 	private String message;
 
 	public String execute() {
+		//セッションタイムアウト
+				if(session == null || session.isEmpty()){
+					return "timeOut";
+				}
+
 		String result = ERROR;
 
 		// 購入履歴の全消去、戻り値は更新件数

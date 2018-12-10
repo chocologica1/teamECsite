@@ -27,6 +27,12 @@ public class ResetPasswordConfirmAction extends ActionSupport implements Session
 
 
 	public String execute() {
+		//セッションタイムアウト
+				if(session == null || session.isEmpty()){
+					return "timeOut";
+				}
+
+
 		String result = ERROR;
 
 		InputChecker inputChecker = new InputChecker();  //InputCheckerをインスタンス化
