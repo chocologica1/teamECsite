@@ -14,6 +14,10 @@ public class LogoutAction extends ActionSupport implements SessionAware {
 	//メソッド
 	public String execute() {
 
+		if(session == null || session.isEmpty()){
+			return "timeOut";
+		}
+
 		String result = ERROR;
 		UserInfoDAO userInfoDAO = new UserInfoDAO();
 

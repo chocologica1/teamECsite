@@ -33,6 +33,10 @@ public class LoginAction extends ActionSupport implements SessionAware{
 
 	public String execute(){
 
+		if(session == null || session.isEmpty()){
+			return "timeOut";
+		}
+
 		String result = ERROR;
 
 		if(loginId == null && password == null){
