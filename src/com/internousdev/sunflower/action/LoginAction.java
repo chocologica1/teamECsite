@@ -29,9 +29,7 @@ public class LoginAction extends ActionSupport implements SessionAware{
 	private List<String>passwordErrorMessageList = new ArrayList<String>();
 
 	private Map<String, Object> session;
-	private Object destinationDTOList;
-
-
+	List<DestinationInfoDTO> destinationInfoDTOList = new ArrayList<DestinationInfoDTO>();
 
 	public String execute(){
 
@@ -93,17 +91,17 @@ public class LoginAction extends ActionSupport implements SessionAware{
 			 */
 
 			cartInfoDao.linkToLoginId(String.valueOf(session.get("tempUserId")),loginId);
-			if(session.get("cartFlg") != null && (Integer)session.get("cartFlg") > 0) {
+			if(session.get("cartFlg") != null && (Boolean.parseBoolean(String.valueOf(session.get("cartFlg"))) == true)) {
 				DestinationInfoDAO destinationInfoDao = new DestinationInfoDAO();
 				try {
-					List<DestinationInfoDTO> destinationInfoDTOList = new ArrayList<DestinationInfoDTO>();
-					destinationInfoDTOList = destinationInfoDao.getDestinationInfo(loginId);
+					destinationInfoDTOList = destinationInfoDao.getDestinationInfo(String.valueOf(session.get("loginId")));
 					Iterator<DestinationInfoDTO> iterator = destinationInfoDTOList.iterator();
 					//宛先情報がない場合nullを入れる。
 					if(!(iterator.hasNext())) {
+						System.out.println("OK");
 						destinationInfoDTOList = null;
 					}
-					session.put("destinationDTOList", destinationDTOList);
+					session.put("destinationInfoDTOList", destinationInfoDTOList);
 				} catch (SQLException e) {
 					e.printStackTrace();
 				}
@@ -120,7 +118,6 @@ public class LoginAction extends ActionSupport implements SessionAware{
 
 
 		}
-
 
 
 		public String getLoginId(){
@@ -166,7 +163,11 @@ public class LoginAction extends ActionSupport implements SessionAware{
 			this.session = session;
 		}
 
+		public List<DestinationInfoDTO> getDestinationInfoDTOList() {
+			return destinationInfoDTOList;
+		}
 
-
-
+		public void setDestinationInfoDTOList(List<DestinationInfoDTO> destinationInfoDTOList) {
+			this.destinationInfoDTOList = destinationInfoDTOList;
+		}
 }
