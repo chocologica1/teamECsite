@@ -11,6 +11,12 @@ public class ResetPasswordAction extends ActionSupport implements SessionAware {
 	private String reFlg;
 
 	public String execute() {
+		//セッションタイムアウト
+				if(session == null || session.isEmpty()){
+					return "timeOut";
+				}
+
+
 		String result = ERROR;
 
 		//エラーメッセージを全て消去する
