@@ -48,7 +48,7 @@
 						</tr>
 						<tr>
 							<td>商品画像</td>
-							<td><Img src='<s:property value="productImagePath"/>/<s:property value="imageFileName"/>'></td>
+							<td><img src='<s:property value="imageFilePath"/>/<s:property value="imageFileName"/>' alt="product" /></td>
 						</tr>
 						<tr>
 							<td>発売会社名</td>

@@ -47,7 +47,6 @@ public class DeleteCartAction extends ActionSupport implements SessionAware{
 			resultList.add(cartInfoDAO.delete(productId,String.valueOf(session.get("loginId")),String.valueOf(session.get("tempUserId"))));
 		}
 
-		resultList.add(cartInfoDAO.delete(productId,String.valueOf(session.get("loginId")),String.valueOf(session.get("tempUserId"))));
 		//resultListに0(削除失敗)があるかどうかを判定
 		if(resultList.size() > 0){
 			result = SUCCESS;
