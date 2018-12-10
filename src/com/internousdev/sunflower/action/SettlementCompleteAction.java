@@ -31,7 +31,8 @@ public class SettlementCompleteAction extends ActionSupport implements SessionAw
 			/*商品履歴情報テーブルに商品ごとの決済情報を登録する*/
 
 			/*ログインユーザのカート情報をカート情報テーブルから取得*/
-			cartDTOList = cartInfoDao.getCartInfoDTOList(String.valueOf(session.get("loginId")), String.valueOf(session.get("tempUserId"))); //デバック時にコメントアウト
+			cartDTOList = cartInfoDao.getCartInfoDTOList(String.valueOf(session.get("loginId")), String.valueOf(session.get("tempUserId")));
+
 			/*カート情報がない場合の処理*/
 			Iterator<CartInfoDTO> iterator = cartDTOList.iterator();
 			if(!(iterator.hasNext())){
@@ -40,11 +41,10 @@ public class SettlementCompleteAction extends ActionSupport implements SessionAw
 			}
 
 			int addCount = 0; //商品履歴情報テーブルに登録された数を格納する変数
-
 			/*購入履歴情報テーブルに1件ずつ登録*/
 			for(int i=0;i<cartDTOList.size();i++){
 				addCount += PHInfoDao.regist(
-						String.valueOf(session.get("loginId")),//ユーザID //デバック時にコメントアウト
+						String.valueOf(session.get("loginId")),//ユーザID
 						cartDTOList.get(i).getProductId(),//商品ID
 						cartDTOList.get(i).getProductCount(),//個数
 						cartDTOList.get(i).getPrice(),//金額
@@ -58,11 +58,10 @@ public class SettlementCompleteAction extends ActionSupport implements SessionAw
 				return ERROR;
 			}
 
-			/*ユーザに紐付いているDBのカート情報テーブルの情報を削除する*/
-
 			int deleteCount = 0; //カート情報テーブルから削除された商品情報の数を格納する変数
-			/*セッションに保存されているログインIDをもつ商品情報をカート情報テーブルから削除*/
-			deleteCount = cartInfoDao.deleteAll(String.valueOf(session.get("loginId"))); //デバック時にコメントアウト
+
+			/*ログインユーザのカート情報をカート情報テーブルから全削除*/
+			deleteCount = cartInfoDao.deleteAll(String.valueOf(session.get("loginId")));
 
 			/*削除に失敗した場合(つまりエラー)*/
 			if(deleteCount <= 0){

@@ -86,11 +86,6 @@
 			<s:form action="CreateDestinationAction">
 				<s:submit value="新規宛先登録"/>
 			</s:form>
-
-			<s:form action="SettlementConfirmAction">
-				<s:submit value="リダイレクト"/>
-			</s:form>
-
 		</div>
 	</div>
 
