@@ -51,6 +51,10 @@
 							<td><img src='<s:property value="imageFilePath"/>/<s:property value="imageFileName"/>' alt="product" /></td>
 						</tr>
 						<tr>
+							<td>値段</td>
+							<td><s:property value="price"/></td>
+						</tr>
+						<tr>
 							<td>発売会社名</td>
 							<td><s:property value="releaseCompany"/></td>
 						</tr>
@@ -78,6 +82,7 @@
 
 		<!-- カート合計金額 -->
 		<div class="totalPrice">
+			<p>合計金額</p>
 			<s:property value="totalPrice"/>円
 		</div>
 
