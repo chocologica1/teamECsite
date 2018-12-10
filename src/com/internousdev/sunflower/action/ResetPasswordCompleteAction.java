@@ -13,6 +13,12 @@ public class ResetPasswordCompleteAction extends ActionSupport implements Sessio
 	private Map<String,Object> session;
 
 	public String execute() {
+		//セッションタイムアウト
+				if(session == null || session.isEmpty()){
+					return "timeOut";
+				}
+
+
 		String result = ERROR;
 
 		UserInfoDAO userInfoDAO = new UserInfoDAO();   //UserInfoDAOをインスタンス化

@@ -16,6 +16,11 @@ public class PurchaseHistoryAction extends ActionSupport implements SessionAware
 	private String message;
 
 	public String execute() {
+		//セッションタイムアウト
+				if(session == null || session.isEmpty()){
+					return "timeOut";
+				}
+
 
 		if(session.containsKey("loginId")) {
 
