@@ -15,7 +15,7 @@
 	float : left;
 	width : 100%;
 	height : 60px;
-	background-color : #005392;
+	background-color : #9b5d73;
 }
 
 #header-menu {
@@ -72,7 +72,7 @@ margin-left : -30px;
     text-align:center;
     color:#fff;
     box-shadow:2px 2px #1a6ea0;
-    background: #4b7ea1;
+    background: #fff1c5;
     background: -webkit-gradient(linear, left top, left bottom, from(#81a8cb), to(#4477a1) );
     background: -moz-linear-gradient(-90deg, #81a8cb, #4477a1);
     filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#81a8cb', endColorstr='#4477a1');

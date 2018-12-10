@@ -8,6 +8,9 @@
 <title>マイページ</title>
 </head>
 <body>
+
+  <jsp:include page="header.jsp"/>
+  <div id = "contents">
   <s:form action = "PurchaseHistoryAction">
 
   <!-- テーブル使用 -->
@@ -41,6 +44,9 @@
 
     <s:submit value = "購入履歴"/>
   </s:form>
+  </div>
+  <s:include value="footer.jsp"/>
+
 
 </body>
 </html>
