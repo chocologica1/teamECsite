@@ -19,6 +19,11 @@
 			}
 		})
 	})
+
+	function submitAction(url){
+		$('form').attr('action',url);
+		$('form').submit();
+	}
 </script>
 </head>
 <body>
@@ -74,26 +79,23 @@
 				</s:iterator>
 			</div>
 
-			<!-- 削除ボタン -->
+		<!-- カート合計金額 -->
+		<div class="totalPrice">
+			<p>合計金額:</p>
+			<s:property value="totalPrice"/>円
+		</div>
+
+		<!-- 決済ボタン -->
+		<input type="button" value="決済" onclick="submitAction('SettlementConfirmAction')"/>
+
+		<!-- 削除ボタン -->
 			<div id="delete">
 				<input type="submit" value="削除" id="deleteButton" disabled = "disabled"/>
 			</div>
 		</s:form>
 
-		<!-- カート合計金額 -->
-		<div class="totalPrice">
-			<p>合計金額</p>
-			<s:property value="totalPrice"/>円
-		</div>
-
-		<!-- 決済ボタン -->
 
 
-			<div class="settlement">
-				<s:form action="SettlementConfirmAction">
-					<s:submit value="決済"/>
-				</s:form>
-			</div>
  	</s:if>
 	<!-- カートに商品が入っていない場合 -->
 	<s:else>
