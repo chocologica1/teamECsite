@@ -20,10 +20,7 @@ public class HomeAction extends ActionSupport implements SessionAware {
 	//ログインしてるか、していないか確認 ログインしていない場合tempUserIdをputする。
 	public String execute(){
 
-		//セッションタイムアウト
-		if(session == null || session.isEmpty()){
-			return "timeOut";
-		}
+
 
 		if(!(session.containsKey("loginId")) && !(session.containsKey("tempUserId"))){
 			CommonUtility commonUtility = new CommonUtility();
