@@ -3,12 +3,15 @@ package com.internousdev.sunflower.action;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
 
 import com.internousdev.sunflower.dao.ProductInfoDAO;
 import com.internousdev.sunflower.dto.ProductInfoDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
-public class ProductDetailsAction extends ActionSupport {
+public class ProductDetailsAction extends ActionSupport implements SessionAware {
 	//フィールド
 		//商品詳細
 	private int productId;
@@ -22,9 +25,17 @@ public class ProductDetailsAction extends ActionSupport {
 	private String productDescription;
 		//関連商品
 	private List<ProductInfoDTO> productInfoDTOList = new ArrayList<ProductInfoDTO>();
+		//セッション
+	private Map<String,Object> session;
 
 	//メソッド
 	public String execute() {
+
+		//セッションタイムアウト
+		if(session == null || session.isEmpty()){
+			return "timeOut";
+		}
+
 
 		String result = ERROR;
 		ProductInfoDAO productInfoDAO = new ProductInfoDAO();
@@ -93,6 +104,11 @@ public class ProductDetailsAction extends ActionSupport {
 
 	public List<ProductInfoDTO> getProductInfoDTOList() {
 		return productInfoDTOList;
+	}
+
+	@Override
+	public void setSession(Map<String,Object> session) {
+		this.session = session;
 	}
 
 }

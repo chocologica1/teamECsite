@@ -18,6 +18,11 @@ public class ProductListAction extends ActionSupport implements SessionAware {
 	//メソッド
 	public String execute() {
 
+		//セッションタイムアウト
+		if(session == null || session.isEmpty()){
+			return "timeOut";
+		}
+
 		//sessionに検索エラーが入っていたら切る
 		session.remove("keywordsErrorMessageList");
 
