@@ -17,6 +17,12 @@ public class SettlementCompleteAction extends ActionSupport implements SessionAw
 	private String radioId;
 
 	public String execute(){
+
+		/*セッションタイムアウト*/
+		if(session == null || session.isEmpty()){
+			return "timeOut";
+		}
+
 		String result = "";
 		CartInfoDAO cartInfoDao = new CartInfoDAO();
 		List<CartInfoDTO> cartDTOList = new ArrayList<CartInfoDTO>();
