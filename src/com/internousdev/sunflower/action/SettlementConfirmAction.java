@@ -22,10 +22,23 @@ public class SettlementConfirmAction extends ActionSupport implements SessionAwa
 	ArrayList<DestinationInfoDTO> destinationInfoDTOList = new ArrayList<DestinationInfoDTO>();
 
 	public String execute(){
+
+		/*セッションタイムアウト*/
+		if(session == null || session.isEmpty()){
+			return "timeOut";
+		}
+
 		String result = "";
 		/*宛先情報取得用DAO*/
 		DestinationInfoDAO destinationDao = new DestinationInfoDAO();
 		/*宛先情報を格納する変数リスト*/
+
+		if(session == null){
+//		if(!(session.containsKey("loginFlg"))){
+			System.out.println("セッションタイムアウト");
+			return ERROR;
+		}
+
 
 		/*ログインしている場合*/
 		if((session.containsKey("loginFlg"))){
