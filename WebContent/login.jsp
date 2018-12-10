@@ -23,7 +23,7 @@ function goResetPasswordAction(){
 
 </head>
 <body>
-	<!-- <jsp:include page="header.jsp" /> -->
+	<jsp:include page="header.jsp" />
 	<h1>ログイン画面</h1>
 	<s:form id="form" action="LoginAction">
 	<!-- エラーメッセージの表示 -->
