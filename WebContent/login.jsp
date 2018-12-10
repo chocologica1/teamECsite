@@ -27,10 +27,9 @@ function goResetPasswordAction(){
 	<h1>ログイン画面</h1>
 	<s:form id="form" action="LoginAction">
 	<!-- エラーメッセージの表示 -->
-		<s:if test="!#session.loginIdErrorMessageList.isEmpry()">
+		<s:if test="!#session.loginIdErrorMessageList.isEmpty()">
 			<div class="error">
 				<div class="error-message">
-				test
 					<s:iterator value="#session.loginIdErrorMessageList"><s:property /><br></s:iterator>
 				</div>
 			</div>
@@ -38,7 +37,6 @@ function goResetPasswordAction(){
 		<s:if test="!#session.passwordErrorMessageList.isEmpty()">
 			<div class="error">
 				<div class="error-message">
-				test
 					<s:iterator value="#session.passwordErrorMessageList"><s:property /><br></s:iterator>
 				</div>
 			</div>
