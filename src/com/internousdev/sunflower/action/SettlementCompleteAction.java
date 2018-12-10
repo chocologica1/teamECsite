@@ -32,8 +32,10 @@ public class SettlementCompleteAction extends ActionSupport implements SessionAw
 //			cartDTOList = cartInfoDao.getCartInfoDTOList("guest",null); //デバック用
 			/*カート情報がない場合の処理*/
 			Iterator<CartInfoDTO> iterator = cartDTOList.iterator();
+			System.out.println("userId:" + session.get("userId"));
+			System.out.println("tempUserId:" + session.get("tempUserId"));
 			if(!(iterator.hasNext())){
-//				cartDTOList = null;
+				System.out.println("getCartERROR");
 				/*エラー画面に遷移*/
 				return ERROR;
 			}
@@ -55,6 +57,7 @@ public class SettlementCompleteAction extends ActionSupport implements SessionAw
 
 			/*登録に失敗した場合(つまりエラー)*/
 			if(addCount <= 0){
+				System.out.println("addCountERROR:"+addCount);
 				/*エラー画面に遷移*/
 				return ERROR;
 			}
@@ -66,29 +69,14 @@ public class SettlementCompleteAction extends ActionSupport implements SessionAw
 			deleteCount = cartInfoDao.deleteAll(String.valueOf(session.get("userId"))); //デバック時にコメントアウト
 //			deleteCount = cartInfoDao.deleteAll("guest"); //デバック用
 
+
+			System.out.println("useId:" + session.get("userId"));
 			/*削除に失敗した場合(つまりエラー)*/
 			if(deleteCount <= 0){
-				System.out.println("NG");
+				System.out.println("deleteCountERROR:"+deleteCount);
 				/*エラー画面に遷移*/
 				return ERROR;
 			}
-
-			/*カート内の情報を再取得*/
-//			cartDTOList.clear();
-//			cartDTOList = cartInfoDao.getCartInfoDTOList(String.valueOf(session.get("loginId")), String.valueOf(session.get("tempUserId")));
-//			iterator = cartDTOList.iterator();
-//			if(!(iterator.hasNext())){
-//				System.out.println("NG");
-				cartDTOList = null;
-//			}
-			/*セッションにログインユーザのカート情報を再格納*/
-			session.put("cartDTOList", cartDTOList);
-
-			/*カート内商品の合計金額を取得*/
-//			int totalPrice = Integer.parseInt(String.valueOf(cartInfoDao.getTotalPrice(String.valueOf(session.get("tempUserId")), String.valueOf(session.get("loginId"))))); //デバック時にコメントアウト
-//			int totalPrice = Integer.parseInt(String.valueOf(cartInfoDao.getTotalPrice(null, "guest"))); //デバック用
-			/*セッションにログインユーザのカート内商品の合計金額を再格納*/
-//			session.put("totalPrice", totalPrice);
 
 			/*カートフラグを折る*/
 			if(session.containsKey("cartFlg")){

@@ -19,7 +19,7 @@ public class SettlementConfirmAction extends ActionSupport implements SessionAwa
 	private String address;
 	private String telNumber;
 	private String email;
-	ArrayList<DestinationInfoDTO> destinationDTOList = new ArrayList<DestinationInfoDTO>();
+	ArrayList<DestinationInfoDTO> destinationInfoDTOList = new ArrayList<DestinationInfoDTO>();
 
 	public String execute(){
 		String result = "";
@@ -28,23 +28,21 @@ public class SettlementConfirmAction extends ActionSupport implements SessionAwa
 		/*宛先情報を格納する変数リスト*/
 
 		/*ログインしている場合*/
-		if(session.containsKey("userId")){ //デバック時にコメントアウト
+		if((session.containsKey("loginFlg"))){
 //		if(true){ //デバック用
 			try{
 				/*DBから宛先情報のリストを取得する*/
-
-				destinationDTOList = destinationDao.getDestinationInfo(String.valueOf(session.get("userId"))); //デバック時にコメントアウト
-//				destinationDTOList = destinationDao.getDestinationInfo("guest");//デバック用
+				destinationInfoDTOList = destinationDao.getDestinationInfo(String.valueOf(session.get("loginId"))); //デバック時にコメントアウト
+//				destinationInfoDTOList = destinationDao.getDestinationInfo("guest");//デバック用
 
 				/*宛先情報リストが空の場合*/
-				Iterator<DestinationInfoDTO> iterator = destinationDTOList.iterator();
+				Iterator<DestinationInfoDTO> iterator = destinationInfoDTOList.iterator();
 				if(!(iterator.hasNext())){
-					destinationDTOList = null;
-
+					destinationInfoDTOList = null;
 				}
 
 				/*セッションに宛先情報リストを入れる*/
-				session.put("destinationDTOList", destinationDTOList);
+				session.put("destinationInfoDTOList", destinationInfoDTOList);
 
 			}
 			catch(SQLException e){
@@ -58,7 +56,7 @@ public class SettlementConfirmAction extends ActionSupport implements SessionAwa
 		/*ログインしていない場合*/
 		else{
 			/*カートフラグを立てる*/
-			session.put("cartFlg", 1);
+			session.put("cartFlg", true);
 
 			/*ログイン画面へ遷移するための戻り値*/
 			result = ERROR;
@@ -79,13 +77,13 @@ public class SettlementConfirmAction extends ActionSupport implements SessionAwa
 	}
 
 
-	public ArrayList<DestinationInfoDTO> getDestinationList() {
-		return destinationDTOList;
+	public ArrayList<DestinationInfoDTO> getDestinationInfoDTOList() {
+		return destinationInfoDTOList;
 	}
 
 
-	public void setDestinationList(ArrayList<DestinationInfoDTO> destinationList) {
-		this.destinationDTOList = destinationList;
+	public void setDestinationInfoDTOList(ArrayList<DestinationInfoDTO> destinationInfoDTOList) {
+		this.destinationInfoDTOList = destinationInfoDTOList;
 	}
 
 	public Map<String, Object> getSession() {
@@ -95,14 +93,6 @@ public class SettlementConfirmAction extends ActionSupport implements SessionAwa
 	public void setSession(Map<String, Object> session) {
 		this.session = session;
 	}
-
-//	public String getDestinationNullMesssage() {
-//		return destinationNullMesssage;
-//	}
-//
-//	public void setDestinationNullMesssage(String destinationNullMesssage) {
-//		this.destinationNullMesssage = destinationNullMesssage;
-//	}
 
 	public String getFamilyName() {
 		return familyName;

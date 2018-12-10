@@ -19,7 +19,7 @@
 		<div id="contents">
 
 			<!-- 宛先情報が存在する場合 -->
-			<s:if test="#session.destinationDTOList.size()>0">
+			<s:if test="#session.destinationInfoDTOList.size()>0">
 				宛先を選択してください
 
 				<!-- 宛先選択フォーム -->
@@ -38,7 +38,7 @@
 						</tr>
 
 						<!-- イテレータによるループ表記 -->
-						<s:iterator value="#session.destinationDTOList" status="st">
+						<s:iterator value="#session.destinationInfoDTOList" status="st">
 							<tr>
 								<!-- 選択用ラジオボタン -->
 								<td>
