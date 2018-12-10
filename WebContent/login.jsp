@@ -45,7 +45,7 @@ function goResetPasswordAction(){
 
 	<table class="vertical-list-table">
 		<tr>
-			<th>ログインID</th>
+			<th>ユーザーID</th>
 		</tr>
 		<tr>
 			<td><s:if test="#session.savedLoginId == true">
