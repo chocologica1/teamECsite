@@ -230,4 +230,23 @@ public class UserInfoDAO {
 		return hiddenPassword;
 	}
 
+	//登録されているIDかどうか確認、登録されていない場合trueを戻す
+	public boolean isUniqueId(String userId){
+		boolean result = false;
+		DBConnector db = new DBConnector();
+		Connection con = db.getConnection();
+		String sql = "SELECT * FROM user_info WHERE user_id = ?";
+		try{
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setString(1, userId);
+			ResultSet rs = ps.executeQuery();
+			result = rs.next();
+		}catch(SQLException e){
+			e.printStackTrace();
+		}finally{
+			try{con.close();}catch(SQLException e){}
+		}
+		return !result;
+	}
+
 }

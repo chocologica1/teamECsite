@@ -6,6 +6,7 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.internousdev.sunflower.dao.UserInfoDAO;
 import com.internousdev.sunflower.util.InputChecker;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -40,6 +41,7 @@ public class CreateUserConfirmAction extends ActionSupport implements SessionAwa
 
 		String result =ERROR;
 		InputChecker inputChecker =new InputChecker();
+		UserInfoDAO userInfoDAO = new UserInfoDAO();
 
 		session.put("familyName",familyName);
 		session.put("firstName",firstName);
@@ -56,6 +58,9 @@ public class CreateUserConfirmAction extends ActionSupport implements SessionAwa
 		firstNameKanaErrorMessageList = inputChecker.doCheck("名ふりがな",firstNameKana,1, 16, false, false, true, false, false, false, false, false, false);
 		emailErrorMessageList = inputChecker.doCheck("メールアドレス", email, 10, 32, true, false, false, true, true, false, false, false, false);
 		userIdErrorMessageList = inputChecker.doCheck("ユーザID", userId, 1, 8, true, false, false, true, false, false, false, false, false);
+		if(!userInfoDAO.isUniqueId(userId)){
+			userIdErrorMessageList.add("使用できないユーザIDです。");
+		}
 		passwordErrorMessageList = inputChecker.doCheck("パスワード", password, 1, 16, true, false, false, true, false, false, false, false, false);
 
 
