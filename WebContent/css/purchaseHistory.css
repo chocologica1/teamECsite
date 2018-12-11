@@ -16,10 +16,11 @@ table tr td{
 	font-size: 13px;
 	padding: 15px;
 	text-align: center;
+	vertical-align: top;
 }
 table tr td img{
 	display: inline-block;
-	vertical-align: top;
+	vertical-align: middle;
 }
 
 
