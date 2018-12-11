@@ -68,6 +68,11 @@ h1{
 	color: #b0757c;
 }
 
+/* エラーメッセージ */
+.error_message{
+	color:FF0000;
+}
+
 /* ボタン */
 
 .submit_btn_box{
