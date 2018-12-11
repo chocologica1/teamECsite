@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<!-- <link rel="stylesheet" href="./css/te"> -->
+<link rel="stylesheet" type="text/css" href="./css/product.css">
 <title>商品詳細</title>
 </head>
 <body>
@@ -12,20 +12,20 @@
 	<div id="main">
 		<div id="contents">
 			<h1>商品詳細</h1>
-			<div class="produvct-wrapper">
+			<div class="product-wrapper">
 				<div class="details-image-box">
 					<img src='<s:property value="imageFilePath"/>/<s:property value="imageFileName"/>' alt="product" class="product-image"/>
 				</div>
 				<div class="details-box">
 					<s:form action="AddCartAction">
-						<div>
-							<table>
+						<div class="table-box">
+							<table class="details-table">
 								<tr>
 									<td>商品名</td>
 									<td><s:property value="productName" /></td>
 								</tr>
 								<tr>
-									<td>商品名かな</td>
+									<td>商品名ふりがな</td>
 									<td><s:property value="productNameKana" /></td>
 								</tr>
 								<tr>
@@ -78,7 +78,7 @@
 								<img src='<s:property value="imageFilePath"/>/<s:property value="imageFileName"/>' alt="product" class="product-image"/>
 							</a>
 						</div>
-						<s:property value="productName"/>
+						<p><s:property value="productName"/></p>
 					</div>
 				</s:iterator>
 			</div>
