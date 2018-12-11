@@ -70,7 +70,7 @@
 
 		<!-- カート合計金額 -->
 		<div class="totalPrice">
-			合計金額:
+			カート合計金額:
 			<s:property value="totalPrice"/>円
 		</div>
 
