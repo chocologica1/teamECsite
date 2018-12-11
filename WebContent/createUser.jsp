@@ -5,11 +5,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="./css/create.css">
+<!-- <link rel="stylesheet" href="./css/create.css"> -->
+<!-- <link rel="stylesheet" href="./css/style.css"> -->
 <title>ユーザー登録画面</title>
 </head>
 <body>
-<%-- 	<jsp:include page="header.jsp" /> --%>
+	<jsp:include page="header.jsp" />
 
 	<div id="contents">
 		<h1>ユーザー情報入力画面</h1>
@@ -164,12 +165,12 @@
 						class="txt" /></td>
 				</tr>
 			</table>
-			<div id="submit_btn_box">
+			<div class ="submit_btn_box">
 				<s:submit value="登録" class="submit_btn" />
 			</div>
 		</s:form>
 	</div>
 
-<%-- 	<jsp:include page="footer.jsp" /> --%>
+	<jsp:include page="footer.jsp" />
 </body>
 </html>

@@ -5,11 +5,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="">
+<!-- <link rel="stylesheet" href=""> -->
 <title>宛先情報入力確認画面</title>
 </head>
 <body>
-<%-- 	<jsp:include page="header.jsp" /> --%>
+	<jsp:include page="header.jsp" />
 	<div>
 		<h1>宛先情報入力確認画面</h1>
 

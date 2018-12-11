@@ -5,11 +5,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="">
+<!-- <link rel="stylesheet" href=""> -->
 <title>宛先情報入力</title>
 </head>
 <body>
-<%-- 	<jsp:include page="header.jsp" /> --%>
+	<jsp:include page="header.jsp" />
 
 	<div id="contents">
 
@@ -147,6 +147,6 @@
 
 	</div>
 
-<%-- 	<jsp:include page="footer.jsp" /> --%>
+	<jsp:include page="footer.jsp" />
 </body>
 </html>

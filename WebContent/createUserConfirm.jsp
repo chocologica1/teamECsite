@@ -5,18 +5,18 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<!-- <link rel="stylesheet" href=""> -->
+<!-- <link rel="stylesheet" href="./css/create.css"> -->
 <title>登録内容の確認</title>
 </head>
 <body>
-<%-- 	<jsp:include page="header.jsp"/> --%>
-	<div>
+	<jsp:include page="header.jsp"/>
+	<div id="contents">
 		<h1>登録内容確認画面</h1>
 		<br>
-		<p>以下の内容で登録します</p>
+		<h2>以下の内容で登録します</h2>
 		<br>
 		<s:form action="CreateUserCompleteAction">
-				<table>
+				<table class="vertical-list-table">
 					<tr>
 						<th><s:label value="姓" /></th>
 						<td><s:property value="familyName" /></td>
@@ -50,16 +50,24 @@
 						<td><s:property value="password" /></td>
 					</tr>
 				</table>
-					<s:submit value="登録情報を確定" />
+				<div id="submit_btn_box">
+				<div id=".contents-btn-set">
+					<s:submit value="登録情報を確定" class="submit_btn"/>
+				</div>
+				</div>
 		</s:form>
 
 		<s:form action="CreateUserAction">
-			<s:submit value="戻る"/>
+		<div id="submit_btn_box">
+		<div id=".contents-btn-set">
+			<s:submit value="戻る" class="submit_btn"/>
+		</div>
+		</div>
 		</s:form>
 
 	</div>
 
-<%-- 	<jsp:include page="footer.jsp" /> --%>
+	<jsp:include page="footer.jsp" />
 
 </body>
 </html>
