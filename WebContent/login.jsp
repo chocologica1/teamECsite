@@ -82,6 +82,7 @@ function goResetPasswordAction(){
 <div class="submit_btn_box">
 	<div id=".contents-btn-set">
 		<s:form action="CreateUserAction">
+		<input type="hidden" name="createUserFlg" value ="1"/>
 			<s:submit value="新規ユーザー登録" class="submit_btn" />
 		</s:form>
 	</div>
