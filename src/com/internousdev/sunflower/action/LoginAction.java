@@ -116,6 +116,9 @@ public class LoginAction extends ActionSupport implements SessionAware{
 
 		//ログイン情報を受け渡す
 			session.put("loginFlg", true);
+	//ユーザIDとパスワードが不一致の場合
+	}else{
+		session.put(key, value)
 	}
 	return result;
 
