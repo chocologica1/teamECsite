@@ -4,7 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<!-- <link rel="stylesheet" href=""> -->
+<!-- <link rel="stylesheet" href="css/style.css"> -->
+<!-- <link rel="stylesheet" href="css/settlement.css"> -->
 <meta http-equiv="refresh" content="3;<s:url action='HomeAction'/>"/>
 <title>決済完了画面</title>
 </head>
@@ -17,7 +18,7 @@
 	<div id="main">
 
 		<!-- コンテンツ -->
-		<div class="contents">
+		<div id="contents">
 
 
 			<h1>決済完了画面</h1>

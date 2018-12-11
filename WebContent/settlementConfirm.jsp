@@ -14,7 +14,7 @@
 	<s:include value="header.jsp"/>
 
 	<!-- コンテンツ -->
-	<div class="contents">
+	<div id="contents">
 		<h1>決済確認画面</h1>
 
 			<!-- 宛先情報が存在する場合 -->
@@ -84,7 +84,8 @@
 
 		<!-- 新規宛先登録ボタン -->
 		<s:form action="CreateDestinationAction">
-			<div class="submit_btn_box">
+			<input type="hidden" name="createDestinationFlg" value="true"/>
+			<div class="submit_btn_box">10
 				<s:submit value="新規宛先登録" class="submit_btn"/>
 			</div>
 		</s:form>
