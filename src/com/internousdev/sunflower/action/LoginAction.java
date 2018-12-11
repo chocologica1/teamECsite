@@ -23,15 +23,16 @@ public class LoginAction extends ActionSupport implements SessionAware{
 	private String loginId;
 	private String password;
 
-	private List<MCategoryDTO>mCategoryDTOList = new ArrayList<MCategoryDTO>();
-
-	private List<String>loginIdErrorMessageList = new ArrayList<String>();
-	private List<String>passwordErrorMessageList = new ArrayList<String>();
-
 	private Map<String, Object> session;
+
 	List<DestinationInfoDTO> destinationInfoDTOList = new ArrayList<DestinationInfoDTO>();
 
 	public String execute(){
+
+		List<MCategoryDTO>mCategoryDTOList = new ArrayList<MCategoryDTO>();
+
+		List<String>loginIdErrorMessageList = new ArrayList<String>();
+		List<String>passwordErrorMessageList = new ArrayList<String>();
 
 		if(session == null || session.isEmpty()){
 			return "timeOut";
@@ -43,7 +44,6 @@ public class LoginAction extends ActionSupport implements SessionAware{
 			loginId = String.valueOf(session.get("userId"));
 			password = String.valueOf(session.get("password"));
 		}
-
 
 		if(savedLoginId==true){
 			session.put("savedLoginId", true);
@@ -58,7 +58,7 @@ public class LoginAction extends ActionSupport implements SessionAware{
 	loginIdErrorMessageList = inputChecker.doCheck("ユーザーID", loginId, 1, 8, true, false, false, true, false, false, false, false, false);
 	passwordErrorMessageList = inputChecker.doCheck("パスワード", password, 1, 16, true, false, false, true, false, false, false, false, false);
 
-	//セッション
+	//エラーメッセージを削除
 	session.remove(loginId, loginIdErrorMessageList);
 	session.remove(password, passwordErrorMessageList);
 
@@ -77,8 +77,6 @@ public class LoginAction extends ActionSupport implements SessionAware{
 
 	UserInfoDAO userInfoDao = new UserInfoDAO();
 
-
-
 	//入力したID,パスワードが登録されているか確認
 	if(userInfoDao.isExistsUserInfo(loginId, password)){
 		//該当ユーザーをログイン状態にする
@@ -86,24 +84,22 @@ public class LoginAction extends ActionSupport implements SessionAware{
 			UserInfoDTO userInfoDTO = userInfoDao.getUserInfo(loginId, password);
 			session.put("loginId", userInfoDTO.getUserId());
 
-
 			//tempUserIdに保持しているカート情報とloginIDをリンクさせる
 			CartInfoDAO cartInfoDao = new CartInfoDAO();
 			cartInfoDao.linkToLoginId(loginId,String.valueOf(session.get("tempUserId")));
-
 
 			/*cartFlgを保持している場合
 			 * 宛先情報を取得し
 			 * 決済画面に遷移
 			 */
-
 			cartInfoDao.linkToLoginId(String.valueOf(session.get("tempUserId")),loginId);
 			if(session.get("cartFlg") != null && (Boolean.parseBoolean(String.valueOf(session.get("cartFlg"))) == true)) {
 				DestinationInfoDAO destinationInfoDao = new DestinationInfoDAO();
 				try {
 					destinationInfoDTOList = destinationInfoDao.getDestinationInfo(String.valueOf(session.get("loginId")));
 					Iterator<DestinationInfoDTO> iterator = destinationInfoDTOList.iterator();
-					//宛先情報がない場合nullを入れる。
+
+					//宛先情報がない場合nullを入れる
 					if(!(iterator.hasNext())) {
 						System.out.println("OK");
 						destinationInfoDTOList = null;
@@ -117,15 +113,13 @@ public class LoginAction extends ActionSupport implements SessionAware{
 				result = SUCCESS;
 			}
 		}
+
 		//ログイン情報を受け渡す
 			session.put("loginFlg", true);
 	}
 	return result;
 
-
-
 		}
-
 
 		public String getLoginId(){
 			return loginId;
@@ -151,18 +145,6 @@ public class LoginAction extends ActionSupport implements SessionAware{
 			this.savedLoginId = savedLoginId;
 		}
 
-		public List<String> getLoginIdErrorMessageList() {
-			return loginIdErrorMessageList;
-		}
-		public void setLoginIdErrorMessageList(List<String> loginIdErrorMessageList) {
-			this.loginIdErrorMessageList = loginIdErrorMessageList;
-		}
-		public List<String> getPasswordErrorMessageList() {
-			return passwordErrorMessageList;
-		}
-		public void setPasswordErrorMessageList(List<String> passwordErrorMessageList) {
-			this.passwordErrorMessageList = passwordErrorMessageList;
-		}
 		public Map<String, Object> getSession() {
 			return session;
 		}
