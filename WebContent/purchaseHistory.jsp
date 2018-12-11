@@ -4,29 +4,21 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<!-- <link rel="stylesheet" href="./css/style.css">
-<link rel="stylesheet" href="./css/purchaseHistory.css">-->
+<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/purchaseHistory.css">
 <title>商品購入履歴一覧</title>
 </head>
 <body>
 <jsp:include page="header.jsp"/>
-
 <div id="contents">
-
-<h1>商品購入履歴一覧画面</h1>
-
+	<h1>商品購入履歴一覧画面</h1>
 
 <!-- 購入履歴がない場合  -->
-
 <s:if test="purchaseHistoryInfoDTOList.size() == 0">
-	<s:property value="message"/>
+	<p><s:property value="message"/></p>
 </s:if>
 
-
-
-
 <!-- 購入履歴がある場合  -->
-
 <s:elseif test="purchaseHistoryInfoDTOList.size() != 0">
 	<table>
 		<tr>
@@ -41,20 +33,21 @@
 		<tr>
 			<td><s:property value="productName"/></td>
 			<td><s:property value="productNameKana"/></td>
-			<td><img src='<s:property value="imageFilePath"/>/<s:property value="imageFileName"/>'></td>
+			<td><img src='<s:property value="imageFilePath"/>/<s:property value="imageFileName"/>' width="100px" height="100px"></td>
 			<td><s:property value="price"/>円</td>
 			<td><s:property value="productCount"/>個</td>
 			<td><s:property value="totalPrice"/>円</td>
 		</tr>
 		</s:iterator>
-		<s:form action="DeletePurchaseHistoryAction">
-			<s:submit value="履歴削除"/>
-		</s:form>
 	</table>
+	<s:form action="DeletePurchaseHistoryAction">
+		<div class="submit_btn_box">
+			<button type="submit" class="submit_btn">履歴削除</button>
+		</div>
+	</s:form>
 </s:elseif>
 
 </div>
-
 <jsp:include page="footer.jsp"/>
 </body>
 </html>

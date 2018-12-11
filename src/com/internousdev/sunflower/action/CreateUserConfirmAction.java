@@ -158,62 +158,6 @@ public class CreateUserConfirmAction extends ActionSupport implements SessionAwa
 		this.password = password;
 	}
 
-//	public List<String> getFamilyNameErrorMessageList() {
-//		return familyNameErrorMessageList;
-//	}
-//
-//	public void setFamilyNameErrorMessageList(List<String> familyNameErrorMessageList) {
-//		this.familyNameErrorMessageList = familyNameErrorMessageList;
-//	}
-//
-//	public List<String> getFirstNameErrorMessageList() {
-//		return firstNameErrorMessageList;
-//	}
-//
-//	public void setFirstNameErrorMessageList(List<String> firstNameErrorMessageList) {
-//		this.firstNameErrorMessageList = firstNameErrorMessageList;
-//	}
-//
-//	public List<String> getFamilyNameKanaErrorMessageList() {
-//		return familyNameKanaErrorMessageList;
-//	}
-//
-//	public void setFamilyNameKanaErrorMessageList(List<String> familyNameKanaErrorMessageList) {
-//		this.familyNameKanaErrorMessageList = familyNameKanaErrorMessageList;
-//	}
-//
-//	public List<String> getFirstNameKanaErrorMessageList() {
-//		return firstNameKanaErrorMessageList;
-//	}
-//
-//	public void setFirstNameKanaErrorMessageList(List<String> firstNameKanaErrorMessageList) {
-//		this.firstNameKanaErrorMessageList = firstNameKanaErrorMessageList;
-//	}
-//
-//	public List<String> getEmailErrorMessageList() {
-//		return emailErrorMessageList;
-//	}
-//
-//	public void setEmailErrorMessageList(List<String> emailErrorMessageList) {
-//		this.emailErrorMessageList = emailErrorMessageList;
-//	}
-//
-//	public List<String> getUserIdErrorMessageList() {
-//		return userIdErrorMessageList;
-//	}
-//
-//	public void setUserIdErrorMessageList(List<String> userIdErrorMessageList) {
-//		this.userIdErrorMessageList = userIdErrorMessageList;
-//	}
-//
-//	public List<String> getPasswordErrorMessageList() {
-//		return passwordErrorMessageList;
-//	}
-//
-//	public void setPasswordErrorMessageList(List<String> passwordErrorMessageList) {
-//		this.passwordErrorMessageList = passwordErrorMessageList;
-//	}
-
 	public String getCategoryId() {
 		return categoryId;
 	}

@@ -20,8 +20,6 @@ public class DeleteCartAction extends ActionSupport implements SessionAware{
 
 	private CartInfoDAO cartInfoDAO = new CartInfoDAO();
 
-	private int productId;
-
 	private List<CartInfoDTO> cartInfoDTOList = null;
 
 	private int totalPrice;
