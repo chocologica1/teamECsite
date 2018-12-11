@@ -4,7 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="">
+<!-- <link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/password.css">-->
 <title>パスワード再設定完了</title>
 <script>
 setTimeout(function(){
@@ -15,9 +16,13 @@ setTimeout(function(){
 <body>
 <jsp:include page="header.jsp"/>
 
+<div id="contents">
+
 <h1>パスワード再設定完了画面</h1>
 
 <p>パスワードの再設定が完了しました。</p>
+
+</div>
 
 <jsp:include page="footer.jsp"/>
 </body>
