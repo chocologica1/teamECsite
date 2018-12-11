@@ -34,6 +34,7 @@ public class LoginAction extends ActionSupport implements SessionAware{
 		List<String>loginIdErrorMessageList = new ArrayList<String>();
 		List<String>passwordErrorMessageList = new ArrayList<String>();
 
+
 		if(session == null || session.isEmpty()){
 			return "timeOut";
 		}
@@ -118,7 +119,7 @@ public class LoginAction extends ActionSupport implements SessionAware{
 			session.put("loginFlg", true);
 	//ユーザIDとパスワードが不一致の場合
 	}else{
-		session.put(key, value)
+		session.put("loginErrorMessage", "入力されたユーザIDまたはパスワードが異なります。");
 	}
 	return result;
 
