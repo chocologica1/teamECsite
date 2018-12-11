@@ -4,11 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="">
+<link rel="stylesheet" href="css/footer.css">
 <title>footer</title>
 </head>
 </head>
 <body>
-	<div>Copywrite Sunflower</div>
+	<div id="footer">Copywrite Sunflower</div>
 </body>
 </html>
