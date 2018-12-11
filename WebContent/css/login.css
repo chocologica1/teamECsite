@@ -1,0 +1,48 @@
+@CHARSET "UTF-8";
+/*login.jsp*/
+
+#contents{
+	height:60px;
+}
+
+.inputform{
+	width: 90%;
+	padding: 10px;
+	font-weight: 400;
+	vertical-align: top;
+	border-right: 1px solid #9b5d73;
+	border-bottom:1px solid #9b5d73;
+	border-top: 1px solid #9b5d73;
+	border-left:1px solid #9b5d73;
+	background: #9b5d73;
+	color:#9b5d73;
+}
+
+.inputform th{
+	width: 25%;
+	padding: 10px;
+	font-weight: 400;
+	vertical-align: top;
+	border-right: 1px solid white;
+	border-bottom: 1px solid white;
+	border-top: 1px solid white;
+	border-left: 1px solid white;
+	background: #9b5d73;
+	color:#ffffff;
+}
+
+.inputform td{
+	width: 75%;
+	padding: 10px;
+	vertical-align: top;
+	border-right: 1px slid #ccc;
+	border-bottom: 1px solid #ccc;
+}
+
+.inputform, th, td{
+	margin : 3%;
+	border-collapse: collapse;
+	border: 1px solid #ccc;
+	line-height: 1.5;
+}
+
