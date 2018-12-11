@@ -57,6 +57,10 @@ body{
 	background-color:#fff;
 }
 
+table{
+	border:1px solid #333;
+}
+
 th{
 	background-color: #c38b8b;
 	color: #FFFFFF;
@@ -68,6 +72,14 @@ h1{
 	color: #b0757c;
 	height:50 px;
 	line-height:50px;
+}
+
+#contents{
+	margin:0 auto;
+	margin-top:70px;
+	margin-bottom:60px;
+	width:85%;
+	margin-left:5%;
 }
 
 /* エラーメッセージ */
