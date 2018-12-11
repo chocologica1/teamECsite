@@ -37,7 +37,6 @@ public class CartInfoDAO {
 				+ "pi.product_name,"
 				+ "pi.product_name_kana,"
 				+ "pi.product_description,"
-				+ "pi.category_id,"
 				+ "pi.image_file_path,"
 				+ "pi.image_file_name,"
 				+ "pi.release_date,"
@@ -64,7 +63,6 @@ public class CartInfoDAO {
 				dto.setUpdateDate(rs.getDate("ci.update_date"));
 				dto.setProductName(rs.getString("pi.product_name"));
 				dto.setProductNameKana(rs.getString("pi.product_name_kana"));
-				dto.setCategoryId(rs.getInt("pi.category_id"));
 				dto.setImageFilePath(rs.getString("pi.image_file_path"));
 				dto.setImageFileName(rs.getString("pi.image_file_name"));
 				dto.setReleaseDate(rs.getDate("pi.release_date"));
