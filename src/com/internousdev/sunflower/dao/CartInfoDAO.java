@@ -13,7 +13,6 @@ public class CartInfoDAO {
 
 	private DBConnector db = new DBConnector();
 
-
 	/**
 	 * カート内商品情報一覧を取得します。
 	 *
@@ -72,7 +71,6 @@ public class CartInfoDAO {
 				cartInfoDTOList.add(dto);
 			}
 		}catch(SQLException e){
-			System.out.println("get");
 			e.printStackTrace();
 		}finally{
 			try{con.close();}catch(SQLException e){}
