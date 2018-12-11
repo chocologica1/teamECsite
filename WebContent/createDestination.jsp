@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<!-- <link rel="stylesheet" href=""> -->
+<link rel="stylesheet" href="">
 <title>宛先情報入力</title>
 </head>
 <body>
@@ -142,7 +142,7 @@
 				</s:else>
 			</tr>
 		</table>
-		<s:submit value="登録確認" />
+		<s:submit value="確認" />
 	</s:form>
 
 	</div>

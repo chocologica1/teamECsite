@@ -5,8 +5,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<!-- <link rel="stylesheet" href="./css/create.css"> -->
-<!-- <link rel="stylesheet" href="./css/style.css"> -->
+<link rel="stylesheet" href="./css/create.css">
+<link rel="stylesheet" href="./css/style.css">
 <title>ユーザー登録画面</title>
 </head>
 <body>
@@ -16,50 +16,57 @@
 		<h1>ユーザー情報入力画面</h1>
 
 		<!-- エラーメッセージここから -->
-		<div class="error">
+
 			<s:if test="!#session.familyNameErrorMessageList.isEmpty()">
+			<div class="error">
 				<s:iterator value="#session.familyNameErrorMessageList">
 					<s:property />
 				</s:iterator>
-				<br>
+				</div>
 			</s:if>
 			<s:if test="!#session.firstNameErrorMessageList.isEmpty()">
+			<div class="error">
 				<s:iterator value="#session.firstNameErrorMessageList">
 					<s:property />
 				</s:iterator>
-				<br>
+			</div>
 			</s:if>
 			<s:if test="!#session.familyNameKanaErrorMessageList.isEmpty()">
+			<div class="error">
 				<s:iterator value="#session.familyNameKanaErrorMessageList">
 					<s:property />
 				</s:iterator>
-				<br>
+			</div>
 			</s:if>
 			<s:if test="!#session.firstNameKanaErrorMessageList.isEmpty()">
+			<div class="error">
 				<s:iterator value="#session.firstNameKanaErrorMessageList">
 					<s:property />
 				</s:iterator>
-				<br>
+				</div>
 			</s:if>
 			<s:if test="!#session.emailErrorMessageList.isEmpty()">
+			<div class="error">
 				<s:iterator value="#session.emailErrorMessageList">
 					<s:property />
 				</s:iterator>
-				<br>
+				</div>
 			</s:if>
 			<s:if test="!#session.userIdErrorMessageList.isEmpty()">
+			<div class="error">
 				<s:iterator value="#session.userIdErrorMessageList">
 					<s:property />
 				</s:iterator>
-				<br>
+				</div>
 			</s:if>
 			<s:if test="!#session.passwordErrorMessageList.isEmpty()">
+			<div class="error">
 				<s:iterator value="#session.passwordErrorMessageList">
 					<s:property />
 				</s:iterator>
-				<br>
+				</div>
 			</s:if>
-		</div>
+
 		<!-- ここまで -->
 
 		<s:form action="CreateUserConfirmAction">
@@ -160,13 +167,13 @@
 
 				<tr class="textBox">
 					<th>パスワード</th>
-					<td><input type="text" name="password"
+					<td><input type="password" name="password"
 						value="" placeholder="パスワード"
 						class="txt" /></td>
 				</tr>
 			</table>
 			<div class ="submit_btn_box">
-				<s:submit value="登録" class="submit_btn" />
+				<s:submit value="確認" class="submit_btn" />
 			</div>
 		</s:form>
 	</div>

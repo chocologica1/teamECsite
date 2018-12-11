@@ -7,6 +7,34 @@
 	width:85%;
 	margin-left:5%;
 }
+p{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+h1{
+	border-bottom: solid 2px #b0757c;
+	border-top:solid 2px #b0757c;
+	color: #b0757c;
+	font-size: 32px;
+	font-weight: bold;
+	height:60 px;
+	line-height:60px;
+	margin-bottom:20px;
+}
+
+body{
+	font-family: YuGothic, "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+	color: #333;
+	background-color:#fff;
+	box-sizing: border-box;
+	width: 100%;
+	min-width: 1000px;
+}
 
 /* メッセージ全般(エラー、選択要求、完了) */
 .info, .error, .complete {
@@ -72,7 +100,7 @@
 	background: #4477a1;
 }
 
-/*======以下、サンプルより引用=====*/
+/* 以下、サンプルを参照 */
 
 table.vertical-list-table {
 	width: 90%;
@@ -110,8 +138,9 @@ table.vertical-list-table, th, td {
 }
 
 .txt {
-	width : 99%;
+	width : 90%;
 	height : 30px;
 	border: 0.5px solid #999;
 	font-size : 24px;
 }
+

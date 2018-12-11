@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<!-- <link rel="stylesheet" href="./css/create.css"> -->
+<link rel="stylesheet" href="./css/create.css">
 <title>登録内容の確認</title>
 </head>
 <body>
@@ -50,16 +50,16 @@
 						<td><s:property value="password" /></td>
 					</tr>
 				</table>
-				<div id="submit_btn_box">
-				<div id=".contents-btn-set">
-					<s:submit value="登録情報を確定" class="submit_btn"/>
+				<div class="submit_btn_box">
+				<div class=".contents-btn-set">
+					<s:submit value="登録" class="submit_btn"/>
 				</div>
 				</div>
 		</s:form>
 
 		<s:form action="CreateUserAction">
-		<div id="submit_btn_box">
-		<div id=".contents-btn-set">
+		<div class="submit_btn_box">
+		<div class=".contents-btn-set">
 			<s:submit value="戻る" class="submit_btn"/>
 		</div>
 		</div>
@@ -68,6 +68,5 @@
 	</div>
 
 	<jsp:include page="footer.jsp" />
-
 </body>
 </html>
