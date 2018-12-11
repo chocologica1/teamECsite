@@ -4,17 +4,17 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="">
+<link rel="stylesheet" href="./css/mypage.css">
 <title>マイページ</title>
 </head>
 <body>
 
   <jsp:include page="header.jsp"/>
   <div id = "contents">
+  <h1>マイページ</h1>
   <s:form action = "PurchaseHistoryAction">
 
-  <!-- テーブル使用 -->
-    <table>
+    <table class = "vertical-list-table">
       <tr>
         <th scope = "row"><s:label value = "姓"/></th>
         <td><s:property value = "userInfoDTO.familyName"/></td>
@@ -42,7 +42,9 @@
 
     </table>
 
-    <s:submit value = "購入履歴"/>
+    <div class = "submit_btn_box">
+      <s:submit value = "購入履歴" class = "submit_btn"/>
+    </div>
   </s:form>
   </div>
   <s:include value="footer.jsp"/>
