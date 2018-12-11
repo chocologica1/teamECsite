@@ -57,12 +57,14 @@ body{
 	background-color:#fff;
 }
 
-table{
-	border:1px solid #333;
+
+td{
+	border:1px solid #AAA;
 }
 
 th{
 	background-color: #c38b8b;
+	border:1px solid #DDD;
 	color: #FFFFFF;
 }
 
