@@ -4,8 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/cart.css">
+<!-- <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/cart.css"> -->
 <title>カート画面</title>
 <script src="//code.jquery.com/jquery-1.12.1.min.js"></script>
 
@@ -79,11 +79,11 @@
 		</div>
 
 		<!-- 決済ボタン -->
-		<div class="submit_btn_box">
+		<div class="submit">
 			<input type="button" value="決済" onclick="submitAction('SettlementConfirmAction')" class="submit_btn"/>
 		</div>
 		<!-- 削除ボタン -->
-			<div class="submit_btn_box" id="delete">
+			<div class="submit" id="delete">
 				<input type="submit" value="削除" id="deleteButton" disabled = "disabled" class="submit_btn"/>
 			</div>
 		</s:form>
