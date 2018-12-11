@@ -33,21 +33,19 @@ function goResetPasswordAction(){
 	<!-- エラーメッセージの表示 -->
 		<s:if test="!#session.loginIdErrorMessageList.isEmpty()">
 			<div class="message">
-					<s:iterator value="#session.loginIdErrorMessageList">
-						<div class="error">
-							<s:property /><br>
-						</div>
-					</s:iterator>
+				<div class="error">
+					<s:iterator value="#session.loginIdErrorMessageList"><s:property />
+					</s:iterator><br>
 				</div>
+			</div>
 		</s:if>
 		<s:if test="!#session.passwordErrorMessageList.isEmpty()">
 			<div class="message">
-					<s:iterator value="#session.passwordErrorMessageList">
-						<div class="error">
-							<s:property /><br>
-						</div>
-					</s:iterator>
+				<div class="error">
+					<s:iterator value="#session.passwordErrorMessageList"><s:property />
+					</s:iterator><br>
 				</div>
+			</div>
 		</s:if>
 
 
