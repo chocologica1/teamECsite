@@ -4,15 +4,19 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="">
+<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/password.css">
 <title>パスワード再設定確認</title>
 </head>
 <body>
 <jsp:include page="header.jsp"/>
 
+<div id="contents">
+
 <h1>パスワード再設定確認画面</h1>
 
 <s:form action="ResetPasswordCompleteAction">
+<div class="table">
 	<table>
 		<tr>
 			<td>ユーザID</td>
@@ -23,14 +27,20 @@
 			<td><s:property value="#session.hiddenPassword"/></td>   <!-- 改めて新パスワードを*で表示  -->
 		</tr>
 	</table>
-	<s:submit value="パスワード再設定"/>
+</div>
+	<div class="submit_btn_box">
+		<button type="submit" class="submit_btn">パスワード再設定</button>
+	</div>
 </s:form>
 
 <s:form action="ResetPasswordAction">
-	<input type="hidden" name="reFlg" value="2"/>
-	<s:submit value="戻る"/>
+	<div class="submit_btn_box">
+		<input type="hidden" name="reFlg" value="2"/>
+		<button type="submit" class="submit_btn">戻る</button>
+	</div>
 </s:form>
 
+</div>
 
 <jsp:include page="footer.jsp"/>
 </body>

@@ -11,42 +11,51 @@
 <body>
 	<jsp:include page="header.jsp" />
 
+	<div id="contents">
+
 	<!-- エラーメッセージ -->
 	<div>
 		<s:if test="!#session.familyNameErrorMessageList.isEmpty()">
-			<s:iterator value="#session.familyNameErrorMessageList"><s:property />
-			</s:iterator>
-			<br>
+			<div class="error">
+				<s:iterator value="#session.familyNameErrorMessageList"><s:property /><br>
+				</s:iterator>
+			</div>
 		</s:if>
 		<s:if test="!#session.firstNameErrorMessageList.isEmpty()">
-			<s:iterator value="#session.firstNameErrorMessageList"><s:property />
-			</s:iterator>
-			<br>
+			<div class="error">
+				<s:iterator value="#session.firstNameErrorMessageList"><s:property /><br>
+				</s:iterator>
+			</div>
 		</s:if>
 		<s:if test="!#session.familyNameKanaErrorMessageList.isEmpty()">
-			<s:iterator value="#session.familyNameKanaErrorMessageList"><s:property />
-			</s:iterator>
-			<br>
+			<div class="error">
+				<s:iterator value="#session.familyNameKanaErrorMessageList"><s:property /><br>
+				</s:iterator>
+			</div>
 		</s:if>
 		<s:if test="!#session.firstNameKanaErrorMessageList.isEmpty()">
-			<s:iterator value="#session.firstNameKanaErrorMessageList"><s:property />
-			</s:iterator>
-			<br>
+			<div class="error">
+				<s:iterator value="#session.firstNameKanaErrorMessageList"><s:property /><br>
+				</s:iterator>
+			</div>
 		</s:if>
 		<s:if test="!#session.userAddressErrorMessageList.isEmpty()">
-			<s:iterator value="#session.userAddressErrorMessageList"><s:property />
-			</s:iterator>
-			<br>
+			<div class="error">
+				<s:iterator value="#session.userAddressErrorMessageList"><s:property /><br>
+				</s:iterator>
+			</div>
 		</s:if>
 		<s:if test="!#session.telNumberErrorMessageList.isEmpty()">
-			<s:iterator value="#session.telNumberErrorMessageList"><s:property />
-			</s:iterator>
-			<br>
+			<div class="error">
+				<s:iterator value="#session.telNumberErrorMessageList"><s:property /><br>
+				</s:iterator>
+			</div>
 		</s:if>
 		<s:if test="!#session.emailErrorMessageList.isEmpty()">
-			<s:iterator value="#session.emailErrorMessageList"><s:property />
-			</s:iterator>
-			<br>
+			<div class="error">
+				<s:iterator value="#session.emailErrorMessageList"><s:property /><br>
+				</s:iterator>
+			</div>
 		</s:if>
 
 	</div>
@@ -135,6 +144,8 @@
 		</table>
 		<s:submit value="登録確認" />
 	</s:form>
+
+	</div>
 
 	<jsp:include page="footer.jsp" />
 </body>
