@@ -16,7 +16,6 @@ header {
 	margin: auto;
 }
 
-
 #header-title {
 	float : left;
     line-height: 60px;
@@ -29,7 +28,6 @@ header {
 #header-menu {
 	float : left;
 	width : 80%;
-	margin-left : -30px;
 }
 
 #header-menu ul{
