@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="">
+<!-- <link rel="stylesheet" href=""> -->
 <meta http-equiv="refresh" content="3;<s:url action='HomeAction'/>"/>
 <title>決済完了画面</title>
 </head>
@@ -17,9 +17,13 @@
 	<div id="main">
 
 		<!-- コンテンツ -->
-		<div id="contents">
+		<div class="contents">
+
+
+			<h1>決済完了画面</h1>
+
 			<!-- メッセージを表示 -->
-			<div id="message">
+			<div class="complete">
 				決済が完了しました。
 			</div>
 		</div>
