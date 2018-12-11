@@ -52,12 +52,12 @@ function goResetPasswordAction(){
 	<table class="inputform">
 
 		<tr>
-			<th>ユーザーID</th>
+			<th>ユーザID</th>
 			<s:if test="#session.savedLoginId == true">
-			<td><s:textfield name="loginId" class="txt" placeholder="ユーザーID" value='%{#session.keepLoginId}' autocomplete="off"/></td>
+			<td><s:textfield name="loginId" class="txt" placeholder="ユーザID" value='%{#session.keepLoginId}' autocomplete="off"/></td>
 			</s:if>
 			<s:else>
-			<td><s:textfield name="loginId" class="txt" placeholder="ユーザーID" autocomplete="off"/></td>
+			<td><s:textfield name="loginId" class="txt" placeholder="ユーザID" autocomplete="off"/></td>
 			</s:else>
 		</tr>
 		<tr>
@@ -72,7 +72,7 @@ function goResetPasswordAction(){
 		<s:else>
 			<s:checkbox name="savedLoginId"/>
 		</s:else>
-		<s:label value="ログインID保存"/><br>
+		<s:label value="ユーザID保存"/><br>
 	</div>
 	<div class="submit_btn_box">
 		<s:submit value="ログイン" class="submit_btn" onclick="goLoginAction();"/>
