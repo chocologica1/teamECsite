@@ -13,14 +13,14 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class HomeAction extends ActionSupport implements SessionAware {
 
-	private List<MCategoryDTO> mCategoryDTOList = new ArrayList<MCategoryDTO>();
+
 	private String categoryId;
 	private Map<String, Object> session;
 
 	//ログインしてるか、していないか確認 ログインしていない場合tempUserIdをputする。
 	public String execute(){
 
-
+		List<MCategoryDTO> mCategoryDTOList = new ArrayList<MCategoryDTO>();
 
 		if(!(session.containsKey("loginId")) && !(session.containsKey("tempUserId"))){
 			CommonUtility commonUtility = new CommonUtility();
@@ -44,14 +44,6 @@ public class HomeAction extends ActionSupport implements SessionAware {
 		this.categoryId = categoryId;
 	}
 
-	public List<MCategoryDTO> getmCategoryDTOList(){
-		return mCategoryDTOList;
-	}
-
-	public void setmCategoryDTOList(List<MCategoryDTO> mCategoryDTOList){
-		this.mCategoryDTOList = mCategoryDTOList;
-	}
-
 	public Map<String, Object> getSession(){
 		return session;
 	}
@@ -59,6 +51,5 @@ public class HomeAction extends ActionSupport implements SessionAware {
 	public void setSession(Map<String,Object> session){
 		this.session = session;
 	}
-
 
 }
