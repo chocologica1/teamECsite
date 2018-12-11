@@ -48,7 +48,6 @@ function goResetPasswordAction(){
 			</div>
 		</s:if>
 
-
 	<table class="inputform">
 
 		<tr>
