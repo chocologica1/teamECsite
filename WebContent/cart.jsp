@@ -35,7 +35,7 @@
  	<s:if test="cartInfoDTOList.size() > 0">
 		<s:form action="DeleteCartAction" name = "form">
 			<div id="cart">
-				<s:iterator value="cartInfoDTOList">
+
 					<table class="product">
 					<thead>
 							<tr>
@@ -51,7 +51,9 @@
 							</tr>
 						</thead>
 						<tbody>
+							<s:iterator value="cartInfoDTOList">
 							<tr>
+
 							<td>
 								<input type="checkbox" value="<s:property value='productId'/>" name="productIdArray" class="deleteCheck">
 							</td>
@@ -61,11 +63,13 @@
 							<td><s:property value="releaseCompany"/></td>
 							<td><s:property value="releaseDate"/></td>
 							<td><s:property value="productCount"/></td>
-							<td><s:property value="subtotal"/></td></tr>
+							<td><s:property value="subtotal"/></td>
+							</tr>
+							</s:iterator>
 						</tbody>
 </table>
 
-				</s:iterator>
+
 			</div>
 
 		<!-- カート合計金額 -->
