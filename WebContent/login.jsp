@@ -41,8 +41,12 @@ function goResetPasswordAction(){
 				</div>
 		</s:if>
 		<s:if test="!#session.passwordErrorMessageList.isEmpty()">
-			<div class="error">
-					<s:iterator value="#session.passwordErrorMessageList"><s:property /><br></s:iterator>
+			<div class="message">
+					<s:iterator value="#session.passwordErrorMessageList">
+						<div class="error">
+							<s:property /><br>
+						</div>
+					</s:iterator>
 				</div>
 		</s:if>
 
