@@ -20,7 +20,6 @@ public class SearchItemAction extends ActionSupport implements SessionAware {
 	private int categoryId;
 	private String keywords;
 
-
 	private Map<String, Object> session;
 
 	public String execute(){
@@ -28,7 +27,6 @@ public class SearchItemAction extends ActionSupport implements SessionAware {
 		List<MCategoryDTO> mCategoryDTOList = new ArrayList<MCategoryDTO>();
 		List<String> keywordsErrorMessageList = new ArrayList<String>();
 		List<ProductInfoDTO> productInfoDTOList = new ArrayList<ProductInfoDTO>();
-
 
 		//セッションタイムアウト
 		if(session == null || session.isEmpty()){
