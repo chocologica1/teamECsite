@@ -83,8 +83,9 @@ h1{
 }
 
 /* エラーメッセージ */
+
 .error_message{
-	color:FF0000;
+	color:#FF0000;
 }
 
 /* ボタン */
