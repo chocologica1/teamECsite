@@ -17,8 +17,7 @@ public class CreateUserAction extends ActionSupport implements SessionAware {
 	private List<String> sexList=new ArrayList<String>();
 	private String email;
 	private String userId;
-	private String password;;
-	private String categoryId;
+	private String password;
 	private Map<String, Object> session;
 
 	public String execute(){
@@ -112,15 +111,6 @@ public class CreateUserAction extends ActionSupport implements SessionAware {
 
 	public void setPassword(String password) {
 		this.password = password;
-	}
-
-
-	public String getCategoryId() {
-		return categoryId;
-	}
-
-	public void setCategoryId(String categoryId) {
-		this.categoryId = categoryId;
 	}
 
 	public Map<String, Object> getSession() {

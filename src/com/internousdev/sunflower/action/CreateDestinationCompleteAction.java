@@ -16,7 +16,6 @@ public class CreateDestinationCompleteAction extends ActionSupport implements Se
 	private String userAddress;
 	private String telNumber;
 	private String email;
-	private String categoryId;
 	private Map<String, Object> session;
 
 	public String execute(){
@@ -26,14 +25,6 @@ public class CreateDestinationCompleteAction extends ActionSupport implements Se
 		}
 		String result = ERROR;
 		DestinationInfoDAO destinationInfoDAO = new DestinationInfoDAO();
-
-		System.out.println(session.get("familyName"));
-		System.out.println(session.get("firstName"));
-		System.out.println(session.get("familyNameKana"));
-		System.out.println(session.get("firstNameKana"));
-		System.out.println(session.get("userAddress"));
-		System.out.println(session.get("telNumber"));
-		System.out.println(session.get("email"));
 
 		/*loginIdに注意*/
 		int count = destinationInfoDAO.createDestination(session.get("loginId").toString(),session.get("familyName").toString(), session.get("firstName").toString(), session.get("familyNameKana").toString(), session.get("firstNameKana").toString(), session.get("userAddress").toString(), session.get("telNumber").toString(), session.get("email").toString());
@@ -98,14 +89,6 @@ public class CreateDestinationCompleteAction extends ActionSupport implements Se
 
 	public void setEmail(String email) {
 		this.email = email;
-	}
-
-	public String getCategoryId() {
-		return categoryId;
-	}
-
-	public void setCategoryId(String categoryId) {
-		this.categoryId = categoryId;
 	}
 
 	public Map<String, Object> getSession() {
