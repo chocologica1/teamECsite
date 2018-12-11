@@ -4,11 +4,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="">
+<!-- <link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/purchaseHistory.css">-->
 <title>商品購入履歴一覧</title>
 </head>
 <body>
 <jsp:include page="header.jsp"/>
+
+<div id="contents">
 
 <h1>商品購入履歴一覧画面</h1>
 
@@ -50,6 +53,7 @@
 	</table>
 </s:elseif>
 
+</div>
 
 <jsp:include page="footer.jsp"/>
 </body>
