@@ -67,7 +67,7 @@
 							</tr>
 							</s:iterator>
 						</tbody>
-</table>
+				</table>
 
 
 			</div>
@@ -83,7 +83,7 @@
 			<input type="button" value="決済" onclick="submitAction('SettlementConfirmAction')" class="submit_btn"/>
 		</div>
 		<!-- 削除ボタン -->
-			<div class="submit_btn_box">
+			<div class="submit_btn_box" id="delete">
 				<input type="submit" value="削除" id="deleteButton" disabled = "disabled" class="submit_btn"/>
 			</div>
 		</s:form>
