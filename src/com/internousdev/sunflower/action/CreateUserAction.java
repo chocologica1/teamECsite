@@ -18,6 +18,7 @@ public class CreateUserAction extends ActionSupport implements SessionAware {
 	private String email;
 	private String userId;
 	private String password;
+	private boolean createUserFlg;
 	private Map<String, Object> session;
 
 	public String execute(){
@@ -111,6 +112,10 @@ public class CreateUserAction extends ActionSupport implements SessionAware {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public void setCreateUserFlg(boolean createUserFlg){
+		this.createUserFlg = createUserFlg;
 	}
 
 	public Map<String, Object> getSession() {

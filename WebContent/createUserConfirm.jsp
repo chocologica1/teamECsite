@@ -59,9 +59,7 @@
 
 		<s:form action="CreateUserAction">
 		<div class="submit_btn_box">
-		<div class=".contents-btn-set">
 			<s:submit value="戻る" class="submit_btn"/>
-		</div>
 		</div>
 		</s:form>
 
