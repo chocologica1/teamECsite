@@ -18,6 +18,8 @@ public class SettlementCompleteAction extends ActionSupport implements SessionAw
 
 	public String execute(){
 
+		System.out.println("Id:" + radioId);
+
 		/*セッションタイムアウト*/
 		if(session == null || session.isEmpty()){
 			return "timeOut";

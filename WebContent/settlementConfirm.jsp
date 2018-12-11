@@ -85,7 +85,7 @@
 		<!-- 新規宛先登録ボタン -->
 		<s:form action="CreateDestinationAction">
 			<input type="hidden" name="createDestinationFlg" value="true"/>
-			<div class="submit_btn_box">10
+			<div class="submit_btn_box">
 				<s:submit value="新規宛先登録" class="submit_btn"/>
 			</div>
 		</s:form>
