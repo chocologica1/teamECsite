@@ -28,6 +28,18 @@ public class CreateUserAction extends ActionSupport implements SessionAware {
 		}
 		String result = ERROR;
 
+		//ログイン画面からの遷移の場合セッションの中の登録情報を削除
+		if(createUserFlg){
+			session.remove("familyName");
+			session.remove("firstName");
+			session.remove("familyNameKana");
+			session.remove("firstNameKana");
+			session.remove("sex");
+			session.remove("email");
+			session.remove("userId");
+			session.remove("password");
+		}
+
 		//セッションに残っているエラーメッセージを取り除いておく
 		session.remove("familyNameErrorMessageList");
 		session.remove("firstNameErrorMessageList");
