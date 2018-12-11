@@ -15,6 +15,7 @@ public class CreateDestinationAction extends ActionSupport implements SessionAwa
 	private String userAddress;
 	private String telnumber;
 	private String email;
+	private Boolean createDestinationFlg;
 	private Map<String, Object> session;
 
 	public String execute(){
@@ -23,6 +24,17 @@ public class CreateDestinationAction extends ActionSupport implements SessionAwa
 			return "timeOut";
 		}
 	String result = ERROR;
+
+	//
+	if(createDestinationFlg){
+		session.remove("familyName");
+		session.remove("firstName");
+		session.remove("familyNameKana");
+		session.remove("firstNameKana");
+		session.remove("userAddress");
+		session.remove("telNumber");
+		session.remove("email");
+	}
 
 	//セッションに残っているエラーメッセージを取り除いておく
 	session.remove("familyNameErrorMessageList");
@@ -100,5 +112,9 @@ public class CreateDestinationAction extends ActionSupport implements SessionAwa
 
 	public void setSession(Map<String, Object> session) {
 		this.session = session;
+	}
+
+	public void setCreateDestinationFlg(boolean createDestinationFlg){
+		this.createDestinationFlg = createDestinationFlg;
 	}
 }
