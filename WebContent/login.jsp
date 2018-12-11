@@ -47,6 +47,14 @@ function goResetPasswordAction(){
 				</div>
 			</div>
 		</s:if>
+		<!-- ユーザーIDもしくはパスワードが一致しない場合表示 -->
+		<s:if test="!#session.loginErrorMessage.isEmpty()">
+			<div class="message">
+				<div class="error">
+
+				</div>
+			</div>
+		</s:if>
 
 	<table class="inputform">
 
