@@ -29,6 +29,7 @@ header {
 #header-menu {
 	float : left;
 	width : 90%;
+	line-height: 60px;
 }
 
 #header-menu ul{
