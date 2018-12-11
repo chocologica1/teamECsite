@@ -19,7 +19,6 @@ public class SearchItemAction extends ActionSupport implements SessionAware {
 
 	private int categoryId;
 	private String keywords;
-
 	private Map<String, Object> session;
 
 	public String execute(){
