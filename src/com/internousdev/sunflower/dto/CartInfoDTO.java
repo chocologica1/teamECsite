@@ -21,7 +21,6 @@ public class CartInfoDTO {
 	private String productName;
 	private String productNameKana;
 	private String productDescription;
-	private int categoryId;
 	private String imageFilePath;
 	private String imageFileName;
 	private Date releaseDate;
@@ -119,14 +118,6 @@ public class CartInfoDTO {
 
 	public void setProductDescription(String productDescription){
 		this.productDescription = productDescription;
-	}
-
-	public int getCategoryId(){
-		return categoryId;
-	}
-
-	public void setCategoryId(int categoryId){
-		this.categoryId = categoryId;
 	}
 
 	public String getImageFilePath(){
