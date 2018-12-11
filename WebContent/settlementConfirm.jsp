@@ -4,7 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/settlement.css">
 <title>決済確認画面</title>
 </head>
 <body>
@@ -17,10 +18,25 @@
 
 		<!-- コンテンツ -->
 		<div id="contents">
+<!-- 		<div class = "top"> -->
+			<h1>決済確認画面</h1>
+<!-- 		</div> -->
+
 
 			<!-- 宛先情報が存在する場合 -->
 			<s:if test="#session.destinationInfoDTOList.size()>0">
-				宛先を選択してください
+
+<!-- 				<div class=message> -->
+					<div class="info">
+						宛先を選択してください
+					</div>
+					<div class="error">
+						宛先を選択してください
+					</div>
+					<div class="complete">
+						宛先を選択してください
+					</div>
+<!-- 				</div> -->
 
 				<!-- 宛先選択フォーム -->
 				<s:form action="SettlementCompleteAction">
