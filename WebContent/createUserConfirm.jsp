@@ -9,7 +9,7 @@
 <title>登録内容の確認</title>
 </head>
 <body>
-	<jsp:include page="header.jsp"/>
+<%-- 	<jsp:include page="header.jsp"/> --%>
 	<div>
 		<h1>登録内容確認画面</h1>
 		<br>
@@ -59,7 +59,7 @@
 
 	</div>
 
-	<jsp:include page="footer.jsp" />
+<%-- 	<jsp:include page="footer.jsp" /> --%>
 
 </body>
 </html>

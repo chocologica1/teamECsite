@@ -5,17 +5,17 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="">
+<link rel="stylesheet" href="./css/create.css">
 <title>ユーザー登録画面</title>
 </head>
 <body>
-	<jsp:include page="header.jsp" />
+<%-- 	<jsp:include page="header.jsp" /> --%>
 
-	<div>
+	<div id="contents">
 		<h1>ユーザー情報入力画面</h1>
 
 		<!-- エラーメッセージここから -->
-		<div class="errorMessage">
+		<div class="error">
 			<s:if test="!#session.familyNameErrorMessageList.isEmpty()">
 				<s:iterator value="#session.familyNameErrorMessageList">
 					<s:property />
@@ -63,18 +63,18 @@
 
 		<s:form action="CreateUserConfirmAction">
 
-			<table>
+			<table class="vertical-list-table">
 				<tr class="textBox">
 					<th class="textTitle">姓</th>
 					<s:if test="#session.savedUserInfo == true">
 						<td><input type="text" name="familyName"
 							value="<s:property value='#session.familyName'/>" placeholder="姓"
-							class="text" /></td>
+							class="txt" /></td>
 					</s:if>
 					<s:else>
 						<td><input type="text" name="familyName"
 							value="<s:property value='familyName'/>" placeholder="姓"
-							class="text" /></td>
+							class="txt" /></td>
 					</s:else>
 				</tr>
 
@@ -83,26 +83,25 @@
 					<s:if test="#session.savedUserInfo == true">
 						<td><input type="text" name="firstName"
 							value="<s:property value='#session.firstName' />" placeholder="名"
-							class="text" /></td>
+							class="txt" /></td>
 					</s:if>
 					<s:else>
 						<td><input type="text" name="firstName"
 							value="<s:property value='firstName' />" placeholder="名"
-							class="text" /></td>
+							class="txt" /></td>
 					</s:else>
-				<tr>
 				</tr>
 				<tr class="textBox">
 					<th class="txtTitle">姓ふりがな</th>
 					<s:if test="#session.savedUserInfo == true">
 						<td><input type="text" name="familyNameKana"
 							value="<s:property value='#session.familyNameKana' />"
-							placeholder="姓ふりがな" class="text" /></td>
+							placeholder="姓ふりがな" class="txt" /></td>
 					</s:if>
 					<s:else>
 						<td><input type="text" name="familyNameKana"
 							value="<s:property value='familyNameKana' />" placeholder="姓ふりがな"
-							class="text" /></td>
+							class="txt" /></td>
 					</s:else>
 				</tr>
 				<tr class="textBox">
@@ -110,65 +109,67 @@
 					<s:if test="#session.savedUserInfo == true">
 						<td><input type="text" name="firstNameKana"
 							value="<s:property value='#session.firstNameKana' />"
-							placeholder="名ふりがな" class="text" /></td>
+							placeholder="名ふりがな" class="txt" /></td>
 					</s:if>
 					<s:else>
 						<td><input type="text" name="firstNameKana"
 							value="<s:property value='firstNameKana' />" placeholder="名ふりがな"
-							class="text" /></td>
+							class="txt" /></td>
 					</s:else>
 				</tr>
 				<tr>
 					<th>性別</th>
 					<s:if test="#session.sex == 1">
-					<td><input type="radio" id="0" name="sex" value="0" />男性</td>
-					<td><input type="radio" id="1" name="sex" value="1" checked/>女性</td>
+					<td><input type="radio" id="0" name="sex" value="0" />男性
+					<input type="radio" id="1" name="sex" value="1" checked/>女性</td>
 					</s:if>
 					<s:else>
-					<td><input type="radio" id="0" name="sex" value="0" checked />男性</td>
-					<td><input type="radio" id="1" name="sex" value="1" />女性</td>
+					<td><input type="radio" id="0" name="sex" value="0" checked />男性
+					<input type="radio" id="1" name="sex" value="1" />女性</td>
 					</s:else>
 				</tr>
 
-				<tr>
+				<tr class="textBox">
 					<th>メールアドレス</th>
 					<s:if test="#session.savedUserInfo == true">
 						<td><input type="text" name="email"
 							value="<s:property value='#session.email' />"
-							placeholder="メールアドレス" class="text" /></td>
+							placeholder="メールアドレス" class="txt" /></td>
 					</s:if>
 					<s:else>
 						<td><input type="text" name="email"
 							value="<s:property value='email' />" placeholder="メールアドレス"
-							class="text" /></td>
+							class="txt" /></td>
 					</s:else>
 				</tr>
 
-				<tr>
+				<tr class="textBox">
 					<th>ユーザID</th>
 					<s:if test="#session.savedUserInfo == true">
 						<td><input type="text" name="userId"
 							value="<s:property value='#session.userId' />"
-							placeholder="ユーザID" class="text" /></td>
+							placeholder="ユーザID" class="txt" /></td>
 					</s:if>
 					<s:else>
 						<td><input type="text" name="userId"
 							value="<s:property value='userId' />" placeholder="ユーザID"
-							class="text" /></td>
+							class="txt" /></td>
 					</s:else>
 				</tr>
 
-				<tr class="txtBox">
+				<tr class="textBox">
 					<th>パスワード</th>
 					<td><input type="text" name="password"
 						value="" placeholder="パスワード"
-						class="text" /></td>
+						class="txt" /></td>
 				</tr>
 			</table>
-			<s:submit value="登録" class="submit_btn" />
+			<div id="submit_btn_box">
+				<s:submit value="登録" class="submit_btn" />
+			</div>
 		</s:form>
 	</div>
 
-	<jsp:include page="footer.jsp" />
+<%-- 	<jsp:include page="footer.jsp" /> --%>
 </body>
 </html>
