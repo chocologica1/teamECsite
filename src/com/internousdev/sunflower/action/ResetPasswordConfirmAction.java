@@ -71,16 +71,27 @@ public class ResetPasswordConfirmAction extends ActionSupport implements Session
 			//入力されたユーザID・パスワードと一致するデータがDB上にあれば"true"が返ってくる
 			if(userInfoDAO.isExistsUserInfo(userId,password)) {
 				//入力された新しいパスワードの1文字目だけ表示、2～16文字目は*で表示されるようにした文字列を代入する
-				String hiddenPassword = userInfoDAO.hiddenPassword(newPassword);
 				session.put("copyUserId", userId);				  	  //セッション「ユーザID」
 				session.put("savedUserId", true);			      //セッション「保存ユーザID(戻る用)」
 				session.put("newPassword", newPassword);          //セッション「新しいパスワード」
-				session.put("hiddenPassword", hiddenPassword);    //セッション「*で表示されるパスワード」
+				session.put("hiddenPassword", hiddenPassword(newPassword));    //セッション「*で表示されるパスワード」
 				result = SUCCESS;
 				return result;
 			}
 		}
 	return result;
+	}
+
+	//パスワードを*で隠すメソッド
+	 String hiddenPassword(String password){
+		int beginIndex = 0;
+		int endIndex = 0;
+		if(password.length() >= 1) {
+			endIndex = 1;
+		}
+		StringBuilder stringBuilder = new StringBuilder("****************");
+		String hiddenPassword = stringBuilder.replace(beginIndex, endIndex, password.substring(beginIndex,endIndex)).toString();
+		return hiddenPassword;
 	}
 
 	public String getUserId() {

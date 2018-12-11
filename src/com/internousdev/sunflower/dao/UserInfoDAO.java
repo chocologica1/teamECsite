@@ -203,19 +203,6 @@ public class UserInfoDAO {
 		return result;
 	}
 
-	//パスワードを*で隠す
-	public String hiddenPassword(String password) {
-		int beginIndex = 0;
-		int endIndex = 0;
-		if(password.length() >= 1) {
-			endIndex = 1;
-		}
-		StringBuilder stringBuilder = new StringBuilder("****************");
-
-		String hiddenPassword = stringBuilder.replace(beginIndex, endIndex, password.substring(beginIndex,endIndex)).toString();
-		return hiddenPassword;
-	}
-
 	//登録されているIDかどうか確認、登録されていない場合trueを戻す
 	public boolean isUniqueId(String userId){
 		boolean result = false;
