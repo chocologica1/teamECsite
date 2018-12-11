@@ -4,8 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<!-- <link rel="stylesheet" href="./css/header.css"> -->
-<!-- <link rel="stylesheet" href="./css/style.css"> -->
+<link rel="stylesheet" href="./css/header.css">
+<link rel="stylesheet" href="./css/style.css">
 <title>ヘッダー</title>
 
 <script>
@@ -37,43 +37,46 @@
 </head>
 <body>
   <header>
-    <div id = "header">
+  	<div id="header-contents">
+		<div id="header-title">
+			<p>Sunflower</p>
+		</div>
+		<div id="header-menu">
+			<ul>
+				<s:form id="form" name="form">
+					<!-- ログイン/未ログイン共通 -->
+					<s:if test='#session.containsKey("mCategoryDTOList")'>
+						<li><s:select name="categoryId"
+								list="#session.mCategoryDTOList" listValue="categoryName"
+								listKey="categoryId" class="cs-div" id="categoryId" /></li>
+					</s:if>
+					<li><s:textfield name="keywords" class="txt-keywords" placeholder="検索キーワード" /></li>
+					<li><s:submit value="商品検索" class="submit_btn" onclick="goSearchItemAction();" /></li>
 
-    <div id = "header-title">
-    Sunflower
-    </div>
+					<!-- ログイン時 -->
+					<s:if test="#session.loginFlg == true">
+						<li><s:submit value="ログアウト" class="submit_btn" onclick="goLogoutAction();" /></li>
+					</s:if>
 
-    <div id = "header-menu">
-      <ul>
-          <s:form id= "form" name = "form">
-	<s:if test='#session.containsKey("mCategoryDTOList")'>
-	<li><s:select name="categoryId" list="#session.mCategoryDTOList" listValue="categoryName" listKey = "categoryId" class="cs-div" id="categoryId"/></li>
-	</s:if>
+					<!-- 未ログイン時 -->
+					<s:else>
+						<li><s:submit value="ログイン" class="submit_btn" onclick="goLoginAction();" /></li>
+					</s:else>
 
-            <li><s:textfield name = "keywords" class = "txt-keywords" placeholder = "検索キーワード"/></li>
-            <li><s:submit value = "商品検索" class = "submit_btn" onclick = "goSearchItemAction();"/></li>
+					<!-- ログイン/未ログイン共通 -->
+					<li><s:submit value="カート" class="submit_btn" onclick="goCartAction();" /></li>
 
-            <s:if test = "#session.loginFlg == true">
-              <li><s:submit value = "ログアウト" class = "submit_btn" onclick = "goLogoutAction();"/></li>
-            </s:if>
+					<li><s:submit value="商品一覧" class="submit_btn" onclick="goProductListAction();" /></li>
 
-            <s:else>
-              <li><s:submit value = "ログイン" class = "submit_btn" onclick = "goLoginAction();"/></li>
-            </s:else>
-
-            <li><s:submit value = "カート" class = "submit_btn" onclick = "goCartAction();"/></li>
-
-            <li><s:submit value = "商品一覧" class = "submit_btn" onclick = "goProductListAction();"/></li>
-
-            <s:if test = "#session.loginFlg == true">
-              <li><s:submit value = "マイページ" class = "submit_btn" onclick = "goMyPageAction();"/></li>
-            </s:if>
-
-          </s:form>
-      </ul>
-    </div>
-    </div>
-  </header>
+					<!-- ログイン時 -->
+					<s:if test="#session.loginFlg == true">
+						<li><s:submit value="マイページ" class="submit_btn" onclick="goMyPageAction();" /></li>
+					</s:if>
+				</s:form>
+			</ul>
+		</div>
+	</div>
+</header>
 
 </body>
 </html>
