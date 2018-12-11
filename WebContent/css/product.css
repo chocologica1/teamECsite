@@ -1,0 +1,79 @@
+@charset "UTF-8";
+
+/*====== style.cssに書いていあって欲しいこと ======*/
+html, body,
+ul, ol, li,
+h1, h2, h3, h4, h5, h6, p,
+form, input, div {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+  list-style: none;
+}
+
+body {
+  font-family: YuGothic, "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+  width: 100%;
+/*   min-width: 1000px; */
+  background-color: #fff;
+  color: #333;
+}
+
+.container {
+	width: 95%;
+	margin: auto;
+}
+
+.page-title {
+	border-top: 3px solid #b0757c;
+	border-bottom: 3px solid #b0757c;
+	color: #b0757c;
+	padding: 10px 0;
+	margin-bottom: 20px;
+}
+
+.error-box {
+	border: 1px solid  #333;
+	padding: 15px 0;
+	padding-left: 30px;
+}
+
+#main {
+	height: auto;
+	margin-top: 70px;
+	margin-bottom: 100px;
+}
+
+/*=============================================*/
+
+.contents-wrapper {
+	width: 100%;
+	display: flex;
+	justify-content:space-between;
+	flex-wrap: wrap;
+}
+
+.product-box {
+	width: 30%;
+	margin-bottom: 40px;
+}
+
+.list-image-box {
+	width: 200px;
+	height: 200px;
+	margin: auto;
+}
+
+.list-image {
+	width: 100%;
+	height: 100%;
+	vertical-align: center;
+}
+
+.list-detail-box {
+	text-align: center;
+	padding-top: 10px;
+}
