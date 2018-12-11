@@ -4,51 +4,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="">
+<link rel="stylesheet" href="./css/header.css">
+
 <title>ヘッダー</title>
 <style type="text/css">
 
-#header {
-	position:fixed;
-	top:0;
-	left:0;
-	float : left;
-	width : 100%;
-	height : 60px;
-	background-color : #9b5d73;
-}
 
-#header-menu {
-float : left;
-width : 80%;
-margin-left : -30px;
-}
-
-#header-menu ul{
-	float : left;
-	marigin-top : 15px;
-	margin-left : 20px;
-	width : 100%;
-}
-
-#header-menu ul li{
-	float : left;
-	list-style : none;
-	padding-left : 1%;
-	color : white;
-	font-size : 12px;
-}
-
-#header-title {
-	float : left;
-	height : 30px;
-	margin-top : 17px;
-	margin-left : 25px;
-	width : 10%;
-	font-family: 'Vidaloka', serif;
-	color:#ffffff;
-	font-size:17px;
-}
 
 .submit_btn_box{
 	width : 45%;
@@ -70,7 +31,7 @@ margin-left : -30px;
 	margin-left : 6px;
     font-size:10px;
     text-align:center;
-    color:#fff;
+    color:#333;
     box-shadow:2px 2px #1a6ea0;
     background: #fff1c5;
     background: -webkit-gradient(linear, left top, left bottom, from(#81a8cb), to(#4477a1) );
