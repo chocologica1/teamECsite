@@ -14,6 +14,7 @@ header {
 #header-contents {
 	width: 90%;
 	margin: auto;
+	overflow: hidden;
 }
 
 #header-title {
@@ -27,7 +28,7 @@ header {
 
 #header-menu {
 	float : left;
-	width : 80%;
+	width : 90%;
 }
 
 #header-menu ul{

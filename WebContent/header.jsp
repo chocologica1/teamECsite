@@ -4,8 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="./css/header.css">
 <link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/header.css">
 <title>ヘッダー</title>
 
 <script>
@@ -48,9 +48,9 @@
 					<s:if test='#session.containsKey("mCategoryDTOList")'>
 						<li><s:select name="categoryId"
 								list="#session.mCategoryDTOList" listValue="categoryName"
-								listKey="categoryId" class="cs-div" id="categoryId" /></li>
+								listKey="categoryId" class="category-select"/></li>
 					</s:if>
-					<li><s:textfield name="keywords" class="txt-keywords" placeholder="検索キーワード" /></li>
+					<li><s:textfield name="keywords" class="search-keywords" placeholder="検索キーワード" /></li>
 					<li><s:submit value="商品検索" class="submit_btn" onclick="goSearchItemAction();" /></li>
 
 					<!-- ログイン時 -->
