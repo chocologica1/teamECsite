@@ -52,14 +52,12 @@ table {
 /* リセットCSS終了 */
 
 body{
-	font-family:sans-serif;
+	font-family: YuGothic, "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
 	color: #333;
 	background-color:#fff;
-}
-
-* {
-  box-sizing: border-box;
-  list-style: none;
+	box-sizing: border-box;
+	width: 100%;
+	min-width: 1000px;
 }
 
 td{
@@ -84,11 +82,10 @@ h1{
 }
 
 #contents{
-	margin:0 auto;
+	margin: auto;
 	margin-top:70px;
 	margin-bottom:200px;
-	width:85%;
-	margin-left:5%;
+	width: 90%;
 }
 
 /* メッセージ全般(エラー、選択要求、完了) */
