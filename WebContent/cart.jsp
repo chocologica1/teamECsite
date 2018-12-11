@@ -4,8 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<!-- <link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/cart.css"> -->
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/cart.css">
 <title>カート画面</title>
 <script src="//code.jquery.com/jquery-1.12.1.min.js"></script>
 

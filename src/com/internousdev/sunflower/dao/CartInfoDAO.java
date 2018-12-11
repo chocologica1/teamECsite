@@ -124,8 +124,8 @@ public class CartInfoDAO {
 		if(existsProduct(productId,userId,tempUserId)){
 			result = addCount(productId,productCount,userId,tempUserId);
 		}else{
-			//userIdがnullの場合tempUserIdを代入(user_idカラムがnot null指定のため)
-			userId = userId == null ? tempUserId : userId;
+			//userIdがnullの場合tempUserIdを代入
+			userId = userId == null || "null".equals(userId) ? tempUserId : userId;
 			Connection con = db.getConnection();
 			String sql = "INSERT INTO cart_info(product_id,product_count,user_id,temp_user_id,price,regist_date,update_date) VALUES(?,?,?,?,?,now(),now())";
 			price = getPrice(productId);
@@ -175,7 +175,7 @@ public class CartInfoDAO {
 	public int linkToLoginId(String userId,String tempUserId){
 		int result = 0;
 		Connection con = db.getConnection();
-		String sql = "UPDATE cart_info SET user_id = ? , update_date = now() WHERE temp_user_id = ?";
+		String sql = "UPDATE cart_info SET user_id = ? , temp_user_id = NULL , update_date = now() WHERE temp_user_id = ?";
 		try{
 			PreparedStatement ps = con.prepareStatement(sql);
 			ps.setString(1, userId);
