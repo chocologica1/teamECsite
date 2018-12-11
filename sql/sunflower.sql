@@ -43,19 +43,7 @@ insert into user_info values
 	(9,"guest9","guest9","Internous","GuestUser9","いんたーのうす","げすとゆーざー9",0,"guest9@gmail.com",0,0,now(),now()),
 	(10,"guest10","guest10","Internous","GuestUser10","いんたーのうす","げすとゆーざー10",0,"guest10@gmail.com",0,0,now(),now()),
 	(11,"guest11","guest11","Internous","GuestUser11","いんたーのうす","げすとゆーざー11",0,"guest11@gmail.com",0,0,now(),now()),
-	(12,"guest12","guest12","Internous","GuestUser12","いんたーのうす","げすとゆーざー12",0,"guest12@gmail.com",0,0,now(),now()),
-	(13,"admin","admin","Internous","AdminUser","いんたーのうす","かんりしゃゆーざー",0,"admin@gmail.com",1,0,now(),now()),
-	(14,"admin2","admin2","Internous","AdminUser2","いんたーのうす","かんりしゃゆーざー2",0,"admin2@gmail.com",1,0,now(),now()),
-	(15,"admin3","admin3","Internous","AdminUser3","いんたーのうす","かんりしゃゆーざー3",0,"admin3@gmail.com",1,0,now(),now()),
-	(16,"admin4","admin4","Internous","AdminUser4","いんたーのうす","かんりしゃゆーざー4",0,"admin4@gmail.com",1,0,now(),now()),
-	(17,"admin5","admin5","Internous","AdminUser5","いんたーのうす","かんりしゃゆーざー5",0,"admin5@gmail.com",1,0,now(),now()),
-	(18,"admin6","admin6","Internous","AdminUser6","いんたーのうす","かんりしゃゆーざー6",0,"admin6@gmail.com",1,0,now(),now()),
-	(19,"admin7","admin7","Internous","AdminUser7","いんたーのうす","かんりしゃゆーざー7",0,"admin7@gmail.com",1,0,now(),now()),
-	(20,"admin8","admin8","Internous","AdminUser8","いんたーのうす","かんりしゃゆーざー8",0,"admin8@gmail.com",1,0,now(),now()),
-	(21,"admin9","admin9","Internous","AdminUser9","いんたーのうす","かんりしゃゆーざー9",0,"admin9@gmail.com",1,0,now(),now()),
-	(22,"admin10","admin10","Internous","AdminUser10","いんたーのうす","かんりしゃゆーざー10",0,"admin10@gmail.com",1,0,now(),now()),
-	(23,"admin11","admin11","Internous","AdminUser11","いんたーのうす","かんりしゃゆーざー11",0,"admin11@gmail.com",1,0,now(),now()),
-	(24,"admin12","admin12","Internous","AdminUser12","いんたーのうす","かんりしゃゆーざー12",0,"admin12@gmail.com",1,0,now(),now());
+	(12,"guest12","guest12","Internous","GuestUser12","いんたーのうす","げすとゆーざー12",0,"guest12@gmail.com",0,0,now(),now());
 /*会員情報テーブルここまで*/
 
 /*商品情報テーブルここから*/
@@ -75,7 +63,7 @@ create table product_info (
 	regist_date datetime not null comment "登録日",
 	update_date datetime comment "更新日"
 ) default charset=utf8 comment="商品情報テーブル";
-/*画像後から修正します*/
+
 insert into product_info values
 	(1,1,"ソファ","そふぁ","リビングルーム詳細1",2,50000,"./images/product","living1.jpg",now(),"会社1",0,now(),now()),
 	(2,2,"クッション","くっしょん","リビングルーム詳細2",2,3000,"./images/product","living2.jpg",now(),"会社2",0,now(),now()),
@@ -178,10 +166,10 @@ create table m_category (
 ) default charset=utf8 comment="カテゴリマスタテーブル";
 
 insert into m_category values
-	(1,1,"全てのカテゴリ","お家全体のインテリアが対象となります",now(),null),
-	(2,2,"リビングルーム","リビングルームのインテリアが対象となります",now(),null),
-	(3,3,"キッズルーム","キッズルームのインテリアが対象となります",now(),null),
-	(4,4,"キッチン","キッチンのインテリアが対象となります",now(),null),
-	(5,5,"ベッドルーム","ベッドルームのインテリアが対象となります",now(),null),
-	(6,6,"バスルーム","バスルームのインテリアが対象となります",now(),null);
+	(1,1,"全てのカテゴリ","お家全体のインテリアが対象となります",now(),now()),
+	(2,2,"リビングルーム","リビングルームのインテリアが対象となります",now(),now()),
+	(3,3,"キッズルーム","キッズルームのインテリアが対象となります",now(),now()),
+	(4,4,"キッチン","キッチンのインテリアが対象となります",now(),now()),
+	(5,5,"ベッドルーム","ベッドルームのインテリアが対象となります",now(),now()),
+	(6,6,"バスルーム","バスルームのインテリアが対象となります",now(),now());
 /*カテゴリマスタテーブルここまで*/
