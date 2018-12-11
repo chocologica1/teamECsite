@@ -13,7 +13,6 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class HomeAction extends ActionSupport implements SessionAware {
 
-
 	private String categoryId;
 	private Map<String, Object> session;
 
