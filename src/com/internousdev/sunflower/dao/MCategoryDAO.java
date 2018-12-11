@@ -44,10 +44,8 @@ public class MCategoryDAO {
         }catch (SQLException e){
         	e.printStackTrace();
         }
-        try{
-        	con.close();
-        }catch (SQLException e){
-        	e.printStackTrace();
+        finally{
+        	try{con.close();}catch(SQLException e){}
         }
 
         return mCategoryDTOList;
