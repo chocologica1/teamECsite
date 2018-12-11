@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/login.css">
 <title>ログイン</title>
 
 <script>
@@ -24,26 +25,29 @@ function goResetPasswordAction(){
 </head>
 <body>
 	<jsp:include page="header.jsp" />
+
+	<div id="contents">
+
 	<h1>ログイン画面</h1>
 	<s:form id="form" action="LoginAction">
 	<!-- エラーメッセージの表示 -->
 		<s:if test="!#session.loginIdErrorMessageList.isEmpty()">
-			<div class="error">
-				<div class="error-message">
-					<s:iterator value="#session.loginIdErrorMessageList"><s:property /><br></s:iterator>
+			<div class="message">
+					<s:iterator value="#session.loginIdErrorMessageList">
+						<div class="error">
+							<s:property /><br>
+						</div>
+					</s:iterator>
 				</div>
-			</div>
 		</s:if>
 		<s:if test="!#session.passwordErrorMessageList.isEmpty()">
 			<div class="error">
-				<div class="error-message">
 					<s:iterator value="#session.passwordErrorMessageList"><s:property /><br></s:iterator>
 				</div>
-			</div>
 		</s:if>
 
 
-	<table class="vertical-list-table">
+	<table class="inputform">
 
 		<tr>
 			<th>ユーザーID</th>
@@ -83,13 +87,14 @@ function goResetPasswordAction(){
 </div>
 <div class="submit_btn_box">
 <div id=".contents-btn-set">
-<s:form action="ResetPasswordAction">
-	<input type="hidden" name="reFlg" value="1"/>
-	<s:submit value="パスワード再設定" class="submit_btn" />
-</s:form>
+	<s:form action="ResetPasswordAction">
+		<input type="hidden" name="reFlg" value="1"/>
+		<s:submit value="パスワード再設定" class="submit_btn" />
+	</s:form>
 </div>
 </div>
 
+</div>
 
 <s:include value="footer.jsp"/>
 </body>
