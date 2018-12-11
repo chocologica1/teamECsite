@@ -10,23 +10,15 @@
 </head>
 <body>
 <jsp:include page="header.jsp"/>
-
 <div id="contents">
-
-<h1>商品購入履歴一覧画面</h1>
-
+	<h1>商品購入履歴一覧画面</h1>
 
 <!-- 購入履歴がない場合  -->
-
 <s:if test="purchaseHistoryInfoDTOList.size() == 0">
 	<p><s:property value="message"/></p>
 </s:if>
 
-
-
-
 <!-- 購入履歴がある場合  -->
-
 <s:elseif test="purchaseHistoryInfoDTOList.size() != 0">
 	<table>
 		<tr>
@@ -56,7 +48,6 @@
 </s:elseif>
 
 </div>
-
 <jsp:include page="footer.jsp"/>
 </body>
 </html>

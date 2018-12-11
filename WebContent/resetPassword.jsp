@@ -11,14 +11,10 @@
 </head>
 <body>
 <jsp:include page="header.jsp"/>
-
 <div id="contents">
-
-<h1>パスワード再設定画面</h1>
-
+	<h1>パスワード再設定画面</h1>
 
 <!-- ↓↓↓ エラーメッセージ ↓↓↓  -->
-
 	<!-- ユーザID不適切  -->
 	<s:if test="!#session.userIdErrorMessageList.isEmpty()">
 		<div class="error">
@@ -26,7 +22,6 @@
 		</s:iterator>
 		</div>
 	</s:if>
-
 	<!-- 現在のパスワード不適切  -->
 	<s:if test="!#session.passwordErrorMessageList.isEmpty()">
 		<div class="error">
@@ -34,7 +29,6 @@
 		</s:iterator>
 		</div>
 	</s:if>
-
 	<!-- ユーザIDまたはパスワードが間違っている  -->
 	<s:if test="!#session.incorrectErrorMessageList.isEmpty()">
 		<div class="error">
@@ -42,7 +36,6 @@
 		</s:iterator>
 		</div>
 	</s:if>
-
 	<!-- 新しいパスワード不適切  -->
 	<s:if test="!#session.newPasswordErrorMessageList.isEmpty()">
 		<div class="error">
@@ -50,7 +43,6 @@
 		</s:iterator>
 		</div>
 	</s:if>
-
 	<!-- 新しいパスワード(再確認)不適切  -->
 	<s:if test="!#session.reConfirmationNewPasswordErrorMessageList.isEmpty()">
 		<div class="error">
@@ -58,7 +50,6 @@
 		</s:iterator>
 		</div>
 	</s:if>
-
 	<!-- 新しいパスワードと(再確認)が不一致  -->
 	<s:if test="!#session.newPasswordIncorrectErrorMessageList.isEmpty()">
 	<div class="error">
@@ -66,13 +57,9 @@
 		</s:iterator>
 	</div>
 	</s:if>
-
 <!--     ここまで     -->
 
-
-
 <!-- ↓↓↓ パスワード再設定 入力欄 ↓↓↓  -->
-
 <s:form action="ResetPasswordConfirmAction">
 	<table>
 		<tr>
@@ -99,16 +86,13 @@
 			<td><input type="password" name="reConfirmationNewPassword" placeholder="新しいパスワード（再確認）" size=70 class="textarea"/></td>
 		</tr>
 	</table>
-
 	<div class="submit_btn_box">
 		<button type="submit" class="submit_btn">確認</button>
 	</div>
 </s:form>
-
 <!--    ここまで     -->
 
 </div>
-
 <jsp:include page="footer.jsp"/>
 </body>
 </html>
