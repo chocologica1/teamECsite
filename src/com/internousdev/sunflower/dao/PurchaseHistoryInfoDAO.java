@@ -50,12 +50,13 @@ public class PurchaseHistoryInfoDAO {
 		}
 		catch (SQLException e) {
 			e.printStackTrace();
-		}
-		try {
-			con.close();
-		}
-		catch (SQLException e) {
-			e.printStackTrace();
+		} finally {
+			try {
+				con.close();
+			}
+			catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 		return purchaseHistoryInfoDTOList;
 	}
@@ -85,12 +86,13 @@ public class PurchaseHistoryInfoDAO {
 		}
 		catch(SQLException e){
 			e.printStackTrace();
-		}
-		try{
-			con.close();
-		}
-		catch(SQLException e){
-			e.printStackTrace();
+		} finally {
+			try{
+				con.close();
+			}
+			catch(SQLException e){
+				e.printStackTrace();
+			}
 		}
 		return count;
 	}
@@ -110,12 +112,13 @@ public class PurchaseHistoryInfoDAO {
 		}
 		catch (SQLException e) {
 			e.printStackTrace();
-		}
-		try {
-			con.close();
-		}
-		catch (SQLException e) {
-			e.printStackTrace();
+		} finally {
+			try {
+				con.close();
+			}
+			catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 		return count;
 	}

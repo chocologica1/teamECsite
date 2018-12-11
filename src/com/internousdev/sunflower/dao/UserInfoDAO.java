@@ -221,7 +221,7 @@ public class UserInfoDAO {
 	public String hiddenPassword(String password) {
 		int beginIndex = 0;
 		int endIndex = 0;
-		if(password.length() > 1) {
+		if(password.length() >= 1) {
 			endIndex = 1;
 		}
 		StringBuilder stringBuilder = new StringBuilder("****************");
