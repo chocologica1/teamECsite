@@ -37,28 +37,32 @@
 			<div id="cart">
 				<s:iterator value="cartInfoDTOList">
 					<table class="product">
-						<tr>
-							<th>削除</th>
-							<th>商品名</th>
-							<th>商品名(ふりがな)</th>
-							<th>商品画像</th>
-							<th>値段</th>
-							<th>発売会社名</th>
-							<th>発売年月日</th>
-							<th>購入個数</th>
-							<th>合計金額</th>
-						</tr>
-						<tr>
-						<td>
-							<input type="checkbox" value="<s:property value='productId'/>" name="productIdArray" class="deleteCheck">
-						</td>
-						<td><s:property value="productName"/></td><td><s:property value="productNameKana"/></td>
-						<td><img src='<s:property value="imageFilePath"/>/<s:property value="imageFileName"/>' alt="product" /></td>
-						<td><s:property value="price"/></td>
-						<td><s:property value="releaseCompany"/></td>
-						<td><s:property value="releaseDate"/></td>
-						<td><s:property value="productCount"/></td>
-						<td><s:property value="subtotal"/></td></tr>
+					<thead>
+							<tr>
+								<th>削除</th>
+								<th>商品名</th>
+								<th>商品名(ふりがな)</th>
+								<th>商品画像</th>
+								<th>値段</th>
+								<th>発売会社名</th>
+								<th>発売年月日</th>
+								<th>購入個数</th>
+								<th>合計金額</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+							<td>
+								<input type="checkbox" value="<s:property value='productId'/>" name="productIdArray" class="deleteCheck">
+							</td>
+							<td><s:property value="productName"/></td><td><s:property value="productNameKana"/></td>
+							<td><img src='<s:property value="imageFilePath"/>/<s:property value="imageFileName"/>' alt="product" /></td>
+							<td><s:property value="price"/></td>
+							<td><s:property value="releaseCompany"/></td>
+							<td><s:property value="releaseDate"/></td>
+							<td><s:property value="productCount"/></td>
+							<td><s:property value="subtotal"/></td></tr>
+						</tbody>
 </table>
 
 				</s:iterator>
@@ -66,7 +70,7 @@
 
 		<!-- カート合計金額 -->
 		<div class="totalPrice">
-			<p>合計金額:</p>
+			合計金額:
 			<s:property value="totalPrice"/>円
 		</div>
 

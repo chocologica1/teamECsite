@@ -69,11 +69,14 @@ th{
 }
 
 h1{
-	border-bottom: solid 1px;
-	border-top:solid 1px #b0757c;
+	border-bottom: solid 2px #b0757c;
+	border-top:solid 2px #b0757c;
 	color: #b0757c;
-	height:50 px;
-	line-height:50px;
+	font-size: 32px;
+	font-weight: bold;
+	height:60 px;
+	line-height:60px;
+	margin-bottom:20px;
 }
 
 #contents{
