@@ -9,29 +9,48 @@
 <title>ヘッダー</title>
 
 <script>
-  function goLoginAction(){
-	  document.getElementById("form").action = "GoLoginAction";
-  }
+	/* 横スクロール */
+// 	$(window).on("scroll", function(){
+//     $("header").css("left", -$(window).scrollLeft());
+// 	});
+// 	(function(win,doc) {
+// 	var header = document.getElementById("header");
 
-  function goMyPageAction(){
-	  document.getElementById("form").action = "MyPageAction";
-  }
+// 	win.addEventListener('scroll', _handleScroll, false);
 
-  function goCartAction(){
-	  document.getElementById("form").action = "CartAction";
-  }
+// 	function _handleScroll() {
+// 	  header.style.left = -window.scrollX + "px";
+// 	}
+// 	})
+// 	window.addEventListener('scroll', _headerScroll, false);
+// 	function _headerScroll() {
+// 		document.getElementById("header").style.left = -window.scrollX + "px";
+// 	}
 
-  function goProductListAction(){
-	  document.getElementById("form").action = "ProductListAction";
-  }
+	/* ボタン */
+	function goLoginAction() {
+		document.getElementById("form").action = "GoLoginAction";
+	}
 
-  function goLogoutAction(){
-	  document.getElementById("form").action = "LogoutAction";
-  }
+	function goMyPageAction() {
+		document.getElementById("form").action = "MyPageAction";
+	}
 
-  function goSearchItemAction(){
-	  document.getElementById("form").action = "SearchItemAction";
-  }
+	function goCartAction() {
+		document.getElementById("form").action = "CartAction";
+	}
+
+	function goProductListAction() {
+		document.getElementById("form").action = "ProductListAction";
+	}
+
+	function goLogoutAction() {
+		document.getElementById("form").action = "LogoutAction";
+	}
+
+	function goSearchItemAction() {
+		document.getElementById("form").action = "SearchItemAction";
+	}
 </script>
 </head>
 <body>
@@ -41,7 +60,7 @@
 			<p>Sunflower</p>
 		</div>
 		<div id="header-menu">
-			<ul>
+			<ul class="header-list">
 				<s:form id="form" name="form">
 					<!-- ログイン/未ログイン共通 -->
 					<s:if test='#session.containsKey("mCategoryDTOList")'>
@@ -49,7 +68,7 @@
 								list="#session.mCategoryDTOList" listValue="categoryName"
 								listKey="categoryId" class="category-select"/></li>
 					</s:if>
-					<li><s:textfield name="keywords" class="search-keywords" placeholder="検索ワード" /></li>
+					<li class="search-box"><s:textfield name="keywords" class="search-keywords" placeholder="検索ワード" /></li>
 					<li><s:submit value="商品検索" class="submit_btn" onclick="goSearchItemAction();" /></li>
 
 					<!-- ログイン時 -->
@@ -75,6 +94,7 @@
 			</ul>
 		</div>
 	</div>
+	<div class="clear"></div>
 </header>
 
 </body>

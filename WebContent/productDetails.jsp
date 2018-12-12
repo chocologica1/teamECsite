@@ -66,7 +66,7 @@
 			</div>
 		</div>
 
-			<!-- 関連商品 -->
+		<!-- 関連商品 -->
 		<div class="category-wrapper">
 			<s:iterator value="productInfoDTOList">
 				<div class="category-box">

@@ -56,19 +56,19 @@
 	margin-bottom: 50px;
 }
 
-td {
+.details-table tr {
 	height: calc(320 / 7 - 2)px;
+}
+
+.details-table td {
+	padding-left: 20px;
 }
 
 td:first-child {
 	background-color: #c38b8b;
 	color: #fff;
-	padding-left: 20px;
 }
 
-td:last-child {
-	padding-left: 20px;
-}
 
 /*関連商品*/
 .category-wrapper {
