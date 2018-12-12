@@ -10,21 +10,16 @@
 <script src="//code.jquery.com/jquery-1.12.1.min.js"></script>
 
 <script type="text/javascript">
-	$(function(){
-		$('.deleteCheck').click(function(){
+
+		function deleteCheck(){
 			var check_count = $('.product :checked').length;
 			if(check_count > 0){
 				$("#deleteButton").removeAttr("disabled");
 			}else{
 				$("#deleteButton").attr("disabled","disabled");
 			}
-		})
-	})
-
-	function submitAction(url){
-		$('form').attr('action',url);
-		$('form').submit();
 	}
+
 </script>
 </head>
 <body>
@@ -55,7 +50,7 @@
 							<tr>
 
 							<td>
-								<input type="checkbox" value="<s:property value='productId'/>" name="productIdArray" class="deleteCheck">
+								<input type="checkbox" value="<s:property value='productId'/>" name="productIdArray" class="deleteCheck" onclick="deleteCheck()">
 							</td>
 							<td><s:property value="productName"/></td><td><s:property value="productNameKana"/></td>
 							<td><img src='<s:property value="imageFilePath"/>/<s:property value="imageFileName"/>' alt="product" /></td>
@@ -80,7 +75,7 @@
 
 		<!-- 決済ボタン -->
 		<div class="submit">
-			<input type="button" value="決済" onclick="submitAction('SettlementConfirmAction')" class="submit_btn"/>
+			<input type="button" value="決済" onclick="location.href='SettlementConfirmAction.action'" class="submit_btn"/>
 		</div>
 		<!-- 削除ボタン -->
 			<div class="submit" id="delete">
