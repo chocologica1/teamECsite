@@ -6,7 +6,7 @@ header {
 	left:0;
 	float : left;
 	width : 100%;
-	height : 100px;
+	height : 80px;
 	background-color : #9b5d73;
 }
 
@@ -18,7 +18,7 @@ header {
 
 #header-title {
 	float : left;
-    line-height: 100px;
+    line-height: 80px;
 	width : 10%;
 	font-family: 'Vidaloka', serif;
 	color:#ffffff;
@@ -28,7 +28,7 @@ header {
 #header-menu {
 	float : left;
 	width : 90%;
-	line-height: 100px;
+	line-height: 80px;
 }
 
 #header-menu ul{
