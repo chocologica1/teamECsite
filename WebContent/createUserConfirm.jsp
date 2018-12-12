@@ -14,8 +14,6 @@
 	<div id="contents">
 		<h1>ユーザ情報入力確認画面</h1>
 		<br>
-		<h2>以下の内容で登録します</h2>
-		<br>
 		<s:form action="CreateUserCompleteAction">
 			<table class="vertical-list-table">
 				<tr>
