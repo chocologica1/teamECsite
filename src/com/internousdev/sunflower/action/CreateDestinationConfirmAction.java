@@ -17,18 +17,18 @@ public class CreateDestinationConfirmAction extends ActionSupport implements Ses
 	private String userAddress;
 	private String telNumber;
 	private String email;
-
-	private List<String> familyNameErrorMessageList = new ArrayList<String>();
-	private List<String> firstNameErrorMessageList = new ArrayList<String>();
-	private List<String> familyNameKanaErrorMessageList = new ArrayList<String>();
-	private List<String> firstNameKanaErrorMessageList = new ArrayList<String>();
-	private List<String> userAddressErrorMessageList = new ArrayList<String>();
-	private List<String> emailErrorMessageList = new ArrayList<String>();
-	private List<String> telNumberErrorMessageList = new ArrayList<String>();
-
 	private Map<String, Object> session;
 
 	public String execute(){
+
+		List<String> familyNameErrorMessageList = new ArrayList<String>();
+		List<String> firstNameErrorMessageList = new ArrayList<String>();
+		List<String> familyNameKanaErrorMessageList = new ArrayList<String>();
+		List<String> firstNameKanaErrorMessageList = new ArrayList<String>();
+		List<String> userAddressErrorMessageList = new ArrayList<String>();
+		List<String> emailErrorMessageList = new ArrayList<String>();
+		List<String> telNumberErrorMessageList = new ArrayList<String>();
+
 		//セッションタイムアウト
 		if(session == null || session.isEmpty()){
 			return "timeOut";
