@@ -33,6 +33,8 @@
 	}
 	.submit_btn:disabled:hover{
 		background-color:#707070;
+		color: #332600;		/* ボタンにカーソルを置いたとき何も変化しないよう修正 */
+		cursor: default;	/* 12/12 西村 */
 	}
 
 	.submit{
