@@ -35,10 +35,10 @@
 			</div>
 		</s:if>
 		<!-- ユーザーIDもしくはパスワードが一致しない場合表示 -->
-		<s:if test="!#session.loginErrorMessage.isEmpty()">
+			<s:if test="notMatch != null">
 			<div class="message">
 				<div class="error">
-					System.out.println("loginErrorMessage");<br>
+						<s:property value="notMatch"/>
 				</div>
 			</div>
 		</s:if>
