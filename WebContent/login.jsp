@@ -9,19 +9,6 @@
 <!-- <link rel="stylesheet" href="./css/login.css"> -->
 <title>ログイン</title>
 
-<script>
-
-function goLoginAction(){
-	document.getElementById("form").action="LoginAction";
-}
-function goCreateUseerAction(){
-	document.getElementById("form").action="CreateUserAction";
-}
-function goResetPasswordAction(){
-	document.getElementById("form").action="ResetPasswordAction";
-}
-</script>
-
 </head>
 <body>
 	<jsp:include page="header.jsp" />
@@ -44,6 +31,14 @@ function goResetPasswordAction(){
 				<div class="error">
 					<s:iterator value="#session.passwordErrorMessageList"><s:property /><br>
 					</s:iterator>
+				</div>
+			</div>
+		</s:if>
+		<!-- ユーザーIDもしくはパスワードが一致しない場合表示 -->
+		<s:if test="!#session.loginErrorMessage.isEmpty()">
+			<div class="message">
+				<div class="error">
+					System.out.println("loginErrorMessage");<br>
 				</div>
 			</div>
 		</s:if>

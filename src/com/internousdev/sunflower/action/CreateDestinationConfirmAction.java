@@ -17,18 +17,18 @@ public class CreateDestinationConfirmAction extends ActionSupport implements Ses
 	private String userAddress;
 	private String telNumber;
 	private String email;
-
-	private List<String> familyNameErrorMessageList = new ArrayList<String>();
-	private List<String> firstNameErrorMessageList = new ArrayList<String>();
-	private List<String> familyNameKanaErrorMessageList = new ArrayList<String>();
-	private List<String> firstNameKanaErrorMessageList = new ArrayList<String>();
-	private List<String> userAddressErrorMessageList = new ArrayList<String>();
-	private List<String> emailErrorMessageList = new ArrayList<String>();
-	private List<String> telNumberErrorMessageList = new ArrayList<String>();
-
 	private Map<String, Object> session;
 
 	public String execute(){
+
+		List<String> familyNameErrorMessageList = new ArrayList<String>();
+		List<String> firstNameErrorMessageList = new ArrayList<String>();
+		List<String> familyNameKanaErrorMessageList = new ArrayList<String>();
+		List<String> firstNameKanaErrorMessageList = new ArrayList<String>();
+		List<String> userAddressErrorMessageList = new ArrayList<String>();
+		List<String> emailErrorMessageList = new ArrayList<String>();
+		List<String> telNumberErrorMessageList = new ArrayList<String>();
+
 		//セッションタイムアウト
 		if(session == null || session.isEmpty()){
 			return "timeOut";
@@ -43,7 +43,6 @@ public class CreateDestinationConfirmAction extends ActionSupport implements Ses
 		userAddressErrorMessageList = inputChecker.doCheck("住所", userAddress, 10, 50, true, true, true, true, true, true, false, false, false);
 		emailErrorMessageList = inputChecker.doCheck("メールアドレス", email, 10, 32, true, false, false, true, true, false, false, false, false);
 		telNumberErrorMessageList = inputChecker.doCheck("電話番号", telNumber, 10, 13, false, false, false, true, false, false, false, false, false);
-
 
 		if(familyNameErrorMessageList.size()==0
 				&& firstNameErrorMessageList.size()==0

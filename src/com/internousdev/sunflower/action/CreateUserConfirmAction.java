@@ -20,26 +20,25 @@ public class CreateUserConfirmAction extends ActionSupport implements SessionAwa
 	private String email;
 	private String userId;
 	private String password;
-
-	private List<String> familyNameErrorMessageList = new ArrayList<String>();
-	private List<String> firstNameErrorMessageList = new ArrayList<String>();
-	private List<String> familyNameKanaErrorMessageList = new ArrayList<String>();
-	private List<String> firstNameKanaErrorMessageList = new ArrayList<String>();
-	private List<String> emailErrorMessageList = new ArrayList<String>();
-	private List<String> userIdErrorMessageList = new ArrayList<String>();
-	private List<String> passwordErrorMessageList = new ArrayList<String>();
-
-	private String categoryId;
 	private List<String> sexList = new ArrayList<String>();
 	private Map<String, Object> session;
 
 	public String execute(){
+
+		List<String> familyNameErrorMessageList = new ArrayList<String>();
+		List<String> firstNameErrorMessageList = new ArrayList<String>();
+		List<String> familyNameKanaErrorMessageList = new ArrayList<String>();
+		List<String> firstNameKanaErrorMessageList = new ArrayList<String>();
+		List<String> emailErrorMessageList = new ArrayList<String>();
+		List<String> userIdErrorMessageList = new ArrayList<String>();
+		List<String> passwordErrorMessageList = new ArrayList<String>();
+
 		//セッションタイムアウト
 		if(session == null || session.isEmpty()){
 			return "timeOut";
 		}
-
 		String result =ERROR;
+
 		InputChecker inputChecker =new InputChecker();
 		UserInfoDAO userInfoDAO = new UserInfoDAO();
 
@@ -158,13 +157,6 @@ public class CreateUserConfirmAction extends ActionSupport implements SessionAwa
 		this.password = password;
 	}
 
-	public String getCategoryId() {
-		return categoryId;
-	}
-
-	public void setCategoryId(String categoryId) {
-		this.categoryId = categoryId;
-	}
 
 	public List<String> getSexList() {
 		return sexList;
