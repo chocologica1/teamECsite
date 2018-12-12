@@ -126,6 +126,4 @@ public class ResetPasswordConfirmAction extends ActionSupport implements Session
 		this.session = session;
 	}
 
-
-
 }

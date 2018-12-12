@@ -16,9 +16,7 @@ public class ResetPasswordAction extends ActionSupport implements SessionAware {
 					return "timeOut";
 				}
 
-
 		String result = ERROR;
-
 		//エラーメッセージを全て消去する
 		session.remove("userIdErrorMessageList");
 		session.remove("passwordErrorMessageList");
@@ -32,14 +30,9 @@ public class ResetPasswordAction extends ActionSupport implements SessionAware {
 		} else if(reFlg.equals("2")) {
 			session.put("savedUserId", true);
 		}
-
 		result = SUCCESS;
-
 		return result;
 	}
-
-
-
 
 	public Map<String, Object> getSession() {
 		return session;
@@ -48,13 +41,11 @@ public class ResetPasswordAction extends ActionSupport implements SessionAware {
 	public void setSession(Map<String, Object> session) {
 		this.session = session;
 	}
-
 	public String getReFlg() {
 		return reFlg;
 	}
 	public void setReFlg(String reFlg) {
 		this.reFlg = reFlg;
 	}
-
 
 }
