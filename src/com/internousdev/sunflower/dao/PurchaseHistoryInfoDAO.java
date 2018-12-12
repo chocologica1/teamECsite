@@ -67,9 +67,9 @@ public class PurchaseHistoryInfoDAO {
 
 		String sql = "INSERT INTO"
 				+ " purchase_history_info"
-				+ " (user_id, product_id, product_count, price, destination_id, regist_date)"
+				+ " (user_id, product_id, product_count, price, destination_id, regist_date, update_date)"
 				+ " VALUES"
-				+ " (?,?,?,?,?,now())";
+				+ " (?,?,?,?,?,now(),now())";
 		int count = 0;
 
 		try{
