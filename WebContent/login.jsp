@@ -35,7 +35,7 @@
 			</div>
 		</s:if>
 		<!-- ユーザーIDもしくはパスワードが一致しない場合表示 -->
-			<s:if test="notMatch != null">
+		<s:if test="notMatch != null">
 			<div class="message">
 				<div class="error">
 						<s:property value="notMatch"/>
@@ -47,11 +47,11 @@
 
 		<tr>
 			<th>ユーザID</th>
-			<s:if test="#session.savedLoginId == true">
-			<td><s:textfield name="loginId" class="txt" placeholder="ユーザID" value='%{#session.keepLoginId}' autocomplete="off"/></td>
-			</s:if>
+				<s:if test="#session.savedLoginId == true">
+					<td><s:textfield name="loginId" class="txt" placeholder="ユーザID" value='%{#session.keepLoginId}' autocomplete="off"/></td>
+				</s:if>
 			<s:else>
-			<td><s:textfield name="loginId" class="txt" placeholder="ユーザID" autocomplete="off"/></td>
+				<td><s:textfield name="loginId" class="txt" placeholder="ユーザID" autocomplete="off"/></td>
 			</s:else>
 		</tr>
 		<tr>
