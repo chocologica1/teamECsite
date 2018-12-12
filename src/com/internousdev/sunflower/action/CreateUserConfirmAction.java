@@ -62,7 +62,6 @@ public class CreateUserConfirmAction extends ActionSupport implements SessionAwa
 		}
 		passwordErrorMessageList = inputChecker.doCheck("パスワード", password, 1, 16, true, false, false, true, false, false, false, false, false);
 
-
 		if(familyNameErrorMessageList.size()==0
 				&& firstNameErrorMessageList.size()==0
 				&& familyNameKanaErrorMessageList.size()==0

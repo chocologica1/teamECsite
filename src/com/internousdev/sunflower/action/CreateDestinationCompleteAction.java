@@ -26,7 +26,6 @@ public class CreateDestinationCompleteAction extends ActionSupport implements Se
 		String result = ERROR;
 		DestinationInfoDAO destinationInfoDAO = new DestinationInfoDAO();
 
-		/*loginIdに注意*/
 		int count = destinationInfoDAO.createDestination(session.get("loginId").toString(),session.get("familyName").toString(), session.get("firstName").toString(), session.get("familyNameKana").toString(), session.get("firstNameKana").toString(), session.get("email").toString(), session.get("telNumber").toString(), session.get("userAddress").toString());
 		if(count >0){
 			result = SUCCESS;

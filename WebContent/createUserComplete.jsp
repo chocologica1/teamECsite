@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="./css/create.css">
+<link rel="stylesheet" href="./css/style.css">
 <meta http-equiv="refresh" content="3;<s:url action='LoginAction'/>">
 <title>ユーザ情報入力完了画面</title>
 </head>

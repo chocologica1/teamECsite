@@ -40,7 +40,6 @@ public class DestinationInfoDAO {
 		}finally{
 			con.close();
 		}
-
 		return destinationDTOList;
 	}
 
