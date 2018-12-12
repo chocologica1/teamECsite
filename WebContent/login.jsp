@@ -9,19 +9,6 @@
 <!-- <link rel="stylesheet" href="./css/login.css"> -->
 <title>ログイン</title>
 
-<script>
-
-function goLoginAction(){
-	document.getElementById("form").action="LoginAction";
-}
-function goCreateUseerAction(){
-	document.getElementById("form").action="CreateUserAction";
-}
-function goResetPasswordAction(){
-	document.getElementById("form").action="ResetPasswordAction";
-}
-</script>
-
 </head>
 <body>
 	<jsp:include page="header.jsp" />
@@ -51,7 +38,7 @@ function goResetPasswordAction(){
 		<s:if test="!#session.loginErrorMessage.isEmpty()">
 			<div class="message">
 				<div class="error">
-
+					System.out.println("loginErrorMessage");<br>
 				</div>
 			</div>
 		</s:if>
