@@ -44,7 +44,8 @@ public class CartInfoDAO {
 				+ "FROM cart_info ci "
 				+ "LEFT JOIN product_info pi "
 				+ "ON ci.product_id = pi.product_id "
-				+ "WHERE user_id = ? OR temp_user_id = ?";
+				+ "WHERE user_id = ? OR temp_user_id = ? "
+				+ "ORDER BY ci.regist_date DESC";
 		try{
 			PreparedStatement ps = con.prepareStatement(sql);
 			ps.setString(1, userId);
@@ -121,7 +122,7 @@ public class CartInfoDAO {
 			result = addCount(productId,productCount,userId,tempUserId);
 		}else{
 			//userIdがnullの場合tempUserIdを代入
-			userId = userId == null || "null".equals(userId) ? tempUserId : userId;
+			userId = userId == null || "null".equals(userId) || userId.isEmpty() ? tempUserId : userId;
 			Connection con = db.getConnection();
 			String sql = "INSERT INTO cart_info(product_id,product_count,user_id,temp_user_id,price,regist_date,update_date) VALUES(?,?,?,?,?,now(),now())";
 			price = getPrice(productId);
@@ -166,23 +167,29 @@ public class CartInfoDAO {
 	 * ログインIDと仮ログインIDで保持していたカート情報をリンクさせます。
 	 * @param tempUserId	仮ログインID
 	 * @param LoginId	ユーザID
-	 * @return	追加に成功した場合正の整数、失敗した場合は0を戻します
 	 */
-	public int linkToLoginId(String userId,String tempUserId){
-		int result = 0;
+	public void linkToLoginId(String userId,String tempUserId){
 		Connection con = db.getConnection();
 		String sql = "UPDATE cart_info SET user_id = ? , temp_user_id = NULL , update_date = now() WHERE temp_user_id = ?";
+
+		//user_idを持つカート情報を呼び出し、現在のtemp_user_idに紐づけて登録する
+		List<CartInfoDTO> cartInfoDTOList = getCartInfoDTOList(userId,null);
+		for(CartInfoDTO dto:cartInfoDTOList){
+			regist(dto.getProductId(),dto.getProductCount(),tempUserId,tempUserId);
+		}
+		deleteAll(userId);
+
+		//現在のtemp_user_idに紐づいたカート情報をuser_idと紐付ける
 		try{
 			PreparedStatement ps = con.prepareStatement(sql);
 			ps.setString(1, userId);
 			ps.setString(2, tempUserId);
-			result = ps.executeUpdate();
+			ps.executeUpdate();
 		}catch(SQLException e){
 			e.printStackTrace();
 		}finally{
 			try{con.close();}catch(SQLException e){}
 		}
-		return result;
 	}
 
 	/**
