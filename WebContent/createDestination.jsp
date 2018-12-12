@@ -6,16 +6,16 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="./css/style.css">
-<link rel="stylesheet" href="./css/creatDestination.css">
+<link rel="stylesheet" href="./css/create.css">
 <title>宛先情報入力</title>
 </head>
 <body>
 	<jsp:include page="header.jsp" />
 
 	<div id="contents">
+	<h1>宛先情報入力画面</h1>
 
 	<!-- エラーメッセージ -->
-	<div>
 		<s:if test="!#session.familyNameErrorMessageList.isEmpty()">
 			<div class="error">
 				<s:iterator value="#session.familyNameErrorMessageList"><s:property /><br>
@@ -59,88 +59,84 @@
 			</div>
 		</s:if>
 
-	</div>
 	<!-- ここまで -->
 
-	<h1>宛先情報入力画面</h1>
-
 	<s:form action="CreateDestinationConfirmAction">
-		<table class = "vertical-list-table">
-			<tr>
-				<th>姓</th>
-				<s:if test="#session.savedDestinationInfo == true">
-				<td><input type="text" name="familyName"
+		<table class="vertical-list-table">
+			<tr class="textBox">
+				<th class="textTitle">姓</th>
+					<s:if test="#session.savedDestinationInfo == true">
+					<td><input type="text" name="familyName"
 					value="<s:property value='#session.familyName' />" placeholder="姓" /></td>
 				</s:if>
 				<s:else>
-				<td><input type="text" name="familyName"
+					<td><input type="text" name="familyName"
 					value="<s:property value='familyName' />" placeholder="姓" /></td>
 				</s:else>
 			</tr>
-			<tr>
+			<tr class="textBox">
 				<th>名</th>
 				<s:if test="#session.savedDestinationInfo == true">
-				<td><input type="text" name="firstName"
+					<td><input type="text" name="firstName"
 					value="<s:property value='#session.firstName' />" placeholder="名" /></td>
 				</s:if>
 				<s:else>
-				<td><input type="text" name="firstName"
+					<td><input type="text" name="firstName"
 					value="<s:property value='firstName' />" placeholder="名" /></td>
 				</s:else>
 			</tr>
-			<tr>
+			<tr class="textBox">
 				<th>姓ふりがな</th>
 				<s:if test="#session.savedDestinationInfo == true">
-				<td><input type="text" name="familyNameKana"
+					<td><input type="text" name="familyNameKana"
 					value="<s:property value='#session.familyNameKana' />" placeholder="姓ふりがな" /></td>
 				</s:if>
 				<s:else>
-				<td><input type="text" name="familyNameKana"
+					<td><input type="text" name="familyNameKana"
 					value="<s:property value='familyNameKana' />" placeholder="姓ふりがな" /></td>
 				</s:else>
 			</tr>
-			<tr>
+			<tr class="textBox">
 				<th>名ふりがな</th>
 				<s:if test="#session.savedDestinationInfo == true">
-				<td><input type="text" name="firstNameKana"
+					<td><input type="text" name="firstNameKana"
 					value="<s:property value='#session.firstNameKana' />" placeholder="名ふりがな" /></td>
 				</s:if>
 				<s:else>
-				<td><input type="text" name="firstNameKana"
+					<td><input type="text" name="firstNameKana"
 					value="<s:property value='firstNameKana' />" placeholder="名ふりがな" /></td>
 				</s:else>
 			</tr>
-
-			<tr>
+			<tr class="textBox">
 				<th>住所</th>
 				<s:if test="#session.savedDestinationInfo == true">
-				<td><input type="text" name="userAddress"
+					<td><input type="text" name="userAddress"
 					value="<s:property value='#session.userAddress' />" placeholder="住所" /></td>
 				</s:if>
 				<s:else>
-				<td><input type="text" name="userAddress"
+					<td><input type="text" name="userAddress"
 					value="<s:property value='userAddress' />" placeholder="住所" /></td>
 				</s:else>
 			</tr>
-			<tr>
+			<tr class="textBox">
 				<th>電話番号</th>
 				<s:if test="#session.savedDestinationInfo == true">
-				<td><input type="text" name="telNumber"
+					<td><input type="text" name="telNumber"
 					value="<s:property value='#session.telNumber' />" placeholder="電話番号" /></td>
 				</s:if>
 				<s:else>
-				<td><input type="text" name="telNumber"
+					<td><input type="text" name="telNumber"
 					value="<s:property value='telNumber' />" placeholder="電話番号" /></td>
 				</s:else>
 			</tr>
-			<tr>
+			<tr class="textBox">
 				<th>メールアドレス</th>
 				<s:if test="#session.savedDestinationInfo == true">
-				<td><input type="text" name="email"
+					<td><input type="text" name="email"
 					value="<s:property value='#session.email' />" placeholder="メールアドレス" /></td>
 				</s:if>
 				<s:else>
-				<td><input type="text" name="email"
+					<td><input type="text" name="email"
 					value="<s:property value='email' />" placeholder="メールアドレス" /></td>
 				</s:else>
 			</tr>
