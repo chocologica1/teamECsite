@@ -22,7 +22,6 @@
   }
 
   function goProductListAction(){
-	  document.getElementById("categoryId").value = 1;
 	  document.getElementById("form").action = "ProductListAction";
   }
 
