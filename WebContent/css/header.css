@@ -2,12 +2,13 @@
 
 header {
 /*
-上に固定しながら横スクロールしたくて試している途中です。
-コメントアウト消さないでもらえると助かります。
+main部と同じようにmin-widthを設定すると
+window幅が小さくてもボタン等が折りたたまれないが
+fixedで固定されているため横スクロールされない。
 */
 	position:fixed;
 	top:0;
-/* 	left:0; */
+	left:0;
 	float : left;
 	width : 100%;
 /* 	min-width: 1000px; */

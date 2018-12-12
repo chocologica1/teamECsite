@@ -4,28 +4,23 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<!-- ↓ viewport表記必要か確認 -->
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="stylesheet" href="./css/style.css">
 <link rel="stylesheet" href="./css/header.css">
 <title>ヘッダー</title>
 
 <script>
-	/* 横スクロール */
-// 	$(window).on("scroll", function(){
-//     $("header").css("left", -$(window).scrollLeft());
-// 	});
-// 	(function(win,doc) {
-// 	var header = document.getElementById("header");
-
-// 	win.addEventListener('scroll', _handleScroll, false);
-
-// 	function _handleScroll() {
-// 	  header.style.left = -window.scrollX + "px";
-// 	}
-// 	})
-// 	window.addEventListener('scroll', _headerScroll, false);
-// 	function _headerScroll() {
-// 		document.getElementById("header").style.left = -window.scrollX + "px";
-// 	}
+	/* 横スクロールさせたいのですができない　よくわからない
+	(function(win, doc) {
+		"use strict";
+		var header = document.getElementById("header");
+		win.addEventListener('scroll', _handleScroll, false);
+		function _handleScroll() {
+			header.style.left = -window.scrollX + "px";
+		}
+	}
+	 */
 
 	/* ボタン */
 	function goLoginAction() {
