@@ -69,16 +69,13 @@ public class SettlementConfirmAction extends ActionSupport implements SessionAwa
 		return id;
 	}
 
-
 	public void setId(String id) {
 		this.id = id;
 	}
 
-
 	public ArrayList<DestinationInfoDTO> getDestinationInfoDTOList() {
 		return destinationInfoDTOList;
 	}
-
 
 	public void setDestinationInfoDTOList(ArrayList<DestinationInfoDTO> destinationInfoDTOList) {
 		this.destinationInfoDTOList = destinationInfoDTOList;
