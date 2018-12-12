@@ -29,8 +29,8 @@
 			<th>値段</th>
 			<th>個数</th>
 			<th>合計金額</th>
-			<th>発売年月日</th>
 			<th>発売会社名</th>
+			<th>発売年月日</th>
 		</tr>
 		<s:iterator value="purchaseHistoryInfoDTOList">
 		<tr>
@@ -40,8 +40,8 @@
 			<td><s:property value="price"/>円</td>
 			<td><s:property value="productCount"/>個</td>
 			<td><s:property value="totalPrice"/>円</td>
-			<td><s:property value="releaseDate"/></td>
 			<td><s:property value="releaseCompany"/></td>
+			<td><s:property value="releaseDate"/></td>
 		</tr>
 		</s:iterator>
 	</table>
