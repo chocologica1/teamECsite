@@ -14,7 +14,9 @@
 
 <!-- 購入履歴がない場合  -->
 <s:if test="purchaseHistoryInfoDTOList.size() == 0">
-	<p><s:property value="message"/></p>
+	<div class="info">
+		<s:property value="message"/>
+	</div>
 </s:if>
 
 <!-- 購入履歴がある場合  -->
