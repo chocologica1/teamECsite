@@ -84,7 +84,7 @@
  	</s:if>
 	<!-- カートに商品が入っていない場合 -->
 	<s:else>
-		<div class="message">カート情報なし</div>
+		<div class="info">カート情報はありません。</div>
 	</s:else>
 
 	<jsp:include page="footer.jsp"/>
