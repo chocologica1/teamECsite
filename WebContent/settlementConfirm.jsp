@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<!-- <link rel="stylesheet" href="css/settlement.css"> -->
+<link rel="stylesheet" href="css/settlement.css">
 <title>決済確認画面</title>
 </head>
 <body>
@@ -24,7 +24,7 @@
 				<!-- 宛先選択フォーム -->
 			<s:form action="SettlementCompleteAction">
 					<!-- 宛先情報テーブル -->
-				<table>
+				<table class="horizontal-list-table">
 					<tr>
 						<th>#</th>
 						<th>姓</th>
