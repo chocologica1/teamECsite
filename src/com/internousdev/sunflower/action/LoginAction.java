@@ -34,7 +34,7 @@ public class LoginAction extends ActionSupport implements SessionAware{
 
 		List<String>loginIdErrorMessageList = new ArrayList<String>();
 		List<String>passwordErrorMessageList = new ArrayList<String>();
-		
+
 		if(session == null || session.isEmpty()){
 			return "timeOut";
 		}
@@ -102,7 +102,6 @@ public class LoginAction extends ActionSupport implements SessionAware{
 
 					//宛先情報がない場合nullを入れる
 					if(!(iterator.hasNext())) {
-						System.out.println("OK");
 						destinationInfoDTOList = null;
 					}
 					session.put("destinationInfoDTOList", destinationInfoDTOList);
