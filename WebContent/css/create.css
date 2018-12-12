@@ -11,7 +11,7 @@ createDestinationCompleteComplete.jsp
 
 /* 入力テーブル */
 table.vertical-list-table {
-	width: 90%;
+	width: 100%;
 	border-collapse: separate;
 	border-spacing: 0;
 	text-align: left;
@@ -27,6 +27,7 @@ table.vertical-list-table th {
 	font-weight: 400;
 	background-color: #c38b8b;
 	border: 1px solid #DDD;
+	text-align:left;
 	color: #FFFFFF;
 }
 
@@ -39,7 +40,6 @@ table.vertical-list-table td {
 }
 
 table.vertical-list-table, th, td {
-	margin: 3%;
 	border-collapse: collapse;
 	border: 1px solid #ccc;
 	line-height: 1.5;
