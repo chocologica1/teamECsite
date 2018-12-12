@@ -23,8 +23,8 @@
 			</s:if>
 
 			<!-- 検索結果なし -->
-			<s:elseif test="#session.productInfoDTOList == null">
-				<div class="error">
+			<s:elseif test="productInfoDTOList == null">
+				<div class="info">
 					<p>検索結果がありません。</p>
 				</div>
 			</s:elseif>
@@ -32,7 +32,7 @@
 			<!-- 商品情報あり -->
 			<s:else>
 				<div class="contents-wrapper">
-					<s:iterator value="#session.productInfoDTOList">
+					<s:iterator value="productInfoDTOList">
 						<div class="product-box">
 							<div class="list-image-box">
 								<!-- 画像をクリックすると商品IDをActionに渡す -->

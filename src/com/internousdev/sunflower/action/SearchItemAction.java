@@ -20,12 +20,12 @@ public class SearchItemAction extends ActionSupport implements SessionAware {
 	private int categoryId;
 	private String keywords;
 	private Map<String, Object> session;
+	private List<ProductInfoDTO> productInfoDTOList = new ArrayList<ProductInfoDTO>();
 
 	public String execute(){
 
 		List<MCategoryDTO> mCategoryDTOList = new ArrayList<MCategoryDTO>();
 		List<String> keywordsErrorMessageList = new ArrayList<String>();
-		List<ProductInfoDTO> productInfoDTOList = new ArrayList<ProductInfoDTO>();
 
 		//セッションタイムアウト
 		if(session == null || session.isEmpty()){
@@ -75,8 +75,6 @@ public class SearchItemAction extends ActionSupport implements SessionAware {
         	productInfoDTOList = null;
         }
 
-        session.put("productInfoDTOList", productInfoDTOList);
-
         if(!session.containsKey("mCategoryList")){
         	MCategoryDAO mCategoryDAO = new MCategoryDAO();
         	mCategoryDTOList = mCategoryDAO.getMCategoryList();
@@ -108,6 +106,10 @@ public class SearchItemAction extends ActionSupport implements SessionAware {
 
 	public void setSession(Map<String, Object> session){
 		this.session = session;
+	}
+
+	public List<ProductInfoDTO> getProductInfoDTOList() {
+		return productInfoDTOList;
 	}
 
 }
