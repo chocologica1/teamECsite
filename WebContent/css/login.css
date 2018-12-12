@@ -23,7 +23,7 @@
 	border-top: 1px solid white;
 	border-left: 1px solid white;
 	background: #9b5d73;
-	color:#ffffff;
+	color:#fff;
 }
 
 .inputform td{
@@ -32,6 +32,7 @@
 	vertical-align: top;
 	border-right: 1px slid #ccc;
 	border-bottom: 1px solid #ccc;
+	background-color: white;
 }
 
 .inputform, th, td{
@@ -41,3 +42,9 @@
 	line-height: 1.5;
 }
 
+.txt{
+	width: 99%;
+	height: 30px;
+	border: 0.5px solid #999;
+	font-size: 24px;
+}

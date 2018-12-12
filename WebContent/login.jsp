@@ -4,8 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<!-- <link rel="stylesheet" href="./css/style.css"> -->
-<!-- <link rel="stylesheet" href="./css/login.css"> -->
+<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/login.css">
 <title>ログイン</title>
 
 </head>
@@ -61,20 +61,17 @@
 	<div class="box">
 		<s:if test="#session.savedLoginId==true">
 			<s:checkbox name="savedLoginId" checked="checked"/>
-		</s:if>
-		<s:else>
+		</s:if>			<s:else>
 			<s:checkbox name="savedLoginId"/>
 		</s:else>
 		<s:label value="ユーザID保存"/><br>
-	</div>
-	<div class="submit_btn_box">
-		<s:submit value="ログイン" class="submit_btn" onclick="goLoginAction();"/>
+		</div>
+		<div class="submit_btn_box">
+			<s:submit value="ログイン" class="submit_btn" onclick="goLoginAction();"/>
 	</div>
 	</s:form>
-
-	<br>
-<div class="submit_btn_box">
-	<div id=".contents-btn-set">
+	<div class="submit_btn_box">
+		<div id=".contents-btn-set">
 		<s:form action="CreateUserAction">
 		<input type="hidden" name="createUserFlg" value ="true"/>
 			<s:submit value="新規ユーザー登録" class="submit_btn" />
