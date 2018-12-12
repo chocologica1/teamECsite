@@ -26,6 +26,7 @@ public class LoginAction extends ActionSupport implements SessionAware{
 	private Map<String, Object> session;
 
 	List<DestinationInfoDTO> destinationInfoDTOList = new ArrayList<DestinationInfoDTO>();
+	private String notMatch = new String();
 
 	public String execute(){
 
@@ -33,8 +34,7 @@ public class LoginAction extends ActionSupport implements SessionAware{
 
 		List<String>loginIdErrorMessageList = new ArrayList<String>();
 		List<String>passwordErrorMessageList = new ArrayList<String>();
-
-
+		
 		if(session == null || session.isEmpty()){
 			return "timeOut";
 		}
@@ -60,8 +60,8 @@ public class LoginAction extends ActionSupport implements SessionAware{
 	passwordErrorMessageList = inputChecker.doCheck("パスワード", password, 1, 16, true, false, false, true, false, false, false, false, false);
 
 	//エラーメッセージを削除
-	session.remove(loginId, loginIdErrorMessageList);
-	session.remove(password, passwordErrorMessageList);
+	session.remove("loginIdErrorMessageList");
+	session.remove("passwordErrorMessageList");
 
 	//入力できない文字が入力ときのメッセージ
 	if(loginIdErrorMessageList.size()!=0 || passwordErrorMessageList.size()!=0){
@@ -119,11 +119,19 @@ public class LoginAction extends ActionSupport implements SessionAware{
 			session.put("loginFlg", true);
 	//ユーザIDとパスワードが不一致の場合
 	}else{
-		session.put("loginErrorMessage", "入力されたユーザIDまたはパスワードが異なります。");
+		notMatch = "入力されたユーザIDまたはパスワードが異なります。";
 	}
 	return result;
 
 		}
+
+		public String getNotMatch() {
+		return notMatch;
+	}
+
+	public void setNotMatch(String notMatch) {
+		this.notMatch = notMatch;
+	}
 
 		public String getLoginId(){
 			return loginId;
