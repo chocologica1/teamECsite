@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="./css/product.css">
-<title>商品一覧</title>
+<title>商品一覧画面</title>
 </head>
 <body>
  	<jsp:include page="header.jsp"/>
