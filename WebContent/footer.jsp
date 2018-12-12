@@ -10,7 +10,7 @@
 </head>
 <body>
 	<footer>
-		Copywrite Sunflower
+		Copyright 2018 Sunflower all rights reserved.
 	</footer>
 </body>
 </html>
