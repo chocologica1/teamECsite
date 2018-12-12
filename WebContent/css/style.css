@@ -47,11 +47,14 @@ table {
 	border-spacing: 0;
 }
 /* リセットCSS終了 */
+* {
+	box-sizing: border-box;
+}
+
 body {
 	font-family: YuGothic, "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
 	color: #333;
 	background-color: #fff;
-	box-sizing: border-box;
 	width: 100%;
 	min-width: 1000px;
 }
@@ -86,7 +89,6 @@ h1 {
 
 /* メッセージ全般(エラー、選択要求、完了) */
 .info, .error, .complete {
-	box-sizing: border-box;
 	margin-top: 1em;
 	margin-bottom: 1em;
 	padding-top: 1em;
@@ -118,13 +120,8 @@ h1 {
 
 /* ボタン */
 .submit_btn_box {
-	width: 45%;
-	display: block;
-	margin-top: 5px;
-	margin-bottom: 5px;
-	margin-left: 3%;
-	padding-left: 42%;
-	float: left;
+	width: 100px;
+	margin: 5px auto;
 }
 
 .submit_btn {
@@ -133,28 +130,19 @@ h1 {
 	border-radius: 100px;
 	width: 100px;
 	height: 35px;
-	margin-top: -5px;
-	margin-left: 6px;
 	font-size: 10px;
+	font-weight: 600;
 	text-align: center;
-	color: #332600;
+	color: #4e120a;
 	background-color: #fff1c5;
 	border: 1px solid #fff;
 	box-shadow:2px 2px #b0757c;
-	/*     background: -webkit-gradient(linear, left top, left bottom, from(#81a8cb), to(#4477a1) ); */
-	/*     background: -moz-linear-gradient(-90deg, #81a8cb, #4477a1); */
-	/*     filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#81a8cb', endColorstr='#4477a1'); */
 }
 
 .submit_btn:hover {
 	color: #fff;
 	background-color: rgba(255,214,91,0.8);
 	cursor: pointer;
-/* 	opacity: 0.5; */
-	/*     background: #81a8cb; */
-	/*     background: -webkit-gradient(linear, left top, left bottom, from(#4477a1), to(#81a8cb) ); */
-	/*     background: -moz-linear-gradient(-90deg, #4477a1, #81a8cb); */
-	/*     filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#4477a1', endColorstr='#81a8cb'); */
 }
 
 .submit_btn:active {
