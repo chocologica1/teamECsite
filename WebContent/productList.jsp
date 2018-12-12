@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<!-- <link rel="stylesheet" type="text/css" href="./css/product.css"> -->
+<link rel="stylesheet" type="text/css" href="./css/product.css">
 <title>商品一覧</title>
 </head>
 <body>

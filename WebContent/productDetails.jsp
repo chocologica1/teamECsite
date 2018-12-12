@@ -18,48 +18,46 @@
 				</div>
 				<div class="details-box">
 					<s:form action="AddCartAction">
-						<div class="table-box">
-							<table class="details-table">
-								<tr>
-									<td>商品名</td>
+						<table class="details-table">
+							<tr>
+								<td>商品名</td>
 									<td><s:property value="productName" /></td>
-								</tr>
-								<tr>
-									<td>商品名ふりがな</td>
-									<td><s:property value="productNameKana" /></td>
-								</tr>
-								<tr>
-									<td>値段</td>
-									<td>¥<s:property value="price" /></td>
-								</tr>
-								<tr>
-									<td>購入個数</td>
-									<td>
-										<!-- カートに購入個数を渡す -->
-										 <select name="productCount">
-											<option value="1" selected="selected">1</option>
-											<option value="2">2</option>
-											<option value="3">3</option>
-											<option value="4">4</option>
-											<option value="5">5</option>
-										</select> 個
-									</td>
-								</tr>
-								<tr>
-									<td>発売会社名</td>
-									<td><s:property value="releaseCompany" /></td>
-								</tr>
-								<tr>
-									<td>発売年月日</td>
-									<td><s:property value="releaseDate" /></td>
-								</tr>
-								<tr>
-									<td>商品詳細情報</td>
-									<td><s:property value="productDescription" /></td>
-								</tr>
-							</table>
-						</div>
-						<div class="submit_btn_box">
+							</tr>
+							<tr>
+								<td>商品名ふりがな</td>
+								<td><s:property value="productNameKana" /></td>
+							</tr>
+							<tr>
+								<td>値段</td>
+								<td><s:property value="price" />円</td>
+							</tr>
+							<tr>
+								<td>購入個数</td>
+								<td>
+									<!-- カートに購入個数を渡す -->
+									 <select name="productCount">
+										<option value="1" selected="selected">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="4">4</option>
+										<option value="5">5</option>
+									</select> 個
+								</td>
+							</tr>
+							<tr>
+								<td>発売会社名</td>
+								<td><s:property value="releaseCompany" /></td>
+							</tr>
+							<tr>
+								<td>発売年月日</td>
+								<td><s:property value="releaseDate" /></td>
+							</tr>
+							<tr>
+								<td>商品詳細情報</td>
+								<td><s:property value="productDescription" /></td>
+							</tr>
+						</table>
+						<div class="cart-button">
 							<!-- カートに商品IDを渡す -->
 							<input type="hidden" name="productId"
 								value="<s:property value='productId'/>" />
