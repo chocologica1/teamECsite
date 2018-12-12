@@ -4,7 +4,6 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="css/style.css">
 <meta http-equiv="refresh" content="3;<s:url action='HomeAction'/>">
 <title>Error</title>
 </head>
