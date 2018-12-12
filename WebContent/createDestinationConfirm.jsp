@@ -11,50 +11,51 @@
 <body>
 	<jsp:include page="header.jsp" />
 
-	<div class="contents">>
+	<div id="contents">
 		<h1>宛先情報入力確認画面</h1>
-
-		<p>以下の内容で登録します</p>
-		<br>
 		<s:form action="CreateDestinationCompleteAction">
-			<table>
-				<tr>
+			<table class="vertical-list-table">
+				<tr class="textBox">
 					<th><s:label value="姓" /></th>
 					<td><s:property value="familyName" /></td>
 				</tr>
-				<tr>
+				<tr class="textBox">
 					<th><s:label value="名" /></th>
 					<td><s:property value="firstName" /></td>
 				</tr>
-				<tr>
+				<tr class="textBox">
 					<th><s:label value="姓ふりがな" /></th>
 					<td><s:property value="familyNameKana" /></td>
 				</tr>
-				<tr>
+				<tr class="textBox">
 					<th><s:label value="名ふりがな" /></th>
 					<td><s:property value="firstNameKana" /></td>
 				</tr>
-				<tr>
+				<tr class="textBox">
 					<th><s:label value="住所" /></th>
 					<td><s:property value="userAddress" /></td>
 				</tr>
-				<tr>
+				<tr class="textBox">
 					<th><s:label value="電話番号" /></th>
 					<td><s:property value="telNumber" /></td>
 				</tr>
 
-				<tr>
+				<tr class="textBox">
 					<th><s:label value="メールアドレス" /></th>
 					<td><s:property value="email" /></td>
 				</tr>
 			</table>
-			<s:submit value="登録" />
+			<div class="submit_btn_box">
+				<s:submit value="登録" class="submit_btn" />
+			</div>
 		</s:form>
 
 		<s:form action="CreateDestinationAction" >
-			<s:submit value="戻る" />
+			<div class="submit_btn_box">
+				<s:submit value="戻る" class="submit_btn" />
+			</div>
 		</s:form>
 	</div>
-
+	<jsp:include page="footer.jsp" />
 </body>
 </html>
