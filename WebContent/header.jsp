@@ -49,7 +49,7 @@
 								list="#session.mCategoryDTOList" listValue="categoryName"
 								listKey="categoryId" class="category-select"/></li>
 					</s:if>
-					<li><s:textfield name="keywords" class="search-keywords" placeholder="検索キーワード" /></li>
+					<li><s:textfield name="keywords" class="search-keywords" placeholder="検索ワード" /></li>
 					<li><s:submit value="商品検索" class="submit_btn" onclick="goSearchItemAction();" /></li>
 
 					<!-- ログイン時 -->
