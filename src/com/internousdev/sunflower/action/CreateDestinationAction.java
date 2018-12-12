@@ -23,31 +23,30 @@ public class CreateDestinationAction extends ActionSupport implements SessionAwa
 		if(session == null || session.isEmpty()){
 			return "timeOut";
 		}
-	String result = ERROR;
+		String result = ERROR;
 
-	//
-	if(createDestinationFlg){
-		session.remove("familyName");
-		session.remove("firstName");
-		session.remove("familyNameKana");
-		session.remove("firstNameKana");
-		session.remove("userAddress");
-		session.remove("telNumber");
-		session.remove("email");
-	}
+		if(createDestinationFlg){
+			session.remove("familyName");
+			session.remove("firstName");
+			session.remove("familyNameKana");
+			session.remove("firstNameKana");
+			session.remove("userAddress");
+			session.remove("telNumber");
+			session.remove("email");
+		}
 
-	//セッションに残っているエラーメッセージを取り除いておく
-	session.remove("familyNameErrorMessageList");
-	session.remove("firstNameErrorMessageList");
-	session.remove("familyNameKanaErrorMessageList");
-	session.remove("firstNameKanaErrorMessageList");
-	session.remove("userAddressErrorMessageList");
-	session.remove("emailErrorMessageList");
-	session.remove("telNumberErrorMessageList");
+		//セッションに残っているエラーメッセージを取り除いておく
+		session.remove("familyNameErrorMessageList");
+		session.remove("firstNameErrorMessageList");
+		session.remove("familyNameKanaErrorMessageList");
+		session.remove("firstNameKanaErrorMessageList");
+		session.remove("userAddressErrorMessageList");
+		session.remove("emailErrorMessageList");
+		session.remove("telNumberErrorMessageList");
 
-	result = SUCCESS;
+		result = SUCCESS;
 
-	return result;
+		return result;
 	}
 
 	public String getFamilyName() {

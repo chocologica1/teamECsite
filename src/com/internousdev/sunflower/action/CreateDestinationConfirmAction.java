@@ -44,7 +44,6 @@ public class CreateDestinationConfirmAction extends ActionSupport implements Ses
 		emailErrorMessageList = inputChecker.doCheck("メールアドレス", email, 10, 32, true, false, false, true, true, false, false, false, false);
 		telNumberErrorMessageList = inputChecker.doCheck("電話番号", telNumber, 10, 13, false, false, false, true, false, false, false, false, false);
 
-
 		if(familyNameErrorMessageList.size()==0
 				&& firstNameErrorMessageList.size()==0
 				&& familyNameKanaErrorMessageList.size()==0

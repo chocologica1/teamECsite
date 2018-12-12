@@ -49,7 +49,6 @@ public class CreateUserAction extends ActionSupport implements SessionAware {
 		session.remove("userIdErrorMessageList");
 		session.remove("passwordErrorMessageList");
 
-
 		result = SUCCESS;
 		return result;
 	}

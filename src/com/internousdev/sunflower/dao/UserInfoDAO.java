@@ -8,9 +8,7 @@ import java.sql.SQLException;
 import com.internousdev.sunflower.dto.UserInfoDTO;
 import com.internousdev.sunflower.util.DBConnector;
 
-
 public class UserInfoDAO {
-
 
 	//ユーザー情報をDBに入れる
 	public int createUser(String familyName, String firstName, String familyNameKana,
@@ -48,7 +46,6 @@ public class UserInfoDAO {
 		return count;
 	}
 
-	//
 	public boolean isExistsUserInfo(String loginId, String password){
 		DBConnector db = new DBConnector();
 		Connection con = db.getConnection();

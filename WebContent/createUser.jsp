@@ -17,56 +17,55 @@
 
 		<!-- エラーメッセージここから -->
 
-			<s:if test="!#session.familyNameErrorMessageList.isEmpty()">
+		<s:if test="!#session.familyNameErrorMessageList.isEmpty()">
 			<div class="error">
 				<s:iterator value="#session.familyNameErrorMessageList">
 					<s:property />
 				</s:iterator>
-				</div>
-			</s:if>
-			<s:if test="!#session.firstNameErrorMessageList.isEmpty()">
+			</div>
+		</s:if>
+		<s:if test="!#session.firstNameErrorMessageList.isEmpty()">
 			<div class="error">
 				<s:iterator value="#session.firstNameErrorMessageList">
 					<s:property />
 				</s:iterator>
 			</div>
-			</s:if>
-			<s:if test="!#session.familyNameKanaErrorMessageList.isEmpty()">
+		</s:if>
+		<s:if test="!#session.familyNameKanaErrorMessageList.isEmpty()">
 			<div class="error">
 				<s:iterator value="#session.familyNameKanaErrorMessageList">
 					<s:property />
 				</s:iterator>
 			</div>
-			</s:if>
-			<s:if test="!#session.firstNameKanaErrorMessageList.isEmpty()">
+		</s:if>
+		<s:if test="!#session.firstNameKanaErrorMessageList.isEmpty()">
 			<div class="error">
 				<s:iterator value="#session.firstNameKanaErrorMessageList">
 					<s:property />
 				</s:iterator>
-				</div>
-			</s:if>
-			<s:if test="!#session.emailErrorMessageList.isEmpty()">
+			</div>
+		</s:if>
+		<s:if test="!#session.emailErrorMessageList.isEmpty()">
 			<div class="error">
 				<s:iterator value="#session.emailErrorMessageList">
 					<s:property />
 				</s:iterator>
-				</div>
-			</s:if>
-			<s:if test="!#session.userIdErrorMessageList.isEmpty()">
+			</div>
+		</s:if>
+		<s:if test="!#session.userIdErrorMessageList.isEmpty()">
 			<div class="error">
 				<s:iterator value="#session.userIdErrorMessageList">
 					<s:property />
 				</s:iterator>
-				</div>
-			</s:if>
-			<s:if test="!#session.passwordErrorMessageList.isEmpty()">
+			</div>
+		</s:if>
+		<s:if test="!#session.passwordErrorMessageList.isEmpty()">
 			<div class="error">
 				<s:iterator value="#session.passwordErrorMessageList">
 					<s:property />
 				</s:iterator>
-				</div>
-			</s:if>
-
+			</div>
+		</s:if>
 		<!-- ここまで -->
 
 		<s:form action="CreateUserConfirmAction">
@@ -128,12 +127,12 @@
 				<tr>
 					<th>性別</th>
 					<s:if test="#session.sex == 1">
-					<td><input type="radio" id="0" name="sex" value="0" />男性
-					<input type="radio" id="1" name="sex" value="1" checked/>女性</td>
+						<td><input type="radio" id="0" name="sex" value="0" />男性 <input
+							type="radio" id="1" name="sex" value="1" checked />女性</td>
 					</s:if>
 					<s:else>
-					<td><input type="radio" id="0" name="sex" value="0" checked />男性
-					<input type="radio" id="1" name="sex" value="1" />女性</td>
+						<td><input type="radio" id="0" name="sex" value="0" checked />男性
+							<input type="radio" id="1" name="sex" value="1" />女性</td>
 					</s:else>
 				</tr>
 
@@ -167,12 +166,11 @@
 
 				<tr class="textBox">
 					<th>パスワード</th>
-					<td><input type="password" name="password"
-						value="" placeholder="パスワード"
-						class="txt" /></td>
+					<td><input type="password" name="password" value=""
+						placeholder="パスワード" class="txt" /></td>
 				</tr>
 			</table>
-			<div class ="submit_btn_box">
+			<div class="submit_btn_box">
 				<s:submit value="確認" class="submit_btn" />
 			</div>
 		</s:form>
