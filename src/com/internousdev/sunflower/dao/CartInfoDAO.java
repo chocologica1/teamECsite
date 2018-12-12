@@ -152,13 +152,16 @@ public class CartInfoDAO {
 	public int getPrice(int productId){
 		int result = 0;
 		String sql = "SELECT price FROM product_info WHERE product_id = ?";
-		try(Connection con = db.getConnection()){
+		Connection con = db.getConnection();
+		try{
 			PreparedStatement ps = con.prepareStatement(sql);
 			ps.setInt(1, productId);
 			ResultSet rs = ps.executeQuery();
 			if(rs.next()) result = rs.getInt("price");
 		}catch(SQLException e){
 			e.printStackTrace();
+		}finally{
+			try{con.close();}catch(SQLException e){}
 		}
 		return result;
 	}
