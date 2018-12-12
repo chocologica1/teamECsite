@@ -5,7 +5,6 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="./css/style.css">
 <link rel="stylesheet" href="./css/create.css">
 <title>宛先情報入力確認画面</title>
 </head>
