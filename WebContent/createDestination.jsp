@@ -21,6 +21,7 @@
 				<s:iterator value="#session.familyNameErrorMessageList"><s:property /><br>
 				</s:iterator>
 			</div>
+
 		</s:if>
 		<s:if test="!#session.firstNameErrorMessageList.isEmpty()">
 			<div class="error">
@@ -64,14 +65,14 @@
 	<s:form action="CreateDestinationConfirmAction">
 		<table class="vertical-list-table">
 			<tr class="textBox">
-				<th class="textTitle">姓</th>
+				<th>姓</th>
 					<s:if test="#session.savedDestinationInfo == true">
 					<td><input type="text" name="familyName"
 					value="<s:property value='#session.familyName' />" placeholder="姓" /></td>
 				</s:if>
 				<s:else>
 					<td><input type="text" name="familyName"
-					value="<s:property value='familyName' />" placeholder="姓" /></td>
+					value="<s:property value='familyName' />" placeholder="姓" class="txt" /></td>
 				</s:else>
 			</tr>
 			<tr class="textBox">
@@ -82,7 +83,7 @@
 				</s:if>
 				<s:else>
 					<td><input type="text" name="firstName"
-					value="<s:property value='firstName' />" placeholder="名" /></td>
+					value="<s:property value='firstName' />" placeholder="名" class="txt" /></td>
 				</s:else>
 			</tr>
 			<tr class="textBox">
@@ -93,7 +94,7 @@
 				</s:if>
 				<s:else>
 					<td><input type="text" name="familyNameKana"
-					value="<s:property value='familyNameKana' />" placeholder="姓ふりがな" /></td>
+					value="<s:property value='familyNameKana' />" placeholder="姓ふりがな" class="txt" /></td>
 				</s:else>
 			</tr>
 			<tr class="textBox">
@@ -104,7 +105,7 @@
 				</s:if>
 				<s:else>
 					<td><input type="text" name="firstNameKana"
-					value="<s:property value='firstNameKana' />" placeholder="名ふりがな" /></td>
+					value="<s:property value='firstNameKana' />" placeholder="名ふりがな" class="txt" /></td>
 				</s:else>
 			</tr>
 			<tr class="textBox">
@@ -115,7 +116,7 @@
 				</s:if>
 				<s:else>
 					<td><input type="text" name="userAddress"
-					value="<s:property value='userAddress' />" placeholder="住所" /></td>
+					value="<s:property value='userAddress' />" placeholder="住所" class="txt" /></td>
 				</s:else>
 			</tr>
 			<tr class="textBox">
@@ -126,7 +127,7 @@
 				</s:if>
 				<s:else>
 					<td><input type="text" name="telNumber"
-					value="<s:property value='telNumber' />" placeholder="電話番号" /></td>
+					value="<s:property value='telNumber' />" placeholder="電話番号" class="txt" /></td>
 				</s:else>
 			</tr>
 			<tr class="textBox">
@@ -137,11 +138,13 @@
 				</s:if>
 				<s:else>
 					<td><input type="text" name="email"
-					value="<s:property value='email' />" placeholder="メールアドレス" /></td>
+					value="<s:property value='email' />" placeholder="メールアドレス" class="txt" /></td>
 				</s:else>
 			</tr>
 		</table>
-		<s:submit value="確認" />
+		<div class="submit_btn_box">
+			<s:submit value="確認" class="submit_btn" />
+		</div>
 	</s:form>
 
 	</div>
