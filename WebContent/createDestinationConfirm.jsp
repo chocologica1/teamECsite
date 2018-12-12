@@ -10,7 +10,8 @@
 </head>
 <body>
 	<jsp:include page="header.jsp" />
-	<div>
+
+	<div class="contents">>
 		<h1>宛先情報入力確認画面</h1>
 
 		<p>以下の内容で登録します</p>

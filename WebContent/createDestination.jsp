@@ -5,7 +5,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="">
+<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/creatDestination.css">
 <title>宛先情報入力</title>
 </head>
 <body>
@@ -61,8 +62,10 @@
 	</div>
 	<!-- ここまで -->
 
+	<h1>宛先情報入力画面</h1>
+
 	<s:form action="CreateDestinationConfirmAction">
-		<table>
+		<table class = "vertical-list-table">
 			<tr>
 				<th>姓</th>
 				<s:if test="#session.savedDestinationInfo == true">
