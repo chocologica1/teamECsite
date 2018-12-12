@@ -35,7 +35,6 @@ public class PurchaseHistoryInfoDAO {
 			PreparedStatement ps = con.prepareStatement(sql);
 			ps.setString(1,loginId);
 			ResultSet rs = ps.executeQuery();
-
 			while(rs.next()) {
 				PurchaseHistoryInfoDTO purchaseHistoryInfoDTO = new PurchaseHistoryInfoDTO();
 				purchaseHistoryInfoDTO.setProductName(rs.getString("product_name"));
@@ -60,8 +59,6 @@ public class PurchaseHistoryInfoDAO {
 		}
 		return purchaseHistoryInfoDTOList;
 	}
-
-
 
 	// 購入商品情報をDBに格納
 	public int regist(String loginId, int productId, int productCount, int price, int destinationId){
@@ -122,8 +119,5 @@ public class PurchaseHistoryInfoDAO {
 		}
 		return count;
 	}
-
-
-
 
 }
