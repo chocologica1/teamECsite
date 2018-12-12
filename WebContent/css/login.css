@@ -5,12 +5,10 @@
 	width: 100%;
 	font-weight: 400;
 	vertical-align: top;
-	border-right: 1px solid #9b5d73;
-	border-bottom:1px solid #9b5d73;
-	border-top: 1px solid #9b5d73;
-	border-left:1px solid #9b5d73;
-	background: #9b5d73;
-	color:#9b5d73;
+	border-right: 1px solid #c38b8b;
+	border-bottom:1px solid #c38b8b;
+	border-top: 1px solid #c38b8b;
+	border-left:1px solid #c38b8b;
 }
 
 .inputform th{
