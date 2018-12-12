@@ -4,8 +4,6 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="Content-Script-Type" content="text/javascript"/>
-<link rel="stylesheet" href="./css/style.css">
 <link rel="stylesheet" href="./css/password.css">
 <title>パスワード再設定画面</title>
 </head>
