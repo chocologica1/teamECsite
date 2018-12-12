@@ -5,13 +5,13 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="./css/product.css">
-<title>商品詳細</title>
+<title>商品詳細画面</title>
 </head>
 <body>
   	<jsp:include page="header.jsp"/>
 	<div id="main">
 		<div id="contents">
-			<h1>商品詳細</h1>
+			<h1>商品詳細画面</h1>
 			<div class="product-wrapper">
 				<div class="details-image-box">
 					<img src='<s:property value="imageFilePath"/>/<s:property value="imageFileName"/>' alt="product" class="product-image"/>
