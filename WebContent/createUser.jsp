@@ -19,49 +19,49 @@
 		<s:if test="!#session.familyNameErrorMessageList.isEmpty()">
 			<div class="error">
 				<s:iterator value="#session.familyNameErrorMessageList">
-					<s:property />
+					<s:property /><br>
 				</s:iterator>
 			</div>
 		</s:if>
 		<s:if test="!#session.firstNameErrorMessageList.isEmpty()">
 			<div class="error">
 				<s:iterator value="#session.firstNameErrorMessageList">
-					<s:property />
+					<s:property /><br>
 				</s:iterator>
 			</div>
 		</s:if>
 		<s:if test="!#session.familyNameKanaErrorMessageList.isEmpty()">
 			<div class="error">
 				<s:iterator value="#session.familyNameKanaErrorMessageList">
-					<s:property />
+					<s:property /><br>
 				</s:iterator>
 			</div>
 		</s:if>
 		<s:if test="!#session.firstNameKanaErrorMessageList.isEmpty()">
 			<div class="error">
 				<s:iterator value="#session.firstNameKanaErrorMessageList">
-					<s:property />
+					<s:property /><br>
 				</s:iterator>
 			</div>
 		</s:if>
 		<s:if test="!#session.emailErrorMessageList.isEmpty()">
 			<div class="error">
 				<s:iterator value="#session.emailErrorMessageList">
-					<s:property />
+					<s:property /><br>
 				</s:iterator>
 			</div>
 		</s:if>
 		<s:if test="!#session.userIdErrorMessageList.isEmpty()">
 			<div class="error">
 				<s:iterator value="#session.userIdErrorMessageList">
-					<s:property />
+					<s:property /><br>
 				</s:iterator>
 			</div>
 		</s:if>
 		<s:if test="!#session.passwordErrorMessageList.isEmpty()">
 			<div class="error">
 				<s:iterator value="#session.passwordErrorMessageList">
-					<s:property />
+					<s:property /><br>
 				</s:iterator>
 			</div>
 		</s:if>
