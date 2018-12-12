@@ -44,7 +44,7 @@
 	<table class="inputform">
 
 		<tr>
-			<th>ユーザID</th>
+			<th>ユーザID:</th>
 				<s:if test="#session.savedLoginId == true">
 					<td><s:textfield name="loginId" class="txt" placeholder="ユーザID" value='%{#session.keepLoginId}' autocomplete="off"/></td>
 				</s:if>
@@ -53,10 +53,10 @@
 			</s:else>
 		</tr>
 		<tr>
-			<th>パスワード</th>
+			<th>パスワード:</th>
 			<td><s:password name="password" class="txt" placeholder="パスワード" autocomplete="off"/></td>
 		</tr>
-	</table>
+	</table><br>
 	<div class="box">
 		<s:if test="#session.savedLoginId==true">
 			<s:checkbox name="savedLoginId" checked="checked"/>
