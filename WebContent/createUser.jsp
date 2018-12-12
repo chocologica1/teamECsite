@@ -7,13 +7,13 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" href="./css/create.css">
 <link rel="stylesheet" href="./css/style.css">
-<title>ユーザー登録画面</title>
+<title>ユーザ情報入力画面</title>
 </head>
 <body>
 	<jsp:include page="header.jsp" />
 
 	<div id="contents">
-		<h1>ユーザー情報入力画面</h1>
+		<h1>ユーザ情報入力画面</h1>
 
 		<!-- エラーメッセージここから -->
 

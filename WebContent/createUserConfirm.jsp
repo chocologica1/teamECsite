@@ -6,12 +6,12 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="./css/create.css">
-<title>登録内容の確認</title>
+<title>ユーザ情報入力確認画面</title>
 </head>
 <body>
 	<jsp:include page="header.jsp" />
 	<div id="contents">
-		<h1>登録内容確認画面</h1>
+		<h1>ユーザ情報入力確認画面</h1>
 		<br>
 		<h2>以下の内容で登録します</h2>
 		<br>
