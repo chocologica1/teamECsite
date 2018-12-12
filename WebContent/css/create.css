@@ -9,24 +9,6 @@ createDestinationCompleteConfirm.jsp
 createDestinationCompleteComplete.jsp
 */
 
-/* メッセージ全般(エラー、選択要求、完了) */
-.info, .error, .complete {
-	margin-top: 1em;
-	margin-bottom: 1em;
-	padding-top: 1em;
-	padding-bottom: 1em;
-	padding-left: 2em;
-	border: 1px solid black;
-	width: 100%;
-}
-
-/* エラーメッセージ */
-.error {
-	border-color: red;
-	background-color: lightpink;
-	color: red;
-}
-
 /* 入力テーブル */
 table.vertical-list-table {
 	width: 90%;
