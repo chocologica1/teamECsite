@@ -36,7 +36,6 @@ public class ProductDetailsAction extends ActionSupport implements SessionAware 
 			return "timeOut";
 		}
 
-
 		String result = ERROR;
 		ProductInfoDAO productInfoDAO = new ProductInfoDAO();
 		ProductInfoDTO productInfoDTO = new ProductInfoDTO();
