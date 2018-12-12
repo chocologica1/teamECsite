@@ -18,11 +18,9 @@ public class ResetPasswordCompleteAction extends ActionSupport implements Sessio
 					return "timeOut";
 				}
 
-
 		String result = ERROR;
 
 		UserInfoDAO userInfoDAO = new UserInfoDAO();   //UserInfoDAOをインスタンス化
-
 		//DB上の情報を更新、更新した件数
 		int count = userInfoDAO.resetPassword(session.get("copyUserId").toString(), session.get("newPassword").toString());
 		if(count > 0) {
@@ -33,24 +31,18 @@ public class ResetPasswordCompleteAction extends ActionSupport implements Sessio
 		return result;
 	}
 
-
-
-
-
 	public String getUserId() {
 		return userId;
 	}
 	public void setUserId(String userId) {
 		this.userId = userId;
 	}
-
 	public String getPassword() {
 		return password;
 	}
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
 	public Map<String, Object> getSession() {
 		return session;
 	}
