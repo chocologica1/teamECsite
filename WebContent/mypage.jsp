@@ -11,7 +11,7 @@
 
   <jsp:include page="header.jsp"/>
   <div id = "contents">
-  <h1>マイページ</h1>
+  <h1>マイページ画面</h1>
   <s:form action = "PurchaseHistoryAction">
 
     <table class = "vertical-list-table">
@@ -48,7 +48,5 @@
   </s:form>
   </div>
   <s:include value="footer.jsp"/>
-
-
 </body>
 </html>
