@@ -25,7 +25,9 @@ public class PurchaseHistoryInfoDAO {
 				+ " pi.image_file_path as image_file_path,"		// 画像ファイルパス
 				+ " pi.image_file_name as image_file_name,"		// 画像ファイル名
 				+ " phi.price as price,"						// 単品価格
-				+ " phi.product_count as product_count"			// 個数
+				+ " phi.product_count as product_count,"		// 個数
+				+ " pi.release_date as release_date,"			// 発売年月日
+				+ " pi.release_company as release_company"		// 発売会社名
 				+ " FROM purchase_history_info as phi"
 				+ " LEFT JOIN product_info as pi"
 				+ " ON phi.product_id = pi.product_id"
@@ -44,6 +46,8 @@ public class PurchaseHistoryInfoDAO {
 				purchaseHistoryInfoDTO.setPrice(rs.getInt("price"));
 				purchaseHistoryInfoDTO.setProductCount(rs.getInt("product_count"));
 				purchaseHistoryInfoDTO.setTotalPrice(rs.getInt("price")*rs.getInt("product_count"));
+				purchaseHistoryInfoDTO.setReleaseDate(rs.getDate("release_date"));
+				purchaseHistoryInfoDTO.setReleaseCompany(rs.getString("release_company"));
 				purchaseHistoryInfoDTOList.add(purchaseHistoryInfoDTO);
 			}
 		}

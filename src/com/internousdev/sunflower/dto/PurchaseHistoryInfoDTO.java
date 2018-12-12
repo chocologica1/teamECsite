@@ -1,5 +1,7 @@
 package com.internousdev.sunflower.dto;
 
+import java.util.Date;
+
 public class PurchaseHistoryInfoDTO {
 	private String productName;
 	private String productNameKana;
@@ -8,6 +10,8 @@ public class PurchaseHistoryInfoDTO {
 	private int price;
 	private int productCount;
 	private int totalPrice;
+	private Date releaseDate;
+	private String releaseCompany;
 
 	public String getProductName() {
 		return productName;
@@ -50,6 +54,18 @@ public class PurchaseHistoryInfoDTO {
 	}
 	public void setTotalPrice(int totalPrice) {
 		this.totalPrice = totalPrice;
+	}
+	public Date getReleaseDate() {
+		return releaseDate;
+	}
+	public void setReleaseDate(Date releaseDate) {
+		this.releaseDate = releaseDate;
+	}
+	public String getReleaseCompany() {
+		return releaseCompany;
+	}
+	public void setReleaseCompany(String releaseCompany) {
+		this.releaseCompany = releaseCompany;
 	}
 
 }
