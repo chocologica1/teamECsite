@@ -14,21 +14,14 @@
 	<!-- ヘッダー -->
 	<s:include value="header.jsp"/>
 
-	<!-- メイン -->
-	<div id="main">
+	<!-- コンテンツ -->
+	<div id="contents">
+		<h1>決済完了画面</h1>
 
-		<!-- コンテンツ -->
-		<div id="contents">
-
-
-			<h1>決済完了画面</h1>
-
-			<!-- メッセージを表示 -->
-			<div class="complete">
-				決済が完了しました。
-			</div>
+		<!-- メッセージを表示 -->
+		<div class="complete">
+			決済が完了しました。
 		</div>
-
 	</div>
 
 	<!-- フッター -->

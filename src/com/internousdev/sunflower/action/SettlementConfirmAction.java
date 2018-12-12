@@ -37,16 +37,13 @@ public class SettlementConfirmAction extends ActionSupport implements SessionAwa
 			try{
 				/*DBから宛先情報のリストを取得する*/
 				destinationInfoDTOList = destinationDao.getDestinationInfo(String.valueOf(session.get("loginId")));
-
 				/*宛先情報リストが空の場合*/
 				Iterator<DestinationInfoDTO> iterator = destinationInfoDTOList.iterator();
 				if(!(iterator.hasNext())){
 					destinationInfoDTOList = null;
 				}
-
 				/*セッションに宛先情報リストを入れる*/
 				session.put("destinationInfoDTOList", destinationInfoDTOList);
-
 			}
 			catch(SQLException e){
 				e.printStackTrace();
@@ -60,16 +57,14 @@ public class SettlementConfirmAction extends ActionSupport implements SessionAwa
 		else{
 			/*カートフラグを立てる*/
 			session.put("cartFlg", true);
-
 			/*ログイン画面へ遷移するための戻り値*/
 			result = ERROR;
 		}
 
 		return result;
 	}
+
 	/*以下セッター＆ゲッター*/
-
-
 	public String getId() {
 		return id;
 	}
