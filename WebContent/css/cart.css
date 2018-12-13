@@ -2,28 +2,30 @@
 	img{
 		position:relative;
 		top:15px;
-		width:50px;
-		height:50px;
+		width:100px;
+		height:100px;
 		z-index: -1;
 	}
 
 	thead th{
 		line-height:30px;
 		font-weight:bold;
+		font-size: 13px;
 	}
 
 	tbody td{
 		text-align:center;
 		line-height:70px;
+		vertical-align: top;
 	}
 
 	.product{
 		margin:0 auto;
+		margin-bottom: 50px;
 		width:100%;
 	}
 
 	.totalPrice{
-		margin-top:50px;
 		font-size:24px;
 		font-color:#666;
 	}
@@ -32,13 +34,14 @@
 		background-color:#707070;
 	}
 	.submit_btn:disabled:hover{
+		color: #707070;
 		background-color:#707070;
-		color: #332600;		/* ボタンにカーソルを置いたとき何も変化しないよう修正 */
-		cursor: default;	/* 12/12 西村 */
+		box-shadow: 2px 2px #707070;
+		cursor: default;
 	}
 
 	.submit{
-		width : 45%;
+	width : 45%;
 	display : block;
 	margin: 0 auto;
 	margin-top : 5px;
