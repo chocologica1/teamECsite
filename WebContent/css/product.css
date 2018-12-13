@@ -46,10 +46,6 @@
 	width: 55%;
 }
 
-.table-box {
-	margin-bottom: 50px;
-}
-
 .details-table {
 	width: 100%;
 	height: 320px;
@@ -68,6 +64,7 @@
 td:first-child {
 	background-color: #c38b8b;
 	color: #fff;
+	width: 40%;
 }
 
 
