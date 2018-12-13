@@ -104,18 +104,19 @@ h1 {
 }
 
 .submit_btn {
-	padding: 0.5em 1em;
-	text-decoration: none;
-	border-radius: 100px;
-	width: 100px;
-	height: 35px;
-	font-size: 10px;
-	font-weight: 600;
-	text-align: center;
-	color: #4e120a;
-	background-color: #fff1c5;
-	border: 1px solid #fff;
-	box-shadow:2px 2px #b0757c;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    border-radius: 100px;
+    border: 1px solid #ccc;
+    width: 100px;
+    height: 35px;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: "ヒラギノ角ゴ Pro W4","ヒラギノ角ゴ Pro" ;
+    text-align: center;
+    color: #;
+    background-color: #fff1c5;
+    box-shadow: 2px 2px;
 }
 
 .submit_btn:hover {
