@@ -4,8 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="">
-<title>ホーム</title>
+<title>ホーム画面</title>
 </head>
 <body>
   <jsp:include page="header.jsp"/>
