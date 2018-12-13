@@ -52,8 +52,11 @@ public class ResetPasswordConfirmAction extends ActionSupport implements Session
 		UserInfoDAO userInfoDAO = new UserInfoDAO();
 		//入力されたユーザID・パスワードと一致するデータがDB上に無かった場合
 		if(!(userInfoDAO.isExistsUserInfo(userId,password))) {
-			incorrectErrorMessageList.add("ユーザIDまたは現在のパスワードが異なります。");
-			session.put("incorrectErrorMessageList", incorrectErrorMessageList);  //セッション「ユーザIDまたはパスワード不存在メッセージ」
+			if((!userId.equals("")) && (!password.equals(""))){
+				incorrectErrorMessageList.add("ユーザIDまたは現在のパスワードが異なります。");
+				session.put("incorrectErrorMessageList", incorrectErrorMessageList);  //セッション「ユーザIDまたはパスワード不存在メッセージ」
+			}
+
 		}
 		//全てのエラーメッセージを格納
 		session.put("userIdErrorMessageList", userIdErrorMessageList);                                         //セッション「ユーザID不適当メッセージ」
@@ -67,7 +70,8 @@ public class ResetPasswordConfirmAction extends ActionSupport implements Session
 		&& passwordErrorMessageList.size() == 0
 		&& newPasswordErrorMessageList.size() == 0
 		&& reConfirmationNewPasswordErrorMessageList.size() == 0
-		&& newPasswordIncorrectErrorMessageList.size() == 0) {
+		&& newPasswordIncorrectErrorMessageList.size() == 0
+		&& incorrectErrorMessageList.size() == 0) {
 			//入力されたユーザID・パスワードと一致するデータがDB上にあれば"true"が返ってくる
 			if(userInfoDAO.isExistsUserInfo(userId,password)) {
 				//入力された新しいパスワードの1文字目だけ表示、2～16文字目は*で表示されるようにした文字列を代入する
