@@ -17,21 +17,21 @@
 	<s:form id="form" action="LoginAction">
 	<!-- エラーメッセージの表示 -->
 		<s:if test="!#session.loginIdErrorMessageList.isEmpty()">
-				<div class="error">
-					<s:iterator value="#session.loginIdErrorMessageList"><s:property /><br>
-					</s:iterator>
+			<div class="error">
+				<s:iterator value="#session.loginIdErrorMessageList"><s:property /><br>
+				</s:iterator>
 			</div>
 		</s:if>
 		<s:if test="!#session.passwordErrorMessageList.isEmpty()">
-				<div class="error">
-					<s:iterator value="#session.passwordErrorMessageList"><s:property /><br>
-					</s:iterator>
+			<div class="error">
+				<s:iterator value="#session.passwordErrorMessageList"><s:property /><br>
+				</s:iterator>
 			</div>
 		</s:if>
 		<!-- ユーザーIDもしくはパスワードが一致しない場合表示 -->
 		<s:if test="!notMatch.isEmpty()">
-				<div class="error">
-						<s:property value="notMatch"/>
+			<div class="error">
+				<s:property value="notMatch"/>
 			</div>
 		</s:if>
 
@@ -40,25 +40,25 @@
 		<tr>
 			<th>ユーザID:</th>
 				<s:if test="#session.savedLoginId == true">
-					<td><s:textfield name="loginId" class="txt" placeholder="ユーザID" value='%{#session.keepLoginId}' autocomplete="off"/></td>
+					<td><s:textfield name="loginId" class="textarea" placeholder="ユーザID" value='%{#session.keepLoginId}' autocomplete="off"/></td>
 				</s:if>
 			<s:else>
-				<td><s:textfield name="loginId" class="txt" placeholder="ユーザID" autocomplete="off"/></td>
+				<td><s:textfield name="loginId" class="textarea" placeholder="ユーザID" autocomplete="off"/></td>
 			</s:else>
 		</tr>
 		<tr>
 			<th>パスワード:</th>
-			<td><s:password name="password" class="txt" placeholder="パスワード" autocomplete="off"/></td>
+			<td><s:password name="password" class="textarea" placeholder="パスワード" autocomplete="off"/></td>
 		</tr>
-	</table><br>
-	<div class="box">
+	</table>
+	<br>
 		<s:if test="#session.savedLoginId==true">
 			<s:checkbox name="savedLoginId" checked="checked"/>
-		</s:if>			<s:else>
+		</s:if>
+		<s:else>
 			<s:checkbox name="savedLoginId"/>
 		</s:else>
 		<s:label value="ユーザID保存"/><br>
-	</div>
 	<div class="submit_btn_box">
 			<s:submit value="ログイン" class="submit_btn"/>
 	</div>
