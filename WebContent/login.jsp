@@ -17,27 +17,21 @@
 	<s:form id="form" action="LoginAction">
 	<!-- エラーメッセージの表示 -->
 		<s:if test="!#session.loginIdErrorMessageList.isEmpty()">
-			<div class="message">
 				<div class="error">
 					<s:iterator value="#session.loginIdErrorMessageList"><s:property /><br>
 					</s:iterator>
-				</div>
 			</div>
 		</s:if>
 		<s:if test="!#session.passwordErrorMessageList.isEmpty()">
-			<div class="message">
 				<div class="error">
 					<s:iterator value="#session.passwordErrorMessageList"><s:property /><br>
 					</s:iterator>
-				</div>
 			</div>
 		</s:if>
 		<!-- ユーザーIDもしくはパスワードが一致しない場合表示 -->
-		<s:if test="notMatch != null">
-			<div class="message">
+		<s:if test="!notMatch.isEmpty()">
 				<div class="error">
 						<s:property value="notMatch"/>
-				</div>
 			</div>
 		</s:if>
 

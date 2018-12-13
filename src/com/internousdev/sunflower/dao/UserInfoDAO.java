@@ -46,6 +46,7 @@ public class UserInfoDAO {
 		return count;
 	}
 
+	//入力されたloginIdとpasswordを持つユーザがいるか調べる
 	public boolean isExistsUserInfo(String loginId, String password){
 		DBConnector db = new DBConnector();
 		Connection con = db.getConnection();
