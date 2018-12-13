@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="css/settlement.css">
+<link rel="stylesheet" href="css/cart.css">
 <title>決済確認画面</title>
 </head>
 <body>
@@ -24,7 +24,8 @@
 				<!-- 宛先選択フォーム -->
 			<s:form action="SettlementCompleteAction">
 					<!-- 宛先情報テーブル -->
-				<table class="horizontal-list-table">
+				<table class="product">
+					<thead>
 					<tr>
 						<th>#</th>
 						<th>姓</th>
@@ -34,6 +35,9 @@
 						<th>電話番号</th>
 						<th>メールアドレス</th>
 					</tr>
+					</thead>
+					<tbody>
+
 					<!-- イテレータによるループ表記 -->
 					<s:iterator value="#session.destinationInfoDTOList" status="st">
 						<tr>
@@ -64,6 +68,7 @@
 							<td><s:property value="email"/></td>
 						</tr>
 					</s:iterator>
+					</tbody>
 				</table>
 
 				<!-- 決済ボタン -->
