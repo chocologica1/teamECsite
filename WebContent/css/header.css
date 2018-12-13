@@ -1,19 +1,26 @@
 @CHARSET "UTF-8";
 
-header {
 /*
-main部と同じようにmin-widthを設定すると
-window幅が小さくてもボタン等が折りたたまれないが
-fixedで固定されているため横スクロールされない。
+positionについて 周知後消します
+fixed
+・画面幅基準で固定されるようで、画面幅を超えた要素は画面を広げない限り見えません。
+・コンテンツにheaderの高さぶんの余白を入れる必要があります。
+sticky
+・画面幅にはとらわれません。スクロールしていったらある地点からは固定みたいな感じで使われます。
+・headerの高さはコンテンツに影響しません（余白不要）。
 */
-	position:fixed;
+
+header {
+/* 	position:fixed; */
+ 	position: -webkit-sticky; /* Safari */
+	position: sticky;
 	top:0;
 	left:0;
-	float : left;
 	width : 100%;
-/* 	min-width: 1000px; */
+	min-width: 1000px;
 	height : 80px;
 	background-color : #9b5d73;
+	z-index: 10;
 }
 
 #header-contents {

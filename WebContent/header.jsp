@@ -11,17 +11,6 @@
 <title>ヘッダー</title>
 
 <script>
-	/* 横スクロールさせたいのですができない　よくわからない
-	(function(win, doc) {
-		"use strict";
-		var header = document.getElementById("header");
-		win.addEventListener('scroll', _handleScroll, false);
-		function _handleScroll() {
-			header.style.left = -window.scrollX + "px";
-		}
-	}
-	 */
-
 	/* ボタン */
 	function goLoginAction() {
 		document.getElementById("form").action = "GoLoginAction";
