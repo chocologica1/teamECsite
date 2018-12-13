@@ -113,9 +113,8 @@ public class LoginAction extends ActionSupport implements SessionAware{
 				result = SUCCESS;
 			}
 		}
-
-			//ログイン情報を受け渡す
-			session.put("loginFlg", true);
+		//ログイン情報を受け渡す
+		session.put("loginFlg", true);
 	//ユーザIDとパスワードが不一致の場合
 	}else{
 		//ユーザIDとパスワードの入力文字数が正しい場合
@@ -124,16 +123,15 @@ public class LoginAction extends ActionSupport implements SessionAware{
 		}
 	}
 	return result;
-
-		}
+	}
 
 		public String getNotMatch() {
 		return notMatch;
-	}
+		}
 
-	public void setNotMatch(String notMatch) {
+		public void setNotMatch(String notMatch) {
 		this.notMatch = notMatch;
-	}
+		}
 
 		public String getLoginId(){
 			return loginId;
