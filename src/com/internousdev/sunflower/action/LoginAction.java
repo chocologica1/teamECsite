@@ -22,19 +22,16 @@ public class LoginAction extends ActionSupport implements SessionAware{
 	private boolean savedLoginId;
 	private String loginId;
 	private String password;
-
 	private Map<String, Object> session;
-
-	List<DestinationInfoDTO> destinationInfoDTOList = new ArrayList<DestinationInfoDTO>();
 	private String notMatch = new String();
+	List<DestinationInfoDTO> destinationInfoDTOList = new ArrayList<DestinationInfoDTO>();
 
 	public String execute(){
 
 		List<MCategoryDTO>mCategoryDTOList = new ArrayList<MCategoryDTO>();
-
 		List<String>loginIdErrorMessageList = new ArrayList<String>();
 		List<String>passwordErrorMessageList = new ArrayList<String>();
-
+		//セッションタイムアウト
 		if(session == null || session.isEmpty()){
 			return "timeOut";
 		}
@@ -84,11 +81,9 @@ public class LoginAction extends ActionSupport implements SessionAware{
 		if(userInfoDao.login(loginId, password)> 0){
 			UserInfoDTO userInfoDTO = userInfoDao.getUserInfo(loginId, password);
 			session.put("loginId", userInfoDTO.getUserId());
-
 			//tempUserIdに保持しているカート情報とloginIDをリンクさせる
 			CartInfoDAO cartInfoDao = new CartInfoDAO();
 			cartInfoDao.linkToLoginId(loginId,String.valueOf(session.get("tempUserId")));
-
 			/*cartFlgを保持している場合
 			 * 宛先情報を取得し
 			 * 決済画面に遷移
@@ -99,7 +94,6 @@ public class LoginAction extends ActionSupport implements SessionAware{
 				try {
 					destinationInfoDTOList = destinationInfoDao.getDestinationInfo(String.valueOf(session.get("loginId")));
 					Iterator<DestinationInfoDTO> iterator = destinationInfoDTOList.iterator();
-
 					//宛先情報がない場合nullを入れる
 					if(!(iterator.hasNext())) {
 						destinationInfoDTOList = null;
@@ -108,6 +102,7 @@ public class LoginAction extends ActionSupport implements SessionAware{
 				} catch (SQLException e) {
 					e.printStackTrace();
 				}
+				//決済画面に遷移
 				result = "settlement";
 			}else {
 				result = SUCCESS;
@@ -128,46 +123,36 @@ public class LoginAction extends ActionSupport implements SessionAware{
 		public String getNotMatch() {
 		return notMatch;
 		}
-
 		public void setNotMatch(String notMatch) {
 		this.notMatch = notMatch;
 		}
-
 		public String getLoginId(){
 			return loginId;
 		}
-
 		public void setLoginId(String loginId){
 			this.loginId = loginId;
 		}
-
 		public String getPassword() {
 			return password;
 		}
-
 		public void setPassword(String password) {
 			this.password = password;
 		}
-
 		public boolean isSavedLoginId() {
 			return savedLoginId;
 		}
-
 		public void setSavedLoginId(boolean savedLoginId) {
 			this.savedLoginId = savedLoginId;
 		}
-
 		public Map<String, Object> getSession() {
 			return session;
 		}
 		public void setSession(Map<String, Object> session) {
 			this.session = session;
 		}
-
 		public List<DestinationInfoDTO> getDestinationInfoDTOList() {
 			return destinationInfoDTOList;
 		}
-
 		public void setDestinationInfoDTOList(List<DestinationInfoDTO> destinationInfoDTOList) {
 			this.destinationInfoDTOList = destinationInfoDTOList;
 		}
