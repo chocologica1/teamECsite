@@ -45,7 +45,7 @@
 		</div>
 		<div id="header-menu">
 			<ul class="header-list">
-				<s:form name="form">
+				<s:form id="form" name="form">
 					<!-- ログイン/未ログイン共通 -->
 					<s:if test='#session.containsKey("mCategoryDTOList")'>
 						<li><s:select name="categoryId"
