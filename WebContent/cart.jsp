@@ -52,11 +52,11 @@
 							</td>
 							<td><s:property value="productName"/></td><td><s:property value="productNameKana"/></td>
 							<td><img src='<s:property value="imageFilePath"/>/<s:property value="imageFileName"/>' alt="product" /></td>
-							<td><s:property value="price"/></td>
+							<td><s:property value="price"/>円</td>
 							<td><s:property value="releaseCompany"/></td>
 							<td><s:property value="releaseDate"/></td>
-							<td><s:property value="productCount"/></td>
-							<td><s:property value="subtotal"/></td>
+							<td><s:property value="productCount"/>個</td>
+							<td><s:property value="subtotal"/>円</td>
 							</tr>
 							</s:iterator>
 						</tbody>
