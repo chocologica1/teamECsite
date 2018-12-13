@@ -99,7 +99,8 @@ h1 {
 
 /* ボタン */
 .submit_btn_box {
-	width: 100px;
+	width: 200px;
+	border: 1px solid blue;
 	margin: 8px auto;
 }
 
@@ -108,15 +109,15 @@ h1 {
     text-decoration: none;
     border-radius: 100px;
     border: 1px solid #ccc;
-    width: 100px;
+    width: 120px;
     height: 35px;
     font-size: 15px;
     font-weight: 600;
     font-family: "ヒラギノ角ゴ Pro W4","ヒラギノ角ゴ Pro" ;
     text-align: center;
-    color: #;
+    color: #332600;
     background-color: #fff1c5;
-    box-shadow: 2px 2px;
+    box-shadow: 2px 2px #332600;
 }
 
 .submit_btn:hover {
@@ -127,6 +128,12 @@ h1 {
 
 .submit_btn:active {
 	background-color: #ffd65b;
+}
+
+/*入力時オレンジになる*/
+.textarea:focus {
+  border: 2px solid #ff9900;
+  outline: 0;
 }
 
 /*====== フッターのスタイル ======*/
@@ -141,4 +148,5 @@ footer {
 	text-align: center;
 	background-color: #9b5d73;
 	color: #fff;
+	font-family: Century Gothic;
 }
