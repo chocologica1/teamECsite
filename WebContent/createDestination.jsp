@@ -64,7 +64,7 @@
 
 	<s:form action="CreateDestinationConfirmAction">
 		<table class="vertical-list-table">
-			<tr class="textBox">
+			<tr>
 				<th>姓</th>
 					<s:if test="#session.savedDestinationInfo == true">
 					<td><input type="text" name="familyName"
@@ -72,7 +72,7 @@
 				</s:if>
 				<s:else>
 					<td><input type="text" name="familyName"
-					value="<s:property value='familyName' />" placeholder="姓" class="txt" /></td>
+					value="<s:property value='familyName' />" placeholder="姓" class="textarea" /></td>
 				</s:else>
 			</tr>
 			<tr class="textBox">
@@ -83,10 +83,10 @@
 				</s:if>
 				<s:else>
 					<td><input type="text" name="firstName"
-					value="<s:property value='firstName' />" placeholder="名" class="txt" /></td>
+					value="<s:property value='firstName' />" placeholder="名" class="textarea" /></td>
 				</s:else>
 			</tr>
-			<tr class="textBox">
+			<tr>
 				<th>姓ふりがな</th>
 				<s:if test="#session.savedDestinationInfo == true">
 					<td><input type="text" name="familyNameKana"
@@ -94,10 +94,10 @@
 				</s:if>
 				<s:else>
 					<td><input type="text" name="familyNameKana"
-					value="<s:property value='familyNameKana' />" placeholder="姓ふりがな" class="txt" /></td>
+					value="<s:property value='familyNameKana' />" placeholder="姓ふりがな" class="textarea" /></td>
 				</s:else>
 			</tr>
-			<tr class="textBox">
+			<tr>
 				<th>名ふりがな</th>
 				<s:if test="#session.savedDestinationInfo == true">
 					<td><input type="text" name="firstNameKana"
@@ -105,10 +105,10 @@
 				</s:if>
 				<s:else>
 					<td><input type="text" name="firstNameKana"
-					value="<s:property value='firstNameKana' />" placeholder="名ふりがな" class="txt" /></td>
+					value="<s:property value='firstNameKana' />" placeholder="名ふりがな" class="textarea" /></td>
 				</s:else>
 			</tr>
-			<tr class="textBox">
+			<tr>
 				<th>住所</th>
 				<s:if test="#session.savedDestinationInfo == true">
 					<td><input type="text" name="userAddress"
@@ -116,10 +116,10 @@
 				</s:if>
 				<s:else>
 					<td><input type="text" name="userAddress"
-					value="<s:property value='userAddress' />" placeholder="住所" class="txt" /></td>
+					value="<s:property value='userAddress' />" placeholder="住所" class="textarea" /></td>
 				</s:else>
 			</tr>
-			<tr class="textBox">
+			<tr>
 				<th>電話番号</th>
 				<s:if test="#session.savedDestinationInfo == true">
 					<td><input type="text" name="telNumber"
@@ -127,10 +127,10 @@
 				</s:if>
 				<s:else>
 					<td><input type="text" name="telNumber"
-					value="<s:property value='telNumber' />" placeholder="電話番号" class="txt" /></td>
+					value="<s:property value='telNumber' />" placeholder="電話番号" class="textarea" /></td>
 				</s:else>
 			</tr>
-			<tr class="textBox">
+			<tr>
 				<th>メールアドレス</th>
 				<s:if test="#session.savedDestinationInfo == true">
 					<td><input type="text" name="email"
@@ -138,7 +138,7 @@
 				</s:if>
 				<s:else>
 					<td><input type="text" name="email"
-					value="<s:property value='email' />" placeholder="メールアドレス" class="txt" /></td>
+					value="<s:property value='email' />" placeholder="メールアドレス" class="textarea" /></td>
 				</s:else>
 			</tr>
 		</table>
