@@ -31,7 +31,7 @@ header {
 #header-title {
 	float : left;
     line-height: 80px;
-	width : 120px;
+	width : 100px;
 	font-family: 'Vidaloka', serif;
 	color:#ffffff;
 	font-size:20px;
@@ -39,7 +39,7 @@ header {
 
 #header-menu {
 	float : left;
-	width : calc(100% - 120px);
+	width : calc(100% - 100px);
 	line-height: 80px;
 }
 
@@ -51,7 +51,7 @@ header {
 .header-list li{
 	float : left;
 	list-style : none;
-	padding-left : 2%;
+	padding-left : 1vw;
 	color : white;
 	font-size : 12px;
 	display: box;
