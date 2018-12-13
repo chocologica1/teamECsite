@@ -24,6 +24,7 @@ public class CartAction extends ActionSupport implements SessionAware{
 			return "timeOut";
 		}
 
+		//カート情報及び合計金額の取得
 		cartInfoDTOList = cartInfoDAO.getCartInfoDTOList(String.valueOf(session.get("loginId")),String.valueOf(session.get("tempUserId")));
 		totalPrice = cartInfoDAO.getTotalPrice(String.valueOf(session.get("loginId")), String.valueOf(session.get("tempUserId")));
 		return SUCCESS;

@@ -47,7 +47,6 @@
 						<tbody>
 							<s:iterator value="cartInfoDTOList">
 							<tr>
-
 							<td>
 								<input type="checkbox" value="<s:property value='productId'/>" name="productIdArray" class="deleteCheck" onclick="deleteCheck()">
 							</td>
