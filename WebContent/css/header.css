@@ -32,7 +32,8 @@ header {
 	float : left;
     line-height: 80px;
 	width : 100px;
-	font-family: 'Vidaloka', serif;
+/* 	font-family: 'Vidaloka', serif; */
+	font-family: Century Gothic;
 	color:#ffffff;
 	font-size:20px;
 }
@@ -62,6 +63,22 @@ header {
 	border: 2px solid #b0757c;
 	width: 120px;
 	height: 25px;
+}
+
+.header_btn {
+    padding: 0.5em 1em;
+    text-decoration: none;
+    border-radius: 100px;
+    border: 1px solid #ccc;
+    width: 100px;
+    height: 35px;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: "ヒラギノ角ゴ Pro W4","ヒラギノ角ゴ Pro" ;
+    text-align: center;
+    color: #;
+    background-color: #fff1c5;
+    box-shadow: 2px 2px;
 }
 
 .clear {

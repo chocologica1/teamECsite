@@ -53,26 +53,26 @@
 								listKey="categoryId" class="category-select"/></li>
 					</s:if>
 					<li class="search-box"><s:textfield name="keywords" class="search-keywords" placeholder="検索ワード" /></li>
-					<li><s:submit value="商品検索" class="submit_btn" onclick="goSearchItemAction();" /></li>
+					<li><s:submit value="商品検索" class="header_btn" onclick="goSearchItemAction();" /></li>
 
 					<!-- ログイン時 -->
 					<s:if test="#session.loginFlg == true">
-						<li><s:submit value="ログアウト" class="submit_btn" onclick="goLogoutAction();" /></li>
+						<li><s:submit value="ログアウト" class="header_btn" onclick="goLogoutAction();" /></li>
 					</s:if>
 
 					<!-- 未ログイン時 -->
 					<s:else>
-						<li><s:submit value="ログイン" class="submit_btn" onclick="goLoginAction();" /></li>
+						<li><s:submit value="ログイン" class="header_btn" onclick="goLoginAction();" /></li>
 					</s:else>
 
 					<!-- ログイン/未ログイン共通 -->
-					<li><s:submit value="カート" class="submit_btn" onclick="goCartAction();" /></li>
+					<li><s:submit value="カート" class="header_btn" onclick="goCartAction();" /></li>
 
-					<li><s:submit value="商品一覧" class="submit_btn" onclick="goProductListAction();" /></li>
+					<li><s:submit value="商品一覧" class="header_btn" onclick="goProductListAction();" /></li>
 
 					<!-- ログイン時 -->
 					<s:if test="#session.loginFlg == true">
-						<li><s:submit value="マイページ" class="submit_btn" onclick="goMyPageAction();" /></li>
+						<li><s:submit value="マイページ" class="header_btn" onclick="goMyPageAction();" /></li>
 					</s:if>
 				</s:form>
 			</ul>
