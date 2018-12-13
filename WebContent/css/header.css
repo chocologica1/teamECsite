@@ -15,12 +15,12 @@ header {
  	position: -webkit-sticky; /* Safari */
 	position: sticky;
 	top:0;
-/* 	left:0; いらないかもしれない*/
 	width : 100%;
 	min-width: 1000px;
 	height : 80px;
 	background-color : #9b5d73;
 	z-index: 10;
+
 }
 
 #header-contents {
@@ -42,6 +42,7 @@ header {
 	float : left;
 	width : calc(100% - 100px);
 	line-height: 80px;
+
 }
 
 .header-list {
@@ -70,15 +71,16 @@ header {
     text-decoration: none;
     border-radius: 100px;
     border: 1px solid #ccc;
-    width: 100px;
+    width: 95px;
     height: 35px;
-    font-size: 15px;
+    font-size: 12px;
     font-weight: 600;
     font-family: "ヒラギノ角ゴ Pro W4","ヒラギノ角ゴ Pro" ;
     text-align: center;
     color: #332600;
     background-color: #fff1c5;
     box-shadow: 2px 2px #332600;
+    padding-bottom: 2px;
 }
 
 .header_btn:hover {

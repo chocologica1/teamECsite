@@ -49,7 +49,7 @@
 				</tr>
 			</table>
 			<div class="submit_btn_box">
-				<div class=".contents-btn-set">
+				<div>
 					<s:submit value="登録" class="submit_btn" />
 				</div>
 			</div>
