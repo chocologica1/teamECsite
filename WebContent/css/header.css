@@ -15,7 +15,7 @@ header {
  	position: -webkit-sticky; /* Safari */
 	position: sticky;
 	top:0;
-	left:0;
+/* 	left:0; いらないかもしれない*/
 	width : 100%;
 	min-width: 1000px;
 	height : 80px;
@@ -50,7 +50,6 @@ header {
 
 .header-list li{
 	float : left;
-	list-style : none;
 	padding-left : 1vw;
 	color : white;
 	font-size : 12px;
