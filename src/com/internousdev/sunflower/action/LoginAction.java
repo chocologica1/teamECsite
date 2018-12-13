@@ -63,7 +63,7 @@ public class LoginAction extends ActionSupport implements SessionAware{
 	session.remove("loginIdErrorMessageList");
 	session.remove("passwordErrorMessageList");
 
-	//入力できない文字が入力ときのメッセージ
+	//入力できない文字が入力されたときのメッセージ
 	if(loginIdErrorMessageList.size()!=0 || passwordErrorMessageList.size()!=0){
 		session.put("loginIdErrorMessageList", loginIdErrorMessageList);
 		session.put("passwordErrorMessageList", passwordErrorMessageList);
@@ -118,7 +118,9 @@ public class LoginAction extends ActionSupport implements SessionAware{
 			session.put("loginFlg", true);
 	//ユーザIDとパスワードが不一致の場合
 	}else{
+		if(loginId != null && password != null){
 		notMatch = "入力されたユーザIDまたはパスワードが異なります。";
+		}
 	}
 	return result;
 
