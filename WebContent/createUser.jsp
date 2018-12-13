@@ -70,8 +70,8 @@
 		<s:form action="CreateUserConfirmAction">
 
 			<table class="vertical-list-table">
-				<tr class="textBox">
-					<th class="textTitle">姓</th>
+				<tr>
+					<th>姓</th>
 					<s:if test="#session.savedUserInfo == true">
 						<td><input type="text" name="familyName"
 							value="<s:property value='#session.familyName'/>" placeholder="姓"
@@ -84,8 +84,8 @@
 					</s:else>
 				</tr>
 
-				<tr class="textBox">
-					<th class="textareaTitle">名</th>
+				<tr>
+					<th>名</th>
 					<s:if test="#session.savedUserInfo == true">
 						<td><input type="text" name="firstName"
 							value="<s:property value='#session.firstName' />" placeholder="名"
@@ -97,8 +97,8 @@
 							class="textarea" /></td>
 					</s:else>
 				</tr>
-				<tr class="textBox">
-					<th class="textareaTitle">姓ふりがな</th>
+				<tr>
+					<th>姓ふりがな</th>
 					<s:if test="#session.savedUserInfo == true">
 						<td><input type="text" name="familyNameKana"
 							value="<s:property value='#session.familyNameKana' />"
@@ -111,7 +111,7 @@
 					</s:else>
 				</tr>
 				<tr>
-					<th class="textareaTitle">名ふりがな</th>
+					<th>名ふりがな</th>
 					<s:if test="#session.savedUserInfo == true">
 						<td><input type="text" name="firstNameKana"
 							value="<s:property value='#session.firstNameKana' />"
