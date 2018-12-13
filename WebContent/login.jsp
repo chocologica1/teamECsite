@@ -66,7 +66,7 @@
 		<s:label value="ユーザID保存"/><br>
 	</div>
 	<div class="submit_btn_box">
-			<s:submit value="ログイン" class="submit_btn" onclick="goLoginAction();"/>
+			<s:submit value="ログイン" class="submit_btn"/>
 	</div>
 	</s:form>
 	<div class="submit_btn_box">
