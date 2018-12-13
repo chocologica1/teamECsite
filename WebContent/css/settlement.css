@@ -1,24 +1,5 @@
 @CHARSET "UTF-8";
 
-table{
-	text-align:center;
-	margin-bottom:2em;
-	width:100%;
-}
-
-th{
-	padding-top:0.5em;
-	padding-bottom:0.5em;
-	font-weight: bold;
-/* 	font-weight: 1000; */
-}
-
-td{
-	padding-top:0.5em;
-	padding-bottom:0.5em;
-}
-
-
 .contents{
 	margin-top:80px;
 
@@ -26,6 +7,37 @@ td{
 
 .submit_btn_box{
 	clear:both;
+}
+
+table.horizontal-list-table{
+	text-align:center;
+	margin-bottom:2em;
+	width:100%;
+
+/* 	background-color:red; */
+/* 	width: 90%; */
+/* 	border-collapse: separate; */
+/* 	border-spacing: 0; */
+/* 	text-align: left; */
+/* 	font-size: 1.4rem; */
+/* 	line-height: 1.5; */
+/* 	border-top: 1px solid #ccc; */
+/* 	border-left: 1px solid #ccc; */
+}
+
+table.horizontal-list-table, th, td{
+
+}
+
+table.horizontal-list-table th{
+	padding-top:0.5em;
+	padding-bottom:0.5em;
+	font-weight: bold;
+}
+
+table.horizontal-list-table td{
+	padding-top:0.5em;
+	padding-bottom:0.5em;
 }
 
 

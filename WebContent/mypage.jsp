@@ -27,7 +27,7 @@
 
       <tr>
         <th scope = "row"><s:label value = "ふりがな"/></th>
-        <td><s:property value = "userInfoDTO.familyNameKana"/><s:property value = "userInfoDTO.firstNameKana"/></td>
+        <td><s:property value = "userInfoDTO.familyNameKana"/>　<s:property value = "userInfoDTO.firstNameKana"/></td>
       </tr>
 
       <tr>
