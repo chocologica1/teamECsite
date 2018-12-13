@@ -34,7 +34,7 @@
 						<th>電話番号</th>
 						<th>メールアドレス</th>
 					</tr>
-						<!-- イテレータによるループ表記 -->
+					<!-- イテレータによるループ表記 -->
 					<s:iterator value="#session.destinationInfoDTOList" status="st">
 						<tr>
 							<!-- 選択用ラジオボタン -->
