@@ -75,52 +75,52 @@
 					<s:if test="#session.savedUserInfo == true">
 						<td><input type="text" name="familyName"
 							value="<s:property value='#session.familyName'/>" placeholder="姓"
-							class="txt" /></td>
+							class="textarea" /></td>
 					</s:if>
 					<s:else>
 						<td><input type="text" name="familyName"
 							value="<s:property value='familyName'/>" placeholder="姓"
-							class="txt" /></td>
+							class="textarea" /></td>
 					</s:else>
 				</tr>
 
 				<tr class="textBox">
-					<th class="txtTitle">名</th>
+					<th class="textareaTitle">名</th>
 					<s:if test="#session.savedUserInfo == true">
 						<td><input type="text" name="firstName"
 							value="<s:property value='#session.firstName' />" placeholder="名"
-							class="txt" /></td>
+							class="textarea" /></td>
 					</s:if>
 					<s:else>
 						<td><input type="text" name="firstName"
 							value="<s:property value='firstName' />" placeholder="名"
-							class="txt" /></td>
+							class="textarea" /></td>
 					</s:else>
 				</tr>
 				<tr class="textBox">
-					<th class="txtTitle">姓ふりがな</th>
+					<th class="textareaTitle">姓ふりがな</th>
 					<s:if test="#session.savedUserInfo == true">
 						<td><input type="text" name="familyNameKana"
 							value="<s:property value='#session.familyNameKana' />"
-							placeholder="姓ふりがな" class="txt" /></td>
+							placeholder="姓ふりがな" class="textarea" /></td>
 					</s:if>
 					<s:else>
 						<td><input type="text" name="familyNameKana"
 							value="<s:property value='familyNameKana' />" placeholder="姓ふりがな"
-							class="txt" /></td>
+							class="textarea" /></td>
 					</s:else>
 				</tr>
-				<tr class="textBox">
-					<th class="txtTitle">名ふりがな</th>
+				<tr>
+					<th class="textareaTitle">名ふりがな</th>
 					<s:if test="#session.savedUserInfo == true">
 						<td><input type="text" name="firstNameKana"
 							value="<s:property value='#session.firstNameKana' />"
-							placeholder="名ふりがな" class="txt" /></td>
+							placeholder="名ふりがな" class="textarea" /></td>
 					</s:if>
 					<s:else>
 						<td><input type="text" name="firstNameKana"
 							value="<s:property value='firstNameKana' />" placeholder="名ふりがな"
-							class="txt" /></td>
+							class="textarea" /></td>
 					</s:else>
 				</tr>
 				<tr>
@@ -135,38 +135,38 @@
 					</s:else>
 				</tr>
 
-				<tr class="textBox">
+				<tr>
 					<th>メールアドレス</th>
 					<s:if test="#session.savedUserInfo == true">
 						<td><input type="text" name="email"
 							value="<s:property value='#session.email' />"
-							placeholder="メールアドレス" class="txt" /></td>
+							placeholder="メールアドレス" class="textarea" /></td>
 					</s:if>
 					<s:else>
 						<td><input type="text" name="email"
 							value="<s:property value='email' />" placeholder="メールアドレス"
-							class="txt" /></td>
+							class="textarea" /></td>
 					</s:else>
 				</tr>
 
-				<tr class="textBox">
+				<tr>
 					<th>ユーザID</th>
 					<s:if test="#session.savedUserInfo == true">
 						<td><input type="text" name="userId"
 							value="<s:property value='#session.userId' />"
-							placeholder="ユーザID" class="txt" /></td>
+							placeholder="ユーザID" class="textarea" /></td>
 					</s:if>
 					<s:else>
 						<td><input type="text" name="userId"
 							value="<s:property value='userId' />" placeholder="ユーザID"
-							class="txt" /></td>
+							class="textarea" /></td>
 					</s:else>
 				</tr>
 
-				<tr class="textBox">
+				<tr>
 					<th>パスワード</th>
 					<td><input type="password" name="password" value=""
-						placeholder="パスワード" class="txt" /></td>
+						placeholder="パスワード" class="textarea" /></td>
 				</tr>
 			</table>
 			<div class="submit_btn_box">

@@ -42,7 +42,7 @@ table.vertical-list-table, th, td {
 	line-height: 1.5;
 }
 /* テキストボックス */
-.txt {
+.textarea {
 	width: 100%;
 	height: 30px;
 	border: 0.5px solid #999;
