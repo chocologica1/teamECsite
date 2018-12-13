@@ -76,9 +76,19 @@ header {
     font-weight: 600;
     font-family: "ヒラギノ角ゴ Pro W4","ヒラギノ角ゴ Pro" ;
     text-align: center;
-    color: #;
+    color: #332600;
     background-color: #fff1c5;
-    box-shadow: 2px 2px;
+    box-shadow: 2px 2px #332600;
+}
+
+.header_btn:hover {
+	color: #fff;
+	background-color: rgba(255,214,91,0.8);
+	cursor: pointer;
+}
+
+.header_btn:active {
+	background-color: #ffd65b;
 }
 
 .clear {
