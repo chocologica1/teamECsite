@@ -64,24 +64,24 @@
 			<td>ユーザID</td>
 			<!-- 再遷移してきた場合  -->
 			<s:if test="#session.savedUserId == true">
-			<td><input type="text" name="userId" placeholder="ユーザID" value='<s:property value="#session.copyUserId"/>' size=80 class="textarea"/></td>
+			<td><input type="text" name="userId" placeholder="ユーザID" value='<s:property value="#session.copyUserId"/>'  class="textarea"/></td>
 			</s:if>
 			<!-- 初めて入力する場合  -->
 			<s:else>
-			<td><input type="text" name="userId" placeholder="ユーザID" value='<s:property value="userId"/>' size=80 class="textarea"/></td>
+			<td><input type="text" name="userId" placeholder="ユーザID" value='<s:property value="userId"/>'  class="textarea"/></td>
 			</s:else>
 		</tr>
 		<tr>
 			<td>現在のパスワード</td>
-			<td><input type="password" name="password" placeholder="現在のパスワード" size=80 class="textarea"/></td>
+			<td><input type="password" name="password" placeholder="現在のパスワード"  class="textarea"/></td>
 		</tr>
 		<tr>
 			<td>新しいパスワード</td>
-			<td><input type="password" name="newPassword" placeholder="新しいパスワード" size=80 class="textarea"/></td>
+			<td><input type="password" name="newPassword" placeholder="新しいパスワード"  class="textarea"/></td>
 		</tr>
 		<tr>
 			<td>新しいパスワード（再確認）</td>
-			<td><input type="password" name="reConfirmationNewPassword" placeholder="新しいパスワード（再確認）" size=80 class="textarea"/></td>
+			<td><input type="password" name="reConfirmationNewPassword" placeholder="新しいパスワード（再確認）"  class="textarea"/></td>
 		</tr>
 	</table>
 	<div class="submit_btn_box">
