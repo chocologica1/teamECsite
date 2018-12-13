@@ -114,12 +114,13 @@ public class LoginAction extends ActionSupport implements SessionAware{
 			}
 		}
 
-		//ログイン情報を受け渡す
+			//ログイン情報を受け渡す
 			session.put("loginFlg", true);
 	//ユーザIDとパスワードが不一致の場合
 	}else{
-		if(loginId != null && password != null){
-		notMatch = "入力されたユーザIDまたはパスワードが異なります。";
+		//ユーザIDとパスワードの入力文字数が正しい場合
+		if(loginIdErrorMessageList.size() == 0 && passwordErrorMessageList.size() == 0){
+			notMatch = "入力されたユーザIDまたはパスワードが異なります。";
 		}
 	}
 	return result;
