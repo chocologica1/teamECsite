@@ -1,12 +1,8 @@
 @CHARSET "UTF-8";
 
 /*====== リセットCSS ======*/
-html, body, div, span, h1, p,
-	 a, abbr, acronym, address, big, cite, code, del, dfn,
-	em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var,
-	b, u, i, ol, ul, li, form, label,
-	table, tbody, tfoot, thead, tr, th, td,
-	footer, header {
+html, body, div, span, h1, p, a, img, ol, ul, li, form, label,
+table, tbody, tfoot, thead, tr, th, td, footer, header {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -22,6 +18,7 @@ body {
 ol, ul {
 	list-style: none;
 }
+/* ====== リセットCSS終了 ====== */
 
 * {
 	box-sizing: border-box;
