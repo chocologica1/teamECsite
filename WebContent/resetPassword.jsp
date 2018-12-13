@@ -59,7 +59,7 @@
 
 <!-- ↓↓↓ パスワード再設定 入力欄 ↓↓↓  -->
 <s:form action="ResetPasswordConfirmAction">
-	<table>
+	<table class="table">
 		<tr>
 			<td>ユーザID</td>
 			<!-- 再遷移してきた場合  -->
