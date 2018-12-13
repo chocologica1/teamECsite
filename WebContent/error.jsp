@@ -8,12 +8,10 @@
 <title>Error</title>
 </head>
 <body>
-	<jsp:include page="header.jsp"/>
 	<div id="contents">
 		<h1>エラー画面</h1>
 		<div>エラーが発生しました。</div>
 		<div>3秒後にホーム画面に自動的に遷移します。</div>
 	</div>
-	<jsp:include page="footer.jsp"/>
 </body>
 </html>
