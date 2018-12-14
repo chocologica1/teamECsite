@@ -21,23 +21,25 @@
 				<div class="info">
 					宛先を選択してください
 				</div>
-				<!-- 宛先選択フォーム -->
+			<!-- 宛先選択フォーム -->
 			<s:form action="SettlementCompleteAction">
-					<!-- 宛先情報テーブル -->
+				<!-- 宛先情報テーブル -->
 				<table class="product">
+					<!-- 見出し -->
 					<thead>
-					<tr>
-						<th>#</th>
-						<th>姓</th>
-						<th>名</th>
-						<th>ふりがな</th>
-						<th>住所</th>
-						<th>電話番号</th>
-						<th>メールアドレス</th>
-					</tr>
+						<tr>
+							<th>#</th>
+							<th>姓</th>
+							<th>名</th>
+							<th>ふりがな</th>
+							<th>住所</th>
+							<th>電話番号</th>
+							<th>メールアドレス</th>
+						</tr>
 					</thead>
-					<tbody>
 
+					<!-- 内容 -->
+					<tbody>
 					<!-- イテレータによるループ表記 -->
 					<s:iterator value="#session.destinationInfoDTOList" status="st">
 						<tr>
