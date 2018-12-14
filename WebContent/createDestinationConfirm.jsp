@@ -52,6 +52,7 @@
 
 		<s:form action="CreateDestinationAction" >
 			<div class="submit_btn_box">
+			<input type="hidden" name="createDestinationFlg" value="false"/>
 				<s:submit value="戻る" class="submit_btn" />
 			</div>
 		</s:form>
