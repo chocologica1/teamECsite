@@ -66,6 +66,11 @@ header {
 	height: 25px;
 }
 
+.search-keywords:focus {
+	border: 2px solid #ff9900;
+	outline: 0;
+}
+
 .header_btn {
     padding: 0.5em 1em;
     text-decoration: none;
