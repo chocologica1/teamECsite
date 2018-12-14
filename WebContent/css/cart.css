@@ -3,11 +3,8 @@
 
 @CHARSET "UTF-8";
 	img{
-		position:relative;
-		top:15px;
 		width:100px;
 		height:100px;
-		z-index: -1;
 	}
 
 	thead th{
@@ -18,7 +15,8 @@
 
 	tbody td{
 		text-align:center;
-		line-height:70px;
+		padding: 15px 0px;
+		line-height:20px;
 		vertical-align: top;
 	}
 
@@ -37,9 +35,9 @@
 		background-color:#707070;
 	}
 	.submit_btn:disabled:hover{
-		color: #707070;
+		color: #332600;
 		background-color:#707070;
-		box-shadow: 2px 2px #707070;
+		box-shadow: 2px 2px #332600;
 		cursor: default;
 	}
 
