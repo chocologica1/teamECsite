@@ -184,11 +184,15 @@ header {
 	display: box;
 }
 
+.category-select {
+	border-radius: 50px;
+	height: 24px;
+}
+
 .search-keywords {
 	border-radius: 100px;
 	padding-left: 5px;
 	border: 1px solid #c38b8b;
-	box-shadow: 0 0 2px #c38b8b;
 	width: 120px;
 	height: 25px;
 }

@@ -4,10 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<!-- ↓ viewport表記必要か確認 -->
-<meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="stylesheet" href="./css/style.css">
-<!-- <link rel="stylesheet" href="./css/header.css"> -->
 <title>ヘッダー</title>
 
 <script>
