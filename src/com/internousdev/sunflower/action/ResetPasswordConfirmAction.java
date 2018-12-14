@@ -45,43 +45,45 @@ public class ResetPasswordConfirmAction extends ActionSupport implements Session
 		passwordErrorMessageList = inputChecker.doCheck("現在のパスワード",password,1,16,true,false,false,true,false,false,false,false,false);
 		newPasswordErrorMessageList = inputChecker.doCheck("新しいパスワード",newPassword,1,16,true,false,false,true,false,false,false,false,false);
 		reConfirmationNewPasswordErrorMessageList = inputChecker.doCheck("新しいパスワード(再確認)",reConfirmationNewPassword,1,16,true,false,false,true,false,false,false,false,false);
-		//doPasswordCheck()メソッドを使って、"新しいパスワード"と"(再確認)"の文字列が一致するか確認する
-		newPasswordIncorrectErrorMessageList = inputChecker.doPasswordCheck(newPassword,reConfirmationNewPassword);
 
-	//UserInfoDAOをインスタンス化（ユーザID・現パスワードの判定）
-		UserInfoDAO userInfoDAO = new UserInfoDAO();
-		//入力されたユーザID・パスワードと一致するデータがDB上に無かった場合
-		if(!(userInfoDAO.isExistsUserInfo(userId,password))) {
-			if((!userId.equals("")) && (!password.equals(""))){
-				incorrectErrorMessageList.add("ユーザIDまたは現在のパスワードが異なります。");
-				session.put("incorrectErrorMessageList", incorrectErrorMessageList);  //セッション「ユーザIDまたはパスワード不存在メッセージ」
-			}
-
-		}
-		//全てのエラーメッセージを格納
+		//４つのエラーメッセージを格納
 		session.put("userIdErrorMessageList", userIdErrorMessageList);                                         //セッション「ユーザID不適当メッセージ」
 		session.put("passwordErrorMessageList", passwordErrorMessageList);                                     //セッション「現在のパスワード不適当メッセージ」
 		session.put("newPasswordErrorMessageList", newPasswordErrorMessageList);                               //セッション「新しいパスワード不適当メッセージ」
 		session.put("reConfirmationNewPasswordErrorMessageList", reConfirmationNewPasswordErrorMessageList);   //セッション「（再確認）不適当メッセージ」
-		session.put("newPasswordIncorrectErrorMessageList", newPasswordIncorrectErrorMessageList);             //セッション「新しいパスワードと（再確認）不一致メッセージ」
 
-	//上記全てのエラーメッセージが無かった場合
+
+	//４つのエラーメッセージが無かった場合
 		if(userIdErrorMessageList.size() == 0
 		&& passwordErrorMessageList.size() == 0
 		&& newPasswordErrorMessageList.size() == 0
-		&& reConfirmationNewPasswordErrorMessageList.size() == 0
-		&& newPasswordIncorrectErrorMessageList.size() == 0
-		&& incorrectErrorMessageList.size() == 0) {
+		&& reConfirmationNewPasswordErrorMessageList.size() == 0) {
+			//UserInfoDAOをインスタンス化（ユーザID・現パスワードの判定）
+			UserInfoDAO userInfoDAO = new UserInfoDAO();
+			//入力されたユーザID・パスワードと一致するデータがDB上に無かった場合
+			if(!(userInfoDAO.isExistsUserInfo(userId,password))) {
+				incorrectErrorMessageList.add("ユーザIDまたは現在のパスワードが異なります。");
+				session.put("incorrectErrorMessageList", incorrectErrorMessageList);  							//セッション「ユーザIDまたはパスワード不存在メッセージ」
+			}
 			//入力されたユーザID・パスワードと一致するデータがDB上にあれば"true"が返ってくる
-			if(userInfoDAO.isExistsUserInfo(userId,password)) {
+			else if(userInfoDAO.isExistsUserInfo(userId,password)) {
 				//入力された新しいパスワードの1文字目だけ表示、2～16文字目は*で表示されるようにした文字列を代入する
 				session.put("copyUserId", userId);				  	  //セッション「ユーザID」
 				session.put("savedUserId", true);			      //セッション「保存ユーザID(戻る用)」
 				session.put("newPassword", newPassword);          //セッション「新しいパスワード」
 				session.put("hiddenPassword", hiddenPassword(newPassword));    //セッション「*で表示されるパスワード」
-				result = SUCCESS;
+
+				//doPasswordCheck()メソッドを使って、"新しいパスワード"と"(再確認)"の文字列が一致するか確認する
+				newPasswordIncorrectErrorMessageList = inputChecker.doPasswordCheck(newPassword,reConfirmationNewPassword);
+				session.put("newPasswordIncorrectErrorMessageList", newPasswordIncorrectErrorMessageList);    	 //セッション「新しいパスワードと（再確認）不一致メッセージ」
+
+				//新しいパスワードと（再確認）が一致している場合
+				if(newPasswordIncorrectErrorMessageList.size() == 0){
+					result = SUCCESS;
+				}
 				return result;
 			}
+			return result;
 		}
 	return result;
 	}
