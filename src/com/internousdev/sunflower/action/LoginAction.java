@@ -25,12 +25,12 @@ public class LoginAction extends ActionSupport implements SessionAware{
 	private Map<String, Object> session;
 	private String notMatch = new String();
 	List<DestinationInfoDTO> destinationInfoDTOList = new ArrayList<DestinationInfoDTO>();
+	List<String>loginIdErrorMessageList = new ArrayList<String>();
+	List<String>passwordErrorMessageList = new ArrayList<String>();
 
 	public String execute(){
 
 		List<MCategoryDTO>mCategoryDTOList = new ArrayList<MCategoryDTO>();
-		List<String>loginIdErrorMessageList = new ArrayList<String>();
-		List<String>passwordErrorMessageList = new ArrayList<String>();
 		//セッションタイムアウト
 		if(session == null || session.isEmpty()){
 			return "timeOut";
@@ -57,13 +57,13 @@ public class LoginAction extends ActionSupport implements SessionAware{
 	passwordErrorMessageList = inputChecker.doCheck("パスワード", password, 1, 16, true, false, false, true, false, false, false, false, false);
 
 	//エラーメッセージを削除
-	session.remove("loginIdErrorMessageList");
-	session.remove("passwordErrorMessageList");
+//	session.remove("loginIdErrorMessageList");
+//	session.remove("passwordErrorMessageList");
 
 	//入力できない文字が入力されたときのメッセージ
 	if(loginIdErrorMessageList.size()!=0 || passwordErrorMessageList.size()!=0){
-		session.put("loginIdErrorMessageList", loginIdErrorMessageList);
-		session.put("passwordErrorMessageList", passwordErrorMessageList);
+//		session.put("loginIdErrorMessageList", loginIdErrorMessageList);
+//		session.put("passwordErrorMessageList", passwordErrorMessageList);
 		session.put("loginFlg",false);
 	}
 
@@ -118,6 +118,22 @@ public class LoginAction extends ActionSupport implements SessionAware{
 		}
 	}
 	return result;
+	}
+
+	public List<String> getLoginIdErrorMessageList() {
+		return loginIdErrorMessageList;
+	}
+
+	public void setLoginIdErrorMessageList(List<String> loginIdErrorMessageList) {
+		this.loginIdErrorMessageList = loginIdErrorMessageList;
+	}
+
+	public List<String> getPasswordErrorMessageList() {
+		return passwordErrorMessageList;
+	}
+
+	public void setPasswordErrorMessageList(List<String> passwordErrorMessageList) {
+		this.passwordErrorMessageList = passwordErrorMessageList;
 	}
 
 		public String getNotMatch() {

@@ -33,7 +33,7 @@ public class SettlementConfirmAction extends ActionSupport implements SessionAwa
 		DestinationInfoDAO destinationDao = new DestinationInfoDAO();
 
 		/*ログインしている場合*/
-		if((session.containsKey("loginFlg"))){
+		if( session.containsKey("loginFlg") && ((Boolean)session.get("loginFlg") == true)){
 			try{
 				/*DBから宛先情報のリストを取得する*/
 				destinationInfoDTOList = destinationDao.getDestinationInfo(String.valueOf(session.get("loginId")));

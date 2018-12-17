@@ -17,15 +17,15 @@
 	<h1>ログイン画面</h1>
 	<s:form id="form" action="LoginAction">
 	<!-- エラーメッセージの表示 -->
-		<s:if test="!#session.loginIdErrorMessageList.isEmpty()">
+		<s:if test="!loginIdErrorMessageList.isEmpty()">
 			<div class="error">
-				<s:iterator value="#session.loginIdErrorMessageList"><s:property /><br>
+				<s:iterator value="loginIdErrorMessageList"><s:property /><br>
 				</s:iterator>
 			</div>
 		</s:if>
-		<s:if test="!#session.passwordErrorMessageList.isEmpty()">
+		<s:if test="!passwordErrorMessageList.isEmpty()">
 			<div class="error">
-				<s:iterator value="#session.passwordErrorMessageList"><s:property /><br>
+				<s:iterator value="passwordErrorMessageList"><s:property /><br>
 				</s:iterator>
 			</div>
 		</s:if>
