@@ -40,10 +40,10 @@ public class DestinationInfoDTOTest {
 	public void testGetId4()throws Exception {
 		DestinationInfoDTO dto = new DestinationInfoDTO();
 		try{
-			int postalMax=Integer.parseInt("214748364");
+			int postalMax=Integer.parseInt("2147483647");
 			dto.setId(postalMax);
 		}catch(RuntimeException e){
-			assertEquals(e.getMessage(), "For input string:\"2147483648\"");
+			assertEquals(e.getMessage(), "For input string:\"2147483647\"");
 			}
 		}
 
@@ -51,10 +51,10 @@ public class DestinationInfoDTOTest {
 	public void testGetId5()throws Exception {
 		DestinationInfoDTO dto = new DestinationInfoDTO();
 		try{
-			int postalMin=Integer.parseInt("-214748364");
+			int postalMin=Integer.parseInt("-2147483647");
 			dto.setId(postalMin);
 		}catch(RuntimeException e){
-			assertEquals(e.getMessage(), "For input string:\"-2147483648\"");
+			assertEquals(e.getMessage(), "For input string:\"-2147483647\"");
 			}
 		}
 
@@ -93,10 +93,10 @@ public class DestinationInfoDTOTest {
 	public void testSetId4()throws Exception {
 		DestinationInfoDTO dto = new DestinationInfoDTO();
 		try{
-			int postalMax = Integer.parseInt("214748364");
+			int postalMax = Integer.parseInt("2147483647");
 			dto.setId(postalMax);
 		}catch(RuntimeException e){
-			assertEquals(e.getMessage(),"For input string:\"2147483648\"");
+			assertEquals(e.getMessage(),"For input string:\"2147483647\"");
 		}
 	}
 
@@ -104,10 +104,10 @@ public class DestinationInfoDTOTest {
 	public void testSetId5()throws Exception {
 		DestinationInfoDTO dto = new DestinationInfoDTO();
 		try{
-			int postalMin = Integer.parseInt("-214748364");
+			int postalMin = Integer.parseInt("-2147483647");
 			dto.setId(postalMin);
 		}catch(RuntimeException e){
-			assertEquals(e.getMessage(),"For input string:\"-2147483648\"");
+			assertEquals(e.getMessage(),"For input string:\"-2147483647\"");
 		}
 	}
 //get userId test
@@ -1220,6 +1220,8 @@ public class DestinationInfoDTOTest {
 	//get Email test
 	@Test
 	public void testGetEmail1() {
+		DestinationInfoDTO dto=new DestinationInfoDTO();
+		String expected = "0";
 		fail("まだ実装されていません");
 	}
 
