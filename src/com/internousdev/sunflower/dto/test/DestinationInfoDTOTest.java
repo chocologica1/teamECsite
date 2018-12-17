@@ -48,8 +48,8 @@ public class DestinationInfoDTOTest {
 			dto.setId(postalMax);
 		}catch(RuntimeException e){
 			assertEquals(e.getMessage(), "For input string:\"2147483647\"");
-			}
 		}
+	}
 
 	@Test
 	public void testGetId5()throws Exception {
@@ -59,8 +59,8 @@ public class DestinationInfoDTOTest {
 			dto.setId(postalMin);
 		}catch(RuntimeException e){
 			assertEquals(e.getMessage(), "For input string:\"-2147483647\"");
-			}
 		}
+	}
 
 	//set Id test
 	@Test
@@ -114,7 +114,7 @@ public class DestinationInfoDTOTest {
 			assertEquals(e.getMessage(),"For input string:\"-2147483647\"");
 		}
 	}
-//get userId test
+	//get userId test
 	@Test
 	public void testGetUserId1() {
 		DestinationInfoDTO dto=new DestinationInfoDTO();
@@ -1929,12 +1929,13 @@ public class DestinationInfoDTOTest {
 		Date actual = dto.getUpdateDate();
 		assertEquals(expected,actual);
 	}
+	@Test
 	public void testGetUpdateDate2() throws ParseException{
 		DestinationInfoDTO dto=new DestinationInfoDTO();
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd HH:mm:ss");
 		Date expected = sdf.parse("20180420 12:00:00");
-		dto.setRegistDate(expected);
-		assertEquals(expected, dto.getRegistDate());
+		dto.setUpdateDate(expected);
+		assertEquals(expected, dto.getUpdateDate());
 	}
 
 	//set UpdateDate test
@@ -1952,8 +1953,8 @@ public class DestinationInfoDTOTest {
 		DestinationInfoDTO dto=new DestinationInfoDTO();
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd HH:mm:ss");
 		Date expected = sdf.parse("20180420 12:00:00");
-		dto.setRegistDate(expected);
-		assertEquals(expected, dto.getRegistDate());
+		dto.setUpdateDate(expected);
+		assertEquals(expected, dto.getUpdateDate());
 	}
 
 }
