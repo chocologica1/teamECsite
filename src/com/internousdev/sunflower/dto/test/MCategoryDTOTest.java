@@ -11,7 +11,7 @@ import org.junit.Test;
 import com.internousdev.sunflower.dto.MCategoryDTO;
 
 public class MCategoryDTOTest {
-
+//get Id test
 	@Test
 	public void testGetId1() {
 		MCategoryDTO dto = new MCategoryDTO();
@@ -63,7 +63,7 @@ public class MCategoryDTOTest {
 			assertEquals(e.getMessage(),"For input string: \"-2147483648\"");
 		}
 	}
-
+//set Id test
 	@Test
 	public void testSetId1() {
 		MCategoryDTO dto = new MCategoryDTO();
@@ -115,7 +115,7 @@ public class MCategoryDTOTest {
 			assertEquals(e.getMessage(),"For input string: \"-2147483648\"");
 		}
 	}
-
+//get CategoryId test
 	@Test
 	public void testGetCategoryId1() {
 		MCategoryDTO dto = new MCategoryDTO();
@@ -167,7 +167,7 @@ public class MCategoryDTOTest {
 			assertEquals(e.getMessage(),"For input string: \"-2147483648\"");
 		}
 	}
-
+//set CategoryId test
 	@Test
 	public void testSetCategoryId() {
 		MCategoryDTO dto = new MCategoryDTO();
@@ -215,7 +215,7 @@ public class MCategoryDTOTest {
 			assertEquals(e.getMessage(), "For input string: \"-2147483648\"");
 		}
 	}
-
+//get CategoryName test
 	@Test
 	public void testGetCategoryName1() {
 		MCategoryDTO dto = new MCategoryDTO();
@@ -335,7 +335,7 @@ public class MCategoryDTOTest {
 		String actual = dto.getCategoryName();
 		assertEquals(expected, actual);
 	}
-
+//Set CategoryName
 	@Test
 	public void testSetCategoryName1() {
 		MCategoryDTO dto = new MCategoryDTO();
@@ -455,7 +455,7 @@ public class MCategoryDTOTest {
 		String actual = dto.getCategoryName();
 		assertEquals(expected, actual);
 	}
-
+//get CategoryDescription test
 	@Test
 	public void testGetCategoryDescription1() {
 		MCategoryDTO dto = new MCategoryDTO();
@@ -575,7 +575,7 @@ public class MCategoryDTOTest {
 		String actual = dto.getCategoryDescription();
 		assertEquals(expected, actual);
 	}
-
+//set Category_descriprion test
 	@Test
 	public void testSetCategoryDescription1() {
 		MCategoryDTO dto = new MCategoryDTO();
@@ -695,7 +695,7 @@ public class MCategoryDTOTest {
 		String actual = dto.getCategoryDescription();
 		assertEquals(expected, actual);
 	}
-
+//set InsertDate test
 	@Test
 	public void testGetInsertDate1() {
 		MCategoryDTO dto = new MCategoryDTO();
@@ -715,26 +715,26 @@ public class MCategoryDTOTest {
 		dto.setInsertDate(expected);
 		assertEquals(expected, dto.getInsertDate());
 	}
-
+//get UpdateDate test
 	@Test
-	public void testSetInsertDate1() {
+	public void testGetUpdateDate1() {
 		MCategoryDTO dto = new MCategoryDTO();
 		Date expected = null;
 
-		dto.setInsertDate(expected);
-		Date actual = dto.getInsertDate();
+		dto.setUpdateDate(expected);
+		Date actual = dto.getUpdateDate();
 		assertEquals(expected, actual);
 	}
 
 	@Test
 	public void testGetUpdateDate2() throws ParseException {
 		MCategoryDTO dto = new MCategoryDTO();
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd HH:mm;ss");
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd HH:mm:ss");
 		Date expected = sdf.parse("20180420 12:00:00");
 		dto.setUpdateDate(expected);
 		assertEquals(expected, dto.getUpdateDate());
 	}
-
+//set UpdateDate test
 	@Test
 	public void testSetUpdateDate1() {
 		MCategoryDTO dto = new MCategoryDTO();
