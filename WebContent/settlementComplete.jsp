@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="./css/style.css">
 <meta http-equiv="refresh" content="3;<s:url action='HomeAction'/>"/>
 <title>決済完了画面</title>
 </head>
