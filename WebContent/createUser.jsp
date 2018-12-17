@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="./css/create.css">
+<link rel="stylesheet" href="./css/style.css">
 <title>ユーザ情報入力画面</title>
 </head>
 <body>
