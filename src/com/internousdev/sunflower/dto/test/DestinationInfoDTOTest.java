@@ -2,6 +2,10 @@ package com.internousdev.sunflower.dto.test;
 
 import static org.junit.Assert.*;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import org.junit.Test;
 
 import com.internousdev.sunflower.dto.DestinationInfoDTO;
@@ -1222,12 +1226,219 @@ public class DestinationInfoDTOTest {
 	public void testGetEmail1() {
 		DestinationInfoDTO dto=new DestinationInfoDTO();
 		String expected = "0";
-		fail("まだ実装されていません");
+
+		dto.setEmail(expected);
+		String actual = dto.getEmail();
+		assertEquals(expected,actual);
+	}
+	@Test
+	public void testGetEmail2() {
+		DestinationInfoDTO dto=new DestinationInfoDTO();
+		String expected = "2147483647";
+
+		dto.setEmail(expected);
+		String actual = dto.getEmail();
+		assertEquals(expected,actual);
+	}
+	@Test
+	public void testGetEmail3() {
+		DestinationInfoDTO dto=new DestinationInfoDTO();
+		String expected = "-2147483647";
+
+		dto.setEmail(expected);
+		String actual = dto.getEmail();
+		assertEquals(expected,actual);
+	}
+	@Test
+	public void testGetEmail4() {
+		DestinationInfoDTO dto=new DestinationInfoDTO();
+		String expected = "null";
+
+		dto.setEmail(expected);
+		String actual = dto.getEmail();
+		assertEquals(expected,actual);
+	}
+	@Test
+	public void testGetEmail5() {
+		DestinationInfoDTO dto=new DestinationInfoDTO();
+		String expected = "";
+
+		dto.setEmail(expected);
+		String actual = dto.getEmail();
+		assertEquals(expected,actual);
+	}
+	@Test
+	public void testGetEmail6() {
+		DestinationInfoDTO dto=new DestinationInfoDTO();
+		String expected = " ";
+
+		dto.setEmail(expected);
+		String actual = dto.getEmail();
+		assertEquals(expected,actual);
+	}
+	@Test
+	public void testGetEmail7() {
+		DestinationInfoDTO dto=new DestinationInfoDTO();
+		String expected = "　";
+
+		dto.setEmail(expected);
+		String actual = dto.getEmail();
+		assertEquals(expected,actual);
+	}
+	@Test
+	public void testGetEmail8() {
+		DestinationInfoDTO dto=new DestinationInfoDTO();
+		String expected = "abc123";
+
+		dto.setEmail(expected);
+		String actual = dto.getEmail();
+		assertEquals(expected,actual);
+	}
+	@Test
+	public void testGetEmail9() {
+		DestinationInfoDTO dto=new DestinationInfoDTO();
+		String expected = "あいう１２３";
+
+		dto.setEmail(expected);
+		String actual = dto.getEmail();
+		assertEquals(expected,actual);
+	}
+	@Test
+	public void testGetEmail10() {
+		DestinationInfoDTO dto=new DestinationInfoDTO();
+		String expected = "abc123あいう１２３";
+
+		dto.setEmail(expected);
+		String actual = dto.getEmail();
+		assertEquals(expected,actual);
+	}
+	@Test
+	public void testGetEmail11() {
+		DestinationInfoDTO dto=new DestinationInfoDTO();
+		String expected = "abc123あいう１２３漢字";
+
+		dto.setEmail(expected);
+		String actual = dto.getEmail();
+		assertEquals(expected,actual);
+	}
+	@Test
+	public void testGetEmail12() {
+		DestinationInfoDTO dto=new DestinationInfoDTO();
+		String expected = "ａｂｃあいう１２３漢字";
+
+		dto.setEmail(expected);
+		String actual = dto.getEmail();
+		assertEquals(expected,actual);
 	}
 
+	//set Email test
 	@Test
-	public void testSetEmail() {
-		fail("まだ実装されていません");
+	public void testSetEmail1() {
+		DestinationInfoDTO dto=new DestinationInfoDTO();
+		String expected = "0";
+
+		dto.setEmail(expected);
+		String actual = dto.getEmail();
+		assertEquals(expected,actual);
+	}
+	@Test
+	public void testSetEmail2() {
+		DestinationInfoDTO dto=new DestinationInfoDTO();
+		String expected = "2147483647";
+
+		dto.setEmail(expected);
+		String actual = dto.getEmail();
+		assertEquals(expected,actual);
+	}
+	@Test
+	public void testSetEmail3() {
+		DestinationInfoDTO dto=new DestinationInfoDTO();
+		String expected = "-2147483647";
+
+		dto.setEmail(expected);
+		String actual = dto.getEmail();
+		assertEquals(expected,actual);
+	}
+	@Test
+	public void testSetEmail4() {
+		DestinationInfoDTO dto=new DestinationInfoDTO();
+		String expected = "null";
+
+		dto.setEmail(expected);
+		String actual = dto.getEmail();
+		assertEquals(expected,actual);
+	}
+	@Test
+	public void testSetEmail5() {
+		DestinationInfoDTO dto=new DestinationInfoDTO();
+		String expected = "";
+
+		dto.setEmail(expected);
+		String actual = dto.getEmail();
+		assertEquals(expected,actual);
+	}
+	@Test
+	public void testSetEmail6() {
+		DestinationInfoDTO dto=new DestinationInfoDTO();
+		String expected = " ";
+
+		dto.setEmail(expected);
+		String actual = dto.getEmail();
+		assertEquals(expected,actual);
+	}
+	@Test
+	public void testSetEmail7() {
+		DestinationInfoDTO dto=new DestinationInfoDTO();
+		String expected = "　";
+
+		dto.setEmail(expected);
+		String actual = dto.getEmail();
+		assertEquals(expected,actual);
+	}
+	@Test
+	public void testSetEmail8() {
+		DestinationInfoDTO dto=new DestinationInfoDTO();
+		String expected = "abc123";
+
+		dto.setEmail(expected);
+		String actual = dto.getEmail();
+		assertEquals(expected,actual);
+	}
+	@Test
+	public void testSetEmail9() {
+		DestinationInfoDTO dto=new DestinationInfoDTO();
+		String expected = "あいう１２３";
+
+		dto.setEmail(expected);
+		String actual = dto.getEmail();
+		assertEquals(expected,actual);
+	}
+	@Test
+	public void testSetEmail10() {
+		DestinationInfoDTO dto=new DestinationInfoDTO();
+		String expected = "abc123あいう１２３";
+
+		dto.setEmail(expected);
+		String actual = dto.getEmail();
+		assertEquals(expected,actual);
+	}
+	@Test
+	public void testSetEmail11() {
+		DestinationInfoDTO dto=new DestinationInfoDTO();
+		String expected = "abc123あいう１２３漢字";
+
+		dto.setEmail(expected);
+		String actual = dto.getEmail();
+		assertEquals(expected,actual);
+	}
+	@Test
+	public void testSetEmail12() {
+		DestinationInfoDTO dto=new DestinationInfoDTO();
+		String expected = "ａｂｃあいう１２３漢字";
+
+		dto.setEmail(expected);
+		String actual = dto.getEmail();
+		assertEquals(expected,actual);
 	}
 
 	//get TelNumber test
@@ -1670,24 +1881,79 @@ public class DestinationInfoDTOTest {
 		assertEquals(expected,actual);
 	}
 
+	//get RegistDate test
 	@Test
-	public void testGetRegistDate() {
-		fail("まだ実装されていません");
+	public void testGetRegistDate1() {
+		DestinationInfoDTO dto=new DestinationInfoDTO();
+		Date expected = null;
+
+		dto.setRegistDate(expected);
+		Date actual = dto.getRegistDate();
+		assertEquals(expected,actual);
+	}
+	@Test
+	public void testGetRegistDate2() throws ParseException {
+		DestinationInfoDTO dto=new DestinationInfoDTO();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd HH:mm:ss");
+		Date expected = sdf.parse("20180420 12:00:00");
+		dto.setRegistDate(expected);
+		assertEquals(expected, dto.getRegistDate());
 	}
 
+	//set RegistDate test
 	@Test
-	public void testSetRegistDate() {
-		fail("まだ実装されていません");
+	public void testSetRegistDate1() {
+		DestinationInfoDTO dto=new DestinationInfoDTO();
+		Date expected = null;
+
+		dto.setRegistDate(expected);
+		Date actual = dto.getRegistDate();
+		assertEquals(expected,actual);
+	}
+	@Test
+	public void testSetRegistDate2() throws ParseException{
+		DestinationInfoDTO dto=new DestinationInfoDTO();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd HH:mm:ss");
+		Date expected = sdf.parse("20180420 12:00:00");
+		dto.setRegistDate(expected);
+		assertEquals(expected, dto.getRegistDate());
 	}
 
+	//get UpdateDate test
 	@Test
-	public void testGetUpdateDate() {
-		fail("まだ実装されていません");
+	public void testGetUpdateDate1() {
+		DestinationInfoDTO dto=new DestinationInfoDTO();
+		Date expected = null;
+
+		dto.setUpdateDate(expected);
+		Date actual = dto.getUpdateDate();
+		assertEquals(expected,actual);
+	}
+	public void testGetUpdateDate2() throws ParseException{
+		DestinationInfoDTO dto=new DestinationInfoDTO();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd HH:mm:ss");
+		Date expected = sdf.parse("20180420 12:00:00");
+		dto.setRegistDate(expected);
+		assertEquals(expected, dto.getRegistDate());
 	}
 
+	//set UpdateDate test
 	@Test
-	public void testSetUpdateDate() {
-		fail("まだ実装されていません");
+	public void testSetUpdateDate1() {
+		DestinationInfoDTO dto=new DestinationInfoDTO();
+		Date expected = null;
+
+		dto.setUpdateDate(expected);
+		Date actual = dto.getUpdateDate();
+		assertEquals(expected,actual);
+	}
+	@Test
+	public void testSetUpdateDate2() throws ParseException{
+		DestinationInfoDTO dto=new DestinationInfoDTO();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd HH:mm:ss");
+		Date expected = sdf.parse("20180420 12:00:00");
+		dto.setRegistDate(expected);
+		assertEquals(expected, dto.getRegistDate());
 	}
 
 }
