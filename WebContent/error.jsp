@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="refresh" content="3;<s:url action='HomeAction'/>">
-<title>Error</title>
+<title>エラー画面</title>
 </head>
 <body>
 	<div id="contents">
