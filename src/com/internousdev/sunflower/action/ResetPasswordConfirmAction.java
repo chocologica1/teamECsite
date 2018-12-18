@@ -37,6 +37,7 @@ public class ResetPasswordConfirmAction extends ActionSupport implements Session
 		session.remove("newPasswordErrorMessageList");
 		session.remove("reConfirmationNewPasswordErrorMessageList");
 		session.remove("newPasswordIncorrectErrorMessageList");
+		session.remove("savedUserId");
 
 	//InputCheckerをインスタンス化(文字種・文字数の判定)
 		InputChecker inputChecker = new InputChecker();
