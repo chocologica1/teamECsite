@@ -167,7 +167,7 @@
 				<tr>
 					<th>パスワード</th>
 					<td><input type="password" name="password" value=""
-						placeholder="パスワード" class="textarea" /></td>
+						placeholder="パスワード" class="textarea" autocomplete="new-password"/></td>
 				</tr>
 			</table>
 			<div class="submit_btn_box">

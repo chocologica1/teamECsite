@@ -8,6 +8,27 @@
 <link rel="stylesheet" href="./css/login.css">
 <title>ログイン</title>
 
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3/jquery.min.js"></script>
+
+<script src="https://terrylinooo.github.io/jquery.disableAutoFill/assets/js/jquery.disableAutoFill.min.js">
+
+$('#form').validate();
+
+//Enable jQuery disableAutoFill plugin
+$('#form').disableAutoFill({
+ passwordField: '.password',
+ debugMode: false,
+ randomizeInputName: true,
+ callback: function() {
+     return $('#form').valid();
+ }
+});
+</script>
+
+
 </head>
 <body>
 	<jsp:include page="header.jsp" />
@@ -49,7 +70,7 @@
 		</tr>
 		<tr>
 			<th>パスワード:</th>
-			<td><s:password name="password" class="textarea" placeholder="パスワード" autocomplete="off"/></td>
+			<td><s:password name="password" class="textarea" placeholder="パスワード" autocomplete="new-password"/></td>
 		</tr>
 	</table>
 	<br>
