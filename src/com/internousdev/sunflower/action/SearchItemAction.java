@@ -41,7 +41,7 @@ public class SearchItemAction extends ActionSupport implements SessionAware {
         if(StringUtils.isBlank(keywords)){
         	keywords = "";
         }else {
-        	keywords = keywords.replaceAll("　", " ").replaceAll("\\s{2,}", " ");
+        	keywords = keywords.replaceAll("　", " ").replaceAll("\\s{2,}", " ").trim();
         }
 
         if(!(keywords.equals(""))){
