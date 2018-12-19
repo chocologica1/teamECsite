@@ -51,9 +51,9 @@ public class ProductDetailsAction extends ActionSupport implements SessionAware 
 		releaseDate = productInfoDTO.getReleaseDate();
 		productDescription = productInfoDTO.getProductDescription();
 
+		//ない商品情報へのアクセス阻止
 		if(imageFilePath == null){
-			result = ERROR;
-			return result;
+			return ERROR;
 		}
 
 		//関連商品を3つ取得
