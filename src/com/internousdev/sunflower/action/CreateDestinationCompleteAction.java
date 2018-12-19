@@ -23,6 +23,16 @@ public class CreateDestinationCompleteAction extends ActionSupport implements Se
 		if(session == null || session.isEmpty()){
 			return "timeOut";
 		}
+
+		if((!session.containsKey("loginId")) || (!session.containsKey("familyName"))
+			|| (!session.containsKey("firstName")) || (!session.containsKey("familyNameKana"))
+			|| (!session.containsKey("firstNameKana")) || (!session.containsKey("email"))
+			|| (!session.containsKey("telNumber")) || (!session.containsKey("userAddress"))){
+			return "timeOut";
+		}
+
+
+
 		String result = ERROR;
 		DestinationInfoDAO destinationInfoDAO = new DestinationInfoDAO();
 
