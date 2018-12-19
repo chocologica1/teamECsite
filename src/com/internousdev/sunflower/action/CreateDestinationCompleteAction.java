@@ -31,8 +31,6 @@ public class CreateDestinationCompleteAction extends ActionSupport implements Se
 			return "timeOut";
 		}
 
-
-
 		String result = ERROR;
 		DestinationInfoDAO destinationInfoDAO = new DestinationInfoDAO();
 
