@@ -35,6 +35,12 @@ public class AddCartAction extends ActionSupport implements SessionAware{
 		if(session == null || session.isEmpty()){
 			return "timeOut";
 		}
+
+		//ない商品を追加できないようにする
+		if(productCount == 0) {
+			return ERROR;
+		}
+
 		int result = 0;
 
 		//仮ユーザーIDを発行していない場合、仮ユーザーIDを発行しsessionに格納
