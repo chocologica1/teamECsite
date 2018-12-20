@@ -45,10 +45,8 @@ public class LoginAction extends ActionSupport implements SessionAware{
 
 		if(savedLoginId==true){
 			session.put("savedLoginId", true);
-			session.put("loginId", loginId);
 		}else{
 			session.put("savedLoginId", false);
-			session.put("loginId", loginId);
 		}
 
 	//フォームに入力できる文字数の指定
