@@ -12,7 +12,6 @@ import com.internousdev.sunflower.dao.CartInfoDAO;
 import com.internousdev.sunflower.dao.DestinationInfoDAO;
 import com.internousdev.sunflower.dao.UserInfoDAO;
 import com.internousdev.sunflower.dto.DestinationInfoDTO;
-import com.internousdev.sunflower.dto.MCategoryDTO;
 import com.internousdev.sunflower.dto.UserInfoDTO;
 import com.internousdev.sunflower.util.InputChecker;
 import com.opensymphony.xwork2.ActionSupport;
@@ -29,7 +28,6 @@ public class LoginAction extends ActionSupport implements SessionAware{
 
 	public String execute(){
 
-		List<MCategoryDTO>mCategoryDTOList = new ArrayList<MCategoryDTO>();
 		//セッションタイムアウト
 		if(session == null || session.isEmpty()){
 			return "timeOut";
