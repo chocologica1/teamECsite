@@ -27,6 +27,9 @@ public class GoLoginAction extends ActionSupport implements SessionAware{
 		}
 		session.put("loginIdErrorMessageList", "");
 		session.put("passwordErrorMessageList", "");
+
+		//カートフラグの削除
+		session.remove("cartFlg");
 		return SUCCESS;
 	}
 
