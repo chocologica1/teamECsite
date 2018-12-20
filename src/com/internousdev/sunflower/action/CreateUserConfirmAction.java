@@ -11,7 +11,6 @@ import com.internousdev.sunflower.util.InputChecker;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class CreateUserConfirmAction extends ActionSupport implements SessionAware{
-
 	private String familyName;
 	private String firstName;
 	private String familyNameKana;
