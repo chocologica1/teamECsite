@@ -120,7 +120,7 @@ public class CartInfoDAO {
 		int price = 0;
 
 		//プロダクトIDが不正な場合0を戻す
-		if(isRightProductId(productId))return 0;
+		if(!isRightProductId(productId))return 0;
 
 		//同じ商品が既にカートに入っていた場合、該当商品の個数を変更
 		if(existsProduct(productId,userId,tempUserId)){
