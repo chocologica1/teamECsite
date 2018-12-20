@@ -118,6 +118,11 @@ public class CartInfoDAO {
 	public int regist(int productId, int productCount, String userId, String tempUserId) {
 		int result = 0;
 		int price = 0;
+
+		//プロダクトIDが不正な場合0を戻す
+		if(isRightProductId(productId))return 0;
+
+		//同じ商品が既にカートに入っていた場合、該当商品の個数を変更
 		if(existsProduct(productId,userId,tempUserId)){
 			result = addCount(productId,productCount,userId,tempUserId);
 		}else{
@@ -275,6 +280,28 @@ public class CartInfoDAO {
 			ps.setString(3, userId);
 			ps.setString(4, tempUserId);
 			result = ps.executeUpdate();
+		}catch(SQLException e){
+			e.printStackTrace();
+		}finally{
+			try{con.close();}catch(SQLException e){}
+		}
+		return result;
+	}
+
+	/**
+	 * 商品IDがデータベース上に存在するかどうか判別します。
+	 * @param productId　商品ID
+	 * @return　存在する商品IDかどうかboolean値で戻す
+	 */
+	public boolean isRightProductId(int productId){
+		boolean result = false;
+		Connection con = db.getConnection();
+		String sql = "SELECT * FROM product_info WHERE product_id = ?";
+		try{
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setInt(1, productId);
+			ResultSet rs = ps.executeQuery();
+			result = rs.next();
 		}catch(SQLException e){
 			e.printStackTrace();
 		}finally{
