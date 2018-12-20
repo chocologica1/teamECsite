@@ -10,7 +10,6 @@ import org.apache.struts2.interceptor.SessionAware;
 
 import com.internousdev.sunflower.dao.CartInfoDAO;
 import com.internousdev.sunflower.dao.DestinationInfoDAO;
-import com.internousdev.sunflower.dao.MCategoryDAO;
 import com.internousdev.sunflower.dao.UserInfoDAO;
 import com.internousdev.sunflower.dto.DestinationInfoDTO;
 import com.internousdev.sunflower.dto.MCategoryDTO;
@@ -57,12 +56,7 @@ public class LoginAction extends ActionSupport implements SessionAware{
 	//入力できない文字が入力されたときのメッセージ
 	if(loginIdErrorMessageList.size()!=0 || passwordErrorMessageList.size()!=0){
 		session.put("loginFlg",false);
-	}
-
-	if(!session.containsKey("mCategoryList")){
-		MCategoryDAO mCategoryDao = new MCategoryDAO();
-		mCategoryDTOList = mCategoryDao.getMCategoryList();
-		session.put("mCategoryDTOList", mCategoryDTOList);
+		return ERROR;
 	}
 
 	UserInfoDAO userInfoDao = new UserInfoDAO();
