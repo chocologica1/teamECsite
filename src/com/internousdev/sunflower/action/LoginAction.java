@@ -65,15 +65,14 @@ public class LoginAction extends ActionSupport implements SessionAware{
 		if(userInfoDao.login(loginId, password)> 0){
 			UserInfoDTO userInfoDTO = userInfoDao.getUserInfo(loginId, password);
 			session.put("loginId", userInfoDTO.getUserId());
-			//tempUserIdに保持しているカート情報とloginIDをリンクさせる
+
 			CartInfoDAO cartInfoDao = new CartInfoDAO();
-			cartInfoDao.linkToLoginId(loginId,String.valueOf(session.get("tempUserId")));
 			/*cartFlgを保持している場合
 			 * 宛先情報を取得し
 			 * 決済画面に遷移
 			 */
-			cartInfoDao.linkToLoginId(String.valueOf(session.get("tempUserId")),loginId);
 			if(session.get("cartFlg") != null && (Boolean.parseBoolean(String.valueOf(session.get("cartFlg"))) == true)) {
+				cartInfoDao.deleteAll(loginId);
 				DestinationInfoDAO destinationInfoDao = new DestinationInfoDAO();
 				try {
 					destinationInfoDTOList = destinationInfoDao.getDestinationInfo(String.valueOf(session.get("loginId")));
@@ -91,6 +90,8 @@ public class LoginAction extends ActionSupport implements SessionAware{
 			}else {
 				result = SUCCESS;
 			}
+			//tempUserIdに保持しているカート情報とloginIDをリンクさせる
+			cartInfoDao.linkToLoginId(loginId,String.valueOf(session.get("tempUserId")));
 		}
 		//ログイン情報を受け渡す
 		session.put("loginFlg", true);
