@@ -92,6 +92,7 @@
 		<result name="success">cart.jsp</result>
 		<result name="error">error.jsp</result>
 		<result name="timeOut">error.jsp</result>
+		<result name="input">error.jsp</result>
 	</action>
 
 	<action name="CartAction" class="com.internousdev.sunflower.action.CartAction" method="execute">
