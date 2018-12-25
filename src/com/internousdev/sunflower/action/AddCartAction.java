@@ -37,7 +37,7 @@ public class AddCartAction extends ActionSupport implements SessionAware{
 		}
 
 		//ない商品を追加できないようにする
-		if(productCount == 0) {
+		if(productCount < 1 || productCount > 5) {
 			return ERROR;
 		}
 
