@@ -12,19 +12,17 @@
 ログアウト機能
 各画面レイアウト修正
 --->
-
 |            | ファイル名    |
 |:-----------|:------------|
 | データベースの作成、更新 | sunflower.sql |
-| 商品一覧機能・画面 | ProductDAO.java, ProductDTO.java, ProductListAction.java, |
-|  |productList.jsp, product.css  |
+| 商品一覧機能・画面 | ProductDAO.java, ProductDTO.java, ProductListAction.java,productList.jsp, product.css |
 | 商品詳細機能・画面 | ProductDetailsAction.java, productDetails.jsp |
 | ログアウト機能 | LogoutAction.java |
 | 各画面レイアウト修正 | style.css |
-
+<br>
 
 ## プレビュー
 ### 商品一覧画面
 ![sunflower productList](https://user-images.githubusercontent.com/43476091/50780039-47079200-12e5-11e9-98bb-6f216296cf52.png)
-###商品詳細画面
+### 商品詳細画面
 
