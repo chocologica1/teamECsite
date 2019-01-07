@@ -25,4 +25,4 @@
 ### 商品一覧画面
 ![sunflower productList](https://user-images.githubusercontent.com/43476091/50780039-47079200-12e5-11e9-98bb-6f216296cf52.png)
 ### 商品詳細画面
-
+![sunflower productdetails](https://user-images.githubusercontent.com/43476091/50782786-50e0c380-12ec-11e9-9760-8accfe7d68af.png)
